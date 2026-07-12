@@ -1,55 +1,79 @@
-import { forwardRef } from 'react'
-import { Link } from 'react-router-dom'
-import { cx } from '../../utils/helpers'
-
-const VARIANTS = {
-  primary: 'bg-signal text-ink hover:bg-signal-soft',
-  secondary: 'bg-transparent text-ivory border border-ivory/25 hover:border-ivory/60',
-  ghost: 'bg-transparent text-ivory hover:text-signal',
-}
-
-const SIZES = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-sm',
-  lg: 'px-8 py-4 text-base',
-}
+import { forwardRef } from "react";
+import { ArrowRight } from "lucide-react";
+import MagneticButton from "../shared/MagneticButton";
 
 /**
- * Button — renders as <button>, <a>, or router <Link> depending on props.
+ * Button
+ * Core CTA atom. Renders as <button> or, when `href` is passed, as <a>.
+ * When `magnetic` is true, wraps itself in MagneticButton for the
+ * cursor-attraction hover effect instead of rendering plain.
+ *
+ * API:
+ *   <Button variant="primary" size="md">Get in touch</Button>
+ *   <Button variant="outline" size="lg" magnetic>Explore services</Button>
+ *   <Button variant="ghost" href="/careers" icon={false}>View roles</Button>
  */
-const Button = forwardRef(function Button(
-  { children, variant = 'primary', size = 'md', className, href, to, ...props },
-  ref
-) {
-  const classes = cx(
-    'inline-flex items-center justify-center gap-2 rounded-full font-medium',
-    'transition-all duration-300 ease-signal',
-    VARIANTS[variant],
-    SIZES[size],
-    className
-  )
+const sizeStyles = {
+  sm: "px-4 py-2 text-sm gap-1.5",
+  md: "px-6 py-3 text-base gap-2",
+  lg: "px-8 py-4 text-lg gap-2.5",
+};
 
-  if (to) {
-    return (
-      <Link to={to} className={classes} ref={ref} {...props}>
+const variantStyles = {
+  primary:
+    "text-white bg-[linear-gradient(135deg,var(--color-gradient-start),var(--color-gradient-end))] shadow-[0_8px_24px_-8px_rgba(37,99,235,0.5)] hover:shadow-[0_12px_32px_-8px_rgba(37,99,235,0.65)] hover:brightness-110",
+  ghost:
+    "text-[color:var(--color-text-primary)] bg-transparent hover:bg-[color:var(--color-bg-secondary)]",
+  outline:
+    "text-[color:var(--color-text-primary)] bg-transparent border border-[color:var(--color-border)] hover:border-[color:var(--color-brand-500)] hover:text-[color:var(--color-brand-600)]",
+};
+
+const Button = forwardRef(
+  (
+    {
+      children,
+      variant = "primary",
+      size = "md",
+      magnetic = false,
+      icon = true,
+      href,
+      className = "",
+      ...props
+    },
+    ref
+  ) => {
+    const Tag = href ? "a" : "button";
+
+    const classes = `relative inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-brand-500)] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+
+    const content = (
+      <>
         {children}
-      </Link>
-    )
-  }
+        {icon && (
+          <ArrowRight
+            size={size === "lg" ? 18 : 16}
+            className="transition-transform duration-300 group-hover:translate-x-0.5"
+          />
+        )}
+      </>
+    );
 
-  if (href) {
+    if (magnetic) {
+      return (
+        <MagneticButton as={Tag} href={href} className={`group ${classes}`} ref={ref} {...props}>
+          {content}
+        </MagneticButton>
+      );
+    }
+
     return (
-      <a href={href} className={classes} ref={ref} {...props}>
-        {children}
-      </a>
-    )
+      <Tag ref={ref} href={href} className={`group ${classes}`} {...props}>
+        {content}
+      </Tag>
+    );
   }
+);
 
-  return (
-    <button className={classes} ref={ref} {...props}>
-      {children}
-    </button>
-  )
-})
+Button.displayName = "Button";
 
-export default Button
+export default Button;

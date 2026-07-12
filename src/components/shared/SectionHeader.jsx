@@ -1,32 +1,89 @@
-import { motion } from 'framer-motion'
-import { fadeUp, viewportOnce } from '../../animations/framer'
-import { cx } from '../../utils/helpers'
+import { motion } from "framer-motion";
 
 /**
- * Consistent section intro: eyebrow label, headline, optional supporting copy.
+ * SectionHeader
+ * Consistent header block used at the top of every section: a tracked
+ * overline label, a large title (JSX so it can carry inline gradient
+ * spans or line breaks), and an optional subtitle. Reveals via a
+ * left-to-right clip-path wipe as it enters the viewport.
+ *
+ * API:
+ *   <SectionHeader
+ *     overline="Services"
+ *     title={<>Built for scale, <span className="text-gradient">not slides</span></>}
+ *     subtitle="Every engagement starts with the problem, not the deck."
+ *     align="left"
+ *   />
  */
-export default function SectionHeader({ eyebrow, title, description, align = 'left', className }) {
+const SectionHeader = ({
+  overline,
+  title,
+  subtitle,
+  align = "left",
+  className = "",
+}) => {
+  const alignment =
+    align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
+
+  const wipeVariants = {
+    hidden: { clipPath: "inset(0 100% 0 0)", opacity: 0 },
+    visible: {
+      clipPath: "inset(0 0% 0 0)",
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 16 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay },
+    }),
+  };
+
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={viewportOnce}
-      variants={fadeUp}
-      className={cx(
-        'max-w-2xl',
-        align === 'center' && 'mx-auto text-center',
-        className
+    <div className={`flex max-w-2xl flex-col gap-4 ${alignment} ${className}`}>
+      {overline && (
+        <motion.span
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+          variants={wipeVariants}
+          className="text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--color-brand-500)]"
+        >
+          {overline}
+        </motion.span>
       )}
-    >
-      {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
-      <h2 className="text-[clamp(1.75rem,3.4vw,3rem)] font-medium leading-[1.1] text-ivory">
-        {title}
-      </h2>
-      {description && (
-        <p className="mt-5 text-base leading-relaxed text-ivory/60 sm:text-lg">
-          {description}
-        </p>
+
+      {title && (
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          custom={0.1}
+          variants={fadeUp}
+          className="text-[clamp(1.75rem,3vw,2.75rem)] font-semibold leading-[1.1] tracking-tight text-[color:var(--color-text-primary)]"
+        >
+          {title}
+        </motion.h2>
       )}
-    </motion.div>
-  )
-}
+
+      {subtitle && (
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          custom={0.2}
+          variants={fadeUp}
+          className="text-base leading-relaxed text-[color:var(--color-text-secondary)] sm:text-lg"
+        >
+          {subtitle}
+        </motion.p>
+      )}
+    </div>
+  );
+};
+
+export default SectionHeader;
