@@ -1,48 +1,39 @@
 import { X } from "lucide-react";
 
 /**
- * Tag
- * Interactive chip for filters and categories (Insights topics, Industries
- * filters, Careers department filters). Distinct from Badge: Badge is a
- * static status label on a card; Tag is something you click, select, or
- * remove.
+ * Tag — interactive chip for filters and selections, distinct from
+ * Badge (which is a static label). Careers.jsx's department filter
+ * buttons hand-rolled this exact active/inactive pattern inline; this
+ * is the shared version, plus an optional removable state for things
+ * like applied-filter chips.
  *
- * API:
- *   <Tag>Fintech</Tag>
- *   <Tag selected onClick={() => setFilter('fintech')}>Fintech</Tag>
- *   <Tag onRemove={() => removeFilter('fintech')}>Fintech</Tag>
+ * <Tag active={dept === "All"} onClick={() => setDept("All")}>All</Tag>
+ * <Tag onRemove={() => clearFilter()}>Engineering ×</Tag>
  */
+
 const Tag = ({
   children,
-  selected = false,
+  active = false,
   onClick,
   onRemove,
+  disabled = false,
   className = "",
 }) => {
-  const interactive = typeof onClick === "function";
-  const Component = interactive ? "button" : "span";
+  const isInteractive = typeof onClick === "function";
 
-  return (
-    <Component
-      type={interactive ? "button" : undefined}
-      onClick={onClick}
-      aria-pressed={interactive ? selected : undefined}
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors duration-200 ${
-        selected
-          ? "border-transparent bg-[color:var(--color-brand-600)] text-white"
-          : "border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] text-[color:var(--color-text-secondary)]"
-      } ${
-        interactive && !selected
-          ? "hover:border-[color:var(--color-brand-500)] hover:text-[color:var(--color-brand-600)]"
-          : ""
-      } ${className}`}
-    >
+  const baseClasses = `inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+    active
+      ? "border border-transparent bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white"
+      : "border border-[color:var(--color-border)] text-[color:var(--color-text-secondary)] hover:border-[color:var(--color-brand-500)]"
+  } ${disabled ? "cursor-not-allowed opacity-50" : ""} ${className}`;
+
+  const content = (
+    <>
       {children}
       {onRemove && (
         <span
           role="button"
           tabIndex={0}
-          aria-label={`Remove ${typeof children === "string" ? children : "tag"}`}
           onClick={(e) => {
             e.stopPropagation();
             onRemove();
@@ -53,13 +44,30 @@ const Tag = ({
               onRemove();
             }
           }}
-          className="ml-0.5 inline-flex rounded-full p-0.5 hover:bg-black/10 dark:hover:bg-white/10"
+          aria-label="Remove filter"
+          className="ml-0.5 rounded-full transition-opacity hover:opacity-70"
         >
-          <X size={12} />
+          <X className="h-3.5 w-3.5" />
         </span>
       )}
-    </Component>
+    </>
   );
+
+  if (isInteractive) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        aria-pressed={active}
+        className={baseClasses}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return <span className={baseClasses}>{content}</span>;
 };
 
 export default Tag;

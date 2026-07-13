@@ -1,202 +1,609 @@
-import { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, PlayCircle } from "lucide-react";
-import MagneticButton from "../shared/MagneticButton";
-import TextReveal from "../shared/TextReveal";
-import { useMouseParallax } from "../../hooks/useMouseParallax";
- 
-/**
- * Hero — Home Section 1
- * Full-viewport opener. Five-phase reveal (overline → headline → subhead →
- * CTAs → visual) with an ambient mesh that tracks the cursor at low
- * amplitude. This is the one place on the page that's allowed to be loud.
- */
- 
-const heroVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] },
-  }),
-};
- 
-const Hero = () => {
-  const containerRef = useRef(null);
-  const { x, y } = useMouseParallax(containerRef, { strength: 18 });
- 
-  const meshX = useSpring(x, { stiffness: 60, damping: 20 });
-  const meshY = useSpring(y, { stiffness: 60, damping: 20 });
- 
-  const orbShiftX = useTransform(meshX, (v) => v * -1.4);
-  const orbShiftY = useTransform(meshY, (v) => v * -1.4);
- 
+import { useRef, useState } from "react";
+
+import { Link } from "react-router-dom";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import {
+  Navigation,
+  Keyboard,
+  Autoplay,
+  EffectFade,
+} from "swiper/modules";
+
+import { motion } from "framer-motion";
+
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
+const HERO_SLIDES = [
+  {
+    id: 1,
+
+    badge: "DIGITAL TRANSFORMATION",
+
+    title:
+      "Cutting Edge\nSolutions To\nPower Your\nBusiness.",
+
+    description:
+      "Empowering businesses with modern technology, AI, and scalable digital solutions.",
+
+    button: "Explore Services",
+
+    image: "/digital.jpeg",
+  },
+
+  {
+    id: 2,
+
+    badge: "ARTIFICIAL INTELLIGENCE",
+
+    title:
+      "Creating\nSmarter\nBusinesses\nWith AI.",
+
+    description:
+      "Delivering enterprise AI solutions that automate, predict, and accelerate innovation.",
+
+    button: "Discover AI",
+
+    image: "/art.jpg",
+  },
+
+  {
+    id: 3,
+
+    badge: "ENTERPRISE SOLUTIONS",
+
+    title:
+      "Engineering\nThe Future\nOf Digital\nGrowth.",
+
+    description:
+      "Helping organizations embrace next-generation technology with confidence.",
+
+    button: "Get Started",
+
+    image: "/ai.jpg",
+  },
+];
+
+const ease = [0.22, 1, 0.36, 1];
+
+function SplitHeadline({ text, active }) {
+  const lines = text.split("\n");
+
   return (
-    <section
-      ref={containerRef}
-      className="relative flex min-h-screen items-center overflow-hidden bg-[color:var(--color-bg-primary)] pt-32 pb-20"
-    >
-      {/* Animated gradient orbs */}
-      <motion.div
-        style={{ x: orbShiftX, y: orbShiftY }}
-        className="pointer-events-none absolute -top-40 -left-32 h-[32rem] w-[32rem] rounded-full bg-gradient-to-br from-[#2563EB]/25 to-[#7C3AED]/15 blur-[110px]"
-        aria-hidden="true"
-      />
-      <motion.div
-        style={{ x: meshX, y: meshY }}
-        className="pointer-events-none absolute top-1/3 -right-24 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tr from-[#6366F1]/20 to-[#3B82F6]/10 blur-[100px]"
-        aria-hidden="true"
-      />
- 
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr]">
-        {/* Copy column */}
-        <div>
-          <motion.span
-            variants={heroVariants}
-            initial="hidden"
-            animate="visible"
-            custom={0.1}
-            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-text-secondary)] backdrop-blur-sm"
-          >
-            Enterprise Technology Consulting
-          </motion.span>
- 
-          <h1 className="mt-8 text-[clamp(2.75rem,6vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-[color:var(--color-text-primary)]">
-            <TextReveal
-              type="words"
-              stagger={0.05}
-              delay={0.28}
-              text="Engineering the systems ambitious enterprises run on."
-            />
-          </h1>
- 
-          <motion.p
-            variants={heroVariants}
-            initial="hidden"
-            animate="visible"
-            custom={0.75}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-[color:var(--color-text-secondary)]"
-          >
-            We embed with leadership teams to modernize the platforms,
-            data, and decisions that sit underneath real revenue —
-            not around it.
-          </motion.p>
- 
-          <motion.div
-            variants={heroVariants}
-            initial="hidden"
-            animate="visible"
-            custom={0.9}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <MagneticButton strength={0.35}>
-              <a
-                href="/contact"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-7 py-4 text-[15px] font-semibold text-white shadow-[0_0_36px_-10px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_48px_-8px_rgba(99,102,241,0.75)]"
-              >
-                Start a conversation
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </MagneticButton>
- 
-            <MagneticButton strength={0.25}>
-              <a
-                href="/work"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-[color:var(--color-border)] px-7 py-4 text-[15px] font-semibold text-[color:var(--color-text-primary)] transition-colors duration-300 hover:border-[color:var(--color-brand-500)]"
-              >
-                <PlayCircle className="h-4.5 w-4.5 text-[color:var(--color-brand-600)]" />
-                See our work
-              </a>
-            </MagneticButton>
-          </motion.div>
- 
-          <motion.div
-            variants={heroVariants}
-            initial="hidden"
-            animate="visible"
-            custom={1.05}
-            className="mt-14 flex items-center gap-8 text-sm text-[color:var(--color-text-muted)]"
-          >
-            <div>
-              <p className="text-2xl font-bold text-[color:var(--color-text-primary)]">180+</p>
-              <p>Engagements delivered</p>
-            </div>
-            <div className="h-8 w-px bg-[color:var(--color-border)]" />
-            <div>
-              <p className="text-2xl font-bold text-[color:var(--color-text-primary)]">24</p>
-              <p>Countries served</p>
-            </div>
-          </motion.div>
-        </div>
- 
-        {/* Visual column — abstract floating mesh, mouse-reactive */}
-        <motion.div
-          variants={heroVariants}
-          initial="hidden"
-          animate="visible"
-          custom={0.5}
-          className="relative hidden aspect-square lg:block"
+    <div className="space-y-2">
+
+      {lines.map((line, lineIndex) => (
+
+        <div
+          key={lineIndex}
+          className="overflow-hidden"
         >
+
           <motion.div
-            style={{ x: meshX, y: meshY }}
-            className="absolute inset-0 rounded-[2.5rem] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] backdrop-blur-xl"
+
+            className="flex flex-wrap"
+
+            initial="hidden"
+
+            animate={active ? "show" : "hidden"}
+
+            variants={{
+              show: {
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: lineIndex * 0.15,
+                },
+              },
+            }}
+
           >
-            <div className="absolute inset-6 rounded-[2rem] bg-gradient-to-br from-[#2563EB]/10 via-transparent to-[#7C3AED]/10" />
- 
-            <svg
-              viewBox="0 0 400 400"
-              className="absolute inset-0 h-full w-full opacity-80"
-              aria-hidden="true"
+
+            {line.split(" ").map((word, index) => (
+
+              <motion.span
+
+                key={index}
+
+                className="
+                mr-6
+                inline-block
+                font-['Montserrat']
+                text-5xl
+                
+                leading-none
+                text-white
+
+                sm:text-6xl
+
+                lg:text-8xl
+
+                xl:text-[84px]
+                "
+
+                variants={{
+
+                  hidden: {
+                    opacity: 0,
+                    y: 90,
+                  },
+
+                  show: {
+
+                    opacity: 1,
+
+                    y: 0,
+
+                    transition: {
+
+                      duration: 0.9,
+
+                      ease,
+
+                    },
+
+                  },
+
+                }}
+
+              >
+
+                {word}
+
+              </motion.span>
+
+            ))}
+
+          </motion.div>
+
+        </div>
+
+      ))}
+
+    </div>
+  );
+}
+
+function Reveal({
+  children,
+  active,
+  delay = 0,
+  className = "",
+}) {
+  return (
+    <motion.div
+      className={className}
+      initial={{
+        opacity: 0,
+        y: 35,
+      }}
+      animate={
+        active
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {
+              opacity: 0,
+              y: 35,
+            }
+      }
+      transition={{
+        duration: 0.8,
+        delay,
+        ease,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function PremiumButton({
+  children,
+  icon: Icon,
+  to = "/",
+}) {
+  return (
+    <Link
+      to={to}
+      className="
+      group
+      relative
+      inline-flex
+      items-center
+      gap-3
+      overflow-hidden
+      rounded-full
+      bg-gradient-to-r
+      from-blue-600
+      to-cyan-500
+      px-8
+      py-4
+      font-['Montserrat']
+      text-sm
+      font-semibold
+      text-white
+      transition-all
+      duration-500
+      hover:scale-105
+      hover:shadow-[0_15px_40px_rgba(37,99,235,.45)]
+      "
+    >
+      {/* Shine Effect */}
+
+      <span
+        className="
+        absolute
+        inset-0
+        -translate-x-full
+        bg-gradient-to-r
+        from-transparent
+        via-white/30
+        to-transparent
+        transition-transform
+        duration-700
+        group-hover:translate-x-full
+        "
+      />
+
+      {/* Text */}
+
+      <span className="relative z-10">
+        {children}
+      </span>
+
+      {/* Arrow */}
+
+      {Icon && (
+        <Icon
+          size={18}
+          className="
+          relative
+          z-10
+          transition-transform
+          duration-300
+          group-hover:translate-x-1
+          "
+        />
+      )}
+    </Link>
+  );
+}
+
+function HeroSlide({ slide, active }) {
+  return (
+    <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Image */}
+  <motion.img
+    src={slide.image}
+    alt={slide.badge}
+    initial={{ scale: 1.1 }}
+    animate={{
+      scale: active ? 1 : 1.1,
+    }}
+    transition={{
+      duration: 1.5,
+    }}
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-black/60 to-black/60" />
+
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-12">
+
+        {/* LEFT */}
+
+        <div className="z-10">
+
+         
+
+
+
+
+
+          {/* Heading */}
+
+          <div className="mt-12">
+
+            <SplitHeadline
+
+              text={slide.title}
+
+              active={active}
+
+            />
+
+          </div>
+
+
+
+
+
+          {/* Description */}
+
+          <Reveal
+
+            active={active}
+
+            delay={0.6}
+
+          >
+
+            <p
+             className="
+mt-8
+max-w-xl
+font-['Montserrat']
+text-lg
+leading-9
+text-gray-400
+"
             >
-              <defs>
-                <linearGradient id="heroMeshLine" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#2563EB" />
-                  <stop offset="100%" stopColor="#7C3AED" />
-                </linearGradient>
-              </defs>
-              {Array.from({ length: 6 }).map((_, i) => (
-                <motion.circle
-                  key={i}
-                  cx={80 + i * 48}
-                  cy={200}
-                  r={3}
-                  fill="url(#heroMeshLine)"
-                  animate={{ cy: [200 - i * 6, 200 + i * 6, 200 - i * 6] }}
-                  transition={{
-                    duration: 4 + i * 0.4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
-              <path
-                d="M40 250 C 140 180, 260 320, 360 220"
-                stroke="url(#heroMeshLine)"
-                strokeWidth="1.5"
-                fill="none"
-                opacity="0.5"
-              />
-            </svg>
-          </motion.div>
- 
-          {/* Floating stat card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute -bottom-6 -left-6 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] px-6 py-4 shadow-[0_20px_48px_-16px_rgba(37,99,235,0.3)]"
+              {slide.description}
+            </p>
+
+          </Reveal>
+
+
+
+
+
+          {/* Button */}
+
+          <Reveal
+
+            active={active}
+
+            delay={0.9}
+
           >
-            <p className="text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-muted)]">
-              Platform uptime
-            </p>
-            <p className="mt-1 text-3xl font-bold text-[color:var(--color-text-primary)]">
-              99.98%
-            </p>
-          </motion.div>
-        </motion.div>
+
+            <div className="mt-10">
+
+              <PremiumButton
+
+                icon={ArrowRight}
+
+              >
+
+                {slide.button}
+
+              </PremiumButton>
+
+            </div>
+
+          </Reveal>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    
+
       </div>
+
     </section>
   );
-};
- 
-export default Hero;
+}
+
+export default function Hero() {
+  const swiperRef = useRef(null);
+
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <section className="relative overflow-hidden bg-[#050816]">
+
+      <Swiper
+        modules={[
+          Navigation,
+          Keyboard,
+          Autoplay,
+          EffectFade,
+        ]}
+
+        effect="fade"
+
+        fadeEffect={{
+          crossFade: true,
+        }}
+
+        speed={1200}
+
+        loop
+
+        keyboard={{
+          enabled: true,
+        }}
+
+        autoplay={{
+          delay: 6500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
+
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+
+        onSlideChange={(swiper) => {
+          setActiveIndex(swiper.realIndex);
+        }}
+      >
+
+        {HERO_SLIDES.map((slide, index) => (
+
+          <SwiperSlide key={slide.id}>
+
+            <HeroSlide
+
+              slide={slide}
+
+              active={activeIndex === index}
+
+            />
+
+          </SwiperSlide>
+
+        ))}
+
+      </Swiper>
+
+
+
+
+
+      {/* LEFT ARROW */}
+
+      <button
+
+        ref={prevRef}
+
+        className="
+        absolute
+        left-8
+        top-1/2
+        z-50
+        -translate-y-1/2
+        flex
+        h-14
+        w-14
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/10
+        bg-white/50
+        backdrop-blur-xl
+        transition
+        duration-300
+        hover:border-blue-500
+        hover:bg-blue-600
+        "
+
+      >
+
+        <ChevronLeft />
+
+      </button>
+
+
+
+
+
+      {/* RIGHT ARROW */}
+
+      <button
+
+        ref={nextRef}
+
+        className="
+        absolute
+        right-8
+        top-1/2
+        z-50
+        -translate-y-1/2
+        flex
+        h-14
+        w-14
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/10
+        bg-white/50
+        backdrop-blur-xl
+        transition
+        duration-300
+        hover:border-blue-500
+        hover:bg-blue-600
+        "
+
+      >
+
+        <ChevronRight />
+
+      </button>
+
+
+
+
+
+
+      {/* PAGINATION */}
+
+      <div
+        className="
+        absolute
+        bottom-12
+        left-1/2
+        z-50
+        flex
+        -translate-x-1/2
+        gap-4
+        "
+      >
+
+        {HERO_SLIDES.map((_, index) => (
+
+          <button
+
+            key={index}
+
+            onClick={() => swiperRef.current.slideToLoop(index)}
+
+            className={`
+            transition-all
+            duration-500
+            rounded-full
+            h-2
+
+            ${
+              activeIndex === index
+
+                ? "bg-blue-500 w-14"
+
+                : "bg-white/20 w-6"
+
+            }
+            `}
+
+          />
+
+        ))}
+
+      </div>
+
+    </section>
+  );
+}

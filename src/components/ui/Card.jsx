@@ -1,76 +1,46 @@
-import { forwardRef } from "react";
-import { motion } from "framer-motion";
-
 /**
- * Card
- * Core surface atom used across services, industries, featured work,
- * testimonials, and bento layouts. Variants control the surface treatment;
- * hover controls the interaction feedback independently, so any
- * combination is valid (e.g. a glass card with a glow hover).
+ * Card — the base container most rounded panels across the site should
+ * render through. ServicesGrid, Overview's stat panel, WhyUs, Industries,
+ * Careers' benefit tiles, and others all hand-rolled this same
+ * border/background/radius pattern inline; this is the shared version.
  *
- * API:
- *   <Card variant="default" hover="lift">...</Card>
- *   <Card variant="glass" hover="glow">...</Card>
- *   <Card variant="gradient">...</Card>
- *   <Card variant="bordered" hover="none">...</Card>
+ * <Card>Plain content</Card>
+ * <Card variant="glass" hover="lift">Frosted panel</Card>
+ * <Card variant="gradient" hover="glow" as="a" href="/services">Clickable</Card>
  */
-const variantStyles = {
-  default:
-    "bg-[color:var(--color-bg-card)] border border-[color:var(--color-border)] shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)]",
+
+const VARIANT_CLASSES = {
+  default: "border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)]",
   glass:
-    "bg-[color:var(--color-surface)] border border-[color:var(--color-border)] backdrop-blur-xl",
+    "border border-[color:var(--color-border)] bg-[color:var(--color-surface)] backdrop-blur-xl",
   gradient:
-    "text-white bg-[linear-gradient(135deg,var(--color-gradient-start),var(--color-gradient-end))] border border-transparent",
-  bordered:
-    "bg-transparent border border-[color:var(--color-border)]",
+    "border border-transparent bg-gradient-to-br from-[#0F172A] to-[#1E1B4B] text-white",
+  bordered: "border-2 border-[color:var(--color-border)] bg-transparent",
 };
 
-const hoverStyles = {
-  lift: "hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-16px_rgba(0,0,0,0.18)]",
-  glow: "hover:shadow-[0_0_0_1px_var(--color-brand-500),0_16px_40px_-12px_rgba(59,130,246,0.35)]",
+const HOVER_CLASSES = {
   none: "",
+  lift: "transition-transform duration-300 hover:-translate-y-1.5",
+  glow: "transition-shadow duration-300 hover:shadow-[0_24px_48px_-24px_rgba(37,99,235,0.3)]",
 };
 
-const Card = forwardRef(
-  (
-    {
-      children,
-      variant = "default",
-      hover = "lift",
-      as: Component = motion.div,
-      className = "",
-      ...props
-    },
-    ref
-  ) => {
-    return (
-      <Component
-        ref={ref}
-        className={`relative overflow-hidden rounded-2xl p-6 transition-all duration-300 ease-out will-change-transform ${variantStyles[variant]} ${hoverStyles[hover]} ${className}`}
-        {...props}
-      >
-        {/* Gradient border reveal on hover, only meaningful for non-gradient variants */}
-        {hover === "glow" && variant !== "gradient" && (
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end))",
-              WebkitMaskImage:
-                "linear-gradient(#fff 0 0)",
-              WebkitMaskComposite: "xor",
-              maskComposite: "exclude",
-              padding: "1px",
-            }}
-          />
-        )}
-        {children}
-      </Component>
-    );
-  }
-);
-
-Card.displayName = "Card";
+const Card = ({
+  children,
+  variant = "default",
+  hover = "none",
+  padding = "p-8",
+  as: Component = "div",
+  className = "",
+  ...rest
+}) => {
+  return (
+    <Component
+      className={`rounded-3xl ${VARIANT_CLASSES[variant]} ${HOVER_CLASSES[hover]} ${padding} ${className}`}
+      {...rest}
+    >
+      {children}
+    </Component>
+  );
+};
 
 export default Card;

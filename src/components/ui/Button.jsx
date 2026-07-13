@@ -1,79 +1,70 @@
-import { forwardRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import MagneticButton from "../shared/MagneticButton";
 
 /**
- * Button
- * Core CTA atom. Renders as <button> or, when `href` is passed, as <a>.
- * When `magnetic` is true, wraps itself in MagneticButton for the
- * cursor-attraction hover effect instead of rendering plain.
+ * Button — the base interactive element most CTAs across the site
+ * should render through. Several sections built earlier (Hero,
+ * ContactCTA, Navbar) hand-rolled this exact gradient/outline/ghost
+ * pattern inline; this is the shared version those could consolidate
+ * onto.
  *
- * API:
- *   <Button variant="primary" size="md">Get in touch</Button>
- *   <Button variant="outline" size="lg" magnetic>Explore services</Button>
- *   <Button variant="ghost" href="/careers" icon={false}>View roles</Button>
+ * <Button variant="primary" size="lg" magnetic>Start a conversation</Button>
+ * <Button variant="outline" href="/work">See our work</Button>
+ * <Button variant="ghost" size="sm" showArrow={false}>Cancel</Button>
  */
-const sizeStyles = {
-  sm: "px-4 py-2 text-sm gap-1.5",
-  md: "px-6 py-3 text-base gap-2",
-  lg: "px-8 py-4 text-lg gap-2.5",
-};
 
-const variantStyles = {
+const VARIANT_CLASSES = {
   primary:
-    "text-white bg-[linear-gradient(135deg,var(--color-gradient-start),var(--color-gradient-end))] shadow-[0_8px_24px_-8px_rgba(37,99,235,0.5)] hover:shadow-[0_12px_32px_-8px_rgba(37,99,235,0.65)] hover:brightness-110",
-  ghost:
-    "text-[color:var(--color-text-primary)] bg-transparent hover:bg-[color:var(--color-bg-secondary)]",
+    "bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white shadow-[0_0_28px_-10px_rgba(99,102,241,0.6)] hover:shadow-[0_0_38px_-8px_rgba(99,102,241,0.75)]",
   outline:
-    "text-[color:var(--color-text-primary)] bg-transparent border border-[color:var(--color-border)] hover:border-[color:var(--color-brand-500)] hover:text-[color:var(--color-brand-600)]",
+    "border border-[color:var(--color-border)] text-[color:var(--color-text-primary)] hover:border-[color:var(--color-brand-500)]",
+  ghost:
+    "text-[color:var(--color-text-primary)] hover:bg-[color:var(--color-bg-secondary)]",
 };
 
-const Button = forwardRef(
-  (
-    {
-      children,
-      variant = "primary",
-      size = "md",
-      magnetic = false,
-      icon = true,
-      href,
-      className = "",
-      ...props
-    },
-    ref
-  ) => {
-    const Tag = href ? "a" : "button";
+const SIZE_CLASSES = {
+  sm: "px-5 py-2.5 text-sm",
+  md: "px-6 py-3.5 text-sm",
+  lg: "px-7 py-4 text-[15px]",
+};
 
-    const classes = `relative inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-brand-500)] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+const Button = ({
+  children,
+  variant = "primary",
+  size = "md",
+  magnetic = false,
+  showArrow = true,
+  href,
+  type = "button",
+  className = "",
+  ...rest
+}) => {
+  const classes = `group inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60 ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]} ${className}`;
 
-    const content = (
-      <>
-        {children}
-        {icon && (
-          <ArrowRight
-            size={size === "lg" ? 18 : 16}
-            className="transition-transform duration-300 group-hover:translate-x-0.5"
-          />
-        )}
-      </>
-    );
+  const content = (
+    <>
+      {children}
+      {showArrow && (
+        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      )}
+    </>
+  );
 
-    if (magnetic) {
-      return (
-        <MagneticButton as={Tag} href={href} className={`group ${classes}`} ref={ref} {...props}>
-          {content}
-        </MagneticButton>
-      );
-    }
+  const element = href ? (
+    <a href={href} className={classes} {...rest}>
+      {content}
+    </a>
+  ) : (
+    <button type={type} className={classes} {...rest}>
+      {content}
+    </button>
+  );
 
-    return (
-      <Tag ref={ref} href={href} className={`group ${classes}`} {...props}>
-        {content}
-      </Tag>
-    );
-  }
-);
-
-Button.displayName = "Button";
+  return magnetic ? (
+    <MagneticButton strength={0.3}>{element}</MagneticButton>
+  ) : (
+    element
+  );
+};
 
 export default Button;

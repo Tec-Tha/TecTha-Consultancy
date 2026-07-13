@@ -1,6 +1,12 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Gauge, Users } from "lucide-react";
-import AnimatedCounter from "../shared/AnimatedCounter";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 /**
  * Overview — Home Section 3
@@ -10,145 +16,266 @@ import AnimatedCounter from "../shared/AnimatedCounter";
  * cliché grid — just a clean editorial split.
  */
 
-const DIFFERENTIATORS = [
+const NEWS = [
   {
-    icon: ShieldCheck,
-    title: "Built for regulated industries",
+    image: "/images/news/1.webp",
+    title: "Cutting-Edge Solutions For Modern Enterprises",
     description:
-      "Compliance and audit requirements are designed in from day one, not retrofitted before launch.",
+      "Helping businesses accelerate innovation through scalable digital transformation.",
   },
+
   {
-    icon: Gauge,
-    title: "Delivery measured in weeks",
+    image: "/images/news/2.webp",
+    title: "Enterprise AI That Delivers Real Results",
     description:
-      "Fixed-scope sprints with visible milestones — no multi-year roadmaps with nothing to show early.",
+      "Unlock automation, intelligence and measurable growth.",
   },
+
   {
-    icon: Users,
-    title: "Senior engineers, not a bench",
+    image: "/images/news/3.webp",
+    title: "Cloud Solutions Built For Scale",
     description:
-      "The people scoping the work are the people building it, from kickoff through handover.",
+      "Secure cloud infrastructure designed for enterprise workloads.",
+  },
+
+  {
+    image: "/images/news/4.webp",
+    title: "Smarter Software Engineering",
+    description:
+      "Creating reliable applications for the next generation.",
+  },
+
+  {
+    image: "/images/news/5.webp",
+    title: "Cyber Security Reinvented",
+    description:
+      "Protecting modern organizations with intelligent security.",
+  },
+
+  {
+    image: "/images/news/6.webp",
+    title: "Transforming Industries With AI",
+    description:
+      "AI-powered innovation for healthcare and finance.",
+  },
+
+  {
+    image: "/images/news/7.webp",
+    title: "Future Ready Technology",
+    description:
+      "Building tomorrow's enterprise ecosystem today.",
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
-  }),
-};
+export default function Overview() {
 
-const Overview = () => {
-  return (
-    <section className="bg-[color:var(--color-bg-primary)] py-28 md:py-36">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[0.85fr_1.15fr]">
-        {/* Stat callout */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          custom={0}
-          className="flex flex-col justify-between rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] p-10"
+const prevRef = useRef(null);
+
+const nextRef = useRef(null);
+
+return(
+
+<section className="bg-white py-24">
+
+  <div className="mx-auto max-w-[1450px] ">
+
+    {/* Header */}
+
+    <div className="mb-16 flex items-center justify-between">
+
+      {/* Left */}
+
+      <motion.h2
+
+        initial={{ opacity: 0, y: 30 }}
+
+        whileInView={{ opacity: 1, y: 0 }}
+
+        viewport={{ once: true }}
+
+        transition={{ duration: .6 }}
+
+        className="
+        font-['Montserrat']
+        text-5xl
+        font-bold
+        tracking-tight
+        text-black
+        lg:text-6xl
+        "
+
+      >
+
+        What's New
+
+      </motion.h2>
+
+
+
+
+
+      {/* Right */}
+
+      <div className="flex items-center gap-5">
+
+        <button
+
+          ref={prevRef}
+
+          className="
+          flex
+          h-14
+          w-14
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-gray-300
+          transition
+          hover:bg-black
+          hover:text-white
+          "
+
         >
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-[color:var(--color-text-muted)]">
-              Client retention
-            </p>
-            <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-[clamp(3.5rem,6vw,5.5rem)] font-bold leading-none tracking-tight text-[color:var(--color-text-primary)]">
-                <AnimatedCounter from={0} to={94} suffix="%" duration={1.8} />
-              </span>
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[color:var(--color-text-secondary)]">
-              of engagements lead to a second, unrelated project within
-              eighteen months.
-            </p>
-          </div>
 
-          <div className="mt-10 h-px w-full bg-[color:var(--color-border)]" />
+          <ChevronLeft size={26} />
 
-          <div className="mt-10 grid grid-cols-2 gap-6">
-            <div>
-              <p className="text-2xl font-bold text-[color:var(--color-text-primary)]">
-                <AnimatedCounter from={0} to={19} suffix=" yrs" duration={1.6} />
-              </p>
-              <p className="mt-1 text-xs text-[color:var(--color-text-muted)]">
-                Avg. leadership tenure
-              </p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-[color:var(--color-text-primary)]">
-                <AnimatedCounter from={0} to={6} duration={1.4} />
-              </p>
-              <p className="mt-1 text-xs text-[color:var(--color-text-muted)]">
-                Industry verticals
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        </button>
 
-        {/* Thesis + differentiators */}
-        <div>
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0.1}
-            className="text-2xl font-semibold leading-snug text-[color:var(--color-text-primary)] md:text-3xl"
-          >
-            We're a technology consultancy built around one constraint:
-            everything we recommend has to survive contact with your
-            existing systems, your compliance team, and your timeline.
-          </motion.p>
 
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0.18}
-            className="mt-6 max-w-xl text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]"
-          >
-            That constraint shapes how we staff, scope, and deliver every
-            engagement — fewer slide decks, more shipped systems.
-          </motion.p>
 
-          <div className="mt-12 space-y-8">
-            {DIFFERENTIATORS.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={0.24 + i * 0.08}
-                  className="flex gap-5 border-t border-[color:var(--color-border)] pt-8 first:border-0 first:pt-0"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] dark:bg-white/5">
-                    <Icon className="h-5 w-5 text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-[color:var(--color-text-primary)]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]">
-                      {item.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+
+
+        <button
+
+          ref={nextRef}
+
+          className="
+          flex
+          h-14
+          w-14
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-gray-300
+          transition
+          hover:bg-black
+          hover:text-white
+          "
+
+        >
+
+          <ChevronRight size={26} />
+
+        </button>
+
       </div>
-    </section>
-  );
-};
 
-export default Overview;
+    </div>
+
+
+
+
+
+    {/* Swiper Here */}
+    <Swiper
+  modules={[Navigation]}
+  spaceBetween={35}
+  slidesPerView={3}
+  loop={true}
+  navigation={{
+    prevEl: prevRef.current,
+    nextEl: nextRef.current,
+  }}
+  onBeforeInit={(swiper) => {
+    swiper.params.navigation.prevEl = prevRef.current;
+    swiper.params.navigation.nextEl = nextRef.current;
+  }}
+  breakpoints={{
+    320: {
+      slidesPerView: 1,
+    },
+
+    768: {
+      slidesPerView: 2,
+    },
+
+    1280: {
+      slidesPerView: 3,
+    },
+  }}
+>
+   {NEWS.map((item, index) => (
+    <SwiperSlide key={index}>
+  <motion.article
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="group cursor-pointer"
+  >
+    {/* Image */}
+
+    <div className="overflow-hidden rounded-3xl">
+
+      <img
+        src={item.image}
+        alt={item.title}
+        className="
+          h-[320px]
+          w-full
+          object-cover
+          transition-all
+          duration-700
+          group-hover:scale-105
+        "
+      />
+
+    </div>
+
+    {/* Title */}
+
+    <h3
+      className="
+        mt-8
+        font-['Montserrat']
+        text-[42px]
+        font-bold
+        leading-tight
+        tracking-tight
+        text-black
+        transition
+        duration-300
+        group-hover:text-blue-600
+      "
+    >
+      {item.title}
+    </h3>
+
+    {/* Description */}
+
+    <p
+      className="
+        mt-5
+        font-['Inter']
+        text-lg
+        leading-8
+        text-gray-600
+      "
+    >
+      {item.description}
+    </p>
+
+  </motion.article>
+</SwiperSlide>
+  ))}
+</Swiper>
+
+  </div>
+
+</section>
+
+)
+
+}

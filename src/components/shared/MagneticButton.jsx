@@ -1,55 +1,31 @@
 import { useRef } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 /**
- * MagneticButton
- * Wraps any button/link content and pulls it toward the cursor within
- * a radius, then springs back to rest on mouse leave.
+ * MagneticButton — wraps any element (button, link) and pulls it toward
+ * the cursor within its own bounding box, springing back to rest on
+ * mouse leave. `strength` scales how far it travels relative to cursor
+ * offset — kept subtle (0.2–0.4) is usually right; higher feels gimmicky.
  *
- * API:
- *   <MagneticButton strength={0.4}>Get in touch</MagneticButton>
- *   <MagneticButton as="a" href="/contact" strength={0.5} className="...">Talk to us</MagneticButton>
- *
- * strength: 0 - 1, how far the element travels relative to cursor offset.
- * radius:   px distance from center at which the pull begins to taper off.
+ * <MagneticButton strength={0.35}><a href="/contact">Talk to us</a></MagneticButton>
  */
-const MagneticButton = ({
-  as: Component = "button",
-  children,
-  strength = 0.4,
-  radius = 80,
-  className = "",
-  ...props
-}) => {
+
+const MagneticButton = ({ children, strength = 0.3, className = "" }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
-  const springConfig = { stiffness: 150, damping: 15, mass: 0.2 };
-  const springX = useSpring(x, springConfig);
-  const springY = useSpring(y, springConfig);
-
-  const textX = useSpring(x, { ...springConfig, stiffness: 180 });
-  const textY = useSpring(y, { ...springConfig, stiffness: 180 });
+  const springX = useSpring(x, { stiffness: 220, damping: 18, mass: 0.4 });
+  const springY = useSpring(y, { stiffness: 220, damping: 18, mass: 0.4 });
 
   const handleMouseMove = (e) => {
     const el = ref.current;
     if (!el) return;
-
     const rect = el.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const offsetX = e.clientX - centerX;
-    const offsetY = e.clientY - centerY;
-    const distance = Math.sqrt(offsetX ** 2 + offsetY ** 2);
-
-    // Taper the pull as the cursor nears the edge of the influence radius
-    const falloff = Math.max(0, 1 - distance / (radius * 2.2));
-
-    x.set(offsetX * strength * falloff);
-    y.set(offsetY * strength * falloff);
+    const offsetX = e.clientX - (rect.left + rect.width / 2);
+    const offsetY = e.clientY - (rect.top + rect.height / 2);
+    x.set(offsetX * strength);
+    y.set(offsetY * strength);
   };
 
   const handleMouseLeave = () => {
@@ -63,19 +39,9 @@ const MagneticButton = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
-      className="relative inline-block"
+      className={`inline-block ${className}`}
     >
-      <Component
-        className={`relative inline-flex items-center justify-center will-change-transform ${className}`}
-        {...props}
-      >
-        <motion.span
-          style={{ x: textX, y: textY }}
-          className="inline-flex items-center justify-center gap-2"
-        >
-          {children}
-        </motion.span>
-      </Component>
+      {children}
     </motion.div>
   );
 };

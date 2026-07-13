@@ -1,67 +1,74 @@
-import { createContext, useEffect, useState, useMemo } from "react";
+import { createContext, useEffect, useState } from "react";
 
 /**
- * ThemeContext
- * Provides { theme, toggleTheme, setTheme } to the app. Consumed via the
- * separate useTheme hook (hooks/useTheme.js), not directly — components
- * should never import ThemeContext itself.
+ * ThemeContext — provides { theme, toggleTheme, setTheme } to the tree.
+ * Consumed via the separate `useTheme` hook (hooks/useTheme.js), kept as
+ * its own file per the folder structure rather than exporting a hook
+ * from here directly.
  *
- * Resolution order on first load:
- *   1. Previously saved choice in localStorage ("theme")
- *   2. OS-level preference (prefers-color-scheme)
- *   3. Falls back to "light"
- *
- * Applies/removes the "dark" class on <html> so Tailwind's `dark:` variants
- * and the CSS variable tokens (--color-bg-primary etc.) switch correctly.
+ * Resolution order on first load: a previously saved choice in
+ * localStorage, then the OS-level prefers-color-scheme, then light as
+ * the final fallback. Applies/removes the `.dark` class on <html>, which
+ * is what index.css's token overrides key off.
  */
+
 export const ThemeContext = createContext(undefined);
 
-const STORAGE_KEY = "theme";
+const STORAGE_KEY = "Tec Tha-theme";
 
 const getInitialTheme = () => {
   if (typeof window === "undefined") return "light";
 
-  const saved = window.localStorage.getItem(STORAGE_KEY);
-  if (saved === "light" || saved === "dark") return saved;
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  if (stored === "light" || stored === "dark") return stored;
 
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   return prefersDark ? "dark" : "light";
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(getInitialTheme);
+  const [theme, setThemeState] = useState(getInitialTheme);
 
+  // Apply to <html> whenever theme changes — this always runs, regardless
+  // of whether the change came from the user or from OS preference.
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle("dark", theme === "dark");
     root.style.colorScheme = theme;
-    window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  // Stay in sync if the user changes OS-level theme and hasn't made an
-  // explicit choice in this browser yet.
+  // Follow OS-level changes, but only if the user hasn't made an explicit
+  // choice of their own (i.e. nothing written to localStorage yet).
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-
     const handleChange = (e) => {
       const hasExplicitChoice = window.localStorage.getItem(STORAGE_KEY);
       if (!hasExplicitChoice) {
-        setTheme(e.matches ? "dark" : "light");
+        setThemeState(e.matches ? "dark" : "light");
       }
     };
-
     media.addEventListener("change", handleChange);
     return () => media.removeEventListener("change", handleChange);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  // Persisting to localStorage happens ONLY here — on an explicit user
+  // action — never as a side effect of the initial OS-derived mount value.
+  const setTheme = (next) => {
+    window.localStorage.setItem(STORAGE_KEY, next);
+    setThemeState(next);
   };
 
-  const value = useMemo(
-    () => ({ theme, toggleTheme, setTheme }),
-    [theme]
-  );
+  const toggleTheme = () => {
+    setThemeState((prev) => {
+      const next = prev === "dark" ? "light" : "dark";
+      window.localStorage.setItem(STORAGE_KEY, next);
+      return next;
+    });
+  };
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };

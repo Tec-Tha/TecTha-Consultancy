@@ -1,79 +1,61 @@
-import { forwardRef, useId } from "react";
+import { useId } from "react";
 
 /**
- * Input
- * Form field atom for Contact and Careers apply flows. Renders <input> by
- * default, or <textarea> when `as="textarea"`. Label sits above the field
- * (not floating) to keep long placeholder-less forms scannable.
+ * Input — the base form field most inputs across the site should render
+ * through. Contact.jsx's form fields and Footer.jsx's newsletter field
+ * both hand-rolled this exact border/focus-ring pattern inline; this is
+ * the shared version, covering both a single-line input and a textarea
+ * via `multiline`.
  *
- * API:
- *   <Input label="Full name" name="name" placeholder="Jane Cooper" required />
- *   <Input as="textarea" label="Message" name="message" rows={5} />
- *   <Input label="Email" name="email" type="email" error="Enter a valid email" />
+ * <Input label="Work email" type="email" required value={v} onChange={fn} />
+ * <Input label="Message" multiline rows={5} value={v} onChange={fn} />
+ * <Input label="Email" error="Enter a valid email address" value={v} onChange={fn} />
  */
-const Input = forwardRef(
-  (
-    {
-      label,
-      name,
-      type = "text",
-      as = "input",
-      error,
-      hint,
-      required = false,
-      className = "",
-      ...props
-    },
-    ref
-  ) => {
-    const generatedId = useId();
-    const id = name || generatedId;
-    const Field = as === "textarea" ? "textarea" : "input";
 
-    const fieldStyles = `w-full rounded-xl border bg-[color:var(--color-bg-card)] px-4 py-3 text-base text-[color:var(--color-text-primary)] placeholder:text-[color:var(--color-text-muted)] outline-none transition-colors duration-200 focus:ring-2 focus:ring-offset-0 ${
-      error
-        ? "border-red-400 focus:border-red-400 focus:ring-red-400/30"
-        : "border-[color:var(--color-border)] focus:border-[color:var(--color-brand-500)] focus:ring-[color:var(--color-brand-500)]/25"
-    }`;
+const Input = ({
+  label,
+  error,
+  multiline = false,
+  rows = 4,
+  className = "",
+  id,
+  ...rest
+}) => {
+  const generatedId = useId();
+  const fieldId = id || generatedId;
+  const Component = multiline ? "textarea" : "input";
 
-    return (
-      <div className={`flex flex-col gap-1.5 ${className}`}>
-        {label && (
-          <label
-            htmlFor={id}
-            className="text-sm font-medium text-[color:var(--color-text-secondary)]"
-          >
-            {label}
-            {required && <span className="ml-1 text-[color:var(--color-brand-500)]">*</span>}
-          </label>
-        )}
+  const fieldClasses = `w-full rounded-xl border bg-[color:var(--color-bg-card)] px-4 py-3 text-sm text-[color:var(--color-text-primary)] placeholder:text-[color:var(--color-text-muted)] transition-colors duration-200 focus:outline-none ${
+    error
+      ? "border-red-400 focus:border-red-500"
+      : "border-[color:var(--color-border)] focus:border-[color:var(--color-brand-500)]"
+  } ${multiline ? "resize-none" : ""} ${className}`;
 
-        <Field
-          ref={ref}
-          id={id}
-          name={name}
-          type={as === "input" ? type : undefined}
-          required={required}
-          aria-invalid={!!error}
-          aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
-          className={fieldStyles}
-          {...props}
-        />
-
-        {error ? (
-          <span id={`${id}-error`} className="text-xs font-medium text-red-500">
-            {error}
-          </span>
-        ) : hint ? (
-          <span id={`${id}-hint`} className="text-xs text-[color:var(--color-text-muted)]">
-            {hint}
-          </span>
-        ) : null}
-      </div>
-    );
-  }
-);
-
-Input.displayName = "Input";
+  return (
+    <div>
+      {label && (
+        <label
+          htmlFor={fieldId}
+          className="text-sm font-medium text-[color:var(--color-text-primary)]"
+        >
+          {label}
+        </label>
+      )}
+      <Component
+        id={fieldId}
+        rows={multiline ? rows : undefined}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${fieldId}-error` : undefined}
+        className={`${label ? "mt-2" : ""} ${fieldClasses}`}
+        {...rest}
+      />
+      {error && (
+        <p id={`${fieldId}-error`} className="mt-1.5 text-xs text-red-500">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+};
 
 export default Input;

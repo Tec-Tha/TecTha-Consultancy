@@ -1,40 +1,38 @@
 /**
- * Divider
- * Structural rule for separating sections, list items, or inline content.
- * Plain by default; use variant="gradient" sparingly as a signature accent
- * (e.g. beneath a SectionHeader), not as a default for every rule on the page.
+ * Divider — thin rule for separating content, horizontal or vertical.
+ * Overview's stat-card rule and the desktop stat separator in Hero both
+ * hand-rolled a bare `h-px`/`w-px` div for this; this is the shared
+ * version, with an optional inline label for cases like "or" between
+ * two options.
  *
- * API:
- *   <Divider />
- *   <Divider orientation="vertical" className="h-6" />
- *   <Divider variant="gradient" />
- *   <Divider label="OR" />
+ * <Divider />
+ * <Divider orientation="vertical" className="h-8" />
+ * <Divider label="or" />
  */
-const Divider = ({
-  orientation = "horizontal",
-  variant = "solid",
-  label,
-  className = "",
-}) => {
-  const base =
-    orientation === "vertical" ? "w-px h-full" : "h-px w-full";
 
-  const variantStyles = {
-    solid: "bg-[color:var(--color-border)]",
-    gradient:
-      orientation === "vertical"
-        ? "bg-[linear-gradient(180deg,transparent,var(--color-brand-500),transparent)]"
-        : "bg-[linear-gradient(90deg,transparent,var(--color-brand-500),transparent)]",
-  };
-
-  if (label && orientation === "horizontal") {
+const Divider = ({ orientation = "horizontal", label, className = "" }) => {
+  if (orientation === "vertical") {
     return (
-      <div className={`flex items-center gap-3 ${className}`} role="separator">
-        <span className={`h-px flex-1 ${variantStyles.solid}`} />
-        <span className="text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+      <div
+        role="separator"
+        aria-orientation="vertical"
+        className={`w-px shrink-0 bg-[color:var(--color-border)] ${className}`}
+      />
+    );
+  }
+
+  if (label) {
+    return (
+      <div
+        role="separator"
+        aria-orientation="horizontal"
+        className={`flex items-center gap-4 ${className}`}
+      >
+        <div className="h-px flex-1 bg-[color:var(--color-border)]" />
+        <span className="text-xs font-medium uppercase tracking-wide text-[color:var(--color-text-muted)]">
           {label}
         </span>
-        <span className={`h-px flex-1 ${variantStyles.solid}`} />
+        <div className="h-px flex-1 bg-[color:var(--color-border)]" />
       </div>
     );
   }
@@ -42,8 +40,8 @@ const Divider = ({
   return (
     <div
       role="separator"
-      aria-orientation={orientation}
-      className={`${base} ${variantStyles[variant]} ${className}`}
+      aria-orientation="horizontal"
+      className={`h-px w-full bg-[color:var(--color-border)] ${className}`}
     />
   );
 };
