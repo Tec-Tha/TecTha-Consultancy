@@ -298,7 +298,7 @@ function HeroSlide({ slide, active }) {
 
 
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-black/60 to-black/60" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/60" />
 
       <div className="mx-auto grid w-full max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-12">
 
