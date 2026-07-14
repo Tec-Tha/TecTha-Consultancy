@@ -74,7 +74,7 @@ html {
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -177,7 +177,7 @@ body {
    pull quotes). Replaces the inline `style={{ fontFamily: "Syne, sans-serif" }}`
    currently set directly in Innovation.jsx's pull-quote cell. */
 .font-accent {
-  font-family: "Syne", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================================================
