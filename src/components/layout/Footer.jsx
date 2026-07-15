@@ -71,14 +71,18 @@ const Footer = () => {
           {/* Brand + newsletter */}
           <div className="md:col-span-4">
             <Link
-              to="/"
-              className="flex items-center gap-2 text-lg font-bold tracking-tight text-[color:var(--color-text-primary)]"
+                 to="/"
+                  className="flex items-center gap-3"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#2563EB] to-[#7C3AED] text-sm font-extrabold text-white">
-                V
-              </span>
-              Tec Tha
-            </Link>
+               <img
+                  src="/logo.jpeg"
+                  alt="Tec Tha"
+                  className="h-10 w-10 rounded-full border border-white/20 object-cover"
+              />
+          <span className="text-lg font-bold tracking-tight text-[color:var(--color-text-primary)]">
+           Tec Tha
+           </span>
+          </Link>
  
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-[color:var(--color-text-secondary)]">
               Enterprise technology consulting for organizations that need
@@ -105,7 +109,7 @@ const Footer = () => {
                 <button
                   type="submit"
                   aria-label="Subscribe"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] text-white transition-transform duration-300 hover:scale-105"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-black text-white transition-transform duration-300 hover:scale-105"
                 >
                   <ArrowRight className="h-4 w-4" />
                 </button>

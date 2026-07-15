@@ -77,7 +77,7 @@ const Navbar = () => {
 
   <div className="flex flex-col leading-none">
     <span className="font-['Montserrat'] text-3xl font-medium text-white">
-      TEC THA
+      Tec Tha
     </span>
 
   </div>

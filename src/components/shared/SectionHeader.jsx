@@ -44,7 +44,7 @@ const SectionHeader = ({ overline, title, subtitle, align = "left" }) => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         custom={0.08}
-        className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-[color:var(--color-text-primary)]"
+        className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font leading-[1.1] tracking-tight text-[color:var(--color-text-primary)]"
       >
         {title}
       </motion.h2>
