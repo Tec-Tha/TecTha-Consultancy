@@ -103,7 +103,7 @@ const Navbar = () => {
                   {isActive && (
                     <motion.span
                       layoutId="navbar-active-underline"
-                      className="absolute inset-x-4 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED]"
+                      className="absolute inset-x-4 -bottom-1 h-[2px] rounded-full bg-white"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}

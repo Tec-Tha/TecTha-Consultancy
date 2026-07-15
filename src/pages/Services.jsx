@@ -223,7 +223,6 @@ const scaleY = useSpring(scrollYProgress, {
   <div className="mx-auto max-w-5xl px-6">
 
     <SectionHeader
-      overline="Our Process"
       title="How We Work"
       subtitle="Simple. Transparent. Efficient."
       align="center"
@@ -232,12 +231,12 @@ const scaleY = useSpring(scrollYProgress, {
     <div className="relative mt-20">
 
       {/* Background Line */}
-      <div className="absolute left-6 top-0 h-full w-[2px] bg-zinc-800" />
+      <div className="absolute left-6 top-0 h-full w-[2px] bg-white" />
 
       {/* Animated Line */}
       <motion.div
         style={{ scaleY }}
-        className="absolute left-6 top-0 h-full w-[2px] origin-top bg-[color:var(--color-brand-500)]"
+        className="absolute left-6 top-0 h-full w-[2px] origin-top bg-black"
       />
 
       <div className="space-y-16">
@@ -253,7 +252,7 @@ const scaleY = useSpring(scrollYProgress, {
           >
 
             {/* Circle */}
-            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[color:var(--color-brand-500)] text-white font-bold">
+            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-black text-white font-bold">
               {phase.step}
             </div>
 
