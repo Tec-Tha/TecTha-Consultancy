@@ -33,7 +33,7 @@ const PageWrapper = ({
  
   return (
     <div
-      className={`${fullBleed ? "" : "pt-20"} min-h-screen bg-[color:var(--color-bg-primary)] ${className}`}
+      className={`${fullBleed ? "" : "pt-15"} min-h-screen bg-[color:var(--color-bg-primary)] ${className}`}
     >
       {children}
     </div>
