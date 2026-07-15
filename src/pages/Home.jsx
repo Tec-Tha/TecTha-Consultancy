@@ -1,11 +1,8 @@
 import Hero from "../components/home/Hero";
 import LogoSlider from "../components/shared/LogoSlider";
 import Overview from "../components/home/Overview";
-import ServicesGrid from "../components/home/ServicesGrid";
 import IndustriesScroll from "../components/home/IndustriesScroll";
 import WhyUs from "../components/home/WhyUs";
-import Statistics from "../components/home/Statistics";
-import FeaturedWork from "../components/home/FeaturedWork";
 import Innovation from "../components/home/Innovation";
 import Testimonials from "../components/home/Testimonials";
 import Insights from "../components/home/Insights";
@@ -28,11 +25,8 @@ const Home = () => {
       <Hero />
       <LogoSlider />
       <Overview />
-      <ServicesGrid />
-      <IndustriesScroll />
       <WhyUs />
-      <Statistics />
-      <FeaturedWork />
+      <IndustriesScroll />
       <Innovation />
       <Testimonials />
       <Insights />

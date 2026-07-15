@@ -18,49 +18,49 @@ import "swiper/css/navigation";
 
 const NEWS = [
   {
-    image: "/images/news/1.webp",
+    image: "/erp.jpeg",
     title: "Cutting-Edge Solutions For Modern Enterprises",
     description:
       "Helping businesses accelerate innovation through scalable digital transformation.",
   },
 
   {
-    image: "/images/news/2.webp",
+    image: "/ai.jpeg",
     title: "Enterprise AI That Delivers Real Results",
     description:
       "Unlock automation, intelligence and measurable growth.",
   },
 
   {
-    image: "/images/news/3.webp",
+    image: "/cloud.jpg",
     title: "Cloud Solutions Built For Scale",
     description:
       "Secure cloud infrastructure designed for enterprise workloads.",
   },
 
   {
-    image: "/images/news/4.webp",
+    image: "/soft.jpg",
     title: "Smarter Software Engineering",
     description:
       "Creating reliable applications for the next generation.",
   },
 
   {
-    image: "/images/news/5.webp",
+    image: "/cyber.jpg",
     title: "Cyber Security Reinvented",
     description:
       "Protecting modern organizations with intelligent security.",
   },
 
   {
-    image: "/images/news/6.webp",
+    image: "/at.jpg.jpeg",
     title: "Transforming Industries With AI",
     description:
       "AI-powered innovation for healthcare and finance.",
   },
 
   {
-    image: "/images/news/7.webp",
+    image: "/future.jpeg",
     title: "Future Ready Technology",
     description:
       "Building tomorrow's enterprise ecosystem today.",
@@ -98,7 +98,7 @@ return(
         className="
         font-['Montserrat']
         text-5xl
-        font-bold
+        font-medium
         tracking-tight
         text-black
         lg:text-6xl
@@ -241,7 +241,7 @@ return(
         mt-8
         font-['Montserrat']
         text-[42px]
-        font-bold
+        font-medium
         leading-tight
         tracking-tight
         text-black
