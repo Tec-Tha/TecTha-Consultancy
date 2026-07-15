@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import ThemeToggle from "../shared/ThemeToggle";
- 
+ import logo from "/logo.jpeg";
 /**
  * Navbar — sticky, scroll-aware.
  * Transparent over the hero, frosted glass once the page scrolls past a
@@ -13,8 +13,8 @@ import ThemeToggle from "../shared/ThemeToggle";
  */
  
 const NAV_LINKS = [
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
+  { label: "Who we are ", to: "/about" },
+  { label: "What we do", to: "/services" },
   { label: "Industries", to: "/industries" },
   { label: "Careers", to: "/careers" },
 ];
@@ -65,15 +65,23 @@ const Navbar = () => {
   className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black shadow-lg"
 >
      <div className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-10">
-        <Link
-          to="/"
-          className="flex items-center gap-3 font-['Montserrat'] text-3xl font-medium tracking-tight text-white"
-        >
-          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#2563EB] to-[#7C3AED] text-lg font-normal text-white">
-            V
-          </span>
-          Tec Tha
-        </Link>
+      <Link
+  to="/"
+  className="flex items-center gap-4"
+>
+  <img
+    src={logo}
+    alt="TEC THA Logo"
+    className="h-14 w-auto object-contain"
+  />
+
+  <div className="flex flex-col leading-none">
+    <span className="font-['Montserrat'] text-3xl font-medium text-white">
+      TEC THA
+    </span>
+
+  </div>
+</Link>
  
         {/* Desktop nav */}
         <nav className="hidden items-center gap-5 lg:flex">
@@ -82,7 +90,7 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `relative px-14 py-3 font-['Montserrat'] text-lg  transition-colors duration-200 ${
+                `relative px-10 py-3 font-['Montserrat'] text-2xl   transition-colors duration-200 ${
                   isActive
                     ? "text-white"
                     : "text-gray-300 hover:text-white"

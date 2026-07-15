@@ -1,155 +1,295 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight } from "lucide-react";
-import SectionHeader from "../shared/SectionHeader";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-/**
- * IndustriesScroll — Home Section 5
- * Pins the section and translates a horizontal track as the user scrolls
- * vertically, turning six industry verticals into one continuous pass.
- * Falls back to native horizontal overflow scroll below lg (pinning a
- * short viewport on mobile fights the user rather than helping them).
- */
-
-const INDUSTRIES = [
+const FEATURES = [
   {
-    id: "fin-services",
-    index: "01",
-    name: "Financial Services",
+    id: 1,
+    number: "01",
+    title: "Enterprise AI",
     description:
-      "Core modernization, risk platforms, and compliance-grade data architecture for banks and asset managers.",
+      "Harness the power of artificial intelligence to automate processes, improve decision-making, and unlock new business opportunities.",
+    image: "/images/whyus/ai.jpg",
   },
   {
-    id: "healthcare",
-    index: "02",
-    name: "Healthcare",
+    id: 2,
+    number: "02",
+    title: "Cloud Engineering",
     description:
-      "Interoperable patient data systems and clinical workflow tooling built for regulated environments.",
+      "Build secure, scalable cloud infrastructure that accelerates innovation while reducing operational complexity.",
+    image: "/images/whyus/cloud.jpg",
   },
   {
-    id: "retail",
-    index: "03",
-    name: "Retail & Consumer",
+    id: 3,
+    number: "03",
+    title: "Software Development",
     description:
-      "Unified commerce, inventory, and personalization engines that hold up during peak demand.",
+      "Design and deliver modern digital products with exceptional performance, scalability, and user experience.",
+    image: "/images/whyus/software.jpg",
   },
   {
-    id: "manufacturing",
-    index: "04",
-    name: "Manufacturing",
+    id: 4,
+    number: "04",
+    title: "Cyber Security",
     description:
-      "Connected plant-floor data and predictive maintenance layered onto existing industrial systems.",
+      "Protect your business with intelligent security solutions, continuous monitoring, and proactive threat management.",
+    image: "/images/whyus/security.jpg",
   },
   {
-    id: "energy",
-    index: "05",
-    name: "Energy & Utilities",
+    id: 5,
+    number: "05",
+    title: "Data & Analytics",
     description:
-      "Grid telemetry, forecasting, and asset management platforms built for long operational lifecycles.",
-  },
-  {
-    id: "public-sector",
-    index: "06",
-    name: "Public Sector",
-    description:
-      "Citizen-facing services and legacy system modernization delivered under strict procurement standards.",
+      "Transform enterprise data into actionable insights that drive smarter decisions and measurable growth.",
+    image: "/images/whyus/data.jpg",
   },
 ];
 
-const IndustriesScroll = () => {
-  const sectionRef = useRef(null);
-  const trackRef = useRef(null);
+export default function WhyUs() {
 
-  useEffect(() => {
-    const mm = gsap.matchMedia();
+const [active,setActive]=useState(0);
 
-    mm.add("(min-width: 1024px)", () => {
-      const track = trackRef.current;
-      const section = sectionRef.current;
-      if (!track || !section) return;
+return(
 
-      const distance = track.scrollWidth - section.offsetWidth;
-      if (distance <= 0) return;
+<section className="bg-white py-32">
 
-      const tween = gsap.to(track, {
-        x: -distance,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${distance}`,
-          scrub: 0.6,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+  <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-24 px-8 lg:grid-cols-2">
 
-      return () => {
-        tween.scrollTrigger?.kill();
-        tween.kill();
-      };
-    });
+    {/* LEFT */}
 
-    return () => mm.revert();
-  }, []);
+    <div className="lg:sticky lg:top-28 h-fit">
 
-  return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-[color:var(--color-bg-primary)] py-28 md:py-0 md:min-h-screen md:flex md:items-center"
-    >
-      <div className="w-full">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeader
-            overline="Industries"
-            title={
-              <>
-                Sectors We Transform
-                <br className="hidden sm:block" /> 
-              </>
-            }
-            subtitle="We deploy custom technological solutions tailored to solve specific regulatory and logistical challenges."
-            align="left"
-          />
-        </div>
+      <div className="mb-8 flex items-center gap-4">
+
+        <div className="h-[2px] w-16 bg-blue-600" />
+
+        <span
+          className="
+          font-['Montserrat']
+          text-sm
+          font-bold
+          uppercase
+          tracking-[6px]
+          text-blue-600
+          "
+        >
+          WHY TEC THA
+        </span>
+
+      </div>
+
+      <h2
+        className="
+        font-['Montserrat']
+        text-6xl
+        font-bold
+        leading-[1.05]
+        tracking-tight
+        text-black
+        "
+      >
+        Technology Built
+        <br />
+        Around Your
+        <br />
+        Business
+      </h2>
+
+      <p
+        className="
+        mt-8
+        max-w-xl
+        text-xl
+        leading-9
+        text-gray-600
+        "
+      >
+        We combine artificial intelligence,
+        cloud engineering and digital innovation
+        to help enterprises modernize,
+        scale and stay ahead of change.
+      </p>
+
+    </div>
+
+
+
+    {/* RIGHT */}
+
+    <div className="space-y-8">
+
+      {FEATURES.map((item,index)=>(
 
         <div
-          ref={trackRef}
-          className="mt-14 flex gap-6 overflow-x-auto px-6 pb-4 [scrollbar-width:none] md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden md:mt-16 md:px-0"
+          key={item.id}
+          onMouseEnter={()=>setActive(index)}
+          className="
+          group
+          cursor-pointer
+          border-b
+          border-gray-200
+          pb-8
+          "
         >
-          <div className="w-[2px] shrink-0 md:hidden" aria-hidden="true" />
-          {INDUSTRIES.map((industry) => (
-            <article
-              key={industry.id}
-              className="group w-[280px] shrink-0 rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[color:var(--color-brand-500)]/40 hover:shadow-[0_24px_48px_-24px_rgba(37,99,235,0.25)] sm:w-[320px] md:ml-6 md:first:ml-6 lg:w-[360px]"
-            >
-              <span className="text-sm font-semibold tracking-wide text-[color:var(--color-brand-500)]">
-                {industry.index}
-              </span>
 
-              <h3 className="mt-6 text-2xl font-semibold text-[color:var(--color-text-primary)]">
-                {industry.name}
-              </h3>
+        <div className="flex items-start justify-between gap-10">
 
-              <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]">
-                {industry.description}
-              </p>
+  {/* Left Content */}
 
-              <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text-secondary)] transition-colors duration-300 group-hover:text-[color:var(--color-brand-600)]">
-                Explore
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
-            </article>
-          ))}
-          <div className="w-[2px] shrink-0 md:mr-6" aria-hidden="true" />
+  <div className="flex gap-8">
+
+    <span
+      className={`
+      mt-2
+      font-['Montserrat']
+      text-xl
+      font-bold
+      transition-all
+      duration-300
+
+      ${
+        active===index
+
+        ? "text-blue-600"
+
+        : "text-gray-400"
+
+      }
+      `}
+    >
+      {item.number}
+    </span>
+
+    <div>
+
+      <h3
+        className={`
+        font-['Montserrat']
+        text-4xl
+        font-semibold
+        transition-all
+        duration-300
+
+        ${
+          active===index
+
+          ? "text-black"
+
+          : "text-gray-500"
+
+        }
+        `}
+      >
+        {item.title}
+      </h3>
+
+      <AnimatePresence mode="wait">
+
+        {active===index && (
+
+          <motion.p
+
+            key={item.id}
+
+            initial={{
+              opacity:0,
+              y:20
+            }}
+
+            animate={{
+              opacity:1,
+              y:0
+            }}
+
+            exit={{
+              opacity:0,
+              y:20
+            }}
+
+            transition={{
+              duration:.35
+            }}
+
+            className="
+            mt-5
+            max-w-lg
+            text-lg
+            leading-8
+            text-gray-600
+            "
+          >
+
+            {item.description}
+
+          </motion.p>
+
+        )}
+
+      </AnimatePresence>
+
+    </div>
+
+  </div>
+
+
+
+  {/* Right Image */}
+
+  <AnimatePresence mode="wait">
+
+    {active===index && (
+
+      <motion.img
+
+        key={item.image}
+
+        src={item.image}
+
+        alt={item.title}
+
+        initial={{
+          opacity:0,
+          scale:1.08
+        }}
+
+        animate={{
+          opacity:1,
+          scale:1
+        }}
+
+        exit={{
+          opacity:0,
+          scale:1.08
+        }}
+
+        transition={{
+          duration:.45
+        }}
+
+        className="
+        h-[260px]
+        w-[360px]
+        rounded-[24px]
+        object-cover
+        shadow-xl
+        "
+      />
+
+    )}
+
+  </AnimatePresence>
+
+</div>
+
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default IndustriesScroll;
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+)
+
+}
