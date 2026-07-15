@@ -26,8 +26,8 @@ const FOCUS_AREAS = [
 
 const Innovation = () => {
   return (
-    <section className="bg-[color:var(--color-bg-primary)] py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-[color:var(--color-bg-primary)] py-24 md:py-36">
+      <div className="mx-auto max-w-7xl ">
         <SectionHeader
           overline="Innovation"
           title={
@@ -59,7 +59,7 @@ const Innovation = () => {
               Innovation Lab
             </span>
 
-            <h3 className="mt-8 max-w-md text-3xl font-semibold leading-tight md:text-4xl">
+            <h3 className="mt-8 max-w-md text-3xl font-normal leading-tight md:text-4xl">
               Every engagement feeds a working prototype, not a slide deck.
             </h3>
 

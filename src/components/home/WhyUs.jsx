@@ -1,141 +1,170 @@
-import { motion } from "framer-motion";
-import { Timer, GitBranch, Users2, TrendingUp } from "lucide-react";
-import SectionHeader from "../shared/SectionHeader";
 
-/**
- * WhyUs — Home Section 7
- * Alternating left/right feature rows, each paired with an abstract
- * floating illustration rather than a screenshot or stock photo. Rows
- * flip direction to keep a long section from feeling like a repeated
- * template block.
- */
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const FEATURES = [
+gsap.registerPlugin(ScrollTrigger);
+
+const THINKING = [
   {
-    icon: Timer,
-    eyebrow: "Delivery speed",
-    title: "Weeks to first working system, not quarters to a proposal",
+    id: 1,
+    title: "Technology should never be the destination.",
+    highlight: "It should be the advantage.",
     description:
-      "We scope in two-week increments with something demonstrable at the end of each one — no six-month discovery phase before you see a line of working code.",
-    gradient: "from-[#2563EB] to-[#4F46E5]",
+      "Technology creates its greatest value when it empowers people, accelerates business, and delivers meaningful outcomes.",
+    image: "/images/thinking/01.jpg",
   },
+
   {
-    icon: GitBranch,
-    eyebrow: "Integration philosophy",
-    title: "Built to sit inside your stack, not replace it wholesale",
+    id: 2,
+    title: "Every solution begins",
+    highlight: "with understanding.",
     description:
-      "Recommendations are constrained by what you already run in production. Rip-and-replace is a last resort, not a default posture.",
-    gradient: "from-[#7C3AED] to-[#6366F1]",
+      "We invest time in understanding your business before designing the technology that supports it.",
+    image: "/images/thinking/02.jpg",
   },
+
   {
-    icon: Users2,
-    eyebrow: "Team model",
-    title: "The engineers who scope the work are the ones who build it",
+    id: 3,
+    title: "Innovation without execution",
+    highlight: "has no value.",
     description:
-      "No handoff between a sales team that scopes and a delivery team that inherits the scope. Continuity from kickoff to handover.",
-    gradient: "from-[#3B82F6] to-[#2563EB]",
+      "Ideas become meaningful only when transformed into reliable digital experiences that people trust.",
+    image: "/images/thinking/03.jpg",
   },
+
   {
-    icon: TrendingUp,
-    eyebrow: "Long-term fit",
-    title: "Measured on what happens after we leave",
+    id: 4,
+    title: "Long-term partnerships",
+    highlight: "create lasting success.",
     description:
-      "Engagements are scoped with an exit in mind — internal teams are trained to own and extend what we build, not stay dependent on us.",
-    gradient: "from-[#6D28D9] to-[#7C3AED]",
+      "Our work doesn't end at launch. We continue helping businesses evolve and grow.",
+    image: "/images/thinking/04.jpg",
   },
 ];
 
-const fadeSide = (fromRight) => ({
-  hidden: { opacity: 0, x: fromRight ? 32 : -32 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
-  },
-});
+export default function HowWeThink() {
 
-const FloatingMark = ({ gradient, reversed }) => (
-  <div className="relative flex h-full min-h-[280px] items-center justify-center">
-    <motion.div
-      animate={{ y: [0, -14, 0] }}
-      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      className={`absolute h-48 w-48 rounded-[2.5rem] bg-gradient-to-br ${gradient} opacity-90 ${
-        reversed ? "rotate-[8deg]" : "-rotate-[8deg]"
-      }`}
-    />
-    <motion.div
-      animate={{ y: [0, 12, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-      className="absolute h-32 w-32 -translate-x-14 translate-y-16 rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] backdrop-blur-sm"
-    />
-  </div>
-);
+const sectionRef = useRef(null);
 
-const WhyUs = () => {
-  return (
-    <section className="bg-[color:var(--color-bg-secondary)] py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6">
-        <SectionHeader
-          overline="Why Choose Us"
-          title={
-            <>
-              Four things clients mention
-              <br className="hidden sm:block" /> before we ask.
-            </>
-          }
-          subtitle="Not a values statement — patterns we hear back from clients unprompted."
-          align="left"
-        />
+const [active,setActive] = useState(0);
 
-        <div className="mt-16 space-y-24 md:space-y-28">
-          {FEATURES.map((feature, i) => {
-            const reversed = i % 2 === 1;
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className={`grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16 ${
-                  reversed ? "md:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <motion.div
-                  variants={fadeSide(reversed)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-120px" }}
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] dark:bg-white/5">
-                    <Icon className="h-5 w-5 text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]" />
-                  </div>
+return(
 
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]">
-                    {feature.eyebrow}
-                  </p>
+<section
+  ref={sectionRef}
+  className="
+  relative
+  h-[500vh]
+  bg-white
+  "
+>
 
-                  <h3 className="mt-3 max-w-md text-2xl font-semibold leading-snug text-[color:var(--color-text-primary)] md:text-3xl">
-                    {feature.title}
-                  </h3>
+  {/* Sticky Container */}
 
-                  <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]">
-                    {feature.description}
-                  </p>
-                </motion.div>
+  <div
+    className="
+    sticky
+    top-0
+    flex
+    h-screen
+    items-center
+    overflow-hidden
+    "
+  >
 
-                <motion.div
-                  variants={fadeSide(!reversed)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-120px" }}
-                >
-                  <FloatingMark gradient={feature.gradient} reversed={reversed} />
-                </motion.div>
-              </div>
-            );
-          })}
+    <div
+      className="
+      mx-auto
+      grid
+      w-full
+      max-w-[1700px]
+      grid-cols-2
+      items-center
+      gap-24
+      px-12
+      "
+    >
+
+      {/* LEFT */}
+
+      <div>
+
+        <div className="mb-8 flex items-center gap-5">
+
+          <div className="h-[2px] w-16 bg-blue-600"/>
+
+          <span
+            className="
+            font-['Montserrat']
+            text-sm
+            font-bold
+            uppercase
+            tracking-[6px]
+            text-blue-600
+            "
+          >
+
+            HOW WE THINK
+
+          </span>
+
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default WhyUs;
+        <h2
+          className="
+          font-['Montserrat']
+          text-[70px]
+          font-bold
+          leading-[0.95]
+          tracking-tight
+          text-black
+          "
+        >
+
+          Building Better
+
+          <br/>
+
+          Digital Futures.
+
+        </h2>
+
+        <p
+          className="
+          mt-8
+          max-w-xl
+          text-xl
+          leading-9
+          text-gray-500
+          "
+        >
+
+          Every scroll reveals another
+          principle that defines how we
+          build, innovate and create
+          meaningful technology.
+
+        </p>
+
+      </div>
+
+
+
+      {/* RIGHT */}
+
+      <div>
+
+        {/* NEXT */}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+)
+
+}

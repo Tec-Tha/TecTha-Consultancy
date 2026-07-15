@@ -217,7 +217,7 @@ return(
   >
     {/* Image */}
 
-    <div className="overflow-hidden rounded-3xl">
+    <div className="overflow-hidden rounded-xl">
 
       <img
         src={item.image}

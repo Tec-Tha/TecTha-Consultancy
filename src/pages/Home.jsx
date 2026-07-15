@@ -1,7 +1,7 @@
 import Hero from "../components/home/Hero";
 import LogoSlider from "../components/shared/LogoSlider";
 import Overview from "../components/home/Overview";
-import IndustriesScroll from "../components/home/IndustriesScroll";
+
 import WhyUs from "../components/home/WhyUs";
 import Innovation from "../components/home/Innovation";
 import Testimonials from "../components/home/Testimonials";
@@ -26,8 +26,7 @@ const Home = () => {
       <LogoSlider />
       <Overview />
       <WhyUs />
-      <IndustriesScroll />
-      <Innovation />
+     <Innovation />
       <Testimonials />
       <Insights />
       <ContactCTA />
