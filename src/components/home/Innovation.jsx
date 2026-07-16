@@ -1,138 +1,334 @@
-import { motion } from "framer-motion";
-import { Cpu, Layers, Sparkles, ArrowUpRight } from "lucide-react";
-import SectionHeader from "../shared/SectionHeader";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-/**
- * Innovation — Home Section 9
- * Editorial bento grid. Unlike the ServicesGrid (uniform cards, scannable),
- * this section trades symmetry for hierarchy — one cell carries the idea,
- * the rest support it. Reserved for R&D and applied-innovation content.
- */
+const STORIES = [
+  {
+    id: 1,
+    title: "Artificial Intelligence",
+    subtitle: "Transforming intelligence into business advantage.",
+    description:
+      "From intelligent automation to predictive decision-making, we build AI solutions that enhance productivity, unlock insights, and create measurable business outcomes.",
+    image: "/images/innovation/ai.jpg",
+  },
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
-  }),
-};
+  {
+    id: 2,
+    title: "Cloud Engineering",
+    subtitle: "Building resilient digital foundations.",
+    description:
+      "Our cloud platforms are designed for scalability, security, and performance—helping enterprises modernize infrastructure while accelerating innovation.",
+    image: "/images/innovation/cloud.jpg",
+  },
 
-const FOCUS_AREAS = [
-  { label: "Applied AI", value: "42" },
-  { label: "Data Platforms", value: "31" },
-  { label: "Cloud Infra", value: "27" },
+  {
+    id: 3,
+    title: "Cyber Resilience",
+    subtitle: "Protecting every digital interaction.",
+    description:
+      "We create secure digital ecosystems through modern security architecture, continuous monitoring, and proactive risk management.",
+    image: "/images/innovation/cyber.jpg",
+  },
 ];
 
-const Innovation = () => {
+export default function Innovation() {
+  const containerRef = useRef(null);
+
+const { scrollYProgress } = useScroll({
+  target: containerRef,
+  offset: ["start end", "end start"],
+});
+
+const imageScale = useTransform(
+  scrollYProgress,
+  [0, 1],
+  [1.12, 1]
+);
+
+const imageY = useTransform(
+  scrollYProgress,
+  [0, 1],
+  [80, -80]
+);
   return (
-    <section className="bg-[color:var(--color-bg-primary)] py-24 md:py-36">
-      <div className="mx-auto max-w-7xl ">
-        <SectionHeader
-          overline="Innovation"
-          title={
-            <>
-              Where R&amp;D earns
-              <br className="hidden sm:block" /> its way into production.
-            </>
-          }
-          subtitle="Our innovation practice exists to de-risk what's next before it reaches your roadmap."
-          align="left"
-        />
+   <section className="bg-white py-10">
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-6 md:grid-rows-2">
-          {/* Large feature cell */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F172A] to-[#1E1B4B] p-10 text-white md:col-span-4 md:row-span-2"
-          >
-            <div
-              className="pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full bg-gradient-to-br from-[#6366F1]/40 to-transparent blur-3xl"
-              aria-hidden="true"
-            />
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-300">
-              <Sparkles className="h-3.5 w-3.5 text-[#818CF8]" />
-              Innovation Lab
-            </span>
+  <div className="mx-auto max-w-[1700px] px-10">
 
-            <h3 className="mt-8 max-w-md text-3xl font-normal leading-tight md:text-4xl">
-              Every engagement feeds a working prototype, not a slide deck.
-            </h3>
+    <motion.div
 
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-slate-400">
-              Emerging techniques are tested against real client data
-              before they're recommended — if it doesn't survive contact
-              with production constraints, it doesn't ship.
-            </p>
+      initial={{
+        opacity:0,
+        y:40
+      }}
 
-            <a
-              href="/about#innovation"
-              className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white"
-            >
-              Inside the lab
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          </motion.div>
+      whileInView={{
+        opacity:1,
+        y:0
+      }}
 
-          {/* Focus areas cell */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0.1}
-            className="rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] p-8 md:col-span-2"
-          >
-            <Layers className="h-6 w-6 text-[color:var(--color-brand-500)]" />
-            <p className="mt-5 text-sm font-semibold uppercase tracking-wide text-[color:var(--color-text-muted)]">
-              Active focus areas
-            </p>
-            <ul className="mt-5 space-y-4">
-              {FOCUS_AREAS.map((area) => (
-                <li
-                  key={area.label}
-                  className="flex items-center justify-between border-b border-[color:var(--color-border)] pb-3 last:border-0 last:pb-0"
-                >
-                  <span className="text-sm text-[color:var(--color-text-secondary)]">
-                    {area.label}
-                  </span>
-                  <span className="text-lg font-semibold text-[color:var(--color-text-primary)]">
-                    {area.value}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+      viewport={{
+        once:true
+      }}
 
-          {/* Pull quote cell — accent font used sparingly, per type system */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0.2}
-            className="flex flex-col justify-between rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-secondary)] p-8 md:col-span-2"
-          >
-            <Cpu className="h-6 w-6 text-[color:var(--color-accent)]" />
-            <p
-              className="mt-5 text-xl leading-snug text-[color:var(--color-text-primary)]"
-              style={{ fontFamily: "Syne, sans-serif" }}
-            >
-              &ldquo;Prototype in weeks. Prove it in production. Decide
-              after, not before.&rdquo;
-            </p>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-muted)]">
-              Lab operating principle
-            </p>
-          </motion.div>
-        </div>
+      transition={{
+        duration:.8
+      }}
+
+      className="max-w-5xl"
+
+    >
+
+      <div className="mb-8 flex items-center gap-5">
+
+        <div className="h-[2px] w-16 bg-blue-600"/>
+
+        <span
+          className="
+          font-['Montserrat']
+          text-xl
+          font-medium
+          uppercase
+          tracking-[6px]
+          text-blue-600
+          "
+        >
+          INNOVATION IN PRACTICE
+        </span>
+
       </div>
-    </section>
-  );
-};
 
-export default Innovation;
+      <h2
+        className="
+        font-['Montserrat']
+        text-[clamp(3.5rem,7vw,6.5rem)]
+        font-medium
+        leading-[1.1]
+        tracking-tight
+        text-black
+        "
+      >
+        Turning Vision   Into   <br/>
+       Enterprise         Reality.
+      
+        <br/>
+
+      </h2>
+
+      <p
+        className="
+        mt-8
+        max-w-3xl
+        text-[22px]
+        leading-10
+        text-gray-500
+        "
+      >
+        Every breakthrough begins with curiosity,
+        is refined through engineering, and delivers
+        measurable business value through execution.
+      </p>
+
+    </motion.div>
+
+    {/* STORIES */}
+
+   <div ref={containerRef}>
+{STORIES.map((story, index) => (
+
+<motion.article
+
+key={story.id}
+
+initial={{
+opacity:0,
+y:80
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+viewport={{
+once:true,
+amount:.3
+}}
+
+transition={{
+duration:.8
+}}
+
+className="
+mb-40
+"
+
+>
+
+<div
+className="
+group
+relative
+overflow-hidden
+rounded-[40px]
+"
+>
+
+{/* IMAGE */}
+
+<motion.img
+  src={story.image}
+  alt={story.title}
+  style={{
+    scale: imageScale,
+    y: imageY,
+  }}
+  className="
+    h-[420px]
+    w-full
+    object-cover
+    will-change-transform
+  "
+/>
+
+{/* OVERLAY */}
+
+<div
+className="
+absolute
+
+inset-0
+
+bg-gradient-to-t
+
+from-black
+
+via-black/20
+
+to-transparent
+"
+/>
+
+{/* CONTENT */}
+
+<motion.div
+
+initial={{
+opacity:0,
+y:60
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+viewport={{
+once:true,
+amount:.4
+}}
+
+transition={{
+duration:.8,
+delay:.2
+}}
+
+className="
+absolute
+bottom-0
+left-0
+z-20
+max-w-3xl
+p-16
+"
+>
+
+<span
+className="
+font-['Montserrat']
+
+text-sm
+
+font-bold
+
+uppercase
+
+tracking-[6px]
+
+text-blue-400
+"
+>
+
+0{story.id}
+
+</span>
+
+<h3
+className="
+mt-5
+
+font-['Montserrat']
+
+text-[60px]
+
+font-bold
+
+leading-[1]
+
+tracking-tight
+
+text-white
+"
+>
+
+{story.title}
+
+</h3>
+
+<p
+className="
+mt-4
+
+text-[28px]
+
+leading-[1.3]
+
+text-white/90
+"
+>
+
+{story.subtitle}
+
+</p>
+
+<p
+className="
+mt-8
+
+max-w-2xl
+
+text-lg
+
+leading-9
+
+text-white/75
+"
+>
+
+{story.description}
+
+</p>
+
+</motion.div>
+
+</div>
+
+</motion.article>
+
+))}
+</div>
+
+  </div>
+
+</section>
+  );
+}

@@ -27,8 +27,9 @@ const Home = () => {
       <Overview />
       <WhyUs />
      <Innovation />
-      <Testimonials />
+      
       <Insights />
+      <Testimonials />
       <ContactCTA />
     </PageWrapper>
   );

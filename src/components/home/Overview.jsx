@@ -75,7 +75,7 @@ const nextRef = useRef(null);
 
 return(
 
-<section className="bg-white py-24">
+<section className="bg-white py-20">
 
   <div className="mx-auto max-w-[1450px] ">
 
