@@ -1,24 +1,115 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
 import ThemeToggle from "../shared/ThemeToggle";
- import logo from "/logo.jpeg";
+import logo from "/logo.jpeg";
+import {
+  Menu,
+  X,
+  ArrowUpRight,
+  ArrowRight,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
+
 /**
  * Navbar — sticky, scroll-aware.
  * Transparent over the hero, frosted glass once the page scrolls past a
  * threshold. Desktop active link gets a shared-layout underline that
  * slides between items; mobile collapses into a staggered slide-down
  * drawer.
+ *
+ * "What we do" opens a TCS-style, hover-driven mega menu: a static intro
+ * panel on the left, a vertical list of category tabs in the middle, and
+ * a flat two-column item list on the right that swaps with the active
+ * tab — everything else in the navbar is unchanged.
  */
- 
+
 const NAV_LINKS = [
   { label: "Who we are ", to: "/about" },
   { label: "What we do", to: "/services" },
-  { label: "Industries", to: "/industries" },
+  { label: "Insights", to: "/industries" },
   { label: "Careers", to: "/careers" },
 ];
- 
+
+const SERVICES = [
+  {
+    title: "Services",
+    items: [
+      {
+        name: "Artificial Intelligence & Data Analytics",
+        link: "/services/EnterpriseSoftware",
+      },
+      {
+        name: "Enterprise Solutions",
+        link: "/services/AIIntegration",
+      },
+      {
+        name: "Cloud & Infrastructure",
+        link: "/services/CloudInfrastructure",
+      },
+      {
+        name: "UI/UX & Product Design",
+        link: "/services/UIUXDesign",
+      },
+      {
+        name: "Cybersecurity",
+        link: "/services/BrandDemand",
+      },
+      {
+        name: "Digital Transformation",
+        link: "/services/DigitalAdvisory",
+      },
+      {
+        name:"HR Technology",
+        link: "/services/hr-technology",
+      },
+      {
+        name:"Business & Digital Transformation",
+        link: "/services/business-digital-transformation",
+      }
+    ],
+  },
+
+  {
+    title: "Industries",
+    items: [
+      {
+        name: "Logistics",
+        link: "/industries/logistics",
+      },
+      {
+        name: "Manufacturing",
+        link: "/industries/manufacturing",
+      },
+      {
+        name: "Retail",
+        link: "/industries/retail",
+      },
+      {
+        name: "Healthcare",
+        link: "/industries/healthcare",
+      },
+      {
+        name: "Banking",
+        link: "/industries/banking",
+      },
+      {
+        name: "Education",
+        link: "/industries/education",
+      },
+      {
+        name: "Government",
+        link: "/industries/government",
+      },
+      {
+        name: "Professional Services",
+        link: "/industries/professional-services",
+      },
+    ],
+  },
+];
+
 const drawerVariants = {
   hidden: { opacity: 0, height: 0 },
   visible: {
@@ -32,87 +123,327 @@ const drawerVariants = {
     transition: { duration: 0.25, ease: [0.7, 0, 0.84, 0] },
   },
 };
- 
+
 const linkStagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.06, delayChildren: 0.08 } },
 };
- 
+
 const linkItem = {
   hidden: { opacity: 0, y: -10 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
 };
- 
+
+// Mega menu panel: fade + slight rise on open/close.
+const megaMenuVariants = {
+  hidden: { opacity: 0, y: 12, scale: 0.99 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+  },
+  exit: {
+    opacity: 0,
+    y: 8,
+    scale: 0.99,
+    transition: { duration: 0.18, ease: [0.7, 0, 0.84, 0] },
+  },
+};
+
+// Right-panel item list: quick cross-fade when the active category changes.
+const itemsPanelVariants = {
+  hidden: { opacity: 0, x: 8 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] },
+  },
+  exit: { opacity: 0, x: -8, transition: { duration: 0.12 } },
+};
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(0);
+  const dropdownRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
   const location = useLocation();
- 
+
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
- 
-  // Close the mobile drawer on route change.
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setShowServices(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close the mobile drawer / mega menu on route change.
   useEffect(() => {
     setIsMenuOpen(false);
+    setShowServices(false);
+    setActiveCategory(0);
   }, [location.pathname]);
- 
+
+  // Clear any pending close timer on unmount.
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
+
+  const openMegaMenu = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setShowServices(true);
+  };
+
+  const scheduleCloseMegaMenu = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setShowServices(false);
+      setActiveCategory(0);
+    }, 120);
+  };
+
+  // Keep the menu open while focus is anywhere inside it (keyboard nav);
+  // close once focus actually leaves the whole dropdown container.
+  const handleContainerBlur = (e) => {
+    if (!dropdownRef.current) return;
+    if (!dropdownRef.current.contains(e.relatedTarget)) {
+      setShowServices(false);
+      setActiveCategory(0);
+    }
+  };
+
+  const handleTriggerKeyDown = (e) => {
+    if (e.key === "Escape") {
+      setShowServices(false);
+      setActiveCategory(0);
+      e.currentTarget.blur();
+    }
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      openMegaMenu();
+    }
+  };
+
   return (
-   <header
-  className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black shadow-lg"
->
-     <div className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-10">
-      <Link
-  to="/"
-  className="flex items-center gap-4"
->
-  <img
-    src={logo}
-    alt="TEC THA Logo"
-    className="h-14 w-auto object-contain"
-  />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black shadow-lg">
+      <div className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-10">
+        <Link to="/" className="flex items-center gap-4">
+          <img
+            src={logo}
+            alt="TEC THA Logo"
+            className="h-14 w-auto object-contain"
+          />
 
-  <div className="flex flex-col leading-none">
-    <span className="font-['Montserrat'] text-3xl font-medium text-white">
-      Tec Tha
-    </span>
+          <div className="flex flex-col leading-none">
+            <span className="font-['Montserrat'] text-3xl font-medium text-white">
+              Tec Tha
+            </span>
+          </div>
+        </Link>
 
-  </div>
-</Link>
- 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-5 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `relative px-10 py-3 font-['Montserrat'] text-2xl   transition-colors duration-200 ${
-                  isActive
-                    ? "text-white"
-                    : "text-gray-300 hover:text-white"
-                }`
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  {isActive && (
+          {NAV_LINKS.map((link) => {
+            if (link.label === "What we do") {
+              return (
+                <div
+                  ref={dropdownRef}
+                  key={link.to}
+                  className="relative"
+                  onMouseEnter={openMegaMenu}
+                  onMouseLeave={scheduleCloseMegaMenu}
+                  onBlur={handleContainerBlur}
+                >
+                  <div className="flex items-center gap-2 px-10 py-3">
+ <Link
+  to="/services"
+  className={`font-['Montserrat'] text-2xl transition-colors ${
+    location.pathname.startsWith("/services")
+      ? "text-white"
+      : "text-gray-300 hover:text-white"
+  }`}
+>
+  What we do
+</Link>
+
+  <button
+    type="button"
+    onClick={() => setShowServices((prev) => !prev)}
+    className="text-gray-300 hover:text-white"
+    aria-haspopup="true"
+    aria-expanded={showServices}
+  >
+    <ChevronDown
+      size={18}
+      className={`transition-transform duration-300 ${
+        showServices ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+</div>
+
+                  {location.pathname.startsWith("/services") && (
                     <motion.span
                       layoutId="navbar-active-underline"
                       className="absolute inset-x-4 -bottom-1 h-[2px] rounded-full bg-white"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}
-                </>
-              )}
-            </NavLink>
-          ))}
+
+                  <AnimatePresence>
+                    {showServices && (
+                      <motion.div
+                        variants={megaMenuVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="fixed inset-x-0 top-20 z-[999] w-full border-t border-white/10 bg-black shadow-2xl"
+                      >
+                        <div className="mx-auto grid max-w-[1650px] grid-cols-[320px_280px_1fr] gap-x-16 px-10 py-16">
+                          {/* Column 1 — static intro panel (doesn't change with the active tab) */}
+                          <div className="pr-4">
+                            <h3 className="font-['Montserrat'] text-4xl font-light leading-[1.1] text-white">
+                              Strategy to
+                              <br />
+                              Systems
+                            </h3>
+                            <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-white/50">
+                              We turn technology decisions into measurable
+                              outcomes — AI, cloud, ERP, security, and growth,
+                              delivered as one connected practice.
+                            </p>
+                            <Link
+                              to="/services"
+                    
+                              className="group mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-white"
+                            >
+                              Explore all services
+                              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                            </Link>
+                          </div>
+
+                          {/* Column 2 — vertical category tabs */}
+                          <div
+                            role="tablist"
+                            aria-label="Service categories"
+                            className="divide-y divide-white/10 border-l border-white/10 pl-10"
+                          >
+                            {SERVICES.map((section, i) => {
+  const isActive = activeCategory === i;
+
+  return (
+    <div key={section.title}>
+      {section.title === "Services" ? (
+        <Link
+          to="/services"
+          onMouseEnter={() => setActiveCategory(i)}
+          onFocus={() => setActiveCategory(i)}
+          onClick={() => setShowServices(false)}
+          className={`group flex w-full items-center justify-between gap-3 py-3.5 text-left font-['Montserrat'] text-[15px] transition-colors duration-200 ${
+            isActive
+              ? "font-semibold text-white"
+              : "text-gray-400 hover:text-white"
+          }`}
+        >
+          <span>{section.title}</span>
+          <ChevronRight size={15} />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          role="tab"
+          aria-selected={isActive}
+          onMouseEnter={() => setActiveCategory(i)}
+          onFocus={() => setActiveCategory(i)}
+          className={`group flex w-full items-center justify-between gap-3 py-3.5 text-left font-['Montserrat'] text-[15px] transition-colors duration-200 ${
+            isActive
+              ? "font-semibold text-white"
+              : "text-gray-400 hover:text-white"
+          }`}
+        >
+          <span>{section.title}</span>
+          <ChevronRight size={15} />
+        </button>
+      )}
+    </div>
+  );
+})}
+                          </div>
+
+                          {/* Columns 3 & 4 — flat item list for the active category */}
+                          <div className="relative min-h-[360px] border-l border-white/10 pl-16">
+                            <AnimatePresence mode="wait">
+                              <motion.div
+                                key={SERVICES[activeCategory].title}
+                                variants={itemsPanelVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                className="columns-2 gap-x-16"
+                              >
+                                {SERVICES[activeCategory].items.map((item) => (
+  <Link
+    key={item.name}
+    to={item.link}
+    onClick={() => setShowServices(false)}
+    className="mb-5 block break-inside-avoid text-[15px] text-gray-300 transition-colors duration-200 hover:text-white"
+  >
+    {item.name}
+  </Link>
+))}
+                              </motion.div>
+                            </AnimatePresence>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+
+            return (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `relative px-10 py-3 font-['Montserrat'] text-2xl transition-colors duration-200 ${
+                    isActive ? "text-white" : "text-gray-300 hover:text-white"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {link.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="navbar-active-underline"
+                        className="absolute inset-x-4 -bottom-1 h-[2px] rounded-full bg-white"
+                      />
+                    )}
+                  </>
+                )}
+              </NavLink>
+            );
+          })}
         </nav>
- 
+
         <div className="hidden items-center gap-4 md:flex">
           <ThemeToggle />
           <Link
@@ -120,10 +451,9 @@ const Navbar = () => {
             className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
           >
             Contact
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
- 
+
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
@@ -137,7 +467,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
- 
+
       {/* Mobile drawer */}
       <AnimatePresence>
         {isMenuOpen && (
@@ -186,5 +516,5 @@ const Navbar = () => {
     </header>
   );
 };
- 
-export default Navbar
+
+export default Navbar;

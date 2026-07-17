@@ -105,7 +105,7 @@ const ServiceDetailLayout = ({ data }) => {
       </section>
 
       {/* Overview */}
-      <section className="bg-[color:var(--color-bg-primary)] py-20 md:py-28">
+      <section id="overview" className="bg-[color:var(--color-bg-primary)] py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             <motion.div
@@ -167,7 +167,7 @@ const ServiceDetailLayout = ({ data }) => {
 
       {/* Features */}
       {features?.length > 0 && (
-        <section className="bg-[color:var(--color-bg-secondary)] py-20 md:py-28">
+        <section id="features" className="bg-[color:var(--color-bg-secondary)] py-20 md:py-28">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-2xl font-bold text-[color:var(--color-text-primary)] md:text-3xl">
               What we deliver
@@ -204,7 +204,7 @@ const ServiceDetailLayout = ({ data }) => {
 
       {/* Tech Stack */}
       {techStack?.length > 0 && (
-        <section className="bg-[color:var(--color-bg-primary)] py-16 md:py-20">
+        <section id="tech-stack" className="bg-[color:var(--color-bg-primary)] py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
               Technologies we use
@@ -229,7 +229,7 @@ const ServiceDetailLayout = ({ data }) => {
 
       {/* Process */}
       {process?.length > 0 && (
-        <section className="bg-[color:var(--color-bg-secondary)] py-20 md:py-28">
+        <section id="process" className="bg-[color:var(--color-bg-secondary)] py-20 md:py-28">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-2xl font-bold text-[color:var(--color-text-primary)] md:text-3xl">
               How we work
@@ -263,7 +263,7 @@ const ServiceDetailLayout = ({ data }) => {
 
       {/* Industries */}
       {industries?.length > 0 && (
-        <section className="bg-[color:var(--color-bg-primary)] py-20 md:py-28">
+        <section id="industries" className="bg-[color:var(--color-bg-primary)] py-20 md:py-28">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-2xl font-bold text-[color:var(--color-text-primary)] md:text-3xl">
               Industries we serve
@@ -302,7 +302,7 @@ const ServiceDetailLayout = ({ data }) => {
 
       {/* Why choose us */}
       {whyChooseUs?.length > 0 && (
-        <section className="bg-[color:var(--color-bg-secondary)] py-20 md:py-28">
+        <section id="why-choose-us" className="bg-[color:var(--color-bg-secondary)] py-20 md:py-28">
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-2xl font-bold text-[color:var(--color-text-primary)] md:text-3xl">
               Why work with us
@@ -339,7 +339,7 @@ const ServiceDetailLayout = ({ data }) => {
 
       {/* FAQs */}
       {faqs?.length > 0 && (
-        <section className="bg-[color:var(--color-bg-primary)] py-20 md:py-28">
+        <section id="faqs" className="bg-[color:var(--color-bg-primary)] py-20 md:py-28">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="text-2xl font-bold text-[color:var(--color-text-primary)] md:text-3xl">
               Common questions

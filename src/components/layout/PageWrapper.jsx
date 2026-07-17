@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ServiceNavbar from "../../components/layout/ServiceNavbar";
  
 /**
  * PageWrapper — wraps the content of every page (except Home, which
@@ -9,14 +10,18 @@ import { useEffect } from "react";
  */
  
 const SITE_NAME = "Tec Tha";
+
+
  
 const PageWrapper = ({
   title,
   description,
   fullBleed = false,
+  showServiceNavbar = false,
   className = "",
   children,
 }) => {
+  console.log("showServiceNavbar =", showServiceNavbar);
   useEffect(() => {
     document.title = title ? `${title} — ${SITE_NAME}` : SITE_NAME;
  
@@ -32,12 +37,23 @@ const PageWrapper = ({
   }, [title, description]);
  
   return (
-    <div
-      className={`${fullBleed ? "" : "pt-15"} min-h-screen bg-[color:var(--color-bg-primary)] ${className}`}
-    >
-      {children}
-    </div>
+   <>
+  {showServiceNavbar && <ServiceNavbar />}
+
+  <div
+    className={`
+      ${fullBleed ? "" : "pt-15"}
+      ${showServiceNavbar ? "pt-[136px]" : ""}
+      min-h-screen
+      bg-[color:var(--color-bg-primary)]
+      ${className}
+    `}
+  >
+    {children}
+  </div>
+</>
   );
 };
+
  
 export default PageWrapper;

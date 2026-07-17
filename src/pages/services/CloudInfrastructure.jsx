@@ -100,6 +100,7 @@ const CloudInfrastructure = () => (
   <PageWrapper
     title="Cloud & Infrastructure"
     description="Modern cloud infrastructure with secure deployment pipelines."
+    showServiceNavbar={true}
   >
     <ServiceDetailLayout data={data} currentServiceId="ai" />
   </PageWrapper>

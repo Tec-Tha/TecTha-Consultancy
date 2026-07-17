@@ -102,6 +102,7 @@ const UIUXDesign = () => (
   <PageWrapper
     title="UI/UX & Product Design"
     description="Human-centered product experiences for web and mobile."
+    showServiceNavbar={true}
   >
     <ServiceDetailLayout data={data} currentServiceId="security" />
   </PageWrapper>

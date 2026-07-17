@@ -102,6 +102,7 @@ const EnterpriseSoftware = () => (
   <PageWrapper
     title="Enterprise Software"
     description="Custom enterprise applications built for scale and security."
+    showServiceNavbar={true}
   >
     <ServiceDetailLayout data={data} currentServiceId="cloud" />
   </PageWrapper>

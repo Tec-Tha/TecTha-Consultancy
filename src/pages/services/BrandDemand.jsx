@@ -98,6 +98,7 @@ const BrandDemand = () => (
   <PageWrapper
     title="Brand & Demand Strategy"
     description="Data-driven marketing strategies that generate measurable growth."
+    showServiceNavbar={true}
   >
     <ServiceDetailLayout data={data} currentServiceId="platform" />
   </PageWrapper>
