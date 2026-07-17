@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import ThemeToggle from "../shared/ThemeToggle";
  import logo from "/logo.jpeg";
 /**
  * Navbar — sticky, scroll-aware.
@@ -77,7 +76,7 @@ const Navbar = () => {
 
   <div className="flex flex-col leading-none">
     <span className="font-['Montserrat'] text-3xl font-medium text-white">
-      TEC THA
+      Tec Tha
     </span>
 
   </div>
@@ -103,7 +102,7 @@ const Navbar = () => {
                   {isActive && (
                     <motion.span
                       layoutId="navbar-active-underline"
-                      className="absolute inset-x-4 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED]"
+                      className="absolute inset-x-4 -bottom-1 h-[2px] rounded-full bg-white"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}
@@ -114,10 +113,10 @@ const Navbar = () => {
         </nav>
  
         <div className="hidden items-center gap-4 md:flex">
-          <ThemeToggle />
+       
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-base font-semibold text-white shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
           >
             Contact
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -126,7 +125,7 @@ const Navbar = () => {
  
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
+         
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}

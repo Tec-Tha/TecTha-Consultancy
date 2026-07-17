@@ -4,7 +4,7 @@ import Overview from "../components/home/Overview";
 
 import WhyUs from "../components/home/WhyUs";
 import Innovation from "../components/home/Innovation";
-import Testimonials from "../components/home/Testimonials";
+import CustomerStories from "../components/home/customerstories";
 import Insights from "../components/home/Insights";
 import ContactCTA from "../components/home/ContactCTA";
 import PageWrapper from "../components/layout/PageWrapper";
@@ -25,11 +25,13 @@ const Home = () => {
       <Hero />
       <LogoSlider />
       <Overview />
-      <WhyUs />
-     <Innovation />
-      
       <Insights />
-      <Testimonials />
+      <WhyUs />
+       
+     <Innovation />
+       
+    <CustomerStories />
+     
       <ContactCTA />
     </PageWrapper>
   );

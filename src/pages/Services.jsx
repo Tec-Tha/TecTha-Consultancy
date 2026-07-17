@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import {motion,useScroll,useSpring,} from "framer-motion";
+import { useRef } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/layout/PageWrapper";
@@ -59,54 +60,46 @@ const SERVICES = [
 const PROCESS = [
   {
     step: "01",
-    title: "Business Discovery & Consultation",
+    title: "Discover",
     description:
-      "Every successful digital transformation begins with understanding the business. Our consultants work closely with your stakeholders to identify operational challenges, business objectives, technical limitations, and growth opportunities before recommending any technology solution.",
+      "Understand your business goals, challenges, and technical requirements before planning the solution.",
     deliverables: [
-      "Business Requirement Analysis",
-      "Stakeholder Discovery Workshops",
-      "Current System Assessment",
-      "Risk & Opportunity Analysis",
-      "Technology Readiness Evaluation",
+      "Business Analysis",
+       "Stakeholder Workshop",
+       "System Audit",
     ],
   },
   {
     step: "02",
-    title: "Solution Architecture & Planning",
+    title: "Architect",
     description:
-      "Based on our findings, we design a scalable technology roadmap tailored to your business. We define the system architecture, select the right technologies, establish project milestones, and prepare a detailed implementation strategy focused on long-term success.",
+      "Design a scalable, secure architecture with the right technology stack and implementation roadmap.",
     deliverables: [
-      "Enterprise Solution Architecture",
-      "Technology Stack Selection",
-      "Implementation Roadmap",
-      "Project Timeline & Milestones",
-      "Security & Compliance Planning",
+      "Solution Architecture",
+      "Tech Stack",
+      "Roadmap",
     ],
   },
   {
     step: "03",
-    title: "Development & Quality Engineering",
+    title: "Build",
     description:
-      "Our engineering teams build secure, scalable, and maintainable software using agile methodologies. Every development cycle includes continuous integration, automated testing, code reviews, and regular client demonstrations to ensure transparency throughout the project.",
+      "Develop high-quality software using agile practices, automation, and continuous testing.",
     deliverables: [
-      "Agile Sprint Development",
-      "Continuous Integration & Deployment",
-      "Quality Assurance Testing",
-      "Performance Optimization",
-      "Security Validation",
+      "Development",
+      "QA Testing",
+      "CI/CD Pipeline",
     ],
   },
   {
     step: "04",
-    title: "Deployment, Support & Continuous Growth",
+    title: "Launch",
     description:
-      "After successful deployment, our engagement continues through proactive monitoring, technical support, knowledge transfer, and continuous optimization. We ensure your technology evolves alongside your business needs.",
+      "Deploy confidently with monitoring, support, and continuous improvements for long-term growth.",
     deliverables: [
-      "Production Deployment",
-      "User Training & Documentation",
-      "Performance Monitoring",
-      "Ongoing Technical Support",
-      "Continuous Product Enhancement",
+      "Deployment",
+      "Monitoring",
+      "Support",
     ],
   },
 ];
@@ -121,6 +114,16 @@ const fadeUp = {
 };
 
 const Services = () => {
+  const timelineRef = useRef(null);
+
+const { scrollYProgress } = useScroll({
+  target: timelineRef,
+  offset: ["start center", "end end"],
+});
+const scaleY = useSpring(scrollYProgress, {
+  stiffness: 120,
+  damping: 25,
+});
   return (
     <PageWrapper
       title="Services"
@@ -215,58 +218,73 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeader
-            overline="Our Delivery Methodology"
-            title="A Proven Process for Delivering Enterprise Technology Solutions"
-            subtitle="From initial consultation to long-term support, our structured engagement model ensures every project is delivered with transparency, technical excellence, and measurable business value."
-            align="left"
-          />
+      {/* Timeline Process */}
+<section ref={timelineRef} className="py-24">
+  <div className="mx-auto max-w-5xl px-6">
 
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-4">
-            {PROCESS.map((phase, i) => (
-              <motion.div
-                key={phase.step}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                custom={i * 0.1}
-                className="relative border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] p-7"
-              >
-                <span className="text-3xl font tracking-tight text-[color:var(--color-brand-500)]/40">
-                  {phase.step}
-                </span>
-                <h3 className="mt-5 text-lg font text-[color:var(--color-text-primary)]">
-                  {phase.title}
-                </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-[color:var(--color-text-secondary)]">
-                  {phase.description}
-                </p>
+    <SectionHeader
+      title="How We Work"
+      subtitle="Simple. Transparent. Efficient."
+      align="center"
+    />
 
-                <div className="mt-6">
-                  <h4 className="text-sm font uppercase tracking-wider text-[color:var(--color-brand-600)]">
-                    Deliverables
-                  </h4>
-                  <ul className="mt-4 space-y-3">
-                    {phase.deliverables.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-center gap-3 text-sm text-[color:var(--color-text-secondary)]"
-                      >
-                        <Check className="h-4 w-4 shrink-0 text-[color:var(--color-brand-600)]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="relative mt-20">
+
+      {/* Background Line */}
+      <div className="absolute left-6 top-0 h-full w-[2px] bg-white" />
+
+      {/* Animated Line */}
+      <motion.div
+        style={{ scaleY }}
+        className="absolute left-6 top-0 h-full w-[2px] origin-top bg-black"
+      />
+
+      <div className="space-y-16">
+
+        {PROCESS.map((phase, i) => (
+          <motion.div
+            key={phase.step}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="relative flex gap-8"
+          >
+
+            {/* Circle */}
+            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-black text-white font-bold">
+              {phase.step}
+            </div>
+
+            {/* Content */}
+            <div className="pb-6">
+              <h3 className="text-2xl font text-[color:var(--color-text-primary)]">
+                {phase.title}
+              </h3>
+
+              <p className="mt-3 max-w-xl text-[color:var(--color-text-secondary)]">
+                {phase.description}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {phase.deliverables.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-[color:var(--color-border)] px-3 py-1 text-sm text-[color:var(--color-text-secondary)]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </motion.div>
+        ))}
+
+      </div>
+    </div>
+  </div>
+</section>
 
       <ContactCTA />
     </PageWrapper>

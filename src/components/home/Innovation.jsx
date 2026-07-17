@@ -8,7 +8,7 @@ const STORIES = [
     subtitle: "Transforming intelligence into business advantage.",
     description:
       "From intelligent automation to predictive decision-making, we build AI solutions that enhance productivity, unlock insights, and create measurable business outcomes.",
-    image: "/images/innovation/ai.jpg",
+    image: "/ai.avif",
   },
 
   {
@@ -17,7 +17,7 @@ const STORIES = [
     subtitle: "Building resilient digital foundations.",
     description:
       "Our cloud platforms are designed for scalability, security, and performance—helping enterprises modernize infrastructure while accelerating innovation.",
-    image: "/images/innovation/cloud.jpg",
+    image: "cloud.jpg",
   },
 
   {
@@ -26,7 +26,7 @@ const STORIES = [
     subtitle: "Protecting every digital interaction.",
     description:
       "We create secure digital ecosystems through modern security architecture, continuous monitoring, and proactive risk management.",
-    image: "/images/innovation/cyber.jpg",
+    image: "/cy.jpg",
   },
 ];
 
@@ -50,7 +50,7 @@ const imageY = useTransform(
   [80, -80]
 );
   return (
-   <section className="bg-white py-10">
+   <section className="bg-white py-18">
 
   <div className="mx-auto max-w-[1700px] px-10">
 
@@ -100,7 +100,7 @@ const imageY = useTransform(
       <h2
         className="
         font-['Montserrat']
-        text-[clamp(3.5rem,7vw,6.5rem)]
+        text-7xl
         font-medium
         leading-[1.1]
         tracking-tight
@@ -159,7 +159,7 @@ duration:.8
 }}
 
 className="
-mb-40
+mb-20
 "
 
 >
@@ -169,7 +169,7 @@ className="
 group
 relative
 overflow-hidden
-rounded-[40px]
+rounded-[10px]
 "
 >
 
@@ -242,25 +242,7 @@ p-16
 "
 >
 
-<span
-className="
-font-['Montserrat']
 
-text-sm
-
-font-bold
-
-uppercase
-
-tracking-[6px]
-
-text-blue-400
-"
->
-
-0{story.id}
-
-</span>
 
 <h3
 className="
@@ -268,9 +250,9 @@ mt-5
 
 font-['Montserrat']
 
-text-[60px]
+text-[50px]
 
-font-bold
+font-medium
 
 leading-[1]
 
@@ -288,7 +270,7 @@ text-white
 className="
 mt-4
 
-text-[28px]
+text-[26px]
 
 leading-[1.3]
 

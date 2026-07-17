@@ -32,7 +32,7 @@ const SectionHeader = ({ overline, title, subtitle, align = "left" }) => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           custom={0}
-          className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]"
+          className="text-xs font-semibold uppercase tracking-[0.18em] text-white"
         >
           {overline}
         </motion.p>
@@ -44,7 +44,7 @@ const SectionHeader = ({ overline, title, subtitle, align = "left" }) => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         custom={0.08}
-        className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-[color:var(--color-text-primary)]"
+        className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font leading-[1.1] tracking-tight text-White"
       >
         {title}
       </motion.h2>
@@ -56,7 +56,7 @@ const SectionHeader = ({ overline, title, subtitle, align = "left" }) => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           custom={0.16}
-          className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]"
+          className="mt-4 text-[15px] leading-relaxed text-white"
         >
           {subtitle}
         </motion.p>

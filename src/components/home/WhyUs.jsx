@@ -8,41 +8,36 @@ gsap.registerPlugin(ScrollTrigger);
 const THINKING = [
   {
     id: 1,
-    title: "Technology should never be the destination.",
-    highlight: "It should be the advantage.",
+    title: "Technology Should Empower Businesses Enable Organizations to Innovate and Thrive with Confidence.",
     description:
-      "Technology creates its greatest value when it empowers people, accelerates business, and delivers meaningful outcomes.",
-    image: "/images/thinking/01.jpg",
+      "We transform technology into a strategic advantage that drives innovation, efficiency, and measurable business growth.",
+    image: "/whyus.jpg",
   },
 
   {
     id: 2,
-    title: "Every solution begins",
-    highlight: "with understanding.",
+    title: "Understanding Comes Before Every Great Transformation with Deep Business Insight and a Clear Vision for the Future.",
     description:
-      "We invest time in understanding your business before designing the technology that supports it.",
+      "Every engagement begins with listening, learning, and aligning technology with your long-term business vision.",
     image: "/images.jpg",
   },
 
   {
     id: 3,
-    title: "Innovation without execution",
-    highlight: "has no value.",
+    title: "Innovation Delivers Its Greatest Value It Accelerates Transformation and  Sustainable Competitive Advantage..",
     description:
-      "Ideas become meaningful only when transformed into reliable digital experiences that people trust.",
-    image: "/images/thinking/03.jpg",
+      "We combine strategy, design, and engineering to create digital solutions that perform reliably at enterprise scale.",
+    image: "/industry.jpg",
   },
 
   {
     id: 4,
-    title: "Long-term partnerships",
-    highlight: "create lasting success.",
+    title: "Building Long-Term Partnerships That Inspire Innovation and Lasting Business Value Beyond Every Engagement.",
     description:
-      "Our work doesn't end at launch. We continue helping businesses evolve and grow.",
-    image: "/images/thinking/04.jpg",
+      "Working together over the long term enables continuous innovation, sustainable growth, and lasting business value.",
+    image: "/fill.avif",
   },
 ];
-
 export default function HowWeThink() {
 
 const sectionRef = useRef(null);
@@ -126,11 +121,11 @@ return(
   grid
   h-full
   w-full
-  max-w-[1700px]
+  max-w-[1900px]
   grid-cols-2
   items-center
-  gap-24
-  px-20
+  gap-8
+  px-14
   "
 >
     <div
@@ -144,9 +139,9 @@ return(
 "
 >
 
-  <div className="mb-12 flex items-center gap-5">
+  <div className="mb-8 flex items-center gap-7">
 
-    <div className="h-[2px] w-16 bg-blue-600"/>
+    <div className="h-[1px] w-16 bg-blue-600"/>
 
     <span
       className="
@@ -154,7 +149,7 @@ return(
       text-xl
       font-medium
       uppercase
-      tracking-[6px]
+      tracking-[4px]
       text-blue-800
       "
     >
@@ -202,6 +197,7 @@ return(
     <h2
       className="
       mt-6
+      
 
       font-['Montserrat']
 
@@ -283,7 +279,7 @@ duration:.8
       src={THINKING[active].image}
       alt={THINKING[active].title}
       className="
-      h-[500px]
+      h-[600px]
       w-full
       object-cover
      scale-105

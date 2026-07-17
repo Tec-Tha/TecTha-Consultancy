@@ -50,24 +50,71 @@ const ARTICLES = [
 
 const Insights = () => {
   return (
-    <section className="bg-[color:var(--color-bg-primary)] py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-black py-24 md:py-18">
+      <div className="mx-auto max-w-7xl px-6 md:px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeader
-            overline="Insights"
-            title={
-              <>
-                Perspective from inside
-                <br className="hidden sm:block" /> the engagements.
-              </>
-            }
-            subtitle="Notes on what's actually working in enterprise technology right now."
-            align="left"
-          />
+        <div className="mb-20 max-w-5xl">
 
+  {/* Overline */}
+
+  <div className="mb-8 flex items-center gap-5">
+
+    <div className="h-[2px] w-16 bg-white" />
+
+    <span
+      className="
+      font-['Montserrat']
+      text-xl
+      font-normal
+      uppercase
+      tracking-[6px]
+      text-white
+      "
+    >
+      INSIGHTS
+    </span>
+
+  </div>
+
+  {/* Heading */}
+
+  <h2
+    className="
+    font-['Montserrat']
+    text-5xl
+    font-normal
+    leading-[0.92]
+    tracking-tight
+    text-white
+    "
+  >
+    Perspectives
+   
+    That Shape
+  
+    Tomorrow.
+  </h2>
+
+  {/* Subtitle */}
+
+  <p
+    className="
+    mt-8
+    max-w-3xl
+    text-[22px]
+    leading-10
+    text-gray-500
+    "
+  >
+    Explore expert perspectives, emerging technologies, and practical
+    insights that help organizations navigate change and create lasting
+    business value.
+  </p>
+
+</div>
           <a
             href="/insights"
-            className="group hidden shrink-0 items-center gap-2 text-sm font-semibold text-[color:var(--color-text-secondary)] transition-colors duration-300 hover:text-[color:var(--color-brand-600)] md:inline-flex"
+            className="group hidden shrink-0 items-center gap-2 text-sm font-semibold text-white transition-colors duration-300 hover:text-[color:var(--color-brand-600)] md:inline-flex"
           >
             View all insights
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -94,24 +141,17 @@ const Insights = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center gap-3 text-xs font-medium text-[color:var(--color-text-muted)]">
-                  <span>{article.date}</span>
-                  <span aria-hidden="true">&middot;</span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" />
-                    {article.readTime}
-                  </span>
-                </div>
+                
 
-                <h3 className="mt-4 text-xl font-semibold leading-snug text-[color:var(--color-text-primary)] transition-colors duration-300 group-hover:text-[color:var(--color-brand-600)]">
+                <h3 className="mt-4 text-3xl font-medium leading-snug text-white transition-colors duration-300 group-hover:white">
                   {article.title}
                 </h3>
 
-                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]">
+                <p className="mt-3 flex-1 text-[14px] leading-relaxed text-white">
                   {article.excerpt}
                 </p>
 
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text-primary)]">
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-normal text-white">
                   Read the piece
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
