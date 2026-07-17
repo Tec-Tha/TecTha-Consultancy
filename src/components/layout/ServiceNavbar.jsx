@@ -9,6 +9,8 @@ const SERVICES = [
   { name: "UI/UX & Product Design", link: "/services/UIUXDesign" },
   { name: "Cybersecurity", link: "/services/BrandDemand" },
   { name: "Digital Transformation", link: "/services/DigitalAdvisory" },
+  {name: "HR Technology",link: "/services/hr-technology"},
+  {name: "Business & Digital Transformation",link: "/services/business-digital-transformation"},
 ];
 
 // Sub-tabs mapped per parent service link.
