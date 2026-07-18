@@ -50,6 +50,10 @@ import IndustrySolutions from "./pages/services/EnterpriseSolution/IndustrySolut
 import Healthcare from "./pages/industries/Healthcare";
 import Banking from "./pages/industries/Banking";
 import Manufacturing from "./pages/industries/Manufacturing";
+import Retail from "./pages/industries/Retail";
+import Education from "./pages/industries/Education";
+import Government from "./pages/industries/Government";
+import ProfessionalServices from "./pages/industries/ProfessionalServices";
 
 function App() {
   return (
@@ -102,6 +106,10 @@ function App() {
         <Route path="/industries/healthcare" element={<Healthcare />}/>
         <Route path="/industries/banking" element={<Banking />}/>
         <Route path="/industries/manufacturing" element={<Manufacturing />}/>
+        <Route path="/industries/:industry" element={<Retail />} />
+        <Route path="/industries/education" element={<Education />} />
+        <Route path="/industries/government" element={<Government />} />
+        <Route path="/industries/professional-services" element={<ProfessionalServices />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
