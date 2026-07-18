@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 const SERVICES = [
-  { name: "Artificial Intelligence & Data Analytics", link: "/services/EnterpriseSoftware" },
+  { name: "Artificial Intelligence", link: "/services/EnterpriseSoftware" },
   { name: "Enterprise Solutions", link: "/services/AIIntegration" },
   { name: "Cloud & Infrastructure", link: "/services/CloudInfrastructure" },
   { name: "UI/UX & Product Design", link: "/services/UIUXDesign" },
@@ -11,6 +11,9 @@ const SERVICES = [
   { name: "Digital Transformation", link: "/services/DigitalAdvisory" },
   {name: "HR Technology",link: "/services/hr-technology"},
   {name: "Business & Digital Transformation",link: "/services/business-digital-transformation"},
+  {name:"Managed Services",link:"/services/ManagedServices"},
+  { name: "Enterprise Applications", link: "/services/EnterpriseApplications" },
+  { name: "Data & Artificial Intelligence", link: "/services/DataAI" },
 ];
 
 // Sub-tabs mapped per parent service link.
@@ -55,6 +58,30 @@ const SUB_SECTIONS = {
     { label: "Finance Solutions", link: "/services/EnterpriseSolution/finance-solutions" },
     { label: "Industry Solutions", link: "/services/EnterpriseSolution/industry-solutions" },
   ],
+  "/services/ManagedServices": [
+    { label: "Managed Applications", link: "/services/ManagedServices/managed-applications" },
+    { label: "Managed Cloud", link: "/services/ManagedServices/managed-cloudd" },
+    { label: "Managed AI", link: "/services/ManagedServices/managed-ai" },
+    { label: "Managed Infrastructure", link: "/services/ManagedServices/managed-infrastructure" },
+    { label: "Technology Operations", link: "/services/ManagedServices/technology-operations" },
+    { label: "Enterprise Support", link: "/services/ManagedServices/enterprise-support" },
+  ],
+  "/services/EnterpriseApplications": [
+    { label: "Enterprise Software", link: "/services/EnterpriseApplications/enterprise-softwaree" },
+    { label: "Custom Applications", link: "/services/EnterpriseApplications/custom-applications" },
+    { label: "Business Applications", link: "/services/EnterpriseApplications/business-applications" },
+    { label: "Systems Integration", link: "/services/EnterpriseApplications/systems-integration" },
+    { label: "SaaS Platforms", link: "/services/EnterpriseApplications/saas-platforms" },
+    { label: "Application Modernization", link: "/services/EnterpriseApplications/application-modernization" },
+  ],
+  "/services/DataAI": [
+    { label: "Data Engineering", link: "/services/DataAI/data-engineering" },
+    { label: "Business Intelligence", link: "/services/DataAI/business-intelligence" },
+    { label: "AI Analytics", link: "/services/DataAI/ai-analytics" },
+    { label: "Executive Intelligence", link: "/services/DataAI/executive-intelligence" },
+    { label: "Predictive Analytics", link: "/services/DataAI/predictive-analytics" },
+    { label: "Data Governance", link: "/services/DataAI/data-governance" },
+  ],
 };
 
 // Reverse lookup: given ANY current path (parent or sub-page), find which
@@ -79,9 +106,12 @@ const ServiceNavbar = () => {
     <div className="fixed top-20 left-0 w-full h-14 bg-black/90 backdrop-blur-md border-b border-white/10 z-40 shadow-lg text-white">
       <div className="mx-auto flex h-full max-w-[1650px] items-center px-6 md:px-10">
         {/* Left: current service label (plain, no dropdown) */}
-        <span className="whitespace-nowrap text-xs md:text-sm font-bold tracking-wide text-white uppercase font-['Montserrat']">
-          {currentService.name}
-        </span>
+        <Link
+  to={currentService.link}
+  className="whitespace-nowrap text-xs md:text-sm font-bold tracking-wide uppercase text-white hover:text-[#818CF8] transition-colors duration-200"
+>
+  {currentService.name}
+</Link>
 
         {subTabs.length > 0 && (
           <>
