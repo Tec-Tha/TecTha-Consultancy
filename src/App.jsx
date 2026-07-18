@@ -5,8 +5,6 @@ import ScrollProgress from "./components/layout/ScrollProgress";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Logistics from "./pages/industries/Logistics";
-import IndustryLayout from "./pages/industries/IndustryLayout";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import EnterpriseSoftware from "./pages/services/EnterpriseSoftware";
@@ -68,8 +66,6 @@ import AIAnalytics from "./pages/services/DataAI/AIAnalytics";
 import ExecutiveIntelligence from "./pages/services/DataAI/ExecutiveIntelligence";
 import PredictiveAnalytics from "./pages/services/DataAI/PredictiveAnalytics";
 import DataGovernance from "./pages/services/DataAI/DataGovernance";
-
-
 function App() {
   return (
     <>
