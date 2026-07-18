@@ -356,6 +356,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
+
             <p className="mt-8 text-lg leading-9 text-gray-400">
 
               Logistics leaders are embracing AI, automation and connected
