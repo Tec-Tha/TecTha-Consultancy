@@ -1,141 +1,319 @@
-import { motion } from "framer-motion";
-import { Timer, GitBranch, Users2, TrendingUp } from "lucide-react";
-import SectionHeader from "../shared/SectionHeader";
 
-/**
- * WhyUs — Home Section 7
- * Alternating left/right feature rows, each paired with an abstract
- * floating illustration rather than a screenshot or stock photo. Rows
- * flip direction to keep a long section from feeling like a repeated
- * template block.
- */
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, AnimatePresence } from "framer-motion";
+gsap.registerPlugin(ScrollTrigger);
 
-const FEATURES = [
+const THINKING = [
   {
-    icon: Timer,
-    eyebrow: "Delivery speed",
-    title: "Weeks to first working system, not quarters to a proposal",
+    id: 1,
+    title: "Technology Should Empower Businesses Enable Organizations to Innovate and Thrive with Confidence.",
     description:
-      "We scope in two-week increments with something demonstrable at the end of each one — no six-month discovery phase before you see a line of working code.",
-    gradient: "from-[#2563EB] to-[#4F46E5]",
+      "We transform technology into a strategic advantage that drives innovation, efficiency, and measurable business growth.",
+    image: "/whyus.jpg",
   },
+
   {
-    icon: GitBranch,
-    eyebrow: "Integration philosophy",
-    title: "Built to sit inside your stack, not replace it wholesale",
+    id: 2,
+    title: "Understanding Comes Before Every Great Transformation with Deep Business Insight and a Clear Vision for the Future.",
     description:
-      "Recommendations are constrained by what you already run in production. Rip-and-replace is a last resort, not a default posture.",
-    gradient: "from-[#7C3AED] to-[#6366F1]",
+      "Every engagement begins with listening, learning, and aligning technology with your long-term business vision.",
+    image: "/wethink1.jpg",
   },
+
   {
-    icon: Users2,
-    eyebrow: "Team model",
-    title: "The engineers who scope the work are the ones who build it",
+    id: 3,
+    title: "Innovation Delivers Its Greatest Value It Accelerates Transformation and  Sustainable Competitive Advantage..",
     description:
-      "No handoff between a sales team that scopes and a delivery team that inherits the scope. Continuity from kickoff to handover.",
-    gradient: "from-[#3B82F6] to-[#2563EB]",
+      "We combine strategy, design, and engineering to create digital solutions that perform reliably at enterprise scale.",
+    image: "/industry.jpg",
   },
+
   {
-    icon: TrendingUp,
-    eyebrow: "Long-term fit",
-    title: "Measured on what happens after we leave",
+    id: 4,
+    title: "Building Long-Term Partnerships That Inspire Innovation and Lasting Business Value Beyond Every Engagement.",
     description:
-      "Engagements are scoped with an exit in mind — internal teams are trained to own and extend what we build, not stay dependent on us.",
-    gradient: "from-[#6D28D9] to-[#7C3AED]",
+      "Working together over the long term enables continuous innovation, sustainable growth, and lasting business value.",
+    image: "/fill.avif",
   },
 ];
+export default function HowWeThink() {
 
-const fadeSide = (fromRight) => ({
-  hidden: { opacity: 0, x: fromRight ? 32 : -32 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
-  },
-});
+const sectionRef = useRef(null);
 
-const FloatingMark = ({ gradient, reversed }) => (
-  <div className="relative flex h-full min-h-[280px] items-center justify-center">
-    <motion.div
-      animate={{ y: [0, -14, 0] }}
-      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      className={`absolute h-48 w-48 rounded-[2.5rem] bg-gradient-to-br ${gradient} opacity-90 ${
-        reversed ? "rotate-[8deg]" : "-rotate-[8deg]"
-      }`}
+const [active,setActive] = useState(0);
+
+useEffect(() => {
+
+  const section = sectionRef.current;
+
+  const tl = gsap.timeline({
+
+    scrollTrigger:{
+
+      trigger:section,
+
+      start:"top top",
+
+      end:"bottom bottom",
+
+      scrub:1,
+
+      invalidateOnRefresh:true,
+
+      onUpdate:(self)=>{
+
+        const progress=self.progress;
+
+        const total=THINKING.length;
+
+        const current=Math.min(
+          total-1,
+          Math.floor(progress*total)
+        );
+
+        setActive(current);
+
+      }
+
+    }
+
+  });
+
+  return()=>{
+
+    tl.kill();
+
+    ScrollTrigger.getAll().forEach(trigger=>trigger.kill());
+
+  }
+
+},[]);
+
+return(
+
+<section
+  ref={sectionRef}
+  className="
+  relative
+  h-[600vh]
+  bg-white
+  "
+>
+
+  {/* Sticky Container */}
+
+  <div
+    className="
+    sticky
+    top-0
+    flex
+    h-screen
+    items-center
+    overflow-hidden
+    "
+  >
+
+  <div
+  className="
+  mx-auto
+  grid
+  h-full
+  w-full
+  max-w-[1900px]
+  grid-cols-2
+  items-center
+  gap-8
+  px-14
+  "
+>
+    <div
+  className="
+  sticky
+  top-0
+  flex
+  h-screen
+  flex-col
+  justify-center
+"
+>
+
+  <div className="mb-8 flex items-center gap-7">
+
+    <div className="h-[1px] w-16 bg-blue-600"/>
+
+    <span
+      className="
+      font-['Montserrat']
+      text-xl
+      font-medium
+      uppercase
+      tracking-[4px]
+      text-blue-800
+      "
+    >
+      HOW WE THINK
+    </span>
+
+  </div>
+<AnimatePresence mode="wait">
+  <motion.div
+
+    key={active}
+
+    initial={{
+      opacity:0,
+      y:50
+    }}
+
+    animate={{
+      opacity:1,
+      y:0
+    }}
+    exit={{
+  opacity:0,
+  y:-40
+}}
+
+    transition={{
+      duration:.7,
+      ease:[0.22,1,0.36,1]
+    }}
+
+  >
+
+    <span
+      className="
+      text-[90px]
+      font-bold
+      leading-none
+      text-gray-400
+      "
+    >
+      0{THINKING[active].id}
+    </span>
+
+    <h2
+      className="
+      mt-6
+      
+
+      font-['Montserrat']
+
+      text-[60px]
+
+      font-medium
+
+      leading-[1.1]
+
+      tracking-tight
+
+      text-black
+      "
+    >
+
+      {THINKING[active].title}
+
+      <br/>
+
+      <span className="text-black">
+
+        {THINKING[active].highlight}
+
+      </span>
+
+    </h2>
+
+    <p
+      className="
+      mt-8
+
+      max-w-xl
+
+      text-xl
+
+      leading-9
+
+      text-gray-500
+      "
+    >
+
+      {THINKING[active].description}
+
+    </p>
+
+ </motion.div>
+ </AnimatePresence>
+
+</div>
+
+{/* RIGHT */}
+
+<div>
+
+  <div className="group relative overflow-hidden rounded-[10px]">
+   <AnimatePresence mode="wait">
+
+<motion.img
+key={active}
+
+initial={{
+opacity:0,
+scale:1.08
+}}
+
+animate={{
+opacity:1,
+scale:1
+}}
+
+exit={{
+opacity:0,
+scale:1.08
+}}
+
+transition={{
+duration:.8
+}}
+      src={THINKING[active].image}
+      alt={THINKING[active].title}
+      className="
+      h-[600px]
+      w-full
+      object-cover
+     scale-105
+transition-transform
+duration-[1800ms]
+ease-out
+group-hover:scale-100
+      "
     />
-    <motion.div
-      animate={{ y: [0, 12, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-      className="absolute h-32 w-32 -translate-x-14 translate-y-16 rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] backdrop-blur-sm"
+    </AnimatePresence>
+
+    <div
+      className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-black/30
+      via-transparent
+      to-transparent
+      "
     />
   </div>
-);
 
-const WhyUs = () => {
-  return (
-    <section className="bg-[color:var(--color-bg-secondary)] py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6">
-        <SectionHeader
-          overline="Why Choose Us"
-          title={
-            <>
-              Four things clients mention
-              <br className="hidden sm:block" /> before we ask.
-            </>
-          }
-          subtitle="Not a values statement — patterns we hear back from clients unprompted."
-          align="left"
-        />
+</div>
 
-        <div className="mt-16 space-y-24 md:space-y-28">
-          {FEATURES.map((feature, i) => {
-            const reversed = i % 2 === 1;
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className={`grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16 ${
-                  reversed ? "md:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <motion.div
-                  variants={fadeSide(reversed)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-120px" }}
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] dark:bg-white/5">
-                    <Icon className="h-5 w-5 text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]" />
-                  </div>
-
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]">
-                    {feature.eyebrow}
-                  </p>
-
-                  <h3 className="mt-3 max-w-md text-2xl font-semibold leading-snug text-[color:var(--color-text-primary)] md:text-3xl">
-                    {feature.title}
-                  </h3>
-
-                  <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]">
-                    {feature.description}
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  variants={fadeSide(!reversed)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-120px" }}
-                >
-                  <FloatingMark gradient={feature.gradient} reversed={reversed} />
-                </motion.div>
-              </div>
-            );
-          })}
-        </div>
       </div>
-    </section>
-  );
-};
 
-export default WhyUs;
+    </div>
+
+  
+
+</section>
+
+
+)
+
+}

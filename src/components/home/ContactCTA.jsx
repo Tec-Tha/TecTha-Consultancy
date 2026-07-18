@@ -22,19 +22,10 @@ const ContactCTA = () => {
   return (
     <section
   ref={sectionRef}
-  className="relative overflow-hidden bg-black py-28 md:py-36"
+  className="relative overflow-hidden bg-black/95 py-28 md:py-36"
 >
  
-      {/* Faint grid texture for depth */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-        aria-hidden="true"
-      />
+  
  
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
         <motion.span

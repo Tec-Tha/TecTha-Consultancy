@@ -75,7 +75,7 @@ const nextRef = useRef(null);
 
 return(
 
-<section className="bg-white py-24">
+<section className="bg-white py-20">
 
   <div className="mx-auto max-w-[1450px] ">
 
@@ -217,7 +217,7 @@ return(
   >
     {/* Image */}
 
-    <div className="overflow-hidden rounded-3xl">
+    <div className="overflow-hidden rounded-xl">
 
       <img
         src={item.image}

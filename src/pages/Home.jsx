@@ -1,14 +1,14 @@
 import Hero from "../components/home/Hero";
 import LogoSlider from "../components/shared/LogoSlider";
 import Overview from "../components/home/Overview";
-import IndustriesScroll from "../components/home/IndustriesScroll";
+
 import WhyUs from "../components/home/WhyUs";
 import Innovation from "../components/home/Innovation";
-import Testimonials from "../components/home/Testimonials";
+import CustomerStories from "../components/home/customerstories";
 import Insights from "../components/home/Insights";
 import ContactCTA from "../components/home/ContactCTA";
 import PageWrapper from "../components/layout/PageWrapper";
-
+import MeetUsHere from "../components/home/MeetUsHere";
 /**
  * Home — composes the full section sequence from the architecture
  * blueprint. Uses fullBleed on PageWrapper since Hero runs edge-to-edge
@@ -25,11 +25,13 @@ const Home = () => {
       <Hero />
       <LogoSlider />
       <Overview />
-      <WhyUs />
-      <IndustriesScroll />
-      <Innovation />
-      <Testimonials />
       <Insights />
+      <WhyUs />
+      <MeetUsHere />
+     <Innovation />
+       
+    <CustomerStories />
+     
       <ContactCTA />
     </PageWrapper>
   );
