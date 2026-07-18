@@ -37,7 +37,7 @@ const SERVICES = [
     title: "Services",
     items: [
       {
-        name: "Artificial Intelligence & Data Analytics",
+        name: "Artificial Intelligence",
         link: "/services/EnterpriseSoftware",
       },
       {
@@ -67,7 +67,19 @@ const SERVICES = [
       {
         name:"Business & Digital Transformation",
         link: "/services/business-digital-transformation",
-      }
+      },
+      {
+        name:"Managed Services",
+        link:"/services/ManagedServices",
+      },
+      {
+        name: "Enterprise Applications",
+        link: "/services/EnterpriseApplications",
+      },
+      {
+        name: "Data & Artificial Intelligence",
+        link: "/services/DataAI",
+      },
     ],
   },
 
@@ -450,7 +462,7 @@ const Navbar = () => {
             to="/contact"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
           >
-            Contact
+            Contact us
           </Link>
         </div>
 

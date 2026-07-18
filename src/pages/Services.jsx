@@ -8,7 +8,7 @@ import ContactCTA from "../components/home/ContactCTA";
 
 const SERVICES = [
   {
-  id: "enterprise-software",
+  id: "ai-integration",
   link: "/services/EnterpriseSoftware",
   image: "/AI Integration & Agentics.jpg",
   title: "Artificial Intelligence & Data Analytics",
@@ -16,7 +16,7 @@ const SERVICES = [
   tags: ["Artificial Intelligence", "Machine Learning", "Data Analytics", "Business Intelligence"],
 },
 {
-  id: "ai-integration",
+  id: "enterprise-software",
   link: "/services/AIIntegration",
   image: "/AI Integration & Agentics.jpg",
   title: "Enterprise Solutions",
@@ -172,7 +172,7 @@ const scaleY = useSpring(scrollYProgress, {
               >
                 <Link
                   to={service.link}
-                  className="group relative block h-[650px] w-full overflow-hidden rounded-3xl transition-[transform,filter] duration-700 ease-[cubic-bezier(.22,1,.36,1)] will-change-transform group-hover/cards:scale-90 hover:!scale-105 hover:z-20"
+                  className="group relative block h-[650px] w-full overflow-hidden transition-[transform,filter] duration-700 ease-[cubic-bezier(.22,1,.36,1)] will-change-transform group-hover/cards:scale-90 hover:!scale-105 hover:z-20"
                 >
                   {/* Image */}
                   <img
