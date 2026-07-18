@@ -8,52 +8,52 @@ import ContactCTA from "../components/home/ContactCTA";
 
 const SERVICES = [
   {
-    id: "enterprise-software",
-    link: "/services/EnterpriseSoftware",
-    image: "/enterprise-software.jpg",
-    title: "Enterprise Software",
-    short: "Custom enterprise applications built for scale and security.",
-    tags: ["ERP", "CRM", "Automation", "SaaS"],
-  },
-  {
-    id: "ai-integration",
-    link: "/services/AIIntegration",
-    image: "/AI Integration & Agentics.jpg",
-    title: "AI Integration & Agentics",
-    short: "Enterprise AI solutions that automate complex business workflows.",
-    tags: ["LLM", "AI Agents", "Automation"],
-  },
-  {
-    id: "cloud-infrastructure",
-    link: "/services/CloudInfrastructure",
-    image: "/cloud & Infrastructure.jpg",
-    title: "Cloud & Infrastructure",
-    short: "Modern cloud infrastructure with secure deployment pipelines.",
-    tags: ["AWS", "GCP", "Kubernetes", "DevOps"],
-  },
-  {
-    id: "uiux-design",
-    link: "/services/UIUXDesign",
-    image: "/UI UX.webp",
-    title: "UI/UX & Product Design",
-    short: "Human-centered product experiences for web and mobile.",
-    tags: ["UX", "UI", "Research", "Prototype"],
-  },
-  {
-    id: "brand-demand",
-    link: "/services/BrandDemand",
-    image: "/Brand & Demand Strategy.webp",
-    title: "Brand & Demand Strategy",
-    short: "Data-driven marketing strategies that generate measurable growth.",
-    tags: ["Brand", "Marketing", "Leads", "Analytics"],
-  },
+  id: "enterprise-software",
+  link: "/services/EnterpriseSoftware",
+  image: "/AI Integration & Agentics.jpg",
+  title: "Artificial Intelligence & Data Analytics",
+  short: "Transform business data into actionable insights with AI-driven analytics and intelligent automation.",
+  tags: ["Artificial Intelligence", "Machine Learning", "Data Analytics", "Business Intelligence"],
+},
+{
+  id: "ai-integration",
+  link: "/services/AIIntegration",
+  image: "/AI Integration & Agentics.jpg",
+  title: "Enterprise Solutions",
+  short: "End-to-end enterprise solutions that streamline operations and accelerate digital transformation.",
+  tags: ["ERP", "CRM", "Business Automation", "Enterprise Solutions"],
+},
+{
+  id: "cloud-infrastructure",
+  link: "/services/CloudInfrastructure",
+  image: "/cloud & Infrastructure.jpg",
+  title: "Cloud & Infrastructure",
+  short: "Scalable cloud platforms and secure infrastructure designed for performance and reliability.",
+  tags: ["AWS", "Azure", "Cloud Migration", "Infrastructure"],
+},
+{
+  id: "uiux-design",
+  link: "/services/UIUXDesign",
+  image: "/UI UX.webp",
+  title: "UI/UX & Product Design",
+  short: "Craft intuitive digital experiences with user-focused design and modern product strategies.",
+  tags: ["UI Design", "UX Research", "Wireframing", "Prototyping"],
+},
+{
+  id: "brand-demand",
+  link: "/services/BrandDemand",
+  image: "/Brand & Demand Strategy.webp",
+  title: "Cybersecurity",
+  short: "Protect business-critical systems with advanced cybersecurity and proactive threat management.",
+  tags: ["Network Security", "Cloud Security", "Threat Detection", "Cyber Resilience"],
+},
   {
     id: "digital-advisory",
     link: "/services/DigitalAdvisory",
     image: "/Digital Advisory.webp",
-    title: "Digital Advisory",
-    short: "Strategic consulting for scalable digital transformation.",
-    tags: ["Consulting", "Cloud", "Security", "Strategy"],
+    title: "Digital Transformation",
+    short: "Empowering organizations with innovative digital strategies, process optimization, and technology modernization.",
+    tags: ["Digital Strategy", "Business Transformation", "Process Automation", "Innovation"],
   },
 ];
 
@@ -292,3 +292,4 @@ const scaleY = useSpring(scrollYProgress, {
 };
 
 export default Services;
+

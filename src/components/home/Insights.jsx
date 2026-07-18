@@ -22,29 +22,28 @@ const ARTICLES = [
   {
     id: "insight-01",
     category: "AI Transformation",
-    title: "Why most enterprise AI pilots never reach production",
+    title: "Why Most Enterprise AI Initiatives Never Reach Production",
     excerpt:
-      "The gap between a working demo and a production system is almost never the model — it's everything wired around it.",
-    readTime: "7 min read",
-    date: "Jun 2026",
+      "The gap between experimentation and enterprise deployment is rarely the model itself. Success depends on governance, integration, and operational readiness.",
+    image: "/insights1.jpg",
   },
+
   {
     id: "insight-02",
-    category: "Cloud & Infrastructure",
-    title: "The real cost of deferring a platform migration",
+    category: "Cloud Strategy",
+    title: "Modern Cloud Platforms Are Built for Business, Not Infrastructure",
     excerpt:
-      "Technical debt compounds quietly until a single incident makes the bill due all at once. A framework for pricing it early.",
-    readTime: "5 min read",
-    date: "May 2026",
+      "Organizations are moving beyond migration to create cloud-native foundations that improve resilience, scalability, and long-term innovation.",
+    image: "/insights2.jpg",
   },
+
   {
     id: "insight-03",
-    category: "Data Strategy",
-    title: "Governance as an enabler, not a checkpoint",
+    category: "Data & Intelligence",
+    title: "Why Data Becomes Valuable Only When It Drives Better Decisions",
     excerpt:
-      "Teams that treat data governance as a gate slow themselves down twice. Building it into the pipeline instead.",
-    readTime: "6 min read",
-    date: "May 2026",
+      "Modern enterprises succeed when trusted data becomes accessible, actionable, and embedded into every business decision.",
+    image: "/insights3.jpg",
   },
 ];
 
@@ -133,14 +132,46 @@ const Insights = () => {
               className="group flex flex-col"
             >
               <a href={`/insights/${article.id}`} className="flex h-full flex-col">
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-secondary)]">
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#2563EB]/10 via-transparent to-[#7C3AED]/10 transition-transform duration-500 group-hover:scale-[1.03]">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-muted)]">
-                      {article.category}
-                    </span>
-                  </div>
-                </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
 
+  <img
+    src={article.image}
+    alt={article.title}
+    className="
+      h-full
+      w-full
+      object-cover
+      brightness-75
+      scale-105
+      transition-all
+      duration-700
+      ease-out
+      group-hover:scale-110
+      group-hover:brightness-100
+    "
+  />
+
+  {/* Dark Overlay */}
+
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-black/50
+      via-black/20
+      to-transparent
+    "
+  />
+
+  {/* Category Badge */}
+
+  <div className="absolute left-6 top-6">
+
+
+  </div>
+
+</div>
                 
 
                 <h3 className="mt-4 text-3xl font-medium leading-snug text-white transition-colors duration-300 group-hover:white">

@@ -8,7 +8,7 @@ import CustomerStories from "../components/home/customerstories";
 import Insights from "../components/home/Insights";
 import ContactCTA from "../components/home/ContactCTA";
 import PageWrapper from "../components/layout/PageWrapper";
-
+import MeetUsHere from "../components/home/MeetUsHere";
 /**
  * Home — composes the full section sequence from the architecture
  * blueprint. Uses fullBleed on PageWrapper since Hero runs edge-to-edge
@@ -27,7 +27,7 @@ const Home = () => {
       <Overview />
       <Insights />
       <WhyUs />
-       
+      <MeetUsHere />
      <Innovation />
        
     <CustomerStories />

@@ -1,215 +1,302 @@
 import { motion } from "framer-motion";
 import {
-  Landmark,
-  HeartPulse,
-  ShoppingBag,
-  Factory,
-  Zap,
-  Building2,
-  ArrowUpRight,
-  Check,
+  ArrowRight,
+  ChevronDown,
 } from "lucide-react";
-import PageWrapper from "../components/layout/PageWrapper";
-import SectionHeader from "../components/shared/SectionHeader";
-import ContactCTA from "../components/home/ContactCTA";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
-/**
- * Industries — Vertical cards · Case study previews
- * The Home page's IndustriesScroll is a horizontal teaser; this page is
- * the destination it points to — full depth per vertical, plus a proof
- * point tied to each one.
- */
+import "swiper/css";
+import "swiper/css/navigation";
 
-const INDUSTRIES = [
+const industries = [
   {
-    id: "financial-services",
-    icon: Landmark,
-    name: "Financial Services",
-    description:
-      "Core modernization, risk platforms, and compliance-grade data architecture for banks and asset managers operating under continuous regulatory scrutiny.",
-    capabilities: ["Core banking migration", "Risk & compliance platforms", "Real-time fraud detection"],
-    caseStudy: { client: "Ferro Capital Partners", result: "6x faster risk modeling" },
+    title: "Healthcare",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
+    desc: "Building intelligent digital healthcare ecosystems powered by AI.",
   },
   {
-    id: "healthcare",
-    icon: HeartPulse,
-    name: "Healthcare",
-    description:
-      "Challenge: HIPAA data routing. Solution: Secure HL7 APIs & encrypted data schemas.",
-    capabilities: ["Clinical data interoperability", "Patient record unification", "Regulatory reporting automation"],
-    caseStudy: { client: "Aurellia Health Network", result: "2.1M patient records unified" },
+    title: "Manufacturing",
+    image:
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&q=80",
+    desc: "Accelerating Industry 4.0 with automation and predictive analytics.",
   },
   {
-    id: "retail",
-    icon: ShoppingBag,
-    name: "Retail & Consumer",
-    description:
-      "Unified commerce, inventory, and personalization engines engineered to hold up during peak demand rather than degrade under it.",
-    capabilities: ["Real-time inventory sync", "Personalization engines", "Checkout & payments resilience"],
-    caseStudy: { client: "Solace Retail Group", result: "+22% conversion lift" },
+    title: "Retail",
+    image:
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=1200&q=80",
+    desc: "Delivering seamless omnichannel retail experiences.",
   },
   {
-    id: "manufacturing",
-    icon: Factory,
-    name: "Manufacturing",
-    description:
-      "Connected plant-floor data and predictive maintenance layered onto existing industrial systems without a rip-and-replace of working hardware.",
-    capabilities: ["Plant-floor data integration", "Predictive maintenance models", "Supply chain visibility"],
-    caseStudy: { client: "Northbridge Logistics", result: "38% faster fulfillment cycle" },
+    title: "Finance",
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
+    desc: "Secure banking platforms and AI-driven financial intelligence.",
   },
   {
-    id: "energy",
-    icon: Zap,
-    name: "Energy & Utilities",
-    description:
-      "Grid telemetry, load forecasting, and asset management platforms built for infrastructure with multi-decade operational lifecycles.",
-    capabilities: ["Grid telemetry platforms", "Demand forecasting", "Asset lifecycle management"],
-    caseStudy: { client: "Meridian Grid Cooperative", result: "31% reduction in unplanned outages" },
+    title: "Education",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+    desc: "Empowering digital campuses and personalized learning.",
   },
   {
-    id: "public-sector",
-    icon: Building2,
-    name: "Public Sector",
-    description:
-      "Citizen-facing digital services and legacy system modernization delivered under strict procurement, security, and accessibility standards.",
-    capabilities: ["Citizen service portals", "Legacy system modernization", "Accessibility & compliance audits"],
-    caseStudy: { client: "State Department of Revenue", result: "60% drop in support call volume" },
+    title: "Logistics",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+    desc: "Transforming global supply chains with intelligent logistics.",
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
-  }),
-};
-
-const Industries = () => {
+export default function Industries() {
   return (
-    <PageWrapper
-      title="Industries"
-      description="Deep, regulated-industry experience across financial services, healthcare, retail, manufacturing, energy, and public sector."
-    >
-      {/* Intro */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <motion.span
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0}
-            className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]"
-          >
-            Industries
-          </motion.span>
+    <>
+      {/* HERO */}
 
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0.08}
-            className="mt-5 text-[clamp(2.25rem,4.5vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--color-text-primary)]"
-          >
-            Sectors We Transform
-          </motion.h1>
+      <section className="relative h-screen overflow-hidden">
 
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={0.16}
-            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[color:var(--color-text-secondary)]"
-          >
-            We deploy custom technological solutions tailored to solve specific regulatory and logistical challenges.
-          </motion.p>
-        </div>
-      </section>
+        <img
+          src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=2200&q=80"
+          className="absolute inset-0 h-full w-full object-cover"
+          alt=""
+        />
 
-      {/* Vertical cards */}
-      <section className="pb-20 md:pb-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="space-y-6">
-            {INDUSTRIES.map((industry, i) => {
-              const Icon = industry.icon;
-              const reversed = i % 2 === 1;
-              return (
-                <motion.article
-                  key={industry.id}
-                  id={industry.id}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={0}
-                  className="scroll-mt-28 rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-bg-card)] p-8 md:p-10"
-                >
-                  <div
-                    className={`grid grid-cols-1 gap-8 md:grid-cols-[1fr_1.3fr] md:gap-12 ${
-                      reversed ? "md:[&>*:first-child]:order-2" : ""
-                    }`}
-                  >
-                    <div>
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--color-brand-50)] dark:bg-white/5">
-                        <Icon className="h-5.5 w-5.5 text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]" />
-                      </div>
-                      <h2 className="mt-6 text-2xl font-semibold text-[color:var(--color-text-primary)]">
-                        {industry.name}
-                      </h2>
-                      <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-text-secondary)]">
-                        {industry.description}
-                      </p>
+        <div className="absolute inset-0 bg-black/60"></div>
 
-                      <ul className="mt-6 space-y-2.5">
-                        {industry.capabilities.map((capability) => (
-                          <li
-                            key={capability}
-                            className="flex items-start gap-2.5 text-sm text-[color:var(--color-text-secondary)]"
-                          >
-                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--color-brand-600)] dark:text-[color:var(--color-brand-400)]" />
-                            {capability}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
 
-                    {/* Case study preview */}
-                    <div className="flex flex-col justify-between rounded-2xl bg-[color:var(--color-bg-secondary)] p-7">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-muted)]">
-                          Case study
-                        </p>
-                        <p className="mt-4 text-3xl font-bold tracking-tight text-[color:var(--color-text-primary)]">
-                          {industry.caseStudy.result}
-                        </p>
-                        <p className="mt-4 text-sm text-[color:var(--color-text-secondary)]">
-                          {industry.caseStudy.client}
-                        </p>
-                      </div>
+        <div className="relative z-20 flex h-full items-center">
 
-                      <a
-                        href="/contact"
-                        className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text-primary)]"
-                      >
-                        Discuss a similar problem
-                        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </a>
-                    </div>
-                  </div>
-                </motion.article>
-              );
-            })}
+          <div className="mx-auto max-w-7xl px-8">
+
+            <motion.p
+              initial={{ opacity:0,y:20 }}
+              whileInView={{ opacity:1,y:0 }}
+              transition={{ duration:.6 }}
+              className="mb-5 uppercase tracking-[0.4em] text-blue-400"
+            >
+              
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity:0,y:30 }}
+              whileInView={{ opacity:1,y:0 }}
+              transition={{ duration:.7 }}
+              className="max-w-4xl text-7xl font-bold leading-tight text-white"
+            >
+              Engineering
+              <br />
+              Industry
+              <br />
+              Transformation.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity:0,y:30 }}
+              whileInView={{ opacity:1,y:0 }}
+              transition={{ delay:.2 }}
+              className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+            >
+              We help organizations modernize operations,
+              unlock intelligent automation,
+              and create scalable digital ecosystems
+              that drive measurable business growth.
+            </motion.p>
+
           </div>
+
         </div>
+
+        <motion.div
+          animate={{ y:[0,10,0] }}
+          transition={{
+            repeat:Infinity,
+            duration:2
+          }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
+        >
+          <ChevronDown size={38}/>
+        </motion.div>
+
       </section>
+      {/* ================= INDUSTRIES GRID ================= */}
 
-      <ContactCTA />
-    </PageWrapper>
-  );
-};
+<section className="bg-[#05070B] py-32">
 
-export default Industries;
+  <div className="mx-auto max-w-7xl px-8">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: .8 }}
+     className="mb-24"
+    >
+
+      <h2 className="max-w-4xl text-6xl font-bold leading-tight text-white">
+
+        Solutions Engineered
+For     Every Industry.
+
+      </h2>
+
+      <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-400">
+
+        From healthcare and finance to manufacturing and logistics, we engineer secure, scalable digital platforms that empower organizations to innovate, transform and grow.
+
+      </p>
+
+    </motion.div>
+
+
+
+    <Swiper
+  modules={[Navigation]}
+  navigation
+  spaceBetween={30}
+  slidesPerView={4.2}
+  speed={800}
+  breakpoints={{
+    0: {
+      slidesPerView: 1.2,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+    1440: {
+      slidesPerView: 4,
+    },
+  }}
+>
+  {industries.map((industry, index) => (
+    <SwiperSlide key={industry.title}>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 50,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          delay: index * 0.12,
+          duration: 0.7,
+        }}
+        className="group overflow-hidden bg-[#111827] cursor-pointer"
+      >
+        {/* IMAGE */}
+
+        <div className="relative h-[560px] overflow-hidden">
+
+          <img
+            src={industry.image}
+            alt={industry.title}
+            className="h-full w-full object-cover transition-all duration-1000 ease-out group-hover:scale-125"
+          />
+
+          {/* Overlay */}
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+
+          {/* Bottom Content */}
+
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+
+            <h3 className="text-3xl font-bold text-white">
+
+              {industry.title}
+
+            </h3>
+
+            <p className="mt-4 leading-8 text-gray-300">
+
+              {industry.desc}
+
+            </p>
+
+            <button className="mt-8 flex items-center gap-3 text-blue-400 transition-all duration-300 group-hover:gap-5">
+
+              Explore Solutions
+
+              <ArrowRight size={18} />
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </motion.div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+  </div>
+
+</section>
+
+{/* ================= CTA SECTION ================= */}
+
+<section className="relative overflow-hidden bg-[#030712] py-40">
+
+  {/* Background */}
+
+  <img
+    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2200&q=80"
+    alt=""
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/75" />
+
+  <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#020617]/70 to-[#020617]/90" />
+
+  <div className="relative z-20 mx-auto max-w-7xl px-8">
+
+    <motion.div
+      initial={{ opacity:0,y:50 }}
+      whileInView={{ opacity:1,y:0 }}
+      viewport={{ once:true }}
+      transition={{ duration:.8 }}
+      className="text-center"
+    >
+
+      <p className="mb-5 uppercase tracking-[0.45em] text-blue-400">
+
+        LET'S BUILD THE FUTURE
+
+      </p>
+
+      <h2 className="mx-auto max-w-5xl text-[clamp(3rem,6vw,5.8rem)] font-black leading-tight text-white">
+
+        Ready To Transform
+        <br />
+        Your Industry?
+
+      </h2>
+
+      <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+
+        Partner with Tec Tha to modernize operations,
+        accelerate innovation,
+        and build secure, scalable enterprise platforms
+        powered by cloud, AI and next-generation technology.
+
+      </p>
+
+    </motion.div>
+
+  </div>
+
+</section>
+
+</>
+);
+}

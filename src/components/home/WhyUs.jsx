@@ -19,7 +19,7 @@ const THINKING = [
     title: "Understanding Comes Before Every Great Transformation with Deep Business Insight and a Clear Vision for the Future.",
     description:
       "Every engagement begins with listening, learning, and aligning technology with your long-term business vision.",
-    image: "/images.jpg",
+    image: "/wethink1.jpg",
   },
 
   {

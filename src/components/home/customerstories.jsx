@@ -14,7 +14,7 @@ const STORIES = [
     description:
       "Helping financial institutions modernize customer experiences through secure, cloud-native platforms and intelligent automation.",
     image: "/customer2.jpg",
-    link: "/customer-stories/digital-banking",
+  
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const STORIES = [
     description:
       "Connecting patients, clinicians, and healthcare systems through integrated digital platforms powered by data and AI.",
     image: "/customer1.jpg",
-    link: "/customer-stories/healthcare",
+   
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const STORIES = [
     description:
       "Creating connected factories with real-time production visibility, predictive maintenance, and intelligent automation.",
     image: "/customer3.jpg",
-    link: "/customer-stories/manufacturing",
+  
   },
   {
     id: 4,
@@ -40,8 +40,8 @@ const STORIES = [
     title: "Reimagining Retail Commerce",
     description:
       "Delivering personalized omnichannel experiences with unified commerce platforms and advanced customer insights.",
-    image: "/images/customer-stories/retail.jpg",
-    link: "/customer-stories/retail",
+    image: "/customer5.jpg",
+  
   },
   {
     id: 5,
@@ -49,8 +49,8 @@ const STORIES = [
     title: "Building Intelligent Energy Networks",
     description:
       "Driving operational resilience with connected infrastructure, predictive analytics, and sustainable energy management.",
-    image: "/images/customer-stories/energy.jpg",
-    link: "/customer-stories/energy",
+    image: "/customer6.jpg",
+    
   },
   {
     id: 6,
@@ -59,13 +59,13 @@ const STORIES = [
     description:
       "Designing secure, accessible citizen service platforms that improve efficiency and deliver better public experiences.",
     image: "/customer4.jpg",
-    link: "/customer-stories/public-sector",
+   
   },
 ];
 
 const CustomerStories = () => {
   return (
-    <section className="bg-white pt-20 pb-28">
+    <section className="bg-white pt-20 pb-24">
       <div className="mx-auto max-w-[1600px] px-8">
 
         {/* Header */}
@@ -169,7 +169,7 @@ const CustomerStories = () => {
                     relative
                     block
                     h-[600px]
-                    overflow-hidden
+                    overflow-hidden 
                     rounded-[5px]
                   "
                 >

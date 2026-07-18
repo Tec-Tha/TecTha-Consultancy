@@ -8,7 +8,7 @@ const STORIES = [
     subtitle: "Transforming intelligence into business advantage.",
     description:
       "From intelligent automation to predictive decision-making, we build AI solutions that enhance productivity, unlock insights, and create measurable business outcomes.",
-    image: "/ai.avif",
+    image: "/innovation1.jpg",
   },
 
   {
@@ -17,7 +17,7 @@ const STORIES = [
     subtitle: "Building resilient digital foundations.",
     description:
       "Our cloud platforms are designed for scalability, security, and performance—helping enterprises modernize infrastructure while accelerating innovation.",
-    image: "cloud.jpg",
+    image: "innovation2.jpg",
   },
 
   {
@@ -26,7 +26,7 @@ const STORIES = [
     subtitle: "Protecting every digital interaction.",
     description:
       "We create secure digital ecosystems through modern security architecture, continuous monitoring, and proactive risk management.",
-    image: "/cy.jpg",
+    image: "/innovation3.jpg",
   },
 ];
 

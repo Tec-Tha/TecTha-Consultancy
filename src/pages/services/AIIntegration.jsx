@@ -98,13 +98,27 @@ const data = {
   ],
 };
 
-const AIIntegration = () => (
-  <PageWrapper
-    title="AI Integration & Agentics"
-    description="Enterprise AI solutions that automate complex business workflows."
-  >
-    <ServiceDetailLayout data={data} currentServiceId="data" />
-  </PageWrapper>
-);
+// const AIIntegration = () => (
+//   <PageWrapper
+//     title="AI Integration & Agentics"
+//     description="Enterprise AI solutions that automate complex business workflows."
+//     showServiceNavbar
+//   >
+//     <ServiceDetailLayout data={data} currentServiceId="data" />
+//   </PageWrapper>
+// );
+const AIIntegration = () => {
+  console.log("AIIntegration Component Loaded");
+
+  return (
+    <PageWrapper
+      title="AI Integration & Agentics"
+      description="Enterprise AI solutions"
+      showServiceNavbar={true}
+    >
+      <ServiceDetailLayout data={data} />
+    </PageWrapper>
+  );
+};
 
 export default AIIntegration;

@@ -98,6 +98,7 @@ const DigitalAdvisory = () => (
   <PageWrapper
     title="Digital Advisory"
     description="Strategic consulting for scalable digital transformation."
+    showServiceNavbar={true}
   >
     <ServiceDetailLayout data={data} currentServiceId="strategy" />
   </PageWrapper>
