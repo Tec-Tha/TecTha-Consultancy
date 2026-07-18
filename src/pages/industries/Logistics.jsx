@@ -137,7 +137,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 </section>
       {/* ================= SMART LOGISTICS ================= */}
 
-      <section className="bg-[#F8FAFC] py-32">
+      <section className="bg-[#05070B] py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -169,7 +169,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
 
-            <h2 className="mt-6 text-6xl font-bold leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
 
               Faster Delivery.
               <br />
@@ -355,7 +355,6 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
               Chains.
 
             </h2>
-
 
             <p className="mt-8 text-lg leading-9 text-gray-400">
 
