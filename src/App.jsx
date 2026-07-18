@@ -5,7 +5,8 @@ import ScrollProgress from "./components/layout/ScrollProgress";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Industries from "./pages/Industries";
+import Logistics from "./pages/industries/Logistics";
+import IndustryLayout from "./pages/industries/IndustryLayout";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import EnterpriseSoftware from "./pages/services/EnterpriseSoftware";
@@ -46,6 +47,9 @@ import CustomerRelationshipManagement from "./pages/services/EnterpriseSolution/
 import SupplyChainSolutions from "./pages/services/EnterpriseSolution/SupplyChainSolutions";
 import FinanceSolutions from "./pages/services/EnterpriseSolution/FinanceSolutions";
 import IndustrySolutions from "./pages/services/EnterpriseSolution/IndustrySolutions";
+import Healthcare from "./pages/industries/Healthcare";
+import Banking from "./pages/industries/Banking";
+import Manufacturing from "./pages/industries/Manufacturing";
 
 function App() {
   return (
@@ -94,7 +98,10 @@ function App() {
         <Route path="/services/EnterpriseSolution/supply-chain-solutions" element={<SupplyChainSolutions />} />
         <Route path="/services/EnterpriseSolution/finance-solutions" element={<FinanceSolutions />} />
         <Route path="/services/EnterpriseSolution/industry-solutions" element={<IndustrySolutions />} />
-        <Route path="/industries" element={<Industries />} />
+        <Route path="/industries/logistics" element={<Logistics />}/>
+        <Route path="/industries/healthcare" element={<Healthcare />}/>
+        <Route path="/industries/banking" element={<Banking />}/>
+        <Route path="/industries/manufacturing" element={<Manufacturing />}/>
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

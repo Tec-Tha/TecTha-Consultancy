@@ -47,8 +47,7 @@ const industries = [
     desc: "Transforming global supply chains with intelligent logistics.",
   },
 ];
-
-export default function Industries() {
+export default function IndustryLayout({ data })  {
   return (
     <>
       {/* HERO */}
@@ -82,7 +81,7 @@ export default function Industries() {
               initial={{ opacity:0,y:30 }}
               whileInView={{ opacity:1,y:0 }}
               transition={{ duration:.7 }}
-              className="max-w-4xl text-7xl font-bold leading-tight text-white"
+              className="max-w-4xl text-7xl leading-tight text-white"
             >
               Engineering
               <br />
@@ -133,7 +132,7 @@ export default function Industries() {
      className="mb-24"
     >
 
-      <h2 className="max-w-4xl text-6xl font-bold leading-tight text-white">
+      <h2 className="max-w-4xl text-6xl leading-tight text-white">
 
         Solutions Engineered
 For     Every Industry.
