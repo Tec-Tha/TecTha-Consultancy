@@ -5,7 +5,8 @@ import ScrollProgress from "./components/layout/ScrollProgress";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Industries from "./pages/Industries";
+import Logistics from "./pages/industries/Logistics";
+import IndustryLayout from "./pages/industries/IndustryLayout";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import EnterpriseSoftware from "./pages/services/EnterpriseSoftware";
@@ -47,6 +48,7 @@ import CustomerRelationshipManagement from "./pages/services/EnterpriseSolution/
 import SupplyChainSolutions from "./pages/services/EnterpriseSolution/SupplyChainSolutions";
 import FinanceSolutions from "./pages/services/EnterpriseSolution/FinanceSolutions";
 import IndustrySolutions from "./pages/services/EnterpriseSolution/IndustrySolutions";
+<<<<<<< HEAD
 import ManagedApplications from "./pages/services/ManagedServices/ManagedApplications";
 import ManagedCloudd from "./pages/services/ManagedServices/ManagedCloudd";
 import ManagedAI from "./pages/services/ManagedServices/ManagedAI";
@@ -67,6 +69,15 @@ import AIAnalytics from "./pages/services/DataAI/AIAnalytics";
 import ExecutiveIntelligence from "./pages/services/DataAI/ExecutiveIntelligence";
 import PredictiveAnalytics from "./pages/services/DataAI/PredictiveAnalytics";
 import DataGovernance from "./pages/services/DataAI/DataGovernance";
+=======
+import Healthcare from "./pages/industries/Healthcare";
+import Banking from "./pages/industries/Banking";
+import Manufacturing from "./pages/industries/Manufacturing";
+import Retail from "./pages/industries/Retail";
+import Education from "./pages/industries/Education";
+import Government from "./pages/industries/Government";
+import ProfessionalServices from "./pages/industries/ProfessionalServices";
+>>>>>>> afa7f18e5d57ce11ade016ba3bb0f75707e9dc6a
 
 function App() {
   return (
@@ -136,7 +147,6 @@ function App() {
         <Route path="/services/DataAI/executive-intelligence" element={<ExecutiveIntelligence />} />
         <Route path="/services/DataAI/predictive-analytics" element={<PredictiveAnalytics />} />
         <Route path="/services/DataAI/data-governance" element={<DataGovernance />} />
-        <Route path="/industries" element={<Industries />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
