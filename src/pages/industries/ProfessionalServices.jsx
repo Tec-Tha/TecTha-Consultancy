@@ -86,7 +86,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.15}
-className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-black leading-[0.95] text-white"
+className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
 >
 
 Driving
@@ -171,7 +171,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
            
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
 
               Strategy That
               <br />
@@ -209,7 +209,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
 
                     ✓
 
@@ -303,7 +303,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-bold text-white">
+                      <h3 className="text-3xl font-light text-white">
 
                         {card.title}
 
@@ -347,7 +347,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
 
               Turning
               <br />
@@ -419,7 +419,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             className="text-center"
           >
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-black leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
 
               Build Smarter
               <br />

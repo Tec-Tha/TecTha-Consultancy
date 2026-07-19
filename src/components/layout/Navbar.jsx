@@ -361,9 +361,9 @@ const Navbar = () => {
 
   return (
     <div key={section.title}>
-      {section.title === "Services" ? (
+      {section.title === "Services" || section.title === "Industries" ? (
         <Link
-          to="/services"
+  to={section.title === "Services" ? "/services" : "/industries"}
           onMouseEnter={() => setActiveCategory(i)}
           onFocus={() => setActiveCategory(i)}
           onClick={() => setShowServices(false)}
@@ -457,7 +457,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          <ThemeToggle />
+          
           <Link
             to="/contact"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
@@ -468,7 +468,6 @@ const Navbar = () => {
 
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}

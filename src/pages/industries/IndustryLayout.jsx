@@ -5,6 +5,15 @@ import {
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
+import healthcareImg from "../../assets/images/industries/healthcare.jpg";
+import manufacturingImg from "../../assets/images/industries/manufacturing.jpg";
+import retailImg from "../../assets/images/industries/retail.jpg";
+import bankingImg from "../../assets/images/industries/banking.jpg";
+import educationImg from "../../assets/images/industries/education.jpg";
+import logisticsImg from "../../assets/images/industries/logistics.jpg";
+import governmentImg from "../../assets/images/industries/government.jpg";
+import professionalImg from "../../assets/images/industries/professional.jpg";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,42 +21,63 @@ import "swiper/css/navigation";
 const industries = [
   {
     title: "Healthcare",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
+    slug: "healthcare",
+    image: healthcareImg,
     desc: "Building intelligent digital healthcare ecosystems powered by AI.",
   },
+
   {
     title: "Manufacturing",
-    image:
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&q=80",
+    slug: "manufacturing",
+    image: manufacturingImg,
     desc: "Accelerating Industry 4.0 with automation and predictive analytics.",
   },
+
   {
     title: "Retail",
-    image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=1200&q=80",
+    slug: "retail",
+    image: retailImg,
     desc: "Delivering seamless omnichannel retail experiences.",
   },
+
   {
-    title: "Finance",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
+    title: "Banking",
+    slug: "banking",
+    image: bankingImg,
     desc: "Secure banking platforms and AI-driven financial intelligence.",
   },
+
   {
     title: "Education",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+    slug: "education",
+    image: educationImg,
     desc: "Empowering digital campuses and personalized learning.",
   },
+
   {
     title: "Logistics",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+    slug: "logistics",
+    image: logisticsImg,
     desc: "Transforming global supply chains with intelligent logistics.",
   },
+
+  {
+    title: "Government",
+    slug: "government",
+    image: governmentImg,
+    desc: "Modernizing public services with secure digital platforms.",
+  },
+
+  {
+    title: "Professional Services",
+    slug: "professional-services",
+    image: professionalImg,
+    desc: "Helping enterprises transform through consulting and innovation.",
+  },
 ];
-export default function IndustryLayout({ data })  {
+
+export default function IndustryLayout() {
+  const navigate = useNavigate();
   return (
     <>
       {/* HERO */}
@@ -139,7 +169,7 @@ For     Every Industry.
 
       </h2>
 
-      <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-400">
+      <p className="mt-4 max-w-3xl text-xl leading-9 text-gray-400">
 
         From healthcare and finance to manufacturing and logistics, we engineer secure, scalable digital platforms that empower organizations to innovate, transform and grow.
 
@@ -171,7 +201,12 @@ For     Every Industry.
   }}
 >
   {industries.map((industry, index) => (
-    <SwiperSlide key={industry.title}>
+    <SwiperSlide
+  key={industry.title}
+  onClick={() =>
+  navigate(`/industries/${industry.slug}`)
+}
+>
       <motion.div
         initial={{
           opacity: 0,
@@ -208,7 +243,7 @@ For     Every Industry.
 
           <div className="absolute bottom-0 left-0 right-0 p-8">
 
-            <h3 className="text-3xl font-bold text-white">
+            <h3 className="text-3xl font-light text-white">
 
               {industry.title}
 
@@ -273,7 +308,7 @@ For     Every Industry.
 
       </p>
 
-      <h2 className="mx-auto max-w-5xl text-[clamp(3rem,6vw,5.8rem)] font-black leading-tight text-white">
+      <h2 className="text-[clamp(3rem,6vw,5.5rem)] font-light leading-[1.05] tracking-tight text-white">
 
         Ready To Transform
         <br />
