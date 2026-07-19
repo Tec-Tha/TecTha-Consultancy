@@ -47,7 +47,7 @@ const TIMELINE = [
   { year: "2007", label: "Founded", detail: "Started as a three-person systems integration practice." },
   { year: "2012", label: "First enterprise contract", detail: "Delivered a core banking migration for a regional lender." },
   { year: "2016", label: "Data & Analytics practice launched", detail: "Formalized data engineering as a standalone discipline." },
-  { year: "2020", label: "Expanded to 12 countries", detail: "Opened delivery hubs to support round-the-clock engagements." },
+  { year: "2020", label: "Expanded to 12 country", detail: "Opened delivery hubs to support round-the-clock engagements." },
   { year: "2024", label: "Applied AI practice launched", detail: "Began scoping production AI systems with measurable guardrails." },
 ];
 

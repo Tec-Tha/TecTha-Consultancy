@@ -182,25 +182,17 @@ const Insights = () => {
                   {article.excerpt}
                 </p>
 
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-normal text-white">
-                  Read the piece
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
+             
               </a>
             </motion.article>
           ))}
         </div>
 
-        <a
-          href="/insights"
-          className="group mt-12 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text-secondary)] transition-colors duration-300 hover:text-[color:var(--color-brand-600)] md:hidden"
-        >
-          View all insights
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </a>
       </div>
     </section>
   );
 };
 
 export default Insights;
+
+

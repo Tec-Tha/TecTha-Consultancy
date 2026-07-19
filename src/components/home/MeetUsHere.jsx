@@ -1,478 +1,396 @@
-import React, {
-  useEffect,
-  useRef,
-  useMemo,
-  useState,
-  useCallback,
-} from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import gsap from "gsap";
-import { ArrowUpRight } from "lucide-react";
-
-/* ---------------------------------------------------------------------- */
-/*  Fonts (Manrope for display, Inter for body) — injected once           */
-/* ---------------------------------------------------------------------- */
-
-const FONT_HREF =
-  "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap";
-
-function useInjectFonts() {
-  useEffect(() => {
-    if (document.getElementById("meet-us-here-fonts")) return;
-    const link = document.createElement("link");
-    link.id = "meet-us-here-fonts";
-    link.rel = "stylesheet";
-    link.href = FONT_HREF;
-    document.head.appendChild(link);
-  }, []);
-}
-
-/* ---------------------------------------------------------------------- */
-/*  Data                                                                   */
-/* ---------------------------------------------------------------------- */
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { gsap } from "gsap";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const COUNTRIES = [
   {
-    id: "usa",
+    code: "US",
     name: "United States",
-    flag: "🇺🇸",
-    city: "New York",
-    image:
-      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80&auto=format&fit=crop",
+    image: "",
+    flag: "",
+    statement:
+      "Driving digital transformation for enterprises across North America.",
   },
   {
-    id: "canada",
-    name: "Canada",
-    flag: "🇨🇦",
-    city: "Toronto",
-    image:
-      "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=900&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "uk",
+    code: "GB",
     name: "United Kingdom",
-    flag: "🇬🇧",
-    city: "London",
-    image:
-      "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=900&q=80&auto=format&fit=crop",
+    image: "",
+    flag: "",
+    statement:
+      "Delivering strategic technology partnerships across the UK and Europe.",
   },
   {
-    id: "germany",
+    code: "DE",
     name: "Germany",
-    flag: "🇩🇪",
-    city: "Cologne",
-    image:
-      "https://images.unsplash.com/photo-1554072675-66db59d9d64c?w=900&q=80&auto=format&fit=crop",
+    image: "",
+    flag: "",
+    statement:
+      "Engineering precision solutions for Europe's industrial leaders.",
   },
   {
-    id: "france",
+    code: "FR",
     name: "France",
-    flag: "🇫🇷",
-    city: "Paris",
-    image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80&auto=format&fit=crop",
+    image: "",
+    flag: "",
+    statement:
+      "Crafting elegant digital experiences for France's leading brands.",
   },
   {
-    id: "netherlands",
-    name: "Netherlands",
-    flag: "🇳🇱",
-    city: "Amsterdam",
-    image:
-      "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=900&q=80&auto=format&fit=crop",
+    code: "CA",
+    name: "Canada",
+    image: "",
+    flag: "",
+    statement:
+      "Building resilient infrastructure for businesses across Canada.",
   },
   {
-    id: "switzerland",
-    name: "Switzerland",
-    flag: "🇨🇭",
-    city: "The Alps",
-    image:
-      "https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?w=900&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "norway",
-    name: "Norway",
-    flag: "🇳🇴",
-    city: "Fjords",
-    image:
-      "https://images.unsplash.com/photo-1601439678777-b2b3c56fa519?w=900&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "uae",
+    code: "AE",
     name: "United Arab Emirates",
-    flag: "🇦🇪",
-    city: "Dubai",
-    image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80&auto=format&fit=crop",
+    image: "",
+    flag: "",
+    statement:
+      "Powering innovation for enterprises across the Middle East.",
   },
   {
-    id: "singapore",
-    name: "Singapore",
-    flag: "🇸🇬",
-    city: "Marina Bay",
-    image:
-      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "australia",
+    code: "AU",
     name: "Australia",
-    flag: "🇦🇺",
-    city: "Sydney",
-    image:
-      "https://images.unsplash.com/photo-1524293581917-878a6d017c71?w=900&q=80&auto=format&fit=crop",
+    image: "",
+    flag: "",
+    statement:
+      "Delivering forward-thinking solutions across Asia-Pacific markets.",
   },
 ];
 
-/* ---------------------------------------------------------------------- */
-/*  Background atmosphere: grid + noise + particles + glow                */
-/* ---------------------------------------------------------------------- */
+export default function MeetUsHere() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [displayIndex, setDisplayIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-const NOISE_SVG =
-  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
+  const imageRef = useRef(null);
+  const statementRef = useRef(null);
+  const flagRef = useRef(null);
+  const timelineRef = useRef(null);
 
-function Atmosphere() {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 26 }).map((_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        size: Math.random() * 2 + 1,
-        duration: Math.random() * 10 + 12,
-        delay: Math.random() * 8,
-      })),
-    []
-  );
+  const itemRefs = useRef([]);
+  const thumbRefs = useRef([]);
+  const arrowRefs = useRef([]);
 
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* pure black base */}
-      <div className="absolute inset-0 bg-black" />
-
-      {/* soft radial glow */}
-      <div
-        className="absolute left-1/2 top-0 h-[700px] w-[1100px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-[0.10] blur-[120px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-x-1/4 translate-y-1/4 rounded-full opacity-[0.06] blur-[110px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%)",
-        }}
-      />
-
-      {/* subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-          maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-        }}
-      />
-
-      {/* noise texture */}
-      <div
-        className="absolute inset-0 opacity-[0.035] mix-blend-overlay"
-        style={{ backgroundImage: `url("${NOISE_SVG}")` }}
-      />
-
-      {/* floating particles */}
-      {particles.map((p) => (
-        <motion.span
-          key={p.id}
-          className="absolute rounded-full bg-white/70"
-          style={{
-            left: `${p.left}%`,
-            top: `${p.top}%`,
-            width: p.size,
-            height: p.size,
-          }}
-          animate={{
-            y: [0, -28, 0],
-            opacity: [0.15, 0.6, 0.15],
-          }}
-          transition={{
-            duration: p.duration,
-            delay: p.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-/* ---------------------------------------------------------------------- */
-/*  Card                                                                   */
-/* ---------------------------------------------------------------------- */
-
-const Card = React.memo(function Card({ country }) {
-  const cardRef = useRef(null);
-
-  const handleMouseMove = useCallback((e) => {
-    const el = cardRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    el.style.setProperty("--spot-x", `${x}%`);
-    el.style.setProperty("--spot-y", `${y}%`);
-  }, []);
-
-  return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      whileHover={{
-        scale: 1.04,
-        rotate: 2,
-        transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
-      }}
-      className="group relative mx-3 shrink-0 select-none overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] shadow-[0_10px_50px_-12px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-shadow duration-500 hover:shadow-[0_0_60px_-8px_rgba(255,255,255,0.18)] hover:border-white/25"
-      style={{
-        width: "320px",
-        height: "440px",
-      }}
-    >
-      {/* mouse spotlight */}
-      <div
-        className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{
-          background:
-            "radial-gradient(280px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255,255,255,0.14), transparent 70%)",
-        }}
-      />
-
-      {/* image — 75% of card height */}
-      <div className="relative h-[75%] w-full overflow-hidden">
-        <img
-          src={country.image}
-          alt={`${country.city}, ${country.name}`}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.12]"
-          draggable={false}
-        />
-        {/* image bottom fade into footer */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/30" />
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
-
-        {/* flag badge, top right */}
-        <div className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/40 text-xl backdrop-blur-md transition-transform duration-500 ease-out group-hover:rotate-[14deg] group-hover:scale-110">
-          <span aria-hidden="true">{country.flag}</span>
-        </div>
-      </div>
-
-      {/* footer: name + arrow */}
-      <div className="relative flex h-[25%] items-center justify-between border-t border-white/10 bg-black/60 px-6">
-        <div className="min-w-0">
-          <p
-            className="truncate text-[17px] font-semibold tracking-wide text-white"
-            style={{ fontFamily: "'Manrope', sans-serif" }}
-          >
-            {country.name}
-          </p>
-          <p className="mt-0.5 text-[12px] font-light uppercase tracking-[0.16em] text-white/40">
-            {country.city}
-          </p>
-        </div>
-
-        <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/5 transition-colors duration-300 group-hover:border-white/40 group-hover:bg-white">
-          <ArrowUpRight
-            size={18}
-            strokeWidth={1.75}
-            className="absolute text-white transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0 group-hover:text-black"
-          />
-          <ArrowUpRight
-            size={18}
-            strokeWidth={1.75}
-            className="absolute -translate-x-6 translate-y-6 text-black opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
-});
-
-/* ---------------------------------------------------------------------- */
-/*  Infinite marquee row (GSAP powered, pause on hover)                    */
-/* ---------------------------------------------------------------------- */
-
-function MarqueeRow({ items, direction = "left", speed = 42 }) {
-  const trackRef = useRef(null);
-  const tweenRef = useRef(null);
-  const prefersReducedMotion = useReducedMotion();
+  const active = COUNTRIES[activeIndex];
+  const display = COUNTRIES[displayIndex];
 
   useEffect(() => {
-    const el = trackRef.current;
-    if (!el || prefersReducedMotion) return;
+    if (activeIndex === displayIndex) return;
 
-    const ctx = gsap.context(() => {
-      if (direction === "left") {
-        gsap.set(el, { xPercent: 0 });
-        tweenRef.current = gsap.to(el, {
-          xPercent: -50,
-          duration: speed,
-          ease: "none",
-          repeat: -1,
-        });
-      } else {
-        gsap.set(el, { xPercent: -50 });
-        tweenRef.current = gsap.to(el, {
-          xPercent: 0,
-          duration: speed,
-          ease: "none",
-          repeat: -1,
-        });
-      }
+    if (timelineRef.current) timelineRef.current.kill();
+
+    setIsAnimating(true);
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.inOut" },
+      onComplete: () => setIsAnimating(false),
+    });
+    timelineRef.current = tl;
+
+    tl.to(imageRef.current, { opacity: 0, scale: 1.08, duration: 0.55 })
+      .to(
+        [statementRef.current, flagRef.current],
+        { opacity: 0, y: 12, duration: 0.35, ease: "power2.in" },
+        "<"
+      )
+      .call(() => setDisplayIndex(activeIndex))
+      .fromTo(
+        imageRef.current,
+        { opacity: 0, scale: 1.16 },
+        { opacity: 1, scale: 1, duration: 1.05, ease: "power3.out" }
+      )
+      .fromTo(
+        flagRef.current,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        "-=0.65"
+      )
+      .fromTo(
+        statementRef.current,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        "-=0.4"
+      );
+
+    return () => tl.kill();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
+
+  const goTo = (index) => {
+    if (index === activeIndex || isAnimating) return;
+    setActiveIndex(index);
+  };
+
+  // Clear any lingering hover styles on the item that just became active
+  useEffect(() => {
+    const el = itemRefs.current[activeIndex];
+    const thumb = thumbRefs.current[activeIndex];
+    const arrow = arrowRefs.current[activeIndex];
+    if (el) gsap.set(el, { clearProps: "borderColor,backgroundColor" });
+    if (thumb) gsap.set(thumb, { clearProps: "scale" });
+    if (arrow) gsap.set(arrow, { clearProps: "x,opacity" });
+  }, [activeIndex]);
+
+  const handleNavHoverIn = (index) => {
+    const isActive = index === activeIndex;
+
+    gsap.to(thumbRefs.current[index], {
+      scale: 1.08,
+      duration: 0.55,
+      ease: "power3.out",
+    });
+    gsap.to(arrowRefs.current[index], {
+      x: 0,
+      opacity: isActive ? 0.55 : 1,
+      duration: 0.4,
+      ease: "power3.out",
     });
 
-    return () => ctx.revert();
-  }, [direction, speed, prefersReducedMotion]);
+    if (!isActive) {
+      gsap.to(itemRefs.current[index], {
+        borderColor: "rgba(255,255,255,0.35)",
+        backgroundColor: "rgba(255,255,255,0.05)",
+        duration: 0.45,
+        ease: "power3.out",
+      });
+    }
+  };
 
-  const handleEnter = () => tweenRef.current?.pause();
-  const handleLeave = () => tweenRef.current?.play();
+  const handleNavHoverOut = (index) => {
+    const isActive = index === activeIndex;
 
-  const doubled = useMemo(() => [...items, ...items], [items]);
+    gsap.to(thumbRefs.current[index], {
+      scale: 1,
+      duration: 0.55,
+      ease: "power3.out",
+    });
+    gsap.to(arrowRefs.current[index], {
+      x: -6,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power3.out",
+    });
+
+    if (!isActive) {
+      gsap.to(itemRefs.current[index], {
+        borderColor: "rgba(255,255,255,0.1)",
+        backgroundColor: "rgba(255,255,255,0.02)",
+        duration: 0.45,
+        ease: "power3.out",
+      });
+    }
+  };
 
   return (
-    <div
-      className="relative w-full overflow-hidden"
-      style={{
-        maskImage:
-          "linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%)",
-      }}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
+    <section className="relative min-h-screen w-full bg-[#050505] text-white overflow-hidden">
+      {/* Background texture */}
       <div
-        ref={trackRef}
-        className="flex w-max will-change-transform"
-        style={{ transform: "translate3d(0,0,0)" }}
-      >
-        {doubled.map((country, i) => (
-          <Card key={`${country.id}-${i}`} country={country} />
-        ))}
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,255,255,0.09), transparent 65%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col px-6 pt-24 pb-20 sm:px-10 lg:px-16">
+        {/* Header */}
+        <div className="mb-16 flex flex-col items-center text-center lg:mb-20">
+          <span className="mb-5 text-[11px] font-medium uppercase tracking-[0.45em] text-white/45">
+            Global Presence
+          </span>
+          <h2 className="font-monstret text-[13vw] leading-[0.9] tracking-tight text-white sm:text-[9vw] lg:text-[5vw]">
+            Meet Us Here
+          </h2>
+          <p className="mt-7 max-w-md text-sm font-light tracking-wide text-white/50 sm:text-base">
+            Meet our teams and partners across global markets.
+          </p>
+        </div>
+
+        {/* Main layout */}
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[64px_1fr_300px] lg:gap-12">
+          {/* Left — vertical active country name */}
+          <div className="hidden items-center justify-center lg:flex">
+            <div className="relative h-[520px] w-full overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={active.code}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -24 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute left-1/2 top-1/2 origin-center whitespace-nowrap text-xs font-medium uppercase tracking-[0.6em] text-white/55"
+                  style={{
+                    writingMode: "vertical-rl",
+                    transform: "translate(-50%, -50%) rotate(180deg)",
+                  }}
+                >
+                  {active.name}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Center — featured region */}
+          <div className="relative mx-auto w-full max-w-[1180px]">
+            {/* Top: left info column + clean hero image */}
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+              {/* Left side — flag, label, country name (outside the image) */}
+              <div
+                ref={flagRef}
+                className="flex flex-row items-center gap-5 lg:w-[260px] lg:shrink-0 lg:flex-col lg:items-start lg:gap-7"
+              >
+                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-[10px] border border-white/30 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.7)]">
+                  {display.flag ? (
+                    <img
+                      src={display.flag}
+                      alt={`${display.name} flag`}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-white/5 text-[9px] tracking-widest text-white/40">
+                      {display.code}
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex flex-col gap-2.5">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50">
+                    Featured Region
+                  </span>
+                  <span className="font-serif text-3xl leading-[1.05] text-white sm:text-4xl lg:text-[2.6rem]">
+                    {display.name}
+                  </span>
+                </div>
+              </div>
+
+              {/* Center — large hero image, no overlay, no text */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px] border border-white/10 bg-neutral-950 shadow-[0_60px_120px_-40px_rgba(0,0,0,0.9)] sm:aspect-[16/10] lg:aspect-[16/9] lg:flex-1">
+                <img
+                  ref={imageRef}
+                  src={display.image}
+                  alt={display.name}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ opacity: display.image ? 1 : 0.9 }}
+                />
+              </div>
+            </div>
+
+            {/* Bottom — description + Explore button, outside the image */}
+            <div className="mt-10 flex flex-col gap-8 border-t border-white/10 pt-10 sm:flex-row sm:items-end sm:justify-between lg:mt-14 lg:pl-[calc(260px+64px)] lg:pt-12">
+              <p
+                ref={statementRef}
+                className="max-w-xl text-base font-light leading-relaxed text-white/75 sm:text-lg"
+              >
+                {display.statement}
+              </p>
+
+            </div>
+          </div>
+
+          {/* Right — premium thumbnail country navigation */}
+          <nav
+            aria-label="Select region"
+            className="flex gap-3 overflow-x-auto pb-4 lg:w-full lg:flex-col lg:gap-2 lg:overflow-visible lg:pb-0"
+          >
+            {COUNTRIES.map((country, index) => {
+              const isActive = index === activeIndex;
+              return (
+                <button
+                  key={country.code}
+                  ref={(el) => (itemRefs.current[index] = el)}
+                  onClick={() => goTo(index)}
+                  onMouseEnter={() => handleNavHoverIn(index)}
+                  onMouseLeave={() => handleNavHoverOut(index)}
+                  onFocus={() => handleNavHoverIn(index)}
+                  onBlur={() => handleNavHoverOut(index)}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`group relative flex w-[220px] shrink-0 cursor-pointer items-center gap-3.5 rounded-[16px] border py-2.5 pl-2.5 pr-4 backdrop-blur-md outline-none transition-[background-color,box-shadow] duration-500 lg:w-full ${
+                    isActive
+                      ? "border-white/90 bg-white/[0.08] shadow-[0_0_36px_-6px_rgba(255,255,255,0.4)]"
+                      : "border-white/12 bg-white/[0.02]"
+                  }`}
+                >
+                  {/* vertical active indicator */}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute -left-3 top-1/2 hidden -translate-y-1/2 rounded-full transition-all duration-500 ease-out lg:block ${
+                      isActive
+                        ? "h-10 w-[2.5px] bg-white opacity-100"
+                        : "h-2 w-[2.5px] bg-white/0 opacity-0"
+                    }`}
+                  />
+
+                  {/* thumbnail */}
+                  <div
+                    ref={(el) => (thumbRefs.current[index] = el)}
+                    className={`relative h-[70px] w-[70px] shrink-0 overflow-hidden rounded-[4px] border bg-white/5 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.7)] transition-[border-color] duration-500 ${
+                      isActive ? "border-white" : "border-white/20"
+                    }`}
+                  >
+                    <img
+                      src={country.image}
+                      alt={country.name}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/10" />
+
+                    {/* small flag chip on the thumbnail */}
+                    <div className="absolute bottom-1 left-1 flex h-[18px] w-[26px] items-center justify-center overflow-hidden rounded-[4px] border border-white/30 bg-black/50 backdrop-blur-sm">
+                      {country.flag ? (
+                        <img
+                          src={country.flag}
+                          alt=""
+                          aria-hidden="true"
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-[7px] font-medium tracking-widest text-white/70">
+                          {country.code}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* name + reveal arrow */}
+                  <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
+                    <span
+                      className={`truncate text-left font-medium leading-tight tracking-wide transition-colors duration-500 ${
+                        isActive
+                          ? "text-[15px] text-white"
+                          : "text-sm text-white/55"
+                      }`}
+                    >
+                      {country.name}
+                    </span>
+                    <ArrowRight
+                      ref={(el) => (arrowRefs.current[index] = el)}
+                      size={14}
+                      strokeWidth={1.5}
+                      className="shrink-0 text-white opacity-0"
+                      style={{ transform: "translateX(-6px)" }}
+                    />
+                  </div>
+                </button>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* Bottom CTA */}
+      
       </div>
-    </div>
-  );
-}
-
-/* ---------------------------------------------------------------------- */
-/*  Section header                                                        */
-/* ---------------------------------------------------------------------- */
-
-function SectionHeader() {
-  return (
-    <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 text-center">
-      <motion.span
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-5 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.3em] text-white/60"
-      >
-        Global Footprint
-      </motion.span>
-
-      <motion.h2
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.05 }}
-        className="text-[13vw] font-extrabold leading-none tracking-tight text-white sm:text-6xl md:text-7xl"
-        style={{ fontFamily: "'Manrope', sans-serif" }}
-      >
-        MEET US HERE
-      </motion.h2>
-
-      <motion.p
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="mt-5 max-w-xl text-base font-light text-white/50 sm:text-lg"
-        style={{ fontFamily: "'Inter', sans-serif" }}
-      >
-        Partnering with organizations across the world.
-      </motion.p>
-    </div>
-  );
-}
-
-/* ---------------------------------------------------------------------- */
-/*  Bottom CTA                                                             */
-/* ---------------------------------------------------------------------- */
-
-function BottomCTA() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-      className="relative z-10 mx-auto mt-24 flex max-w-2xl flex-col items-center px-6 text-center"
-    >
-      <h3
-        className="text-2xl font-bold leading-snug text-white sm:text-4xl"
-        style={{ fontFamily: "'Manrope', sans-serif" }}
-      >
-        Your Business Could Be Our Next Success Story
-      </h3>
-
-      <motion.button
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        className="group mt-9 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white px-8 py-4 text-[15px] font-semibold tracking-wide text-black shadow-[0_0_40px_-8px_rgba(255,255,255,0.35)] transition-all duration-300 hover:shadow-[0_0_60px_-4px_rgba(255,255,255,0.55)]"
-        style={{ fontFamily: "'Manrope', sans-serif" }}
-      >
-        Let's Build Together
-        <ArrowUpRight
-          size={18}
-          strokeWidth={2.25}
-          className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-        />
-      </motion.button>
-    </motion.div>
-  );
-}
-
-/* ---------------------------------------------------------------------- */
-/*  Main export                                                           */
-/* ---------------------------------------------------------------------- */
-
-export default function MeetUsHere() {
-  useInjectFonts();
-
-  const topRow = useMemo(() => COUNTRIES.slice(0, 6), []);
-  const bottomRow = useMemo(() => COUNTRIES.slice(6), []);
-
-  return (
-    <section
-      className="relative w-full overflow-hidden bg-black py-28"
-      style={{ fontFamily: "'Inter', sans-serif" }}
-      aria-label="Meet us here — global presence"
-    >
-      <Atmosphere />
-
-      <SectionHeader />
-
-      <div className="relative z-10 mt-16 flex flex-col gap-8">
-        <MarqueeRow items={topRow} direction="left" speed={38} />
-        <MarqueeRow items={bottomRow} direction="right" speed={44} />
-      </div>
-
-      <BottomCTA />
     </section>
   );
 }

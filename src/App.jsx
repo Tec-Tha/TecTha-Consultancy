@@ -53,6 +53,7 @@ import Manufacturing from "./pages/industries/Manufacturing";
 import Retail from "./pages/industries/Retail";
 import Education from "./pages/industries/Education";
 import Government from "./pages/industries/Government";
+import Insights from "./pages/Insights";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
       <ScrollProgress />
       <Navbar />
       <Routes>
+       <Route path="/insights" element={<Insights />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />

@@ -5,7 +5,7 @@ import Overview from "../components/home/Overview";
 import WhyUs from "../components/home/WhyUs";
 import Innovation from "../components/home/Innovation";
 import CustomerStories from "../components/home/customerstories";
-import Insights from "../components/home/Insights";
+import Insights from "../components/home/in";
 import ContactCTA from "../components/home/ContactCTA";
 import PageWrapper from "../components/layout/PageWrapper";
 import MeetUsHere from "../components/home/MeetUsHere";
