@@ -94,7 +94,7 @@ export default function Healthcare() {
             custom={0}
             className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400"
           >
-            Healthcare Industry
+           
           </motion.p>
 
           <motion.h1
@@ -149,7 +149,7 @@ export default function Healthcare() {
       </section>
             {/* ================= DIGITAL HEALTHCARE ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-white py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -186,7 +186,7 @@ export default function Healthcare() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+           <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]"> 
 
               Intelligent Care
               <br />
@@ -194,7 +194,7 @@ export default function Healthcare() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+          <p className="mt-8 text-lg leading-9 text-gray-400">
 
               Healthcare organizations are embracing AI, cloud platforms,
               connected medical devices and predictive analytics to
@@ -227,7 +227,7 @@ export default function Healthcare() {
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-700">
 
                     {item}
 
@@ -351,7 +351,7 @@ export default function Healthcare() {
       </section>
             {/* ================= CONNECTED HEALTHCARE ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-white py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -370,7 +370,7 @@ export default function Healthcare() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Building The
               <br />
@@ -380,7 +380,7 @@ export default function Healthcare() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Modern healthcare demands connected systems, secure data
               exchange, AI-powered clinical support and digital experiences

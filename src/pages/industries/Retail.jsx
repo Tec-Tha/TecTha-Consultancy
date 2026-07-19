@@ -142,7 +142,7 @@ export default function Retail() {
       </section>
             {/* ================= MODERN RETAIL ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-[#F8FAFC] py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -173,7 +173,7 @@ export default function Retail() {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Seamless Shopping.
               <br />
@@ -181,7 +181,7 @@ export default function Retail() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Retail is evolving beyond traditional storefronts. We help
               retailers create connected shopping experiences through AI,
@@ -214,7 +214,7 @@ export default function Retail() {
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-700">
 
                     {item}
 
@@ -336,7 +336,7 @@ export default function Retail() {
       </section>
             {/* ================= FUTURE OF RETAIL ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-[#F8FAFC] py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -355,7 +355,7 @@ export default function Retail() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Transforming
               <br />
@@ -365,7 +365,7 @@ export default function Retail() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Today's consumers expect seamless, personalized and connected
               experiences across every channel. We help retailers modernize
