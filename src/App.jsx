@@ -66,10 +66,7 @@ import AIAnalytics from "./pages/services/DataAI/AIAnalytics";
 import ExecutiveIntelligence from "./pages/services/DataAI/ExecutiveIntelligence";
 import PredictiveAnalytics from "./pages/services/DataAI/PredictiveAnalytics";
 import DataGovernance from "./pages/services/DataAI/DataGovernance";
-<<<<<<< HEAD
-=======
 import IndustryLayout from "./pages/industries/IndustryLayout";
->>>>>>> cdedd86b72497dd3daa5cb16abd8ee8c835e798c
 import Logistics from "./pages/industries/Logistics";
 import Healthcare from "./pages/industries/Healthcare";
 import Banking from "./pages/industries/Banking";
@@ -79,10 +76,6 @@ import Education from "./pages/industries/Education";
 import Government from "./pages/industries/Government";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> cdedd86b72497dd3daa5cb16abd8ee8c835e798c
 function App() {
   return (
     <>
@@ -130,7 +123,6 @@ function App() {
         <Route path="/services/EnterpriseSolution/supply-chain-solutions" element={<SupplyChainSolutions />} />
         <Route path="/services/EnterpriseSolution/finance-solutions" element={<FinanceSolutions />} />
         <Route path="/services/EnterpriseSolution/industry-solutions" element={<IndustrySolutions />} />
-<<<<<<< HEAD
         <Route path="/services/ManagedServices" element={<ManagedServices />} />
         <Route path="/services/ManagedServices/managed-applications" element={<ManagedApplications />} />
         <Route path="/services/ManagedServices/managed-cloudd" element={<ManagedCloudd />} />
@@ -139,7 +131,7 @@ function App() {
         <Route path="/services/ManagedServices/technology-operations" element={<TechnologyOperations />} />
         <Route path="/services/ManagedServices/enterprise-support" element={<EnterpriseSupport />} />
         <Route path="/services/EnterpriseApplications" element={<EnterpriseApplications />} />
-        <Route path="/services/EnterpriseApplications/enterprise-software" element={<EnterpriseSoftwaree />} />
+        <Route path="/services/EnterpriseApplications/enterprise-softwaree" element={<EnterpriseSoftwaree />} />
         <Route path="/services/EnterpriseApplications/custom-applications" element={<CustomApplications />} />
         <Route path="/services/EnterpriseApplications/business-applications" element={<BusinessApplications />} />
         <Route path="/services/EnterpriseApplications/systems-integration" element={<SystemsIntegration />} />
@@ -156,13 +148,11 @@ function App() {
         <Route path="/industries/healthcare" element={<Healthcare />} />
         <Route path="/industries/banking" element={<Banking />} />
         <Route path="/industries/manufacturing" element={<Manufacturing />} />
-=======
         <Route path="/industries" element={<IndustryLayout />} />
         <Route path="/industries/logistics" element={<Logistics />}/>
         <Route path="/industries/healthcare" element={<Healthcare />}/>
         <Route path="/industries/banking" element={<Banking />}/>
         <Route path="/industries/manufacturing" element={<Manufacturing />}/>
->>>>>>> cdedd86b72497dd3daa5cb16abd8ee8c835e798c
         <Route path="/industries/retail" element={<Retail />} />
         <Route path="/industries/education" element={<Education />} />
         <Route path="/industries/government" element={<Government />} />

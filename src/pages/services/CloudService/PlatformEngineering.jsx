@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import {
   ArrowRight,
+  Bot,
+  ShieldAlert,
+  GitBranch,
+  Database,
+  Repeat,
+  Workflow,
+  MessageSquare,
   LayoutTemplate,
   Boxes,
   Rocket,
@@ -84,53 +91,125 @@ const Counter = ({ value, className }) => {
 /* ---------------------------------------------------------- */
 
 const CHALLENGES = [
-  { icon: Puzzle, title: "Every team reinvents its own tooling", desc: "Without a shared platform, teams build one-off deployment and infrastructure setups that duplicate effort." },
-  { icon: Wrench, title: "Developers waiting on infrastructure requests", desc: "Simple requests like provisioning a database or environment turn into multi-day tickets to another team." },
-  { icon: ShieldCheck, title: "Inconsistent security and compliance", desc: "Without standard guardrails, every team's setup carries a different, unmanaged level of risk." },
-  { icon: Gauge, title: "Slow onboarding for new engineers", desc: "New hires spend weeks learning fragmented tooling before they can ship their first change." },
-  { icon: Users, title: "Platform team stretched thin", desc: "A small platform team fields the same support requests repeatedly instead of building for scale." },
-  { icon: Eye, title: "No visibility into what's running where", desc: "As services multiply, no one has a clear picture of what exists, who owns it, or its current state." },
+  {
+    icon: Bot,
+    title: "Complex Development Environments",
+    desc: "Managing multiple development tools, cloud platforms, and infrastructure slows software delivery and increases operational complexity.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Inconsistent Developer Experience",
+    desc: "Different environments and manual configurations reduce productivity and create deployment inconsistencies.",
+  },
+  {
+    icon: GitBranch,
+    title: "Slow Software Delivery",
+    desc: "Disconnected workflows and inefficient automation delay application releases and business innovation.",
+  },
+  {
+    icon: Database,
+    title: "Infrastructure Management Challenges",
+    desc: "Maintaining scalable infrastructure manually increases operational overhead and limits engineering efficiency.",
+  },
+  {
+    icon: Repeat,
+    title: "Scalability & Reliability",
+    desc: "Rapid business growth requires resilient platforms that support continuous delivery and high application availability.",
+  },
+  {
+    icon: Eye,
+    title: "Limited Platform Visibility",
+    desc: "Without centralized monitoring, engineering teams struggle to optimize platform performance and resource utilization.",
+  },
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Assess", desc: "We map how your engineering teams currently ship code, provision infrastructure, and where friction slows them down.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Design Golden Paths", desc: "We define standardized, self-service workflows for the most common tasks developers repeat every day.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Build the Platform", desc: "We build the internal developer platform, templates, and tooling that make those golden paths real.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Embed Guardrails", desc: "We bake security, compliance, and cost controls into the platform itself, so good practice is the default.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Support & Evolve", desc: "We help your platform team maintain and extend the platform as new needs and services emerge.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" },
+  {
+    step: "01",
+    title: "Platform Assessment",
+    desc: "We assess your engineering processes, infrastructure, and developer workflows to define an effective platform strategy.",
+    image: "...",
+  },
+  {
+    step: "02",
+    title: "Platform Architecture",
+    desc: "Our experts design scalable platform architectures that simplify development, deployment, and operations.",
+    image: "...",
+  },
+  {
+    step: "03",
+    title: "Automation & Integration",
+    desc: "We implement Infrastructure as Code, CI/CD pipelines, automation, and cloud-native platform capabilities.",
+    image: "...",
+  },
+  {
+    step: "04",
+    title: "Platform Operations",
+    desc: "Deliver secure, reliable, and observable platforms with continuous monitoring, governance, and operational support.",
+    image: "...",
+  },
+  {
+    step: "05",
+    title: "Optimization & Innovation",
+    desc: "Continuously improve platform performance, developer productivity, scalability, and operational efficiency.",
+    image: "...",
+  },
 ];
 
 const DELIVERABLES = [
-  { icon: LayoutTemplate, title: "Internal Developer Platform", desc: "A self-service platform giving engineers the tools they need without waiting on tickets." },
-  { icon: Route, title: "Golden Path Templates", desc: "Standardized, pre-approved workflows for the tasks developers do most often." },
-  { icon: Boxes, title: "Infrastructure Abstractions", desc: "Simplified interfaces over complex infrastructure, so teams provision safely without deep cloud expertise." },
-  { icon: ShieldCheck, title: "Built-In Guardrails", desc: "Security, compliance, and cost controls embedded directly into the platform's default paths." },
-  { icon: Rocket, title: "Faster Onboarding", desc: "New engineers ship their first change in days, not weeks, using standardized tooling." },
-  { icon: Gauge, title: "Platform Observability", desc: "Clear visibility into what services exist, who owns them, and how they're performing." },
-];
-
-const INDUSTRIES = [
-  { name: "SaaS & Technology", desc: "Platforms that let engineering scale without scaling headcount.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Financial Services", desc: "Self-service infrastructure with compliance guardrails built in.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "E-Commerce", desc: "Standardized deployment paths for teams shipping frequently.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Platforms enforcing consistent security across every service.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Internal platforms connecting software teams to operational systems.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Golden paths built for teams shipping across many services at once.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-];
-
-const IMPACT = [
-  { value: "80%", label: "Fewer Infrastructure Support Tickets" },
-  { value: "5x", label: "Faster New Engineer Onboarding" },
-  { value: "60%", label: "Faster Time to First Deploy" },
-  { value: "100%", label: "Services Covered by Standard Guardrails" },
+  {
+    icon: Bot,
+    title: "Developer Platforms",
+    desc: "Build self-service platforms that simplify application development, deployment, and lifecycle management.",
+  },
+  {
+    icon: Workflow,
+    title: "CI/CD Automation",
+    desc: "Accelerate software delivery through automated build, testing, deployment, and release pipelines.",
+  },
+  {
+    icon: Database,
+    title: "Infrastructure as Code",
+    desc: "Automate infrastructure provisioning and management using scalable Infrastructure as Code practices.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Platform Security & Governance",
+    desc: "Strengthen platform security, compliance, access management, and operational governance.",
+  },
+  {
+    icon: Eye,
+    title: "Platform Observability",
+    desc: "Monitor platform health, application performance, and operational metrics through centralized observability.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Platform Engineering Consulting",
+    desc: "Receive expert guidance to modernize engineering platforms and accelerate software innovation.",
+  },
 ];
 
 const FAQS = [
-  { q: "How is platform engineering different from DevOps?", a: "DevOps focuses on automating delivery pipelines for a given team. Platform engineering builds the shared, self-service foundation, tools, templates, and guardrails, that every team in the organization builds on top of." },
-  { q: "Do we need a dedicated platform team for this to work?", a: "It helps, but isn't required to start. We can help you stand up the platform and either support your existing team or help you build the platform team that will own it going forward." },
-  { q: "Will golden paths limit what our developers can build?", a: "No. Golden paths cover the common, repeatable cases so developers move fast by default, while still leaving room for teams to go outside the path when a task genuinely needs it." },
-  { q: "How long does it take to see impact from a platform investment?", a: "Teams typically see faster onboarding and fewer support tickets within the first few months, as the first golden paths roll out and adoption grows." },
-  { q: "Does this replace our existing cloud or DevOps tooling?", a: "No, it sits on top of it. The platform packages your existing infrastructure and tooling into simpler, self-service workflows rather than replacing the underlying systems." },
+  {
+    q: "What is Platform Engineering?",
+    a: "Platform Engineering focuses on building and managing internal developer platforms that improve software delivery, automation, scalability, and operational efficiency.",
+  },
+  {
+    q: "Why is Platform Engineering important?",
+    a: "It improves developer productivity, standardizes infrastructure, accelerates software delivery, and strengthens platform reliability.",
+  },
+  {
+    q: "Can Platform Engineering support cloud-native environments?",
+    a: "Yes. We build and manage cloud-native platforms across AWS, Azure, Google Cloud, Kubernetes, and hybrid environments.",
+  },
+  {
+    q: "Do you implement CI/CD and Infrastructure as Code?",
+    a: "Absolutely. We automate development workflows using CI/CD pipelines, Infrastructure as Code, and modern DevOps practices.",
+  },
+  {
+    q: "Do you provide ongoing platform support?",
+    a: "Yes. We provide continuous monitoring, optimization, governance, maintenance, and platform engineering advisory services.",
+  },
 ];
 
 /* ---------------------------------------------------------- */
@@ -163,38 +242,44 @@ const PlatformEngineering = () => {
         </motion.div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10 pb-24 pt-40">
-          <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="text-xs font-semibold uppercase tracking-[0.3em] text-[#93A5FF] mb-6 font-['Montserrat']">
-            Cloud Strategy
-          </motion.p>
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0.12}
-            className="text-white text-4xl md:text-6xl lg:text-7xl font leading-[1.03] max-w-4xl mb-8 tracking-tight"
-          >
-            A cloud roadmap the whole business can stand behind.
-          </motion.h1>
           <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0.22}
-            className="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed mb-10"
-          >
-            We build the roadmap, cost model, and governance framework
-            that turn cloud investment into a plan engineering, finance,
-            and leadership can all execute against.
-          </motion.p>
-          <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={0.32}>
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
-            >
-              Schedule a Strategy Session
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </motion.div>
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  custom={0}
+  className="text-xs font-semibold uppercase tracking-[0.3em] text-[#93A5FF] mb-6 font-['Montserrat']"
+>
+  Platform Engineering
+</motion.p>
+
+<motion.h1
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  custom={0.12}
+  className="text-white text-4xl md:text-6xl lg:text-7xl font leading-[1.03] max-w-4xl mb-8 tracking-tight"
+>
+  Accelerate software delivery with modern Platform Engineering.
+</motion.h1>
+
+<motion.p
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  custom={0.22}
+  className="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed mb-10"
+>
+  Build scalable engineering platforms that automate infrastructure, streamline development workflows, and empower teams to deliver software faster with greater reliability.
+</motion.p>
+
+<Link
+  to="/contact"
+  className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
+>
+  Schedule a Platform Engineering Consultation
+  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+</Link>
+      
         </div>
       </section>
 
@@ -209,25 +294,21 @@ const PlatformEngineering = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <Eyebrow>Why Cloud Strategy</Eyebrow>
-            <h2 className="text-3xl md:text-5xl font leading-[1.1] mb-8 tracking-tight text-[#0B1120]">
-              Cloud investment without a plan is just spend.
-            </h2>
-            <div className="text-gray-600 text-lg leading-relaxed space-y-5">
-              <p>
-                Most organizations approve cloud budgets before they have
-                a real plan for where that money leads. Provider choice,
-                architecture direction, and cost projections get decided
-                team by team, with no shared view of the destination.
-              </p>
-              <p>
-                A cloud strategy fixes that before a dollar is committed.
-                It ties provider and architecture decisions to a real cost
-                model, sequences the roadmap around business priorities,
-                and gets engineering, finance, and leadership aligned on
-                the same plan.
-              </p>
-            </div>
+           <Eyebrow>WHY PLATFORM ENGINEERING</Eyebrow>
+
+<h2 className="text-3xl md:text-5xl font leading-[1.1] mb-8 tracking-tight text-[#0B1120]">
+  Empower developers with scalable, self-service engineering platforms.
+</h2>
+
+<div className="text-gray-600 text-lg leading-relaxed space-y-5">
+  <p>
+    Modern software teams need standardized platforms that simplify infrastructure management, automate delivery pipelines, and improve collaboration across development and operations.
+  </p>
+
+  <p>
+    Our Platform Engineering services help organizations build cloud-native platforms, increase developer productivity, strengthen governance, and accelerate software innovation.
+  </p>
+</div>
           </motion.div>
 
           <motion.div
@@ -283,15 +364,13 @@ const PlatformEngineering = () => {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <p className="text-sm uppercase tracking-[0.35em] text-blue-500 font-semibold mb-4">
-              Strategic Challenges
-            </p>
-      
-            <h2 className="text-5xl md:text-6xl text-white font-light leading-tight max-w-6xl">
-              Why AI initiatives
-              <br />
-              fail before they scale.
-            </h2>
+           <p className="text-sm uppercase tracking-[0.35em] text-blue-500 font-semibold mb-4">
+  Platform Engineering Challenges
+</p>
+
+<h2 className="text-5xl md:text-6xl text-white font-light leading-tight max-w-6xl">
+  The platform challenges slowing modern software delivery.
+</h2>
           </motion.div>
       
           <div className="space-y-6">
@@ -347,14 +426,12 @@ const PlatformEngineering = () => {
       
           {/* Heading */}
           <p className="uppercase tracking-[0.35em] text-blue-600 text-sm font-semibold mb-5">
-            Strategy Framework
-          </p>
-      
-          <h2 className="text-5xl font-light text-slate-900 max-w-4xl mb-20 leading-tight">
-            A disciplined path from ambiguity
-            <br />
-            to execution.
-          </h2>
+  Platform Engineering Framework
+</p>
+
+<h2 className="text-5xl font-light text-slate-900 max-w-4xl mb-20 leading-tight">
+  A modern framework for scalable engineering platforms and continuous delivery.
+</h2>
       
           {/* Cards */}
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -410,14 +487,13 @@ const PlatformEngineering = () => {
       
               <Eyebrow>What We Deliver</Eyebrow>
       
-              <h2 className="mt-5 text-5xl font-light leading-tight text-white">
-                Tangible deliverables your teams can act on.
-              </h2>
-      
-              <p className="mt-8 text-lg leading-8 text-white/60">
-                Every engagement concludes with practical outputs that help
-                leadership make confident decisions and accelerate execution.
-              </p>
+             <h2 className="mt-5 text-5xl font-light leading-tight text-white">
+  Comprehensive Platform Engineering solutions for modern enterprises.
+</h2>
+
+<p className="mt-8 text-lg leading-8 text-white/60">
+  Our Platform Engineering services simplify infrastructure management, automate software delivery, improve developer experience, and build resilient platforms for continuous innovation.
+</p>
       
             </div>
       
@@ -545,21 +621,21 @@ const PlatformEngineering = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="relative max-w-[1000px] mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-6xl font leading-[1.05] text-white mb-8 tracking-tight">
-            Give your cloud investment a direction, not just a budget.
-          </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-            Our strategists help you build the roadmap, cost model, and
-            alignment that turn cloud spend into a plan the whole business
-            can execute against.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-3 rounded-full border border-white/20 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:border-blue-500 hover:bg-white/5"
-          >
-            Schedule a Strategy Session
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          <h2 className="mt-5 text-5xl font-light leading-tight text-white">
+  Build engineering platforms that power continuous innovation.
+</h2>
+
+<p className="mt-8 text-lg leading-8 text-white/60">
+  Partner with our Platform Engineering experts to modernize development platforms, accelerate software delivery, and enable scalable digital transformation.
+</p>
+
+<Link
+  to="/contact"
+  className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
+>
+  Schedule a Platform Engineering Consultation
+  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+</Link>
         </motion.div>
       </section>
     </div>
