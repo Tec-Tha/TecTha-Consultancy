@@ -135,7 +135,7 @@ export default function Manufacturing() {
       </section>
             {/* ================= SMART MANUFACTURING ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-[#F8FAFC] py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -166,7 +166,7 @@ export default function Manufacturing() {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Smart Factories.
               <br />
@@ -174,7 +174,7 @@ export default function Manufacturing() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Modern manufacturers are embracing Industry 4.0 technologies to
               improve production efficiency, optimize operations and deliver
@@ -207,7 +207,7 @@ export default function Manufacturing() {
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-700">
 
                     {item}
 
@@ -333,7 +333,7 @@ export default function Manufacturing() {
       </section>
             {/* ================= FUTURE OF MANUFACTURING ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-[#F8FAFC] py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -352,7 +352,7 @@ export default function Manufacturing() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Accelerating
               <br />
@@ -362,7 +362,7 @@ export default function Manufacturing() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Tec Tha enables manufacturers to build resilient,
               intelligent and connected production ecosystems through
@@ -430,7 +430,7 @@ export default function Manufacturing() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-[#0F172A]">
 
               Build Intelligent
               <br />

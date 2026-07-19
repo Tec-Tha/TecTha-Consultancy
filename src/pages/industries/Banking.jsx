@@ -133,7 +133,7 @@ export default function Banking() {
       </section>
             {/* ================= DIGITAL BANKING ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-[#F8FAFC] py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -170,7 +170,7 @@ export default function Banking() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Secure Banking.
               <br />
@@ -178,7 +178,7 @@ export default function Banking() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Financial institutions are transforming customer experiences
               with AI-powered banking, real-time payments, fraud detection,
@@ -211,7 +211,7 @@ export default function Banking() {
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-600">
 
                     {item}
 
@@ -338,7 +338,7 @@ export default function Banking() {
       </section>
             {/* ================= FUTURE OF FINANCE ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-[#F8FAFC] py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -357,7 +357,7 @@ export default function Banking() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Banking Built
               <br />
@@ -367,7 +367,7 @@ export default function Banking() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Financial institutions require resilient, scalable and secure
               platforms to support millions of daily transactions.

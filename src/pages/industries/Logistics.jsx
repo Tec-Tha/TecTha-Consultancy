@@ -137,7 +137,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 </section>
       {/* ================= SMART LOGISTICS ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-[#F8FAFC] py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -169,7 +169,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Faster Delivery.
               <br />
@@ -179,7 +179,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Modern logistics organizations rely on connected supply chains,
               intelligent automation and AI-powered visibility to optimize
@@ -212,7 +212,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-700">
 
                     {item}
 
@@ -333,7 +333,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= FUTURE OF LOGISTICS ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-[#F8FAFC] py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -346,7 +346,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Delivering
               <br />
@@ -356,7 +356,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Logistics leaders are embracing AI, automation and connected
               ecosystems to improve visibility, reduce costs and deliver
