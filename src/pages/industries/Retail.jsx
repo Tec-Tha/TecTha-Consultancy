@@ -92,7 +92,7 @@ export default function Retail() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-black leading-[0.95] text-white"
+            className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
           >
             Retail Through
             <br />
@@ -173,7 +173,7 @@ export default function Retail() {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
 
               Seamless Shopping.
               <br />
@@ -208,7 +208,7 @@ export default function Retail() {
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
 
                     ✓
 
@@ -246,7 +246,7 @@ export default function Retail() {
             <div>
 
 
-              <h2 className="max-w-4xl text-6xl font-black leading-tight text-white">
+              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
 
                 Creating Intelligent
                 <br />
@@ -305,7 +305,7 @@ export default function Retail() {
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-bold text-white">
+                      <h3 className="text-3xl font-light text-white">
 
                         {card.title}
 
@@ -355,7 +355,7 @@ export default function Retail() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
 
               Transforming
               <br />
@@ -436,7 +436,7 @@ export default function Retail() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-black leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
 
               Create Retail
               <br />

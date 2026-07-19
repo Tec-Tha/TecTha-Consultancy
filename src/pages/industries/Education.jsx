@@ -90,7 +90,7 @@ export default function Education() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-black leading-[0.95] text-white"
+            className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
           >
             Empowering
             <br />
@@ -169,7 +169,7 @@ export default function Education() {
           >
 
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
 
               Smarter Learning.
               <br />
@@ -204,7 +204,7 @@ export default function Education() {
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
 
                     ✓
 
@@ -242,7 +242,7 @@ export default function Education() {
             <div>
 
              
-              <h2 className="max-w-4xl text-6xl font-black leading-tight text-white">
+              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
 
                 Building Intelligent
                 <br />
@@ -301,7 +301,7 @@ export default function Education() {
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-bold text-white">
+                      <h3 className="text-3xl font-light text-white">
 
                         {card.title}
 
@@ -344,7 +344,7 @@ export default function Education() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-white">
 
               Creating
               <br />
@@ -423,7 +423,7 @@ export default function Education() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-black leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
 
               Build Future-Ready
               <br />

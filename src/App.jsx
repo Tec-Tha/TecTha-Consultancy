@@ -45,7 +45,6 @@ import CustomerRelationshipManagement from "./pages/services/EnterpriseSolution/
 import SupplyChainSolutions from "./pages/services/EnterpriseSolution/SupplyChainSolutions";
 import FinanceSolutions from "./pages/services/EnterpriseSolution/FinanceSolutions";
 import IndustrySolutions from "./pages/services/EnterpriseSolution/IndustrySolutions";
-<<<<<<< HEAD
 import ManagedApplications from "./pages/services/ManagedServices/ManagedApplications";
 import ManagedCloudd from "./pages/services/ManagedServices/ManagedCloudd";
 import ManagedAI from "./pages/services/ManagedServices/ManagedAI";
@@ -66,7 +65,8 @@ import AIAnalytics from "./pages/services/DataAI/AIAnalytics";
 import ExecutiveIntelligence from "./pages/services/DataAI/ExecutiveIntelligence";
 import PredictiveAnalytics from "./pages/services/DataAI/PredictiveAnalytics";
 import DataGovernance from "./pages/services/DataAI/DataGovernance";
-=======
+import IndustryLayout from "./pages/industries/IndustryLayout";
+import Logistics from "./pages/industries/Logistics";
 import Healthcare from "./pages/industries/Healthcare";
 import Banking from "./pages/industries/Banking";
 import Manufacturing from "./pages/industries/Manufacturing";
@@ -75,7 +75,7 @@ import Education from "./pages/industries/Education";
 import Government from "./pages/industries/Government";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
 
->>>>>>> d96711cc3738735f63dc83a9b4b82586c90d228d
+
 function App() {
   return (
     <>
@@ -123,11 +123,12 @@ function App() {
         <Route path="/services/EnterpriseSolution/supply-chain-solutions" element={<SupplyChainSolutions />} />
         <Route path="/services/EnterpriseSolution/finance-solutions" element={<FinanceSolutions />} />
         <Route path="/services/EnterpriseSolution/industry-solutions" element={<IndustrySolutions />} />
+        <Route path="/industries" element={<IndustryLayout />} />
         <Route path="/industries/logistics" element={<Logistics />}/>
         <Route path="/industries/healthcare" element={<Healthcare />}/>
         <Route path="/industries/banking" element={<Banking />}/>
         <Route path="/industries/manufacturing" element={<Manufacturing />}/>
-        <Route path="/industries/:industry" element={<Retail />} />
+        <Route path="/industries/retail" element={<Retail />} />
         <Route path="/industries/education" element={<Education />} />
         <Route path="/industries/government" element={<Government />} />
         <Route path="/industries/professional-services" element={<ProfessionalServices />} />
