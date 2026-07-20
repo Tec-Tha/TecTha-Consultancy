@@ -105,31 +105,31 @@ const FRAMEWORK = [
   {
     step: "01",
     title: "Discover",
-    image: "/art.jpg",
+    image: "/Ai/aii.jpg",
     desc: "We map your current data, systems, and operational workflows to establish a clear baseline before any recommendation is made.",
   },
   {
     step: "02",
     title: "Assess",
-    image: "/art.jpg",
+    image: "/Ai/19.jpg",
     desc: "We evaluate AI readiness across data quality, infrastructure, talent, and governance to identify what is realistically achievable.",
   },
   {
     step: "03",
     title: "Prioritize",
-    image: "/art.jpg",
+    image: "/Ai/20.jpg",
     desc: "Opportunities are scored against business value and delivery feasibility, so effort goes where it creates the most defensible return.",
   },
   {
     step: "04",
     title: "Roadmap",
-    image: "/art.jpg",
+    image: "/Ai/21.jpg",
     desc: "We sequence initiatives into a phased execution plan, aligned to budget cycles, technical dependencies, and stakeholder readiness.",
   },
   {
     step: "05",
     title: "Execute",
-    image: "/art.jpg",
+    image: "/Ai/22.jpg",
     desc: "Our teams support delivery from pilot through production, with governance checkpoints built into every phase of the rollout.",
   },
 ];
@@ -175,7 +175,7 @@ const AIStrategy = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2400&auto=format&fit=crop"
+            src="/Ai/23.jpg"
             alt="Executive strategy meeting"
             className="h-full w-full object-cover"
           />
@@ -263,7 +263,7 @@ const AIStrategy = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop"
+                src="/Ai/ai6.jpeg"
                 alt="Enterprise data strategy"
                 className="h-full w-full object-cover"
               />
@@ -555,12 +555,7 @@ const AIStrategy = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise strategy"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

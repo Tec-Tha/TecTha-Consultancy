@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Data Assessment",
     desc: "We assess your data sources, analytics capabilities, and business objectives to define an AI analytics strategy.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "02",
     title: "Analytics Strategy",
     desc: "Our experts design AI-powered analytics solutions that align with business goals and decision-making requirements.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "03",
     title: "Platform Implementation",
     desc: "We integrate AI models, data platforms, and visualization tools to enable intelligent business analytics.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "04",
     title: "Insight Generation",
     desc: "Real-time dashboards, predictive analytics, and automated reporting provide actionable business intelligence.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "We continuously improve AI models, analytics performance, and business insights to maximize long-term value.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 

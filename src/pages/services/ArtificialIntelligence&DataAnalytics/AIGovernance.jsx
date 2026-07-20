@@ -93,11 +93,11 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Assess", desc: "We inventory where AI is already in use across your organization and evaluate the risk each use case carries.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Define Policy", desc: "We establish clear standards for acceptable AI use, data handling, and decision authority across teams.", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Build Controls", desc: "We implement approval workflows, access restrictions, and review checkpoints matched to each system's risk level.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Document", desc: "Every model, decision pathway, and control is documented to withstand internal review and external audit.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Monitor & Report", desc: "We track AI system behavior on an ongoing basis and provide leadership with clear, regular reporting on compliance.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Assess", desc: "We inventory where AI is already in use across your organization and evaluate the risk each use case carries.", image: "/Ai/63.jpg" },
+  { step: "02", title: "Define Policy", desc: "We establish clear standards for acceptable AI use, data handling, and decision authority across teams.", image: "/Ai/62.avif" },
+  { step: "03", title: "Build Controls", desc: "We implement approval workflows, access restrictions, and review checkpoints matched to each system's risk level.", image: "/Ai/66.jpg" },
+  { step: "04", title: "Document", desc: "Every model, decision pathway, and control is documented to withstand internal review and external audit.", image: "/Ai/61.avif" },
+  { step: "05", title: "Monitor & Report", desc: "We track AI system behavior on an ongoing basis and provide leadership with clear, regular reporting on compliance.", image: "/Ai/65.jpg" },
 ];
 
 const DELIVERABLES = [
@@ -109,21 +109,7 @@ const DELIVERABLES = [
   { icon: Landmark, title: "Board & Executive Reporting", desc: "Regular reporting that gives leadership a clear view of AI risk posture and compliance status." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Governance frameworks aligned to model risk management expectations.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Policy and controls that keep AI use within regulatory and clinical boundaries.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Insurance", desc: "Documented decision pathways for AI-assisted underwriting and claims.", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Public Sector", desc: "Transparent, auditable frameworks suited to public accountability standards.", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Oversight structures for AI systems embedded in operational decision-making.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Retail", desc: "Governance for AI used in pricing, personalization, and inventory decisions.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-];
 
-const IMPACT = [
-  { value: "100%", label: "AI Use Cases Documented and Classified" },
-  { value: "70%", label: "Faster Audit and Compliance Reviews" },
-  { value: "50%", label: "Reduction in Unmanaged AI Risk" },
-  { value: "24/7", label: "Continuous Compliance Monitoring" },
-];
 
 const FAQS = [
   { q: "What does an AI governance engagement actually produce?", a: "You get a documented policy framework, a risk classification system for AI use cases, defined controls, and ongoing monitoring — not just a set of recommendations." },
@@ -155,7 +141,7 @@ const AIGovernance = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2400&auto=format&fit=crop"
+            src="/Ai/37.jpg"
             alt="AI governance and compliance frameworks"
             className="h-full w-full object-cover"
           />
@@ -239,7 +225,7 @@ const AIGovernance = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1600&auto=format&fit=crop"
+                src="/Ai/32.jpg"
                 alt="AI policy and compliance controls"
                 className="h-full w-full object-cover"
               />
@@ -530,12 +516,7 @@ const AIGovernance = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise AI governance systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

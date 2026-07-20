@@ -123,35 +123,35 @@ const FRAMEWORK = [
     title: "Workforce Assessment",
     desc: "We evaluate your HR processes, workforce challenges, and organizational goals to define the right Human Capital Management strategy.",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "02",
     title: "Solution Planning",
     desc: "Our experts design an HCM solution tailored to recruitment, payroll, employee engagement, and talent management requirements.",
     image:
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "03",
     title: "System Integration",
     desc: "We integrate HCM with ERP, payroll, attendance, finance, and other enterprise applications for seamless workforce management.",
     image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "04",
     title: "Deployment & Adoption",
     desc: "We implement the solution, migrate employee data, train HR teams, and ensure a smooth transition across your organization.",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Ongoing support, analytics, and performance improvements ensure your HCM platform evolves with your workforce.",
     image:
-      "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
@@ -233,7 +233,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2400&auto=format&fit=crop"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -309,7 +309,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1600&auto=format&fit=crop"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

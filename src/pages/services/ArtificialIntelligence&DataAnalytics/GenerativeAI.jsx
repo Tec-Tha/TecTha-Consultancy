@@ -94,11 +94,11 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Define", desc: "We identify the specific content, workflow, or interaction generative AI should improve, and the quality bar it must meet.", image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Ground", desc: "We connect the model to your proprietary data through retrieval and fine-tuning, so outputs reflect your business, not generic internet text.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Build", desc: "We engineer the application layer — prompts, guardrails, and interfaces — that turns a raw model into a usable business tool.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Evaluate", desc: "Outputs are tested against accuracy, tone, and safety benchmarks before anything reaches an end user or customer.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Deploy", desc: "The system goes live with monitoring, feedback loops, and human review points built in from day one.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Define", desc: "We identify the specific content, workflow, or interaction generative AI should improve, and the quality bar it must meet.", image: "/Ai/41.jpg" },
+  { step: "02", title: "Ground", desc: "We connect the model to your proprietary data through retrieval and fine-tuning, so outputs reflect your business, not generic internet text.", image: "/Ai/50.jpg" },
+  { step: "03", title: "Build", desc: "We engineer the application layer — prompts, guardrails, and interfaces — that turns a raw model into a usable business tool.", image: "/Ai/44.jpg" },
+  { step: "04", title: "Evaluate", desc: "Outputs are tested against accuracy, tone, and safety benchmarks before anything reaches an end user or customer.", image: "/Ai/38.jpg" },
+  { step: "05", title: "Deploy", desc: "The system goes live with monitoring, feedback loops, and human review points built in from day one.", image: "/Ai/39.jpg" },
 ];
 
 const DELIVERABLES = [
@@ -110,21 +110,6 @@ const DELIVERABLES = [
   { icon: BookOpen, title: "Retrieval-Augmented Knowledge Systems", desc: "Generative outputs grounded in verified internal documentation and data." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Automated report drafting and compliance-reviewed client communications.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Technical documentation generation grounded in engineering specifications.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Clinical documentation support within strict compliance boundaries.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Retail", desc: "Product content and personalized messaging generated at scale.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Automated operational reporting grounded in live shipment data.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Public Sector", desc: "Citizen-facing content generation with full auditability and oversight.", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" },
-];
-
-const IMPACT = [
-  { value: "70%", label: "Reduction in Content Drafting Time" },
-  { value: "90%", label: "Output Grounded in Verified Data" },
-  { value: "3x", label: "Faster Documentation Turnaround" },
-  { value: "100%", label: "Review-Ready Governance" },
-];
 
 const FAQS = [
   { q: "How do you prevent hallucination in generated content?", a: "Outputs are grounded through retrieval-augmented generation against your verified data sources, with evaluation benchmarks and human review points built into the workflow before content reaches an end user." },
@@ -156,7 +141,7 @@ const GenerativeAI = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2400&auto=format&fit=crop"
+            src="/Ai/35.jpg"
             alt="Generative AI systems"
             className="h-full w-full object-cover"
           />
@@ -242,7 +227,7 @@ const GenerativeAI = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+                src="/Ai/31.avif"
                 alt="Grounded generative AI"
                 className="h-full w-full object-cover"
               />
@@ -406,73 +391,75 @@ const GenerativeAI = () => {
       {/* WHAT WE DELIVER — white bg, icon cards                        */}
       {/* ============================================================ */}
       <section className="bg-black py-28">
-        <div className="max-w-7xl mx-auto px-6">
-      
-          <div className="grid lg:grid-cols-[420px_1fr] gap-20">
-      
-            {/* Left Sticky */}
-            <div className="lg:sticky lg:top-28 self-start">
-      
-              <Eyebrow>What We Deliver</Eyebrow>
-      
-              <h2 className="mt-5 text-5xl font-light leading-tight text-white">
-                Tangible deliverables your teams can act on.
-              </h2>
-      
-              <p className="mt-8 text-lg leading-8 text-white/60">
-                Every engagement concludes with practical outputs that help
-                leadership make confident decisions and accelerate execution.
-              </p>
-      
-            </div>
-      
-            {/* Right Cards */}
-            <div className="space-y-8">
-      
-              {DELIVERABLES.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
-                  }}
-                  whileHover={{
-                    scale: 1.02,
-                    y: -5,
-                  }}
-                  className="sticky top-32"
-                >
-                  <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-10 transition-all duration-500 hover:border-blue-500/40 hover:bg-white/10">
-      
-                    <div className="flex items-center justify-between">
-      
-                      <span className="text-7xl font-light text-white/10">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-      
-                    </div>
-      
-                    <h3 className="mt-8 text-3xl font text-white">
-                      {item.title}
-                    </h3>
-      
-                    <p className="mt-5 text-lg leading-8 text-white/60">
-                      {item.desc}
-                    </p>
-      
-                  </div>
-                </motion.div>
-              ))}
-      
-            </div>
-      
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid lg:grid-cols-[420px_1fr] gap-20">
+
+      {/* Left Sticky */}
+      <div className="lg:sticky lg:top-28 self-start">
+        <Eyebrow>What We Deliver</Eyebrow>
+
+        <h2 className="mt-5 text-5xl font-light leading-tight text-white">
+          Tangible deliverables your teams can act on.
+        </h2>
+
+        <p className="mt-8 text-lg leading-8 text-white/60">
+          Every engagement concludes with practical outputs that help
+          leadership make confident decisions and accelerate execution.
+        </p>
+      </div>
+
+      {/* Right Cards */}
+      <div className="space-y-8">
+        {DELIVERABLES.map((item, index) => (
+          <div
+            key={item.title}
+            className="sticky top-32"
+          >
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 150,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.12,
+                ease: "easeOut",
+              }}
+              whileHover={{
+                scale: 1.02,
+                y: -5,
+              }}
+            >
+              <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-10 transition-all duration-500 hover:border-blue-500/40 hover:bg-white/10">
+
+                <div className="flex items-center justify-between">
+                  <span className="text-7xl font-light text-white/10">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h3 className="mt-8 text-3xl text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-5 text-lg leading-8 text-white/60">
+                  {item.desc}
+                </p>
+
+              </div>
+            </motion.div>
           </div>
-      
-        </div>
-      </section>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
 
      
 
@@ -539,12 +526,7 @@ const GenerativeAI = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?q=80&w=2400&auto=format&fit=crop"
-            alt="Generative AI content systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

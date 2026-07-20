@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "ERP Solutions",
     short:
       "Implement modern ERP platforms that streamline operations and improve enterprise-wide efficiency.",
-    image: "/art.jpg",
+    image: "/ERPSol/4.jpg",
     tags: ["ERP", "Implementation", "Transformation"],
     link: "/services/EnterpriseSolution/erp-solutions",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Human Capital Management",
     short:
       "Optimize workforce management with integrated HR, payroll, talent, and employee experience solutions.",
-    image: "/art.jpg",
+    image: "/ERPSol/5.jpg",
     tags: ["HR", "Talent", "Workforce"],
     link: "/services/EnterpriseSolution/human-capital-management",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "Customer Relationship Management",
     short:
       "Strengthen customer engagement with intelligent CRM solutions that improve sales, service, and retention.",
-    image: "/art.jpg",
+    image: "/ERPSol/10.jpg",
     tags: ["CRM", "Sales", "Customer Experience"],
     link: "/services/EnterpriseSolution/customer-relationship-management",
   },
@@ -55,7 +55,7 @@ const CAPABILITIES = [
     title: "Supply Chain Solutions",
     short:
       "Improve supply chain visibility, inventory management, and operational efficiency through connected solutions.",
-    image: "/art.jpg",
+    image: "/ERPSol/8.jpg",
     tags: ["Supply Chain", "Inventory", "Logistics"],
     link: "/services/EnterpriseSolution/supply-chain-solutions",
   },
@@ -64,7 +64,7 @@ const CAPABILITIES = [
     title: "Finance Solutions",
     short:
       "Modernize financial operations with automated accounting, reporting, compliance, and planning capabilities.",
-    image: "/art.jpg",
+    image: "/ERPSol/14.jpg",
     tags: ["Finance", "Automation", "Reporting"],
     link: "/services/EnterpriseSolution/finance-solutions",
   },
@@ -73,7 +73,7 @@ const CAPABILITIES = [
     title: "Industry Solutions",
     short:
       "Deliver industry-specific enterprise solutions tailored to unique business processes and regulatory requirements.",
-    image: "/art.jpg",
+    image: "/ERPSol/12.jpg",
     tags: ["Industry", "Enterprise", "Compliance"],
     link: "/services/EnterpriseSolution/industry-solutions",
   },
@@ -109,65 +109,70 @@ const CHALLENGES = [
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess & Discover",
-    desc: "Analyze existing enterprise systems, business processes, and operational challenges to identify transformation opportunities.",
-    image: "/art.jpg",
+    title: "Assess",
+    desc: "We audit existing data infrastructure, systems, and workflows to identify where AI creates the most defensible business value.",
+    image:
+"/Ai/1.jpg",
   },
   {
     step: "02",
-    title: "Design Solution",
-    desc: "Develop a scalable enterprise solution architecture aligned with business objectives and industry best practices.",
-    image: "/art.jpg",
+    title: "Design",
+    desc: "We architect the target data model and system design, sequenced against technical constraints and business priorities.",
+    image:
+"/Ai/2.jpg",
   },
   {
     step: "03",
-    title: "Implement & Integrate",
-    desc: "Configure, customize, and integrate enterprise applications with existing business systems for seamless operations.",
-    image: "/art.jpg",
+    title: "Build",
+    desc: "Engineering teams develop, train, and integrate solutions using agile delivery, with governance checkpoints in every sprint.",
+    image:
+"/Ai/ai4.jpeg",
   },
   {
     step: "04",
-    title: "Deploy & Enable",
-    desc: "Deploy enterprise solutions with comprehensive testing, user training, and change management for successful adoption.",
-    image: "/art.jpg",
+    title: "Deploy",
+    desc: "Solutions move to production with monitoring, rollback plans, and performance benchmarks in place from day one.",
+    image:
+"/Ai/ai1.jpg",
   },
   {
     step: "05",
-    title: "Optimize & Support",
-    desc: "Continuously enhance system performance through optimization, upgrades, governance, and managed support services.",
-    image: "/art.jpg",
+    title: "Scale & Govern",
+    desc: "We establish ongoing monitoring, retraining cycles, and governance reporting so performance holds as usage grows.",
+    image:
+"/Ai/5.jpg",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/ERPSol/13.jpg",
     desc: "Optimize production planning, inventory management, and end-to-end manufacturing operations.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/ERPSol/11.jpg",
     desc: "Unify inventory, sales, customer engagement, and supply chain operations across all channels.",
   },
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/ERPSol/7.jpg",
     desc: "Improve financial management, regulatory reporting, and enterprise governance with integrated solutions.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/ERPSol/1.jpg",
     desc: "Enhance healthcare operations with secure resource planning, procurement, and compliance management.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/ERPSol/6.jpg",
     desc: "Streamline warehouse management, transportation, and supply chain operations through connected enterprise systems.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/ERPSol/2.jpg",
     desc: "Modernize public sector operations with secure, transparent, and citizen-focused enterprise solutions.",
   },
 ];
@@ -208,7 +213,7 @@ const ERPSolutions = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/ERPSol/9.jpg')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -286,7 +291,7 @@ const ERPSolutions = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/ERPSol/15.jpg"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -314,7 +319,7 @@ const ERPSolutions = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/ERPSol/10.jpg"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />

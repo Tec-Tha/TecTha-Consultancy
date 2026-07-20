@@ -94,11 +94,11 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Map", desc: "We document the end-to-end process as it actually runs today, including every exception and manual workaround.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Redesign", desc: "We redesign the workflow around automation from the ground up, rather than automating an inefficient process as-is.", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Automate", desc: "We combine RPA, machine learning, and orchestration to handle both the routine path and the common exceptions.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Validate", desc: "Every automated workflow is tested against real historical cases before it touches live production data.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Operate", desc: "We monitor automation performance continuously, with clear escalation paths when a process needs human judgment.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Map", desc: "We document the end-to-end process as it actually runs today, including every exception and manual workaround.", image: "/Ai/54.jpg" },
+  { step: "02", title: "Redesign", desc: "We redesign the workflow around automation from the ground up, rather than automating an inefficient process as-is.", image: "/Ai/57.jpg" },
+  { step: "03", title: "Automate", desc: "We combine RPA, machine learning, and orchestration to handle both the routine path and the common exceptions.", image: "/Ai/ai5.jpg" },
+  { step: "04", title: "Validate", desc: "Every automated workflow is tested against real historical cases before it touches live production data.", image: "/Ai/60.jpg" },
+  { step: "05", title: "Operate", desc: "We monitor automation performance continuously, with clear escalation paths when a process needs human judgment.", image: "/Ai/59.jpg" },
 ];
 
 const DELIVERABLES = [
@@ -110,21 +110,7 @@ const DELIVERABLES = [
   { icon: Zap, title: "Exception Handling Framework", desc: "Structured escalation paths for cases automation cannot confidently resolve." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Automated reconciliation and compliance reporting workflows.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Automated quality checks and supply chain exception handling.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Automated claims processing within strict compliance boundaries.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Retail", desc: "Automated order processing and inventory reconciliation.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Automated dispatch, tracking, and exception escalation workflows.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Public Sector", desc: "Automated case processing with full auditability and oversight.", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" },
-];
 
-const IMPACT = [
-  { value: "45%", label: "Reduction in Manual Processing Time" },
-  { value: "80%", label: "Exception Cases Auto-Resolved" },
-  { value: "3x", label: "Faster Process Turnaround" },
-  { value: "100%", label: "Audit-Ready Logging" },
-];
 
 const FAQS = [
   { q: "How is intelligent automation different from traditional RPA?", a: "Traditional RPA follows a fixed script and breaks on deviation. Intelligent automation combines RPA with machine learning, so the system can handle common exceptions and route only genuinely ambiguous cases to a human." },
@@ -156,7 +142,7 @@ const IntelligentAutomation = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2400&auto=format&fit=crop"
+            src="/Ai/55.jpg"
             alt="Intelligent automation operations"
             className="h-full w-full object-cover"
           />
@@ -244,7 +230,7 @@ const IntelligentAutomation = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop"
+                src="/Ai/58.jpg"
                 alt="Automated workflow operations"
                 className="h-full w-full object-cover"
               />
@@ -536,12 +522,7 @@ const IntelligentAutomation = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2400&auto=format&fit=crop"
-            alt="Intelligent automation operations"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

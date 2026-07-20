@@ -94,11 +94,11 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Architect", desc: "We design the target-state AI architecture, defining how models, data pipelines, and applications connect within your existing environment.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Engineer", desc: "Our engineering teams build the pipelines, APIs, and infrastructure required to move models from experimentation into a stable production environment.", image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Integrate", desc: "AI systems are connected into your existing applications and workflows, so outputs reach the people and processes that need them.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Monitor", desc: "We establish performance monitoring, drift detection, and alerting so degradation is caught before it affects business outcomes.", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Scale", desc: "Proven systems are extended to new use cases and business units on the same governed foundation, without rebuilding from scratch.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Architect", desc: "We design the target-state AI architecture, defining how models, data pipelines, and applications connect within your existing environment.", image: "/Ai/12.avif" },
+  { step: "02", title: "Engineer", desc: "Our engineering teams build the pipelines, APIs, and infrastructure required to move models from experimentation into a stable production environment.", image: "/Ai/13.avif" },
+  { step: "03", title: "Integrate", desc: "AI systems are connected into your existing applications and workflows, so outputs reach the people and processes that need them.", image: "/Ai/15.avif" },
+  { step: "04", title: "Monitor", desc: "We establish performance monitoring, drift detection, and alerting so degradation is caught before it affects business outcomes.", image: "/Ai/14.avif" },
+  { step: "05", title: "Scale", desc: "Proven systems are extended to new use cases and business units on the same governed foundation, without rebuilding from scratch.", image: "/Ai/16.avif" },
 ];
 
 const DELIVERABLES = [
@@ -110,21 +110,7 @@ const DELIVERABLES = [
   { icon: RefreshCw, title: "Retraining Framework", desc: "A structured process for retraining and redeploying models as conditions change." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Real-time fraud scoring and credit risk models running at production scale.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Predictive maintenance models integrated with plant floor systems.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Clinical decision-support models deployed within compliance boundaries.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Retail", desc: "Personalization and demand forecasting models serving live traffic.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Route and fleet optimization models running continuously in production.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Public Sector", desc: "Citizen service models deployed with full auditability and oversight.", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" },
-];
 
-const IMPACT = [
-  { value: "99%", label: "Production Uptime Target" },
-  { value: "50%", label: "Faster Model Deployment" },
-  { value: "35%", label: "Reduction in Model Drift Incidents" },
-  { value: "100%", label: "Governance Ready" },
-];
 
 const FAQS = [
   { q: "What separates a proof-of-concept from a production AI system?", a: "Production systems require reliable infrastructure, monitoring, access controls, and a defined retraining process — capabilities a proof-of-concept typically lacks entirely." },
@@ -156,7 +142,7 @@ const EnterpriseAI = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2400&auto=format&fit=crop"
+            src="/Ai/17.jpg"
             alt="Enterprise data center"
             className="h-full w-full object-cover"
           />
@@ -242,7 +228,7 @@ const EnterpriseAI = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop"
+                src="/Ai/18.avif"
                 alt="Production AI infrastructure"
                 className="h-full w-full object-cover"
               />
@@ -541,12 +527,7 @@ const EnterpriseAI = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise AI systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}
