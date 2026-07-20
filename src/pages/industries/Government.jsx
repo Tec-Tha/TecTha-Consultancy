@@ -23,27 +23,27 @@ const fadeUp = {
 const focusCards = [
   {
     title:"Digital Governance",
-    image:"https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=1200&q=80"
+    image:"/industry/29.jpg"
   },
   {
     title:"Citizen Services",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjLPXT1zeFJok3P6p1XcNJPCNuBZmuOML56RN7UbRnJ1zviVsqdb7rWjM&s=10"
+    image:"/industry/30.jpg"
   },
   {
     title:"Cyber Security",
-    image:"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80"
+    image:"/industry/31.jpg"
   },
   {
     title:"Smart Cities",
-    image:"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80"
+    image:"/industry/32.jpg"
   },
   {
     title:"Public Infrastructure",
-    image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+    image:"/industry/33.jpg"
   },
   {
     title:"AI Governance",
-    image:"https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200&q=80"
+    image:"/industry/34.jpg"
   }
 ];
 
@@ -58,7 +58,7 @@ return(
 <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
 <img
-src="https://media.istockphoto.com/id/139389652/photo/indian-parliament-house-new-delhi.jpg?s=612x612&w=0&k=20&c=cFXkWnuA9vUfpSVxFqrVm0XM06Jj6SzevnIIowFp758="
+src="/industry/35.jpg"
 alt="Government"
 className="absolute inset-0 h-full w-full object-cover scale-105"
 />
@@ -153,7 +153,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
             <img
-              src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1800&q=80"
+              src="/industry/36.jpg"
               alt="Digital Government"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -382,7 +382,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80"
+              src="/industry/33.jpg"
               alt="Government Innovation"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -399,7 +399,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=2200&q=80"
+          src="/industry/29.jpg"
           alt="Government CTA"
           className="absolute inset-0 h-full w-full object-cover"
         />

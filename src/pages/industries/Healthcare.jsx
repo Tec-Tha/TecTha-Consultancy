@@ -24,37 +24,37 @@ const focusCards = [
   {
     title: "AI Diagnostics",
     image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=80",
+      "/industry/44.jpg",
     desc: "AI-assisted diagnosis for faster and more accurate clinical decisions.",
   },
   {
     title: "Smart Hospitals",
     image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
+      "/industry/45.jpg",
     desc: "Digitally connected hospitals powered by intelligent systems.",
   },
   {
     title: "Remote Monitoring",
     image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80",
+      "/industry/46.jpg",
     desc: "Continuous patient monitoring through IoT healthcare devices.",
   },
   {
     title: "Healthcare Analytics",
     image:
-      "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80",
+      "/industry/47.jpg",
     desc: "Real-time insights for better patient outcomes and planning.",
   },
   {
     title: "Electronic Records",
     image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80",
+      "/industry/48.jpg",
     desc: "Secure and scalable electronic medical record platforms.",
   },
   {
     title: "Precision Medicine",
     image:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1200&q=80",
+      "/industry/49.jpg",
     desc: "Personalized treatment powered by AI and genomic intelligence.",
   },
 ];
@@ -70,7 +70,7 @@ export default function Healthcare() {
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=2200&q=80"
+          src="/industry/50.jpg"
           alt="Healthcare"
           className="absolute inset-0 h-full w-full object-cover scale-105"
         />
@@ -164,7 +164,7 @@ export default function Healthcare() {
           >
 
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWXPd9ztZMtdlbrxyEhWq8gjtiM2Jp0n6nTs4UtNWvVHpj-5izexRNHLA&s=10"
+              src="/industry/51.jpg"
               alt="Digital Healthcare"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -404,7 +404,7 @@ export default function Healthcare() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=1800&q=80"
+              src="/industry/52.jpg"
               alt="Healthcare Technology"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -421,7 +421,7 @@ export default function Healthcare() {
         {/* Background Image */}
 
         <img
-          src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=2200&q=80"
+          src="/industry/53.jpg"
           alt="Healthcare"
           className="absolute inset-0 h-full w-full object-cover"
         />

@@ -4,6 +4,7 @@ import ContactCTA from "../../components/home/ContactCTA";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -23,27 +24,27 @@ const fadeUp = {
 const focusCards = [
   {
     title:"Warehouse Automation",
-    image:"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+    image:"/industry/21.jpg"
   },
   {
     title:"Fleet Intelligence",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzs-mVfZyEJZcPi35_G75gGOFfF8b9sSyyH3ChCRpa2VcXZ0y6GU7F2pc&s=10"
+    image:"/industry/22.jpg"
   },
   {
     title:"AI Route Planning",
-    image:"https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1200&q=80"
+    image:"/industry/23.jpg"
   },
   {
     title:"Supply Chain Visibility",
-    image:"https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&q=80"
+    image:"/industry/24.jpg"
   },
   {
     title:"Inventory Intelligence",
-    image:"https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=80"
+    image:"/industry/25.jpg"
   },
   {
     title:"Smart Distribution",
-    image:"https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1200&q=80"
+    image:"/industry/26.jpg"
   }
 ];
 
@@ -56,7 +57,7 @@ return(
 <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
 <img
-src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=2200&q=80"
+src="/industry/21.jpg"
 className="absolute inset-0 h-full w-full object-cover scale-105"
 alt=""
 />
@@ -152,7 +153,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
             <img
-              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1800&q=80"
+              src="/industry/27.jpg"
               alt="Smart Logistics"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -380,7 +381,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
             <img
-              src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1800&q=80"
+              src="/industry/26.jpg"
               alt="Future Logistics"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -397,7 +398,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1586528116493-2f1d1b8d1d8c?w=2200&q=80"
+          src="/industry/28.jpg"
           alt="Logistics CTA"
           className="absolute inset-0 h-full w-full object-cover"
         />

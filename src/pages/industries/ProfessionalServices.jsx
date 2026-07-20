@@ -23,27 +23,27 @@ const fadeUp = {
 const focusCards = [
   {
     title:"Business Strategy",
-    image:"https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80"
+    image:"/industry/54.jpg"
   },
   {
     title:"Digital Consulting",
-    image:"https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80"
+    image:"/industry/55.jpg"
   },
   {
     title:"Enterprise Advisory",
-    image:"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80"
+    image:"/industry/56.jpg"
   },
   {
     title:"Workforce Transformation",
-    image:"https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80"
+    image:"/industry/57.jpg"
   },
   {
     title:"Business Intelligence",
-    image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
+    image:"/industry/58.jpg"
   },
   {
     title:"Operational Excellence",
-    image:"https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80"
+    image:"/industry/59.jpg"
   }
 ];
 
@@ -58,7 +58,7 @@ return(
 <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
 <img
-src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=2200&q=80"
+src="/industry/60.jpg"
 alt="Professional Services"
 className="absolute inset-0 h-full w-full object-cover scale-105"
 />
@@ -154,7 +154,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1800&q=80"
+              src="/industry/54.jpg"
               alt="Enterprise Consulting"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -379,7 +379,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
             <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1800&q=80"
+              src="/industry/55.jpg"
               alt="Business Transformation"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -396,7 +396,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2200&q=80"
+          src="/industry/54.jpg"
           alt="Professional Services"
           className="absolute inset-0 h-full w-full object-cover"
         />

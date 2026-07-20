@@ -24,32 +24,32 @@ const focusCards = [
   {
     title: "Omnichannel Commerce",
     image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=1200&q=80",
+      "/industry/61.jpg",
   },
   {
     title: "Customer Experience",
     image:
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1200&q=80",
+      "/industry/62.jpg",
   },
   {
     title: "AI Personalization",
     image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80",
+      "/industry/63.jpg",
   },
   {
     title: "Retail Analytics",
     image:
-      "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=1200&q=80",
+      "/industry/64.jpg",
   },
   {
     title: "Inventory Intelligence",
     image:
-      "https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?w=1200&q=80",
+      "/industry/65.jpg",
   },
   {
     title: "Digital Payments",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+      "/industry/66.jpg",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function Retail() {
       <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
         <img
-          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=2200&q=80"
+          src="/indsutry/67.jpg"
           alt="Retail"
           className="absolute inset-0 h-full w-full object-cover scale-105"
         />
@@ -157,7 +157,7 @@ export default function Retail() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1800&q=80"
+              src="/industry/68.jpg"
               alt="Modern Retail"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -390,7 +390,7 @@ export default function Retail() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1800&q=80"
+              src="/industry/69.jpg"
               alt="Retail Innovation"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -407,7 +407,7 @@ export default function Retail() {
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1481437156560-3205f6a55735?w=2200&q=80"
+          src="/industry/70.jpg"
           alt="Retail CTA"
           className="absolute inset-0 h-full w-full object-cover"
         />

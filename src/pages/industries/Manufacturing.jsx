@@ -24,32 +24,32 @@ const focusCards = [
   {
     title: "Smart Factory",
     image:
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&q=80",
+      "/industry/37.jpg",
   },
   {
     title: "Industrial IoT",
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&q=80",
+      "/industry/38.jpg",
   },
   {
     title: "Predictive Maintenance",
     image:
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80",
+      "/industry/39.jpg",
   },
   {
     title: "Digital Twin",
     image:
-      "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=1200&q=80",
+      "/industry/40.jpg",
   },
   {
     title: "Automation",
     image:
-      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80",
+      "/industry/41.jpg",
   },
   {
     title: "Supply Chain",
     image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+      "/industry/21.jpg",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Manufacturing() {
       <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
         <img
-          src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=2200&q=80"
+          src="/industry/42.jpg"
           alt="Manufacturing"
           className="absolute inset-0 h-full w-full object-cover scale-105"
         />
@@ -150,7 +150,7 @@ export default function Manufacturing() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1800&q=80"
+              src="/industry/25.jpg"
               alt="Smart Manufacturing"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -384,7 +384,7 @@ export default function Manufacturing() {
           >
 
             <img
-              src="https://plus.unsplash.com/premium_photo-1661878008007-7a13bf31c14b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWFudWZhY3R1cmluZ3xlbnwwfHwwfHx8MA%3D%3D"
+              src="/industry/43.jpg"
               alt="Manufacturing Innovation"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -401,7 +401,7 @@ export default function Manufacturing() {
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=2200&q=80"
+          src="/industry/24.jpg"
           alt="Manufacturing CTA"
           className="absolute inset-0 h-full w-full object-cover"
         />

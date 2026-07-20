@@ -85,7 +85,7 @@ export default function IndustryLayout() {
       <section className="relative h-screen overflow-hidden">
 
         <img
-          src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=2200&q=80"
+          src="/industry/19.jpg"
           className="absolute inset-0 h-full w-full object-cover"
           alt=""
         />
@@ -283,7 +283,7 @@ For     Every Industry.
   {/* Background */}
 
   <img
-    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2200&q=80"
+    src="/industry/20.jpg"
     alt=""
     className="absolute inset-0 h-full w-full object-cover"
   />
