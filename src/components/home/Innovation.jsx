@@ -1,316 +1,316 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+  import { motion, useScroll, useTransform } from "framer-motion";
+  import { useRef } from "react";
 
-const STORIES = [
-  {
-    id: 1,
-    title: "Artificial Intelligence",
-    subtitle: "Transforming intelligence into business advantage.",
-    description:
-      "From intelligent automation to predictive decision-making, we build AI solutions that enhance productivity, unlock insights, and create measurable business outcomes.",
-    image: "/innovation1.jpg",
-  },
+  const STORIES = [
+    {
+      id: 1,
+      title: "Artificial Intelligence",
+      subtitle: "Transforming intelligence into business advantage.",
+      description:
+        "From intelligent automation to predictive decision-making, we build AI solutions that enhance productivity, unlock insights, and create measurable business outcomes.",
+      image: "/ai1.png",
+    },
 
-  {
-    id: 2,
-    title: "Cloud Engineering",
-    subtitle: "Building resilient digital foundations.",
-    description:
-      "Our cloud platforms are designed for scalability, security, and performance—helping enterprises modernize infrastructure while accelerating innovation.",
-    image: "innovation2.jpg",
-  },
+    {
+      id: 2,
+      title: "Cloud Engineering",
+      subtitle: "Building resilient digital foundations.",
+      description:
+        "Our cloud platforms are designed for scalability, security, and performance—helping enterprises modernize infrastructure while accelerating innovation.",
+      image: "cl1.png",
+    },
 
-  {
-    id: 3,
-    title: "Cyber Resilience",
-    subtitle: "Protecting every digital interaction.",
-    description:
-      "We create secure digital ecosystems through modern security architecture, continuous monitoring, and proactive risk management.",
-    image: "/innovation3.jpg",
-  },
-];
+    {
+      id: 3,
+      title: "Cyber Resilience",
+      subtitle: "Protecting every digital interaction.",
+      description:
+        "We create secure digital ecosystems through modern security architecture, continuous monitoring, and proactive risk management.",
+      image: "/cy.png",
+    },
+  ];
 
-export default function Innovation() {
-  const containerRef = useRef(null);
+  export default function Innovation() {
+    const containerRef = useRef(null);
 
-const { scrollYProgress } = useScroll({
-  target: containerRef,
-  offset: ["start end", "end start"],
-});
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-const imageScale = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [1.12, 1]
-);
+  const imageScale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [1.12, 1]
+  );
 
-const imageY = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [80, -80]
-);
-  return (
-   <section className="bg-white py-28">
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [80, -80]
+  );
+    return (
+    <section className="bg-white py-28">
 
-  <div className="mx-auto max-w-[1700px] px-10">
+    <div className="mx-auto max-w-[1700px] px-10">
 
-    <motion.div
+      <motion.div
 
-      initial={{
-        opacity:0,
-        y:40
-      }}
+        initial={{
+          opacity:0,
+          y:40
+        }}
 
-      whileInView={{
-        opacity:1,
-        y:0
-      }}
+        whileInView={{
+          opacity:1,
+          y:0
+        }}
 
-      viewport={{
-        once:true
-      }}
+        viewport={{
+          once:true
+        }}
 
-      transition={{
-        duration:.8
-      }}
+        transition={{
+          duration:.8
+        }}
 
-      className="max-w-5xl"
+        className="max-w-5xl"
 
-    >
+      >
 
-      <div className="mb-8 flex items-center gap-5">
+        <div className="mb-8 flex items-center gap-5">
 
-        <div className="h-[2px] w-16 bg-blue-600"/>
+          <div className="h-[2px] w-16 bg-blue-600"/>
 
-        <span
+          <span
+            className="
+            font-['Montserrat']
+            text-xl
+            font-medium
+            uppercase
+            tracking-[6px]
+            text-blue-600
+            "
+          >
+            INNOVATION IN PRACTICE
+          </span>
+
+        </div>
+
+        <h2
           className="
           font-['Montserrat']
-          text-xl
+          text-7xl
           font-medium
-          uppercase
-          tracking-[6px]
-          text-blue-600
+          leading-[1.1]
+          tracking-tight
+          text-black
           "
         >
-          INNOVATION IN PRACTICE
-        </span>
+          Turning Vision   Into   <br/>
+        Enterprise         Reality.
+        
+          <br/>
 
-      </div>
+        </h2>
 
-      <h2
-        className="
-        font-['Montserrat']
-        text-7xl
-        font-medium
-        leading-[1.1]
-        tracking-tight
-        text-black
-        "
-      >
-        Turning Vision   Into   <br/>
-       Enterprise         Reality.
-      
-        <br/>
+        <p
+          className="
+          mt-8
+          max-w-3xl
+          text-[22px]
+          leading-10
+          text-gray-500
+          "
+        >
+          Every breakthrough begins with curiosity,
+          is refined through engineering, and delivers
+          measurable business value through execution.
+        </p>
 
-      </h2>
+      </motion.div>
 
-      <p
-        className="
-        mt-8
-        max-w-3xl
-        text-[22px]
-        leading-10
-        text-gray-500
-        "
-      >
-        Every breakthrough begins with curiosity,
-        is refined through engineering, and delivers
-        measurable business value through execution.
-      </p>
+      {/* STORIES */}
 
-    </motion.div>
+    <div ref={containerRef}>
+  {STORIES.map((story, index) => (
 
-    {/* STORIES */}
+  <motion.article
 
-   <div ref={containerRef}>
-{STORIES.map((story, index) => (
+  key={story.id}
 
-<motion.article
-
-key={story.id}
-
-initial={{
-opacity:0,
-y:80
-}}
-
-whileInView={{
-opacity:1,
-y:0
-}}
-
-viewport={{
-once:true,
-amount:.3
-}}
-
-transition={{
-duration:.8
-}}
-
-className="
-mb-20
-"
-
->
-
-<div
-className="
-group
-relative
-overflow-hidden
-rounded-[10px]
-"
->
-
-{/* IMAGE */}
-
-<motion.img
-  src={story.image}
-  alt={story.title}
-  style={{
-    scale: imageScale,
-    y: imageY,
+  initial={{
+  opacity:0,
+  y:80
   }}
+
+  whileInView={{
+  opacity:1,
+  y:0
+  }}
+
+  viewport={{
+  once:true,
+  amount:.3
+  }}
+
+  transition={{
+  duration:.8
+  }}
+
   className="
-    h-[420px]
-    w-full
-    object-cover
-    will-change-transform
+  mb-20
   "
-/>
 
-{/* OVERLAY */}
+  >
 
-<div
-className="
-absolute
+  <div
+  className="
+  group
+  relative
+  overflow-hidden
+  rounded-[10px]
+  "
+  >
 
-inset-0
+  {/* IMAGE */}
 
-bg-gradient-to-t
+  <motion.img
+    src={story.image}
+    alt={story.title}
+    style={{
+      scale: imageScale,
+      y: imageY,
+    }}
+    className="
+      h-[420px]
+      w-full
+      object-cover
+      will-change-transform
+    "
+  />
 
-from-black
+  {/* OVERLAY */}
 
-via-black/20
+  <div
+  className="
+  absolute
 
-to-transparent
-"
-/>
+  inset-0
 
-{/* CONTENT */}
+  bg-gradient-to-t
 
-<motion.div
+  from-black
 
-initial={{
-opacity:0,
-y:60
-}}
+  via-black/60
 
-whileInView={{
-opacity:1,
-y:0
-}}
+  to-transparent
+  "
+  />
 
-viewport={{
-once:true,
-amount:.4
-}}
+  {/* CONTENT */}
 
-transition={{
-duration:.8,
-delay:.2
-}}
+  <motion.div
 
-className="
-absolute
-bottom-0
-left-0
-z-20
-max-w-3xl
-p-16
-"
->
+  initial={{
+  opacity:0,
+  y:60
+  }}
+
+  whileInView={{
+  opacity:1,
+  y:0
+  }}
+
+  viewport={{
+  once:true,
+  amount:.4
+  }}
+
+  transition={{
+  duration:.8,
+  delay:.2
+  }}
+
+  className="
+  absolute
+  bottom-0
+  left-0
+  z-20
+  max-w-3xl
+  p-16
+  "
+  >
 
 
 
-<h3
-className="
-mt-5
+  <h3
+  className="
+  mt-5
 
-font-['Montserrat']
+  font-['Montserrat']
 
-text-[50px]
+  text-[50px]
 
-font-medium
+  font-medium
 
-leading-[1]
+  leading-[1]
 
-tracking-tight
+  tracking-tight
 
-text-white
-"
->
+  text-white
+  "
+  >
 
-{story.title}
+  {story.title}
 
-</h3>
+  </h3>
 
-<p
-className="
-mt-4
+  <p
+  className="
+  mt-4
 
-text-[26px]
+  text-[26px]
 
-leading-[1.3]
+  leading-[1.3]
 
-text-white/90
-"
->
+  text-white/90
+  "
+  >
 
-{story.subtitle}
+  {story.subtitle}
 
-</p>
+  </p>
 
-<p
-className="
-mt-8
+  <p
+  className="
+  mt-8
 
-max-w-2xl
+  max-w-2xl
 
-text-lg
+  text-lg
 
-leading-9
+  leading-9
 
-text-white/75
-"
->
+  text-white/75
+  "
+  >
 
-{story.description}
+  {story.description}
 
-</p>
+  </p>
 
-</motion.div>
-
-</div>
-
-</motion.article>
-
-))}
-</div>
+  </motion.div>
 
   </div>
 
-</section>
-  );
-}
+  </motion.article>
+
+  ))}
+  </div>
+
+    </div>
+
+  </section>
+    );
+  }

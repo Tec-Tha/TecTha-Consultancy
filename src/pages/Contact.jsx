@@ -11,12 +11,19 @@ import { ArrowLeft, Building2, ChevronDown } from "lucide-react";
  * field carries a live character counter. Standalone page — does not use
  * PageWrapper, since the layout (back link, split image) is bespoke here.
  *
- * Swap `PORTRAIT_IMAGE` for a real asset and wire `handleSubmit` up to your
- * form backend / API route — it currently just logs and prevents default.
+ * Submission is wired to FormSubmit.co (https://formsubmit.co) via its
+ * AJAX endpoint — no backend required. Swap FORM_ENDPOINT's email for
+ * your own inbox. The first submission to a new FormSubmit address
+ * triggers a one-time "confirm this email" step on their end before
+ * messages start arriving — that's FormSubmit's activation flow, not a
+ * bug here.
  */
 
 const PORTRAIT_IMAGE = "/contact.avif";
 const MESSAGE_MAX_LENGTH = 1500;
+
+// Swap the email below for the inbox that should receive submissions.
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/contact@tectha.com";
 
 const REGIONS = ["North America", "Europe", "Middle East", "Asia Pacific", "India", "Other"];
 const INDUSTRIES = [
@@ -120,16 +127,47 @@ const Contact = ({ onBack }) => {
   useMontserrat();
 
   const [form, setForm] = useState(INITIAL_FORM);
+  // idle | sending | success | error
+  const [status, setStatus] = useState("idle");
 
   const updateField = (field) => (e) => {
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: wire this up to your form backend / API route.
-    console.log("Request for services submitted:", form);
+    setStatus("sending");
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New service request — ${form.firstName} ${form.lastName} (${form.organization})`,
+          _template: "table",
+          "First name": form.firstName,
+          "Last name": form.lastName,
+          Email: form.email,
+          Organization: form.organization,
+          Region: form.region,
+          Industry: form.industry,
+          Message: form.message,
+          "Marketing opt-in": form.consentMarketing ? "Yes" : "No",
+        }),
+      });
+
+      if (!response.ok) throw new Error("FormSubmit request failed");
+
+      setStatus("success");
+      setForm(INITIAL_FORM);
+    } catch (error) {
+      console.error("Request for services submission failed:", error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -283,12 +321,26 @@ const Contact = ({ onBack }) => {
             <p className="text-xs text-white/40">*Mandatory fields</p>
           </div>
 
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-white/15 px-10 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:bg-white/25"
-          >
-            Send
-          </button>
+          <div className="flex items-center gap-5">
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="inline-flex items-center justify-center rounded-full bg-white/15 px-10 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {status === "sending" ? "Sending..." : "Send"}
+            </button>
+
+            {status === "success" && (
+              <span className="text-sm font-medium text-white/70">
+                Thanks — we'll be in touch shortly.
+              </span>
+            )}
+            {status === "error" && (
+              <span className="text-sm font-medium text-red-400">
+                Something went wrong. Please try again.
+              </span>
+            )}
+          </div>
         </motion.form>
       </div>
     </div>

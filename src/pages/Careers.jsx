@@ -34,7 +34,7 @@ import ContactCTA from "../components/home/ContactCTA";
 // Mail CTA
 // ---------------------------------------------------------------------------
 
-const CAREERS_EMAIL = "careers@tectha.com";
+const CAREERS_EMAIL = "career@tectha.com";
 const CAREERS_SUBJECT = "Application for Career Opportunities";
 const CAREERS_BODY = [
   "Hello Tec Tha Careers Team,",
@@ -164,12 +164,12 @@ const GROWTH_CAROUSEL = [
 const DEPARTMENTS = ["All", "Engineering", "Data", "Design", "Operations"];
 
 const OPEN_ROLES = [
-  { title: "Senior Platform Engineer", department: "Engineering", location: "Remote — EMEA", type: "Full-time" },
-  { title: "Staff Data Engineer", department: "Data", location: "Singapore", type: "Full-time" },
+  { title: "Senior Software Engineer", department: "Engineering", type: "Full-time" },
+  { title: "Data Analyst", department: "Data", location: "Singapore", type: "Full-time" },
   { title: "Cloud Security Architect", department: "Engineering", location: "Remote — Americas", type: "Full-time" },
-  { title: "Product Designer, Platforms", department: "Design", location: "London", type: "Full-time" },
-  { title: "Delivery Lead", department: "Operations", location: "Bengaluru", type: "Full-time" },
-  { title: "Machine Learning Engineer", department: "Data", location: "Remote — Global", type: "Contract" },
+  { title: "Product Manager", department: "Management", location: "London", type: "Full-time" },
+  { title: "Business Developer", department: "Consultant", location: "Bengaluru", type: "Full-time" },
+  { title: "AI Engineer", department: "Artifical Intelligence", location: "Remote — Global", type: "Contract" },
 ];
 
 const JOIN_US_BAND = {
@@ -622,11 +622,8 @@ const Careers = () => {
                     </p>
                     <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[color:var(--color-text-muted)]">
                       <span>{role.department}</span>
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3.5 w-3.5" />
-                        {role.location}
-                      </span>
-                      <span>{role.type}</span>
+                     
+                      
                     </div>
                   </div>
 
@@ -657,51 +654,35 @@ const Careers = () => {
           </div>
         </section>
 
-   <section className="bg-black py-24 md:py-28">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={0}
-            >
-              <h2 className="text-4xl font-medium tracking-tight text-white md:text-5xl">
-                {JOIN_US_BAND.title}
-              </h2>
-              <p className="mt-5 text-base font-light text-white/70">{JOIN_US_BAND.description}</p>
-              <a
-                href={MAILTO_HREF}
-                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-black"
-              >
-                Click here
-              </a>
-            </motion.div>
+  <section className="bg-[#1f2322] py-24 md:py-32">
+  <div className="mx-auto max-w-5xl px-6 text-center">
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      custom={0}
+    >
+      <h2 className="text-5xl font-light tracking-tight text-white md:text-7xl">
+        With you for the long run
+      </h2>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={0.1}
-              className="flex flex-col gap-4 border-t border-white/15 pt-8 md:border-l md:border-t-0 md:pl-14 md:pt-0"
-            >
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-                Partner Access
-              </span>
-              {JOIN_US_BAND.partnerLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.anchor}
-                  className="group inline-flex w-fit items-center gap-2 rounded-full border border-white/40 px-6 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-white hover:bg-white/10"
-                >
-                  {link.label}
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+      <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-white/70 md:text-xl">
+        Whether you are a client, partner, investor, or future team member,
+        our commitment is to build lasting relationships through trust,
+        innovation, and meaningful collaboration. Let's create the future
+        together.
+      </p>
+
+      <a
+        href="mailto:career@tectha.com?subject=Career%20Application&body=Dear%20Tec%20Tha%20Recruitment%20Team,%0A%0APlease%20find%20my%20resume%20attached%20for%20your%20review.%0A%0AThank%20you."
+        className="mt-12 inline-flex items-center justify-center rounded-full border border-white/30 px-10 py-4 text-base font-medium text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-black"
+      >
+        Contact Us
+      </a>
+    </motion.div>
+  </div>
+</section>
               
       </div>
     </PageWrapper>
