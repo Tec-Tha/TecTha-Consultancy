@@ -163,7 +163,7 @@ const ManagedCloud = () => {
 
         <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10 pb-24 pt-40">
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="text-xs font-semibold uppercase tracking-[0.3em] text-[#93A5FF] mb-6 font-['Montserrat']">
-            Cloud Strategy
+            Managed Cloud
           </motion.p>
           <motion.h1
             variants={fadeUp}

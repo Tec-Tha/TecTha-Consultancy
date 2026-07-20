@@ -39,36 +39,25 @@ const SERVICES = [
     items: [
       {
         name: "Artificial Intelligence",
-        link: "/services/EnterpriseSoftware",
+        link: "/services/ArtificialIntelligence",
       },
       {
         name: "Enterprise Solutions",
-        link: "/services/AIIntegration",
+        link: "/services/ERPsolution",
       },
       {
         name: "Cloud & Infrastructure",
         link: "/services/CloudInfrastructure",
       },
       {
-        name: "UI/UX & Product Design",
-        link: "/services/UIUXDesign",
-      },
-      {
         name: "Cybersecurity",
-        link: "/services/BrandDemand",
+        link: "/services/CyberSecurity",
       },
       {
         name: "Digital Transformation",
-        link: "/services/DigitalAdvisory",
+        link: "/services/DigitalTransformation",
       },
-      {
-        name:"HR Technology",
-        link: "/services/hr-technology",
-      },
-      {
-        name:"Business & Digital Transformation",
-        link: "/services/business-digital-transformation",
-      },
+      
       {
         name:"Managed Services",
         link:"/services/ManagedServices",

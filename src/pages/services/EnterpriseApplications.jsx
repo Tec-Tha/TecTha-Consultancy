@@ -25,118 +25,116 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "Custom Application Development",
+    title: "Enterprise Software",
     short:
-      "Bespoke software built around your exact workflows, not a vendor's template.",
+      "Develop scalable enterprise software tailored to your business processes and long-term growth objectives.",
     image: "/art.jpg",
-    tags: ["Custom Build", "Full-Stack", "Enterprise"],
-    link: "/services/EnterpriseApplication/custom-application-development",
+    tags: ["Enterprise", "Scalable", "Custom Software"],
+    link: "/services/EnterpriseApplications/enterprise-softwaree",
   },
   {
     id: 2,
-    title: "Application Modernization",
+    title: "Custom Applications",
     short:
-      "Re-platform legacy applications onto modern, maintainable architectures.",
+      "Build custom applications that streamline operations and solve unique business challenges.",
     image: "/art.jpg",
-    tags: ["Modernization", "Re-platforming", "Legacy"],
-    link: "/services/EnterpriseApplication/application-modernization",
+    tags: ["Custom Development", "Business Apps", "Automation"],
+    link: "/services/EnterpriseApplications/custom-applications",
   },
   {
     id: 3,
-    title: "API & Integration Platforms",
+    title: "Business Applications",
     short:
-      "Connect internal systems and partners through a governed integration layer.",
+      "Deliver business applications that improve collaboration, productivity, and operational efficiency.",
     image: "/art.jpg",
-    tags: ["API", "Integration", "Middleware"],
-    link: "/services/EnterpriseApplication/api-integration-platforms",
+    tags: ["Business", "Workflow", "Productivity"],
+    link: "/services/EnterpriseApplications/business-applications",
   },
   {
     id: 4,
-    title: "Enterprise Mobile Apps",
+    title: "Systems Integration",
     short:
-      "Field and workforce applications built for scale, offline use, and security.",
+      "Connect enterprise systems, applications, and data for seamless business operations.",
     image: "/art.jpg",
-    tags: ["Mobile", "Cross-Platform", "Workforce"],
-    link: "/services/EnterpriseApplication/enterprise-mobile-apps",
+    tags: ["Integration", "API", "Connectivity"],
+    link: "/services/EnterpriseApplications/systems-integration",
   },
   {
     id: 5,
-    title: "QA & Test Automation",
+    title: "SaaS Platforms",
     short:
-      "Automated testing pipelines that catch regressions before they reach production.",
+      "Design and develop secure, cloud-native SaaS platforms built for scalability and performance.",
     image: "/art.jpg",
-    tags: ["QA", "Automation", "Reliability"],
-    link: "/services/EnterpriseApplication/qa-test-automation",
+    tags: ["SaaS", "Cloud", "Multi-Tenant"],
+    link: "/services/EnterpriseApplications/saas-platforms",
   },
   {
     id: 6,
-    title: "DevOps & Cloud Operations",
+    title: "Application Modernization",
     short:
-      "CI/CD pipelines and cloud infrastructure that keep applications shipping safely.",
+      "Modernize legacy applications with cloud-native architectures and modern development practices.",
     image: "/art.jpg",
-    tags: ["DevOps", "CI/CD", "Cloud"],
-    link: "/services/EnterpriseApplication/devops-cloud-operations",
+    tags: ["Modernization", "Cloud", "Legacy"],
+    link: "/services/EnterpriseApplications/application-modernization",
   },
 ];
-
 
 const CHALLENGES = [
   {
-    title: "Off-the-shelf software doesn't fit",
-    desc: "Generic platforms force teams to work around missing features instead of the software adapting to how the business actually runs.",
+    title: "Legacy Systems Limiting Growth",
+    desc: "Outdated applications reduce agility, increase maintenance costs, and slow digital transformation initiatives.",
   },
   {
-    title: "Legacy applications slowing the business down",
-    desc: "Aging codebases are costly to maintain, difficult to extend, and unable to support new integrations or user expectations.",
+    title: "Disconnected Business Applications",
+    desc: "Siloed systems create duplicate work, inconsistent data, and inefficient business processes.",
   },
   {
-    title: "Systems that don't talk to each other",
-    desc: "Core applications operate in isolation, forcing manual data entry and duplicate work across departments.",
+    title: "Slow Software Delivery",
+    desc: "Manual development and deployment processes delay innovation and increase operational risks.",
   },
   {
-    title: "Releases that break more than they fix",
-    desc: "Without automated testing and CI/CD discipline, every deployment carries the risk of unplanned downtime.",
+    title: "Scalability Challenges",
+    desc: "Applications designed for yesterday's workloads struggle to support modern business growth and user demand.",
   },
   {
-    title: "Field teams working without the right tools",
-    desc: "Mobile and offline workflows are patched together with spreadsheets instead of purpose-built applications.",
+    title: "Poor User Experience",
+    desc: "Complex, outdated interfaces reduce employee productivity and customer satisfaction.",
   },
   {
-    title: "Technical debt no one owns",
-    desc: "Years of quick fixes have left applications fragile, undocumented, and risky to change.",
+    title: "Security & Compliance Risks",
+    desc: "Legacy architectures and inconsistent security practices expose enterprise applications to evolving threats.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We audit existing applications, codebases, and workflows to identify where custom development creates the most defensible business value.",
+    title: "Assess & Discover",
+    desc: "Evaluate existing applications, business processes, and technical architecture to identify modernization opportunities.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target application design and integration model, sequenced against technical constraints and business priorities.",
+    title: "Design Solution",
+    desc: "Create scalable application architectures and integration strategies aligned with business objectives.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Build",
-    desc: "Engineering teams develop, test, and integrate applications using agile delivery, with governance checkpoints in every sprint.",
+    title: "Develop & Integrate",
+    desc: "Build high-quality applications using agile methodologies, modern frameworks, and seamless system integration.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Deploy",
-    desc: "Applications move to production through automated CI/CD pipelines, with monitoring and rollback plans in place from day one.",
+    title: "Deploy & Optimize",
+    desc: "Launch applications through automated deployment pipelines with monitoring, testing, and performance optimization.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Scale & Govern",
-    desc: "We establish ongoing maintenance, performance monitoring, and release governance so applications hold up as usage grows.",
+    title: "Support & Evolve",
+    desc: "Continuously improve applications through maintenance, feature enhancements, security updates, and performance tuning.",
     image: "/art.jpg",
   },
 ];
@@ -145,56 +143,55 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "Secure transaction platforms and compliance-aware internal tools.",
+    desc: "Secure enterprise applications supporting financial operations, compliance, and customer engagement.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Shop floor applications and plant-level operational systems.",
+    desc: "Custom software for production management, inventory control, and operational efficiency.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Clinical workflow applications built with compliance-aware architecture.",
+    desc: "Healthcare applications that improve patient care while ensuring regulatory compliance.",
   },
   {
-    title: "Retail",
+    title: "Retail & E-Commerce",
     image: "/art.jpg",
-    desc: "Store operations, POS integrations, and customer-facing applications.",
+    desc: "Digital commerce platforms and business applications that enhance customer experiences.",
   },
   {
-    title: "Logistics",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "Fleet and warehouse applications for field and dispatch teams.",
+    desc: "Integrated logistics applications for fleet management, warehouse operations, and supply chain visibility.",
   },
   {
-    title: "Public Sector",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Case management systems and citizen-facing digital applications.",
+    desc: "Secure enterprise applications supporting public services and digital citizen engagement.",
   },
 ];
 
-
 const FAQS = [
   {
-    q: "How is Tec Tha's approach to enterprise applications different from a generic dev shop?",
-    a: "We do not hand off code and disappear. Every engagement pairs architecture decisions with long-term ownership, so the application we build is designed to be maintained, extended, and supported well beyond launch.",
+    q: "Why choose Tec Tha for Enterprise Application Development?",
+    a: "Tec Tha builds scalable, secure, and future-ready enterprise applications that align with your business goals while ensuring long-term maintainability and operational excellence.",
   },
   {
-    q: "How long does a typical enterprise application engagement take?",
-    a: "A focused internal tool can move from assessment to production in 8 to 12 weeks. Full enterprise applications typically run 4 to 9 months, delivered in phased releases so value is realized incrementally rather than at a single go-live date.",
+    q: "How long does an enterprise application project typically take?",
+    a: "Project timelines depend on business requirements and application complexity. Smaller solutions may take a few weeks, while enterprise-scale platforms are delivered incrementally over several months.",
   },
   {
-    q: "Can you work with our existing systems and legacy codebase?",
-    a: "Yes. Most engagements begin by integrating with existing ERP, CRM, and legacy applications rather than replacing them outright. We assess what should be modernized, what should be wrapped with integration layers, and what should be left untouched.",
+    q: "Can you integrate with our existing enterprise systems?",
+    a: "Yes. We integrate seamlessly with ERP, CRM, cloud platforms, databases, third-party APIs, and legacy systems to maximize the value of your existing technology investments.",
   },
   {
-    q: "How do you ensure application security and compliance?",
-    a: "Security is not a final checklist item. We build authentication, access controls, and audit trails into the architecture itself, aligned to frameworks such as SOC 2, GDPR, and relevant industry-specific regulation.",
+    q: "How do you ensure application security?",
+    a: "We implement secure coding practices, identity management, encryption, access controls, compliance frameworks, and continuous security testing throughout the development lifecycle.",
   },
   {
-    q: "What does ongoing support look like after launch?",
-    a: "We provide structured post-launch support including bug fixes, performance monitoring, and quarterly roadmap reviews, so the application continues to evolve as business needs change.",
+    q: "Do you provide post-launch support?",
+    a: "Yes. We provide ongoing maintenance, monitoring, performance optimization, feature enhancements, and technical support to ensure long-term business success.",
   },
 ];
 

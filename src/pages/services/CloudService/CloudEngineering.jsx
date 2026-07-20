@@ -110,21 +110,6 @@ const DELIVERABLES = [
   { icon: DollarSign, title: "Cost Optimization", desc: "Right-sized infrastructure and ongoing spend management that cuts waste without cutting capacity." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Resilient, compliant infrastructure for regulated transaction workloads.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "E-Commerce", desc: "Elastic architecture that handles traffic spikes without downtime.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Secure, auditable cloud environments for sensitive patient data.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "SaaS & Technology", desc: "Multi-tenant infrastructure engineered for reliability at scale.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Cloud platforms connecting plant systems with real-time data pipelines.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Infrastructure built for real-time tracking and dispatch at volume.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-];
-
-const IMPACT = [
-  { value: "45%", label: "Average Reduction in Cloud Spend" },
-  { value: "99.9%", label: "Infrastructure Uptime Achieved" },
-  { value: "10x", label: "Faster Deployment Frequency" },
-  { value: "24/7", label: "Infrastructure Monitoring Coverage" },
-];
 
 const FAQS = [
   { q: "Do you work with our existing cloud provider, or do we need to switch?", a: "We work within your existing provider — AWS, Azure, or GCP — and design around what makes sense for your workloads, rather than forcing a migration you don't need." },

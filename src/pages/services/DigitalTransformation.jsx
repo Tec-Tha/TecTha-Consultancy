@@ -25,118 +25,116 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "Security Strategy",
+    title: "Business Consulting",
     short:
-      "Roadmaps that align security investment to real business risk.",
+      "Align business strategy with digital initiatives to accelerate growth, innovation, and operational excellence.",
     image: "/art.jpg",
-    tags: ["Consulting", "Roadmap", "Risk"],
-    link: "/services/CyberSecurity/security-strategy",
+    tags: ["Strategy", "Transformation", "Consulting"],
+    link: "/services/DigitalTransformation/business-consulting",
   },
   {
     id: 2,
-    title: "Threat Detection & Response",
+    title: "Enterprise Transformation",
     short:
-      "24/7 monitoring and incident response built to contain threats fast.",
+      "Drive organization-wide transformation through modern operating models, digital innovation, and business agility.",
     image: "/art.jpg",
-    tags: ["SOC", "Detection", "Response"],
-    link: "/services/CyberSecurity/threat-detection-response",
+    tags: ["Transformation", "Operations", "Innovation"],
+    link: "/services/DigitalTransformation/enterprise-transformation",
   },
   {
     id: 3,
-    title: "Penetration Testing",
+    title: "Enterprise Architecture",
     short:
-      "Offensive security testing that finds the gaps before attackers do.",
+      "Design scalable enterprise architectures that align technology investments with long-term business objectives.",
     image: "/art.jpg",
-    tags: ["Pen Testing", "Red Team", "Vulnerability"],
-    link: "/services/CyberSecurity/penetration-testing",
+    tags: ["Architecture", "Technology", "Governance"],
+    link: "/services/DigitalTransformation/enterprise-architecture",
   },
   {
     id: 4,
-    title: "Identity & Access Management",
+    title: "Process Excellence",
     short:
-      "Zero-trust identity architectures that control who can reach what.",
+      "Optimize business processes through automation, continuous improvement, and operational efficiency initiatives.",
     image: "/art.jpg",
-    tags: ["Zero Trust", "IAM", "Access"],
-    link: "/services/CyberSecurity/identity-access-management",
+    tags: ["Process", "Optimization", "Automation"],
+    link: "/services/DigitalTransformation/process-excellence",
   },
   {
     id: 5,
-    title: "Cloud & Network Security",
+    title: "Technology Advisory",
     short:
-      "Hardened environments across cloud, on-premise, and hybrid networks.",
+      "Provide strategic technology guidance to maximize business value, reduce risk, and improve IT investments.",
     image: "/art.jpg",
-    tags: ["Cloud Security", "Network", "Hardening"],
-    link: "/services/CyberSecurity/cloud-network-security",
+    tags: ["Technology", "Advisory", "Strategy"],
+    link: "/services/DigitalTransformation/technology-advisory",
   },
   {
     id: 6,
-    title: "Compliance & Risk Management",
+    title: "Change Management",
     short:
-      "Governance frameworks built for audit readiness and regulatory trust.",
+      "Enable successful digital transformation through structured change management, communication, and workforce adoption.",
     image: "/art.jpg",
-    tags: ["Compliance", "Audit", "Governance"],
-    link: "/services/CyberSecurity/compliance-risk-management",
+    tags: ["Change", "Adoption", "Leadership"],
+    link: "/services/DigitalTransformation/change-management",
   },
 ];
-
 
 const CHALLENGES = [
   {
-    title: "Blind spots across the attack surface",
-    desc: "Shadow IT, unmanaged devices, and forgotten cloud accounts create entry points that security teams never see.",
+    title: "Misaligned Business & Technology Goals",
+    desc: "Technology initiatives often fail to deliver expected outcomes because they are not aligned with overall business strategy.",
   },
   {
-    title: "Alert fatigue drowning the security team",
-    desc: "Analysts are overwhelmed by low-value alerts, leaving real threats buried in the noise until it's too late.",
+    title: "Slow Digital Transformation",
+    desc: "Legacy processes, organizational resistance, and fragmented systems delay digital transformation initiatives.",
   },
   {
-    title: "Slow response to active incidents",
-    desc: "Without a tested response plan, containment takes hours instead of minutes, and damage compounds by the day.",
+    title: "Complex Enterprise Operations",
+    desc: "Disconnected processes and siloed departments reduce efficiency and limit organizational agility.",
   },
   {
-    title: "Compliance treated as a once-a-year event",
-    desc: "Point-in-time audits give a false sense of security while controls drift out of compliance in between.",
+    title: "Inefficient Technology Investments",
+    desc: "Organizations struggle to prioritize technology initiatives that deliver measurable business value and ROI.",
   },
   {
-    title: "Third-party and supply chain risk",
-    desc: "Vendors and partners with privileged access introduce risk that internal controls alone can't contain.",
+    title: "Managing Organizational Change",
+    desc: "Employee resistance and lack of structured change management reduce the success of transformation programs.",
   },
   {
-    title: "Security seen as a blocker, not a partner",
-    desc: "Disconnected security and engineering teams slow releases instead of building security into the pipeline itself.",
+    title: "Governance & Compliance Challenges",
+    desc: "Rapid business growth increases the need for effective governance, risk management, and regulatory compliance.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We audit existing controls, infrastructure, and threat exposure to identify where risk is highest and most urgent.",
+    title: "Assess & Discover",
+    desc: "Evaluate business strategy, technology landscape, and operational processes to identify transformation opportunities.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target security posture, sequenced against risk severity and business priorities.",
+    title: "Define Strategy",
+    desc: "Develop transformation roadmaps, governance frameworks, and business strategies aligned with organizational goals.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Harden",
-    desc: "Security teams implement controls, close vulnerabilities, and deploy monitoring with governance checkpoints in place.",
+    title: "Transform & Implement",
+    desc: "Execute transformation initiatives through process optimization, technology enablement, and organizational alignment.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Detect & Respond",
-    desc: "Detection systems go live with tested incident response playbooks and escalation paths ready from day one.",
+    title: "Enable Adoption",
+    desc: "Support successful implementation through stakeholder engagement, change management, and performance monitoring.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Monitor & Govern",
-    desc: "We establish ongoing threat monitoring, compliance reporting, and tabletop exercises so posture holds as risk evolves.",
+    title: "Optimize & Sustain",
+    desc: "Continuously improve business performance through governance, operational excellence, and ongoing strategic guidance.",
     image: "/art.jpg",
   },
 ];
@@ -145,60 +143,59 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "Fraud prevention, transaction monitoring, and regulatory-grade security controls.",
+    desc: "Support digital transformation, governance, and operational excellence across financial institutions.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "OT and industrial control system security for connected plant floors.",
+    desc: "Modernize manufacturing operations with smart processes, digital technologies, and enterprise transformation.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Patient data protection and HIPAA-aligned security architecture.",
+    desc: "Improve healthcare delivery through digital transformation, compliance, and process optimization.",
   },
   {
-    title: "Retail",
+    title: "Retail & E-Commerce",
     image: "/art.jpg",
-    desc: "Payment security and fraud detection across e-commerce and in-store systems.",
+    desc: "Enhance customer experiences with digital business strategies and operational transformation.",
   },
   {
-    title: "Logistics",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "Fleet and supply chain security hardened against operational disruption.",
+    desc: "Optimize logistics operations through digital innovation, automation, and process excellence.",
   },
   {
-    title: "Public Sector",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Critical infrastructure protection and citizen data security at scale.",
+    desc: "Enable citizen-centric digital services through strategic transformation and governance frameworks.",
   },
 ];
-
 
 const FAQS = [
   {
-    q: "How is Tec Tha's approach to cyber security different from a generic vendor?",
-    a: "We do not sell a single tool and call it coverage. Every engagement starts with your actual attack surface, business risk, and compliance obligations, and we design layered defenses that fit how your organization actually operates.",
+    q: "Why choose Tec Tha for Digital Transformation services?",
+    a: "Tec Tha combines business consulting, technology expertise, and transformation experience to help organizations modernize operations, improve efficiency, and achieve measurable business outcomes.",
   },
   {
-    q: "How long does a typical security engagement take?",
-    a: "A focused penetration test or risk assessment can be delivered in 3 to 6 weeks. Enterprise-wide security transformations typically run 4 to 9 months, delivered in phases so critical risk is addressed first.",
+    q: "How long does a digital transformation project typically take?",
+    a: "Project timelines vary based on business complexity. Focused consulting engagements may take a few weeks, while enterprise-wide transformation programs are delivered in phased stages over several months.",
   },
   {
-    q: "Can you work with our existing security tools and team?",
-    a: "Yes. Most engagements begin by integrating with existing SIEM, firewall, and identity systems rather than replacing them outright. We assess what should be optimized, what should be replaced, and what should stay as is.",
+    q: "Can you work with our existing systems and business processes?",
+    a: "Yes. We enhance and modernize existing business processes and technology investments while minimizing operational disruption and maximizing long-term value.",
   },
   {
-    q: "How do you handle compliance and regulatory requirements?",
-    a: "Compliance is not a final checklist item. We build control documentation, continuous monitoring, and audit trails into the security program itself, aligned to frameworks such as SOC 2, ISO 27001, and relevant industry-specific regulation.",
+    q: "How do you ensure successful organizational change?",
+    a: "We use structured change management frameworks, stakeholder engagement, communication strategies, and training programs to ensure successful transformation adoption.",
   },
   {
-    q: "What does ongoing support look like after deployment?",
-    a: "We provide structured post-deployment support including 24/7 monitoring, incident response readiness, and quarterly security reviews, so posture continues to hold as threats and business conditions evolve.",
+    q: "Do you provide ongoing advisory and transformation support?",
+    a: "Yes. We provide continuous advisory services, governance reviews, performance monitoring, and strategic guidance to support long-term business growth and innovation.",
   },
 ];
 
-const CyberSecurity = () => {
+const DigitalAdvisory = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
@@ -230,10 +227,10 @@ const CyberSecurity = () => {
 </>
         <div className="relative max-w-[1200px] mx-auto">
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="-mt-20 text-xl font uppercase tracking-[0.3em] mb-6 font-['Montserrat'] text-white">
-            Cyber Security
+            Digital Transformation 
           </motion.p> <hr className="border-white/40 my-6" />
           <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.08} className="text-7xl md:text-6xl lg:text-7xl font text-white leading-[1.05]">
-            Security Built to Withstand the Next Attempt.
+            Independent Advisory Built for Enterprise.
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0.16} className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
             {/* incase add description use this block */}
@@ -256,27 +253,27 @@ const CyberSecurity = () => {
       transition={{ duration: 0.8 }}
     >
       <p className="text-sm uppercase tracking-[0.3em] text-blue-600 mb-6 font-semibold">
-        Security Vision
+        Enterprise Vision
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Security should adapt to the business —
+        Advice should be grounded in engineering —
         <br />
-        not the other way around.
+        not a slide deck.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6 font-['montserrat']">
-        Most security programs begin with a tool decision and work backward
-        toward the business risk. We reverse that order. Every engagement
-        starts with how your organization actually operates and where real
-        exposure lives, then works forward to the controls and monitoring
-        that defend it.
+        Most advisory engagements end at a recommendation and leave
+        execution to someone else. We reverse that order. Every
+        recommendation we make is shaped by teams who actually build and
+        operate enterprise systems, so the advice holds up in production,
+        not just in a boardroom.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Programs built around a single vendor's roadmap tend to leave gaps.
-        Programs built around your actual risk continue to hold as threats
-        and the business evolve.
+        Strategy detached from delivery tends to sit on a shelf. Strategy
+        grounded in engineering reality continues to guide decisions as
+        the business evolves.
       </p>
     </motion.div>
 
@@ -291,10 +288,11 @@ const CyberSecurity = () => {
       {/* Replace this div with <img> later */}
       <img
   src="/art.jpg"
-  alt="Security Vision"
+  alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
 
+    
     </motion.div>
 
   </div>
@@ -319,9 +317,10 @@ const CyberSecurity = () => {
     >
       <img
   src="/art.jpg"
-  alt="Security Reality"
+  alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
+
     </motion.div>
 
     {/* Right Content */}
@@ -336,21 +335,21 @@ const CyberSecurity = () => {
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Most enterprises don't have a tooling problem.
+        Most enterprises don't lack advice.
         <br />
-        They have a visibility problem.
+        They lack advice they can trust.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6">
-        Enterprises today run more security tools than at any point in
-        history, yet breaches persist because no single team has a complete
-        view of the attack surface across cloud, network, and endpoints.
+        Leadership teams receive no shortage of vendor pitches and
+        consulting decks, yet major technology decisions still get made on
+        incomplete information because no one in the room is independent.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Tec Tha treats security as enterprise infrastructure. We build
-        unified visibility, tested response plans, and governed controls
-        that organizations can confidently rely on to withstand real threats.
+        Tec Tha treats digital advisory as enterprise infrastructure. We
+        give leadership independent, engineering-grounded guidance that
+        organizations can confidently rely on for high-stakes decisions.
       </p>
 
     </motion.div>
@@ -441,7 +440,7 @@ const CyberSecurity = () => {
   <div className="mx-auto max-w-7xl px-6">
 
     <p className="uppercase tracking-[0.35em] text-blue-500 text-sm font-semibold mb-5">
-      Security Capabilities
+      Enterprise Capabilities
     </p>
 
     <h2 className="text-5xl text-black font-light mb-16">
@@ -671,7 +670,7 @@ const CyberSecurity = () => {
 
       <p className="mt-8 text-lg leading-8 text-slate-500">
         Everything enterprise teams usually ask before
-        starting a cyber security initiative.
+        starting a digital advisory engagement.
       </p>
 
     </motion.div>
@@ -766,18 +765,19 @@ const CyberSecurity = () => {
     <div className=" border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-14 md:p-20 backdrop-blur-xl">
 
       <p className="mb-5 uppercase tracking-[0.35em] text-sm font-semibold text-blue-500">
-        Cyber Security Advisory
+        Digital Advisory Practice
       </p>
 
       <h2 className="max-w-4xl text-5xl font-light leading-tight text-white md:text-6xl">
-        Ready to close the gaps
+        Ready for advice grounded
         <br />
-        before someone else finds them?
+        in engineering reality?
       </h2>
 
       <p className="mt-8 max-w-3xl text-lg leading-9 text-white/70">
-        Speak with our security advisory team to identify where detection,
-        response, and governance can reduce risk across your organization.
+        Speak with our advisory practice to identify where strategy, vendor
+        evaluation, and governance can create measurable business value
+        across your organization.
       </p>
 
       <div className="mt-12 flex flex-wrap gap-6">
@@ -809,7 +809,7 @@ const CyberSecurity = () => {
       <section className="py-16 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-gray-400 text-base max-w-md">
-            Explore how Threat Detection, Penetration Testing, and Identity & Access Management fit into a single connected roadmap for your organization.
+            Explore how Technology Strategy, Operating Model Design, and Vendor Selection fit into a single connected roadmap for your organization.
           </p>
           <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/5 transition-colors shrink-0">
             View all services
@@ -821,4 +821,4 @@ const CyberSecurity = () => {
   );
 };
 
-export default CyberSecurity;
+export default DigitalAdvisory;

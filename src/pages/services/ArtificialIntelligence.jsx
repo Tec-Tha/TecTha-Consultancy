@@ -25,85 +25,85 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "HRIS Implementation",
+    title: "AI Strategy",
     short:
-      "End-to-end deployment and configuration of core HR systems tailored to your workforce structure.",
+      "Roadmaps that connect AI investment to measurable business outcomes.",
     image: "/art.jpg",
-    tags: ["HRIS", "Deployment", "Configuration"],
-    link: "/services/HrTechnology/hris-implementation",
+    tags: ["Consulting", "Roadmap", "Transformation"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/ai-strategy",
   },
   {
     id: 2,
-    title: "Payroll & Benefits Systems",
+    title: "Enterprise AI",
     short:
-      "Integrated payroll processing and benefits administration built for accuracy and compliance.",
+      "Production-grade AI systems built for enterprise scale and security.",
     image: "/art.jpg",
-    tags: ["Payroll", "Benefits", "Compliance"],
-    link: "/services/HrTechnology/payroll-benefits-systems",
+    tags: ["Scalable", "Secure", "Enterprise"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/enterprise-ai",
   },
   {
     id: 3,
-    title: "Talent Acquisition Platforms",
+    title: "Generative AI",
     short:
-      "Applicant tracking and recruiting technology that shortens time-to-hire without losing rigor.",
+      "Custom LLMs and GenAI solutions trained on your enterprise knowledge.",
     image: "/art.jpg",
-    tags: ["ATS", "Recruiting", "Sourcing"],
-    link: "/services/HrTechnology/talent-acquisition-platforms",
+    tags: ["LLM", "RAG", "GPT"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/generative-ai",
   },
   {
     id: 4,
-    title: "Performance & Talent Management",
+    title: "AI Agents",
     short:
-      "Goal-setting, review cycles, and succession planning tools connected to real business outcomes.",
+      "Autonomous AI agents capable of planning and executing workflows.",
     image: "/art.jpg",
-    tags: ["Performance", "Reviews", "Succession"],
-    link: "/services/HrTechnology/performance-talent-management",
+    tags: ["Agents", "Automation", "AI"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/ai-agents",
   },
   {
     id: 5,
-    title: "People Analytics",
+    title: "Intelligent Automation",
     short:
-      "Workforce dashboards and predictive reporting that turn HR data into decisions leadership can act on.",
+      "Combine AI, RPA and workflows to automate repetitive operations.",
     image: "/art.jpg",
-    tags: ["Analytics", "Reporting", "Insights"],
-    link: "/services/HrTechnology/people-analytics",
+    tags: ["RPA", "Workflow", "ML"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/intelligent-automation",
   },
   {
     id: 6,
-    title: "HR System Integration",
+    title: "AI Governance",
     short:
-      "Connecting HRIS, payroll, and talent tools into a single, reliable data flow across the enterprise.",
+      "Responsible AI frameworks with compliance, monitoring and auditability.",
     image: "/art.jpg",
-    tags: ["Integration", "Data Flow", "Automation"],
-    link: "/services/HrTechnology/hr-system-integration",
+    tags: ["Security", "Compliance", "Risk"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/ai-governance",
   },
 ];
 
 
 const CHALLENGES = [
   {
-    title: "Employee data scattered across systems",
-    desc: "HRIS, payroll, and talent platforms don't talk to each other, so headcount and comp data never fully agree.",
+    title: "Data trapped in silos",
+    desc: "Critical business data is scattered across legacy systems and departmental tools, making enterprise-wide analysis slow and unreliable.",
   },
   {
-    title: "Manual processes slowing down HR",
-    desc: "Onboarding, leave requests, and approvals still run through spreadsheets and email instead of workflows.",
+    title: "AI pilots that never scale",
+    desc: "Proof-of-concept models perform well in isolation but stall before production due to weak infrastructure or unclear ownership.",
   },
   {
-    title: "Compliance risk in payroll and benefits",
-    desc: "Configuration gaps and manual overrides create exposure across jurisdictions and reporting requirements.",
+    title: "Manual processes limiting growth",
+    desc: "Operations teams spend disproportionate time on repetitive work that automation could execute with greater accuracy.",
   },
   {
-    title: "Recruiting technology that can't keep pace",
-    desc: "Hiring volume has outgrown the applicant tracking system, and time-to-fill keeps climbing as a result.",
+    title: "Decisions lagging behind events",
+    desc: "Leadership reacts to problems after they surface in quarterly reports, rather than anticipating them in real time.",
   },
   {
-    title: "No single view of workforce data",
-    desc: "Leadership makes people decisions without reliable, consolidated reporting across the organization.",
+    title: "Compliance risk in AI adoption",
+    desc: "Rapid AI deployment without governance controls exposes the organization to regulatory and reputational risk.",
   },
   {
-    title: "HR technology stack built by accretion",
-    desc: "Point solutions were added over the years with no architecture, leaving gaps, overlaps, and integration debt.",
+    title: "Fragmented technology ownership",
+    desc: "Multiple vendors and disconnected roadmaps leave no single team accountable for enterprise-wide data quality.",
   },
 ];
 
@@ -112,31 +112,31 @@ const METHODOLOGY = [
   {
     step: "01",
     title: "Assess",
-    desc: "We audit existing HR systems, data flows, and processes to identify where technology creates the most measurable workforce impact.",
+    desc: "We audit existing data infrastructure, systems, and workflows to identify where AI creates the most defensible business value.",
     image: "/art.jpg",
   },
   {
     step: "02",
     title: "Design",
-    desc: "We architect the target HR technology stack, integration model, and data governance framework, sequenced against people priorities.",
+    desc: "We architect the target data model and system design, sequenced against technical constraints and business priorities.",
     image: "/art.jpg",
   },
   {
     step: "03",
     title: "Build",
-    desc: "We configure HRIS, payroll, and talent systems, and connect them into a single reliable data architecture.",
+    desc: "Engineering teams develop, train, and integrate solutions using agile delivery, with governance checkpoints in every sprint.",
     image: "/art.jpg",
   },
   {
     step: "04",
     title: "Deploy",
-    desc: "Systems go live with data migration validated, workflows tested, and end-user training completed from day one.",
+    desc: "Solutions move to production with monitoring, rollback plans, and performance benchmarks in place from day one.",
     image: "/art.jpg",
   },
   {
     step: "05",
     title: "Scale & Govern",
-    desc: "We establish ongoing configuration management, reporting governance, and system reviews so HR technology keeps pace with growth.",
+    desc: "We establish ongoing monitoring, retraining cycles, and governance reporting so performance holds as usage grows.",
     image: "/art.jpg",
   },
 ];
@@ -145,60 +145,60 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "Compliance-aware HR technology for highly regulated, multi-jurisdiction workforces.",
+    desc: "Fraud detection, credit risk modeling, and regulatory reporting automation.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Workforce systems built for shift-based, multi-site operational environments.",
+    desc: "Predictive maintenance, quality inspection, and supply chain forecasting.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Credentialing, scheduling, and compliance-driven HR platforms for clinical staff.",
+    desc: "Clinical data analytics and compliance-aware AI deployment.",
   },
   {
     title: "Retail",
     image: "/art.jpg",
-    desc: "High-volume onboarding and scheduling technology built for seasonal workforce swings.",
+    desc: "Demand forecasting, personalization, and inventory optimization.",
   },
   {
     title: "Logistics",
     image: "/art.jpg",
-    desc: "Distributed workforce systems supporting drivers, warehouse staff, and field teams.",
+    desc: "Route optimization, warehouse automation, and fleet intelligence.",
   },
   {
     title: "Public Sector",
     image: "/art.jpg",
-    desc: "Auditable, policy-compliant HR technology for citizen-serving workforces.",
+    desc: "Citizen service automation and data-driven policy planning.",
   },
 ];
 
 
 const FAQS = [
   {
-    q: "How is Tec Tha's HR technology practice different from a typical HRIS vendor?",
-    a: "We're vendor-agnostic and start from your workforce and processes, not a product's default configuration. Recommendations are built around what your organization actually needs, not what's easiest to sell.",
+    q: "How is Tec Tha's approach to enterprise AI different from a generic AI vendor?",
+    a: "We do not sell a single product and adapt your business to fit it. Every engagement starts with your data reality, existing systems, and operational constraints, and we design solutions that integrate into how your organization actually works, with governance built in from the start.",
   },
   {
-    q: "Can you work with the HR systems we already have?",
-    a: "Yes. Most engagements begin with an audit of your existing HRIS, payroll, and talent tools before we recommend replacement, integration, or reconfiguration.",
+    q: "How long does a typical AI or data analytics engagement take?",
+    a: "A focused analytics workflow can move from assessment to production in 8 to 12 weeks. Enterprise-wide AI platforms typically run 4 to 9 months, delivered in phased releases so value is realized incrementally rather than at a single go-live date.",
   },
   {
-    q: "How do you handle sensitive employee data during implementation?",
-    a: "Data migration follows a validated, access-controlled process with staged testing, aligned to relevant data protection and labor regulations for your jurisdictions.",
+    q: "Can you work with our existing data infrastructure and legacy systems?",
+    a: "Yes. Most engagements begin by integrating with existing ERP, CRM, and legacy databases rather than replacing them outright. We assess what should be modernized, what should be wrapped with integration layers, and what should be left untouched.",
   },
   {
-    q: "What does the transition to a new HR platform look like for employees?",
-    a: "We run a structured rollout covering data migration, workflow testing, and manager and employee training, so day-to-day HR processes are not disrupted.",
+    q: "How do you handle AI governance and regulatory compliance?",
+    a: "Governance is not a final checklist item. We build model documentation, bias testing, access controls, and audit trails into the development process itself, aligned to frameworks such as SOC 2, GDPR, and relevant industry-specific regulation.",
   },
   {
-    q: "Can you integrate HR systems with our existing finance and IT platforms?",
-    a: "Yes. Integration with finance, identity, and operational systems is a core part of the practice, so employee data stays consistent across the enterprise.",
+    q: "What does ongoing support look like after deployment?",
+    a: "We provide structured post-deployment support including performance monitoring, retraining schedules, and quarterly business reviews, so systems continue to perform as data and business conditions evolve.",
   },
 ];
 
-const HrTechnology = () => {
+const ArtificialIntelligence = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
@@ -230,10 +230,10 @@ const HrTechnology = () => {
 </>
         <div className="relative max-w-[1200px] mx-auto">
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="-mt-20 text-xl font uppercase tracking-[0.3em] mb-6 font-['Montserrat'] text-white">
-            HR Technology
+            Artificial Intelligence 
           </motion.p> <hr className="border-white/40 my-6" />
           <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.08} className="text-7xl md:text-6xl lg:text-7xl font text-white leading-[1.05]">
-            Workforce Systems Built for Enterprise Scale.
+            Artificial Intelligence Built for Enterprise.
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0.16} className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
             {/* incase add description use this block */}
@@ -260,22 +260,23 @@ const HrTechnology = () => {
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        People decisions should be data-driven —
+        Technology should adapt to business —
         <br />
-        not best guesses.
+        not the other way around.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6 font-['montserrat']">
-        Most HR technology projects start with a product selection and work
-        backward toward process. We reverse that order. Every engagement
-        starts with how your workforce actually operates, then works forward
-        to the systems, data architecture, and workflows that support it.
+        Most enterprise technology programs begin with a platform decision and
+        work backward toward the business problem. We reverse that order.
+        Every engagement starts with how your organization actually makes
+        decisions, then works forward to the data architecture and AI systems
+        that support it.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Technology built around a vendor's default configuration tends to
-        create workarounds. Technology built around your workforce
-        anticipates how people actually move through it.
+        Systems built around a vendor's roadmap tend to outlive their usefulness.
+        Systems built around your operating model continue to evolve as your
+        business grows.
       </p>
     </motion.div>
 
@@ -336,21 +337,22 @@ const HrTechnology = () => {
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Most enterprises don't have a talent problem.
+        Most enterprises don't have a data problem.
         <br />
-        They have a systems problem.
+        They have a trust problem.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6">
-        Workforces are more distributed than ever, yet HR teams are stretched
-        thin managing disconnected point solutions, so data never fully
-        lines up and decisions get slower.
+        Enterprises today generate more data than at any point in history,
+        yet decision-makers often rely on intuition because information is
+        inconsistent, delayed, or fragmented across disconnected systems.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Tec Tha treats HR technology as enterprise infrastructure. We
-        provide connected systems and clean data architecture that
-        organizations can confidently build workforce decisions on.
+        Tec Tha treats AI and data as enterprise infrastructure. We build
+        trusted data pipelines, governance frameworks, and intelligent systems
+        that organizations can confidently rely on for mission-critical
+        decisions.
       </p>
 
     </motion.div>
@@ -670,8 +672,8 @@ const HrTechnology = () => {
       </h2>
 
       <p className="mt-8 text-lg leading-8 text-slate-500">
-        Everything HR and IT leaders usually ask before
-        modernizing their HR technology stack.
+        Everything enterprise teams usually ask before
+        starting an AI transformation initiative.
       </p>
 
     </motion.div>
@@ -766,19 +768,19 @@ const HrTechnology = () => {
     <div className=" border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-14 md:p-20 backdrop-blur-xl">
 
       <p className="mb-5 uppercase tracking-[0.35em] text-sm font-semibold text-blue-500">
-        HR Technology Practice
+        Enterprise AI Advisory
       </p>
 
       <h2 className="max-w-4xl text-5xl font-light leading-tight text-white md:text-6xl">
-        Ready to modernize your
+        Ready to turn enterprise data
         <br />
-        HR technology stack?
+        into a decision advantage?
       </h2>
 
       <p className="mt-8 max-w-3xl text-lg leading-9 text-white/70">
-        Speak with our HR technology team to identify where HRIS
-        implementation, payroll integration, and people analytics can
-        create measurable workforce impact across your organization.
+        Speak with our enterprise advisory team to identify where AI,
+        automation, and analytics can create measurable business value across
+        your organization.
       </p>
 
       <div className="mt-12 flex flex-wrap gap-6">
@@ -810,7 +812,7 @@ const HrTechnology = () => {
       <section className="py-16 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-gray-400 text-base max-w-md">
-            Explore how HRIS Implementation, Payroll Systems, and People Analytics fit into a single connected roadmap for your organization.
+            Explore how AI Strategy, Enterprise AI, and Generative AI fit into a single connected roadmap for your organization.
           </p>
           <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/5 transition-colors shrink-0">
             View all services
@@ -822,4 +824,4 @@ const HrTechnology = () => {
   );
 };
 
-export default HrTechnology;
+export default ArtificialIntelligence;
