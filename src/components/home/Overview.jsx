@@ -19,54 +19,53 @@ import "swiper/css/navigation";
 const NEWS = [
   {
     image: "/erp.jpeg",
-    title: "Cutting-Edge Solutions For Modern Enterprises",
+    title: "Modern Enterprise Solutions",
     description:
-      "Helping businesses accelerate innovation through scalable digital transformation.",
+      "Empowering organizations with scalable enterprise technology, intelligent automation, cloud-native platforms, and digital transformation strategies that improve operational efficiency, accelerate innovation, and drive long-term business growth across global industries.",
   },
 
   {
     image: "/ai.jpeg",
     title: "Enterprise AI That Delivers Real Results",
     description:
-      "Unlock automation, intelligence and measurable growth.",
+      "Harness the power of Artificial Intelligence to automate complex workflows, generate actionable business insights, improve customer experiences, and enable faster, data-driven decision-making across every level of your organization.",
   },
 
   {
     image: "/cloud.jpg",
     title: "Cloud Solutions Built For Scale",
     description:
-      "Secure cloud infrastructure designed for enterprise workloads.",
+      "Design, migrate, and optimize secure cloud environments that provide exceptional scalability, business continuity, operational resilience, and performance while reducing infrastructure complexity and accelerating digital innovation.",
   },
 
   {
     image: "/soft.jpg",
     title: "Smarter Software Engineering",
     description:
-      "Creating reliable applications for the next generation.",
+      "Develop modern, secure, and high-performance enterprise applications using agile engineering practices, scalable architectures, and user-centric design that support continuous innovation and evolving business requirements.",
   },
 
   {
     image: "/cyber.jpg",
     title: "Cyber Security Reinvented",
     description:
-      "Protecting modern organizations with intelligent security.",
+      "Protect critical digital assets with advanced cybersecurity solutions including threat detection, identity and access management, cloud security, compliance frameworks, and proactive risk management for modern enterprises.",
   },
 
   {
     image: "/at.jpg.jpeg",
     title: "Transforming Industries With AI",
     description:
-      "AI-powered innovation for healthcare and finance.",
+      "Accelerate digital transformation across healthcare, banking, manufacturing, retail, logistics, education, and government through intelligent AI solutions that enhance productivity, optimize operations, and create sustainable business value.",
   },
 
   {
     image: "/future.jpeg",
     title: "Future Ready Technology",
     description:
-      "Building tomorrow's enterprise ecosystem today.",
+      "Build future-ready digital ecosystems with next-generation technologies, cloud computing, enterprise AI, automation, cybersecurity, and data-driven innovation that prepare organizations for long-term success in a rapidly evolving world.",
   },
 ];
-
 export default function Overview() {
 
 const prevRef = useRef(null);

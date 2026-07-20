@@ -5,7 +5,43 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const AUTO_ADVANCE_MS = 5000;
 
 const COUNTRIES = [
+   {
+    code: "SG",
+    name: "Singapore",
+    flag: "/meetushere/sg.svg",
+    image: "/meetushere/8.avif",
+    heading: "Enabling next-generation enterprise technology across Singapore",
+    paragraph:
+      "As a regional technology hub, Singapore is where Tec Tha delivers advanced cloud, AI, and data engineering solutions that help enterprises across Asia-Pacific scale securely and intelligently.",
+    chips: ["AI & Cloud", "Data Engineering", "Cybersecurity", "Digital Transformation"],
+  },
   {
+  code: "EU",
+  name: "Europe",
+  flag: "/meetushere/eu.svg",
+  image: "/meetushere/9.avif",
+  heading: "Accelerating digital transformation across Europe",
+  paragraph:
+    "Tec Tha partners with enterprises across Europe to modernize technology landscapes through AI, cloud engineering, cybersecurity, and enterprise software. We help organizations build secure, resilient, and future-ready digital ecosystems that drive innovation and sustainable growth.",
+  chips: [
+    "Enterprise AI",
+    "Cloud Transformation",
+    "Cybersecurity",
+    "Digital Engineering",
+  ],
+},
+ 
+    {
+    code: "AE",
+    name: "United Arab Emirates",
+    flag: "/meetushere/uae.svg",
+    image: "/meetushere/2.avif",
+    heading: "Advancing enterprise and government innovation across the UAE",
+    paragraph:
+      "In the UAE, Tec Tha builds intelligent, secure digital infrastructure for enterprises and government institutions, combining AI, cloud, and data engineering to support ambitious national transformation agendas.",
+    chips: ["AI & Data Analytics", "Cloud Solutions", "Digital Engineering", "Technology Consulting"],
+  },
+   {
     code: "DE",
     name: "Germany",
     flag: "/meetushere/germany.svg",
@@ -25,6 +61,16 @@ const COUNTRIES = [
       "Across the UK, Tec Tha delivers cloud modernization, data-driven intelligence, and technology consulting that help enterprises and public institutions operate with greater agility, security, and resilience.",
     chips: ["Cloud Modernization", "Data & Analytics", "Technology Consulting", "AI Solutions"],
   },
+    {
+    code: "AU",
+    name: "Australia",
+    flag: "/meetushere/au.svg",
+    image: "/meetushere/7.avif",
+    heading: "Delivering scalable enterprise technology across Australia",
+    paragraph:
+      "Tec Tha works with Australian enterprises and institutions to modernize infrastructure, apply AI at scale, and strengthen cybersecurity posture, underpinning digital transformation built to last.",
+    chips: ["Cloud & AI Solutions", "Enterprise Software", "Cybersecurity", "Data Analytics"],
+  },
   {
     code: "US",
     name: "United States",
@@ -35,16 +81,7 @@ const COUNTRIES = [
       "Tec Tha equips enterprises across the United States with enterprise-grade AI, resilient cloud infrastructure, and advanced cybersecurity, engineered to support digital transformation at national scale.",
     chips: ["Enterprise AI", "Cloud Infrastructure", "Cybersecurity", "Digital Engineering"],
   },
-  {
-    code: "AE",
-    name: "United Arab Emirates",
-    flag: "/meetushere/uae.svg",
-    image: "/meetushere/2.avif",
-    heading: "Advancing enterprise and government innovation across the UAE",
-    paragraph:
-      "In the UAE, Tec Tha builds intelligent, secure digital infrastructure for enterprises and government institutions, combining AI, cloud, and data engineering to support ambitious national transformation agendas.",
-    chips: ["AI & Data Analytics", "Cloud Solutions", "Digital Engineering", "Technology Consulting"],
-  },
+
   {
     code: "FR",
     name: "France",
@@ -55,26 +92,8 @@ const COUNTRIES = [
       "Tec Tha supports France's enterprises with rigorously engineered cloud platforms, applied AI, and cybersecurity architecture, delivering digital transformation built for long-term operational excellence.",
     chips: ["Cloud & Infrastructure", "AI Engineering", "Cybersecurity", "Software Consulting"],
   },
-  {
-    code: "SG",
-    name: "Singapore",
-    flag: "/meetushere/sg.svg",
-    image: "/meetushere/8.avif",
-    heading: "Enabling next-generation enterprise technology across Singapore",
-    paragraph:
-      "As a regional technology hub, Singapore is where Tec Tha delivers advanced cloud, AI, and data engineering solutions that help enterprises across Asia-Pacific scale securely and intelligently.",
-    chips: ["AI & Cloud", "Data Engineering", "Cybersecurity", "Digital Transformation"],
-  },
-  {
-    code: "AU",
-    name: "Australia",
-    flag: "/meetushere/au.svg",
-    image: "/meetushere/7.avif",
-    heading: "Delivering scalable enterprise technology across Australia",
-    paragraph:
-      "Tec Tha works with Australian enterprises and institutions to modernize infrastructure, apply AI at scale, and strengthen cybersecurity posture, underpinning digital transformation built to last.",
-    chips: ["Cloud & AI Solutions", "Enterprise Software", "Cybersecurity", "Data Analytics"],
-  },
+ 
+
 ];
 
 const total = COUNTRIES.length;
