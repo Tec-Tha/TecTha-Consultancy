@@ -17,6 +17,14 @@ import {
   Plus,
 } from "lucide-react";
 import ServiceNavbar from "../../../components/layout/ServiceNavbar";
+import framework1 from "../../../assets/images/services/CybersecurityService/framework1.jpg";
+import framework2 from "../../../assets/images/services/CybersecurityService/framework2.jpg";
+import framework3 from "../../../assets/images/services/CybersecurityService/framework3.jpg";
+import framework4 from "../../../assets/images/services/CybersecurityService/framework4.jpg";
+import framework5 from "../../../assets/images/services/CybersecurityService/framework5.jpg";
+import heroImg from "../../../assets/images/services/CybersecurityService/hero.jpg";
+import overviewImg from "../../../assets/images/services/CybersecurityService/overview.jpg";
+import ctaImg from "../../../assets/images/services/CybersecurityService/cta.jpg";
 
 /* ---------------------------------------------------------- */
 /* Shared motion variants                                      */
@@ -122,31 +130,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Security Assessment",
     desc: "We evaluate your cloud infrastructure, identify vulnerabilities, and assess security risks across your environment.",
-    image: "...",
+    image: framework1,
   },
   {
     step: "02",
     title: "Security Architecture",
     desc: "Our experts design a cloud security strategy aligned with your business, compliance, and operational requirements.",
-    image: "...",
+    image: framework2,
   },
   {
     step: "03",
     title: "Security Implementation",
     desc: "We deploy identity management, encryption, monitoring, firewall policies, and advanced threat protection controls.",
-    image: "...",
+    image: framework3,
   },
   {
     step: "04",
     title: "Monitoring & Response",
     desc: "Continuous monitoring, threat detection, and incident response ensure rapid identification and mitigation of security risks.",
-    image: "...",
+    image: framework4,
   },
   {
     step: "05",
     title: "Continuous Compliance",
     desc: "Regular security reviews, compliance audits, and ongoing optimization keep your cloud environment protected.",
-    image: "...",
+    image: framework5,
   },
 ];
 
@@ -227,7 +235,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src={overviewImg}
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -243,7 +251,7 @@ const AIAgents = () => {
             initial="hidden"
             animate="visible"
             custom={0.12}
-            className="text-white text-4xl md:text-6xl lg:text-7xl font leading-[1.03] max-w-4xl mb-8 tracking-tight"
+            className="text-white text-3xl md:text-5xl lg:text-6xl font-light leading-[1.03] max-w-4xl mb-8 tracking-tight"
           >
            Secure your cloud infrastructure with intelligent security solutions.
           </motion.h1>
@@ -303,7 +311,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src={heroImg}
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -596,7 +604,7 @@ const AIAgents = () => {
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
+            src={ctaImg}
             alt="Enterprise agent systems"
             className="h-full w-full object-cover"
           />
