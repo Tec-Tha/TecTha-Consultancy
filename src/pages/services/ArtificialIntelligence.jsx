@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "AI Strategy",
     short:
       "Roadmaps that connect AI investment to measurable business outcomes.",
-    image: "/art.jpg",
+    image:"/Ai/ai.jpg",
     tags: ["Consulting", "Roadmap", "Transformation"],
     link: "/services/ArtificialIntelligence&DataAnalytics/ai-strategy",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Enterprise AI",
     short:
       "Production-grade AI systems built for enterprise scale and security.",
-    image: "/art.jpg",
+    image:"/Ai/ai15.jpg",
     tags: ["Scalable", "Secure", "Enterprise"],
     link: "/services/ArtificialIntelligence&DataAnalytics/enterprise-ai",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "Generative AI",
     short:
       "Custom LLMs and GenAI solutions trained on your enterprise knowledge.",
-    image: "/art.jpg",
+    image:"/Ai/ai16.jpg",
     tags: ["LLM", "RAG", "GPT"],
     link: "/services/ArtificialIntelligence&DataAnalytics/generative-ai",
   },
@@ -55,7 +55,8 @@ const CAPABILITIES = [
     title: "AI Agents",
     short:
       "Autonomous AI agents capable of planning and executing workflows.",
-    image: "/art.jpg",
+    image:
+"/Ai/ai3.jpg",
     tags: ["Agents", "Automation", "AI"],
     link: "/services/ArtificialIntelligence&DataAnalytics/ai-agents",
   },
@@ -64,7 +65,8 @@ const CAPABILITIES = [
     title: "Intelligent Automation",
     short:
       "Combine AI, RPA and workflows to automate repetitive operations.",
-    image: "/art.jpg",
+    image:
+"/Ai/ai8.jpg",
     tags: ["RPA", "Workflow", "ML"],
     link: "/services/ArtificialIntelligence&DataAnalytics/intelligent-automation",
   },
@@ -73,7 +75,8 @@ const CAPABILITIES = [
     title: "AI Governance",
     short:
       "Responsible AI frameworks with compliance, monitoring and auditability.",
-    image: "/art.jpg",
+    image:
+"/Ai/aii2.jpg",
     tags: ["Security", "Compliance", "Risk"],
     link: "/services/ArtificialIntelligence&DataAnalytics/ai-governance",
   },
@@ -113,63 +116,74 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess",
     desc: "We audit existing data infrastructure, systems, and workflows to identify where AI creates the most defensible business value.",
-    image: "/art.jpg",
+    image:
+"/Ai/1.jpg",
   },
   {
     step: "02",
     title: "Design",
     desc: "We architect the target data model and system design, sequenced against technical constraints and business priorities.",
-    image: "/art.jpg",
+    image:
+"/Ai/2.jpg",
   },
   {
     step: "03",
     title: "Build",
     desc: "Engineering teams develop, train, and integrate solutions using agile delivery, with governance checkpoints in every sprint.",
-    image: "/art.jpg",
+    image:
+"/Ai/ai4.jpeg",
   },
   {
     step: "04",
     title: "Deploy",
     desc: "Solutions move to production with monitoring, rollback plans, and performance benchmarks in place from day one.",
-    image: "/art.jpg",
+    image:
+"/Ai/ai1.jpg",
   },
   {
     step: "05",
     title: "Scale & Govern",
     desc: "We establish ongoing monitoring, retraining cycles, and governance reporting so performance holds as usage grows.",
-    image: "/art.jpg",
+    image:
+"/Ai/5.jpg",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image:
+"/Ai/6.jpg",
     desc: "Fraud detection, credit risk modeling, and regulatory reporting automation.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image:
+"/Ai/3.jpg",
     desc: "Predictive maintenance, quality inspection, and supply chain forecasting.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image:
+"/Ai/aii1.jpg",
     desc: "Clinical data analytics and compliance-aware AI deployment.",
   },
   {
     title: "Retail",
-    image: "/art.jpg",
+    image:
+"/Ai/7.jpg",
     desc: "Demand forecasting, personalization, and inventory optimization.",
   },
   {
     title: "Logistics",
-    image: "/art.jpg",
+    image:
+"/Ai/9.jpg",
     desc: "Route optimization, warehouse automation, and fleet intelligence.",
   },
   {
     title: "Public Sector",
-    image: "/art.jpg",
+    image:
+"/Ai/8.jpg",
     desc: "Citizen service automation and data-driven policy planning.",
   },
 ];
@@ -212,7 +226,7 @@ const ArtificialIntelligence = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage:"url('/Ai/10.jpg')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -290,7 +304,7 @@ const ArtificialIntelligence = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/Ai/aii.jpg"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -318,7 +332,7 @@ const ArtificialIntelligence = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/Ai/ai14.jpg"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />

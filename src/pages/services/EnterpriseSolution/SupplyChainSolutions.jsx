@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Supply Chain Assessment",
     desc: "We analyze your procurement, inventory, logistics, and warehouse operations to identify improvement opportunities.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "02",
     title: "Solution Design",
     desc: "Our experts design a supply chain solution tailored to your operational requirements and business objectives.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "03",
     title: "System Integration",
     desc: "We integrate supply chain solutions with ERP, CRM, warehouse management, transportation, and supplier systems.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "04",
     title: "Deployment & Training",
     desc: "We implement the solution, migrate operational data, and train teams for seamless adoption.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Ongoing monitoring, analytics, and performance improvements ensure long-term supply chain efficiency.",
-    image: "...",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
@@ -227,7 +227,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2400&auto=format&fit=crop"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -303,7 +303,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

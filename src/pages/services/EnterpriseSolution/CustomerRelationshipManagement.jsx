@@ -122,34 +122,33 @@ const FRAMEWORK = [
     step: "01",
     title: "Business Discovery",
     desc: "We assess your sales processes, customer journeys, and business goals to define the right CRM strategy.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "02",
     title: "CRM Solution Design",
     desc: "Our team designs a customer relationship management solution tailored to your sales, marketing, and support operations.",
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "03",
     title: "System Integration",
     desc: "We integrate CRM with ERP, email platforms, customer support tools, marketing systems, and third-party applications.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1552664688-cf412ec27db2?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "04",
     title: "Deployment & Training",
     desc: "We deploy the CRM platform, migrate customer data, and train your teams for successful adoption.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "We provide ongoing support, performance monitoring, and feature enhancements to maximize CRM effectiveness.",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop",
   },
 ];
-
 const DELIVERABLES = [
   {
     icon: Bot,

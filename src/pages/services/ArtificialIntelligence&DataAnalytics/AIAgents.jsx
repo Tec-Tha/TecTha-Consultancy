@@ -94,11 +94,11 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Scope", desc: "We define the specific task or workflow the agent will own, and the exact boundaries of its authority to act.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Connect", desc: "We integrate the agent with your real systems and data — the tools it needs to actually complete work, not simulate it.", image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Design Guardrails", desc: "We define approval checkpoints, escalation rules, and hard limits so the agent operates safely within its scope.", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Test", desc: "The agent is run against historical and edge-case scenarios before it is given access to live production systems.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Operate", desc: "We monitor agent behavior continuously, with full activity logs and a clear path to intervene when needed.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Scope", desc: "We define the specific task or workflow the agent will own, and the exact boundaries of its authority to act.", image: "/Ai/47.jpg" },
+  { step: "02", title: "Connect", desc: "We integrate the agent with your real systems and data — the tools it needs to actually complete work, not simulate it.", image: "/Ai/45.jpg" },
+  { step: "03", title: "Design Guardrails", desc: "We define approval checkpoints, escalation rules, and hard limits so the agent operates safely within its scope.", image: "/Ai/46.jpg" },
+  { step: "04", title: "Test", desc: "The agent is run against historical and edge-case scenarios before it is given access to live production systems.", image: "/Ai/51.jpg" },
+  { step: "05", title: "Operate", desc: "We monitor agent behavior continuously, with full activity logs and a clear path to intervene when needed.", image: "/Ai/ai13.jpg" },
 ];
 
 const DELIVERABLES = [
@@ -110,21 +110,7 @@ const DELIVERABLES = [
   { icon: MessageSquare, title: "Human-in-the-Loop Interfaces", desc: "Review and intervention tools that keep people in control of consequential decisions." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Agents that triage claims and flag exceptions for human review.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Agents coordinating maintenance scheduling across plant systems.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Agents supporting administrative workflows within compliance limits.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Retail", desc: "Agents managing inventory exceptions and reorder workflows.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Agents coordinating dispatch and rerouting decisions in real time.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Public Sector", desc: "Agents supporting case triage with full auditability and oversight.", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" },
-];
 
-const IMPACT = [
-  { value: "60%", label: "Faster Multi-Step Task Completion" },
-  { value: "40%", label: "Reduction in Escalation Volume" },
-  { value: "100%", label: "Actions Logged and Auditable" },
-  { value: "24/7", label: "Continuous Task Coverage" },
-];
 
 const FAQS = [
   { q: "How is an AI agent different from a chatbot?", a: "A chatbot answers questions in conversation. An agent takes action — it can query systems, execute multi-step tasks, and complete work end to end, within defined boundaries and approval checkpoints." },
@@ -156,7 +142,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/Ai/24.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -242,7 +228,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/Ai/25.jpg"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -539,12 +525,7 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}
