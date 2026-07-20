@@ -654,6 +654,7 @@ const Careers = () => {
           </div>
         </section>
 
+
   <section className="bg-[#1f2322] py-24 md:py-32">
   <div className="mx-auto max-w-5xl px-6 text-center">
     <motion.div
@@ -683,6 +684,53 @@ const Careers = () => {
     </motion.div>
   </div>
 </section>
+
+   <section className="bg-black py-24 md:py-28">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={0}
+            >
+              <h2 className="text-4xl font-medium tracking-tight text-white md:text-5xl">
+                {JOIN_US_BAND.title}
+              </h2>
+              <p className="mt-5 text-base font-light text-white/70">{JOIN_US_BAND.description}</p>
+              <a
+                href={MAILTO_HREF}
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-black"
+              >
+                Click here
+              </a>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={0.1}
+              className="flex flex-col gap-4 border-t border-white/15 pt-8 md:border-l md:border-t-0 md:pl-14 md:pt-0"
+            >
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+                Partner Access
+              </span>
+              {JOIN_US_BAND.partnerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.anchor}
+                  className="group inline-flex w-fit items-center gap-2 rounded-full border border-white/40 px-6 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-white hover:bg-white/10"
+                >
+                  {link.label}
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
               
       </div>
     </PageWrapper>
