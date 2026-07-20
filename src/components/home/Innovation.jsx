@@ -50,7 +50,7 @@ const imageY = useTransform(
   [80, -80]
 );
   return (
-   <section className="bg-white py-18">
+   <section className="bg-white py-28">
 
   <div className="mx-auto max-w-[1700px] px-10">
 

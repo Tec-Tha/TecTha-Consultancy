@@ -1,395 +1,269 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { gsap } from "gsap";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const AUTO_ADVANCE_MS = 5000;
 
 const COUNTRIES = [
   {
-    code: "US",
-    name: "United States",
-    image: "",
-    flag: "",
-    statement:
-      "Driving digital transformation for enterprises across North America.",
+    code: "DE",
+    name: "Germany",
+    flag: "/meetushere/germany.svg",
+    image: "/meetushere/1.avif",
+    heading: "Engineering digital transformation across Germany",
+    paragraph:
+      "Tec Tha partners with Germany's industrial and enterprise leaders to modernize core systems, embed AI into critical operations, and build cloud and cybersecurity foundations engineered for precision and scale.",
+    chips: ["AI & Automation", "Cloud Engineering", "Cybersecurity", "Enterprise Software"],
   },
   {
     code: "GB",
     name: "United Kingdom",
-    image: "",
-    flag: "",
-    statement:
-      "Delivering strategic technology partnerships across the UK and Europe.",
+    flag: "/meetushere/uk.svg",
+    image: "/meetushere/4.avif",
+    heading: "Powering enterprise innovation across the United Kingdom",
+    paragraph:
+      "Across the UK, Tec Tha delivers cloud modernization, data-driven intelligence, and technology consulting that help enterprises and public institutions operate with greater agility, security, and resilience.",
+    chips: ["Cloud Modernization", "Data & Analytics", "Technology Consulting", "AI Solutions"],
   },
   {
-    code: "DE",
-    name: "Germany",
-    image: "",
-    flag: "",
-    statement:
-      "Engineering precision solutions for Europe's industrial leaders.",
-  },
-  {
-    code: "FR",
-    name: "France",
-    image: "",
-    flag: "",
-    statement:
-      "Crafting elegant digital experiences for France's leading brands.",
-  },
-  {
-    code: "CA",
-    name: "Canada",
-    image: "",
-    flag: "",
-    statement:
-      "Building resilient infrastructure for businesses across Canada.",
+    code: "US",
+    name: "United States",
+    flag: "/meetushere/us.svg",
+    image: "/meetushere/5.avif",
+    heading: "Accelerating enterprise transformation across the United States",
+    paragraph:
+      "Tec Tha equips enterprises across the United States with enterprise-grade AI, resilient cloud infrastructure, and advanced cybersecurity, engineered to support digital transformation at national scale.",
+    chips: ["Enterprise AI", "Cloud Infrastructure", "Cybersecurity", "Digital Engineering"],
   },
   {
     code: "AE",
     name: "United Arab Emirates",
-    image: "",
-    flag: "",
-    statement:
-      "Powering innovation for enterprises across the Middle East.",
+    flag: "/meetushere/uae.svg",
+    image: "/meetushere/2.avif",
+    heading: "Advancing enterprise and government innovation across the UAE",
+    paragraph:
+      "In the UAE, Tec Tha builds intelligent, secure digital infrastructure for enterprises and government institutions, combining AI, cloud, and data engineering to support ambitious national transformation agendas.",
+    chips: ["AI & Data Analytics", "Cloud Solutions", "Digital Engineering", "Technology Consulting"],
+  },
+  {
+    code: "FR",
+    name: "France",
+    flag: "/meetushere/fr.svg",
+    image: "/meetushere/6.avif",
+    heading: "Driving enterprise-grade digital transformation across France",
+    paragraph:
+      "Tec Tha supports France's enterprises with rigorously engineered cloud platforms, applied AI, and cybersecurity architecture, delivering digital transformation built for long-term operational excellence.",
+    chips: ["Cloud & Infrastructure", "AI Engineering", "Cybersecurity", "Software Consulting"],
+  },
+  {
+    code: "SG",
+    name: "Singapore",
+    flag: "/meetushere/sg.svg",
+    image: "/meetushere/8.avif",
+    heading: "Enabling next-generation enterprise technology across Singapore",
+    paragraph:
+      "As a regional technology hub, Singapore is where Tec Tha delivers advanced cloud, AI, and data engineering solutions that help enterprises across Asia-Pacific scale securely and intelligently.",
+    chips: ["AI & Cloud", "Data Engineering", "Cybersecurity", "Digital Transformation"],
   },
   {
     code: "AU",
     name: "Australia",
-    image: "",
-    flag: "",
-    statement:
-      "Delivering forward-thinking solutions across Asia-Pacific markets.",
+    flag: "/meetushere/au.svg",
+    image: "/meetushere/7.avif",
+    heading: "Delivering scalable enterprise technology across Australia",
+    paragraph:
+      "Tec Tha works with Australian enterprises and institutions to modernize infrastructure, apply AI at scale, and strengthen cybersecurity posture, underpinning digital transformation built to last.",
+    chips: ["Cloud & AI Solutions", "Enterprise Software", "Cybersecurity", "Data Analytics"],
   },
 ];
 
+const total = COUNTRIES.length;
+
 export default function MeetUsHere() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [displayIndex, setDisplayIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [paused, setPaused] = useState(false);
+  const timerRef = useRef(null);
 
-  const imageRef = useRef(null);
-  const statementRef = useRef(null);
-  const flagRef = useRef(null);
-  const timelineRef = useRef(null);
+  const goTo = useCallback((next) => {
+    setDirection(next > index || (index === total - 1 && next === 0) ? 1 : -1);
+    setIndex(((next % total) + total) % total);
+  }, [index]);
 
-  const itemRefs = useRef([]);
-  const thumbRefs = useRef([]);
-  const arrowRefs = useRef([]);
-
-  const active = COUNTRIES[activeIndex];
-  const display = COUNTRIES[displayIndex];
+  const next = useCallback(() => goTo(index + 1), [index, goTo]);
+  const prev = useCallback(() => goTo(index - 1), [index, goTo]);
 
   useEffect(() => {
-    if (activeIndex === displayIndex) return;
+    if (paused) return undefined;
+    timerRef.current = setInterval(() => {
+      setDirection(1);
+      setIndex((i) => (i + 1) % total);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(timerRef.current);
+  }, [paused, index]);
 
-    if (timelineRef.current) timelineRef.current.kill();
+  const country = COUNTRIES[index];
 
-    setIsAnimating(true);
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.inOut" },
-      onComplete: () => setIsAnimating(false),
-    });
-    timelineRef.current = tl;
-
-    tl.to(imageRef.current, { opacity: 0, scale: 1.08, duration: 0.55 })
-      .to(
-        [statementRef.current, flagRef.current],
-        { opacity: 0, y: 12, duration: 0.35, ease: "power2.in" },
-        "<"
-      )
-      .call(() => setDisplayIndex(activeIndex))
-      .fromTo(
-        imageRef.current,
-        { opacity: 0, scale: 1.16 },
-        { opacity: 1, scale: 1, duration: 1.05, ease: "power3.out" }
-      )
-      .fromTo(
-        flagRef.current,
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        "-=0.65"
-      )
-      .fromTo(
-        statementRef.current,
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        "-=0.4"
-      );
-
-    return () => tl.kill();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex]);
-
-  const goTo = (index) => {
-    if (index === activeIndex || isAnimating) return;
-    setActiveIndex(index);
-  };
-
-  // Clear any lingering hover styles on the item that just became active
-  useEffect(() => {
-    const el = itemRefs.current[activeIndex];
-    const thumb = thumbRefs.current[activeIndex];
-    const arrow = arrowRefs.current[activeIndex];
-    if (el) gsap.set(el, { clearProps: "borderColor,backgroundColor" });
-    if (thumb) gsap.set(thumb, { clearProps: "scale" });
-    if (arrow) gsap.set(arrow, { clearProps: "x,opacity" });
-  }, [activeIndex]);
-
-  const handleNavHoverIn = (index) => {
-    const isActive = index === activeIndex;
-
-    gsap.to(thumbRefs.current[index], {
-      scale: 1.08,
-      duration: 0.55,
-      ease: "power3.out",
-    });
-    gsap.to(arrowRefs.current[index], {
-      x: 0,
-      opacity: isActive ? 0.55 : 1,
-      duration: 0.4,
-      ease: "power3.out",
-    });
-
-    if (!isActive) {
-      gsap.to(itemRefs.current[index], {
-        borderColor: "rgba(255,255,255,0.35)",
-        backgroundColor: "rgba(255,255,255,0.05)",
-        duration: 0.45,
-        ease: "power3.out",
-      });
-    }
-  };
-
-  const handleNavHoverOut = (index) => {
-    const isActive = index === activeIndex;
-
-    gsap.to(thumbRefs.current[index], {
-      scale: 1,
-      duration: 0.55,
-      ease: "power3.out",
-    });
-    gsap.to(arrowRefs.current[index], {
-      x: -6,
-      opacity: 0,
-      duration: 0.4,
-      ease: "power3.out",
-    });
-
-    if (!isActive) {
-      gsap.to(itemRefs.current[index], {
-        borderColor: "rgba(255,255,255,0.1)",
-        backgroundColor: "rgba(255,255,255,0.02)",
-        duration: 0.45,
-        ease: "power3.out",
-      });
-    }
+  const variants = {
+    enter: (dir) => ({ opacity: 0, scale: 1.04, x: dir > 0 ? 24 : -24 }),
+    center: { opacity: 1, scale: 1, x: 0 },
+    exit: (dir) => ({ opacity: 0, scale: 0.98, x: dir > 0 ? -24 : 24 }),
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-[#050505] text-white overflow-hidden">
-      {/* Background texture */}
+    <section
+      className="relative min-h-screen w-full bg-[#040404] text-white overflow-hidden"
+      style={{ fontFamily: "'Montserrat', sans-serif" }}
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+      `}</style>
+
+      {/* ambient texture */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        className="pointer-events-none absolute inset-0 opacity-[0.25]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
+            "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
         }}
       />
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,255,255,0.09), transparent 65%)",
+            "radial-gradient(ellipse 55% 35% at 50% 0%, rgba(255,255,255,0.07), transparent 65%)",
         }}
       />
 
-      <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col px-6 pt-24 pb-20 sm:px-10 lg:px-16">
-        {/* Header */}
-        <div className="mb-16 flex flex-col items-center text-center lg:mb-20">
-          <span className="mb-5 text-[11px] font-medium uppercase tracking-[0.45em] text-white/45">
-            Global Presence
-          </span>
-          <h2 className="font-monstret text-[13vw] leading-[0.9] tracking-tight text-white sm:text-[9vw] lg:text-[5vw]">
+      <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-6 pt-20 pb-16 sm:px-10 lg:px-16">
+        {/* Page header */}
+        <div className="mb-14 flex flex-col items-center text-center lg:mb-16">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-8 bg-white/40" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.5em] text-white/45">
+              Global Presence
+            </span>
+            <span className="h-px w-8 bg-white/40" />
+          </div>
+          <h2 className="text-[11vw] font-medium  leading-[0.95] tracking-tight sm:text-[7vw] lg:text-[3.6rem]">
             Meet Us Here
           </h2>
-          <p className="mt-7 max-w-md text-sm font-light tracking-wide text-white/50 sm:text-base">
-            Meet our teams and partners across global markets.
+          <p className="mt-6 max-w-lg text-sm font-light leading-relaxed tracking-wide text-white/50 sm:text-base">
+            Tec Tha delivers AI, cloud, cybersecurity, and enterprise engineering
+            for organizations across seven global markets.
           </p>
         </div>
 
-        {/* Main layout */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[64px_1fr_300px] lg:gap-12">
-          {/* Left — vertical active country name */}
-          <div className="hidden items-center justify-center lg:flex">
-            <div className="relative h-[520px] w-full overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={active.code}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -24 }}
-                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-1/2 top-1/2 origin-center whitespace-nowrap text-xs font-medium uppercase tracking-[0.6em] text-white/55"
-                  style={{
-                    writingMode: "vertical-rl",
-                    transform: "translate(-50%, -50%) rotate(180deg)",
-                  }}
-                >
-                  {active.name}
-                </motion.span>
-              </AnimatePresence>
-            </div>
-          </div>
+        {/* Card */}
+        <div
+          className="relative mx-auto w-full"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <div className="relative h-[400px] w-full overflow-hidden rounded-[6px] border border-white/12 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:h-[560px] lg:h-[660px]">
+            {/* Prev / Next arrows — centered against the card's own height at every breakpoint */}
+            <button
+              aria-label="Previous country"
+              onClick={prev}
+              className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/40 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-black/70 sm:left-6 sm:h-12 sm:w-12"
+            >
+              <ChevronLeft size={18} strokeWidth={1.5} />
+            </button>
+            <button
+              aria-label="Next country"
+              onClick={next}
+              className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/40 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-black/70 sm:right-6 sm:h-12 sm:w-12"
+            >
+              <ChevronRight size={18} strokeWidth={1.5} />
+            </button>
 
-          {/* Center — featured region */}
-          <div className="relative mx-auto w-full max-w-[1180px]">
-            {/* Top: left info column + clean hero image */}
-            <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-              {/* Left side — flag, label, country name (outside the image) */}
-              <div
-                ref={flagRef}
-                className="flex flex-row items-center gap-5 lg:w-[260px] lg:shrink-0 lg:flex-col lg:items-start lg:gap-7"
+            <AnimatePresence custom={direction} mode="wait">
+              <motion.div
+                key={country.code}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0"
               >
-                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-[10px] border border-white/30 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.7)]">
-                  {display.flag ? (
-                    <img
-                      src={display.flag}
-                      alt={`${display.name} flag`}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-white/5 text-[9px] tracking-widest text-white/40">
-                      {display.code}
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50">
-                    Featured Region
-                  </span>
-                  <span className="font-serif text-3xl leading-[1.05] text-white sm:text-4xl lg:text-[2.6rem]">
-                    {display.name}
-                  </span>
-                </div>
-              </div>
-
-              {/* Center — large hero image, no overlay, no text */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px] border border-white/10 bg-neutral-950 shadow-[0_60px_120px_-40px_rgba(0,0,0,0.9)] sm:aspect-[16/10] lg:aspect-[16/9] lg:flex-1">
                 <img
-                  ref={imageRef}
-                  src={display.image}
-                  alt={display.name}
+                  src={country.image}
+                  alt={country.name}
                   className="absolute inset-0 h-full w-full object-cover"
-                  style={{ opacity: display.image ? 1 : 0.9 }}
+                  style={{ filter: "grayscale(0.35) contrast(1.05)" }}
                 />
-              </div>
-            </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/10" />
 
-            {/* Bottom — description + Explore button, outside the image */}
-            <div className="mt-10 flex flex-col gap-8 border-t border-white/10 pt-10 sm:flex-row sm:items-end sm:justify-between lg:mt-14 lg:pl-[calc(260px+64px)] lg:pt-12">
-              <p
-                ref={statementRef}
-                className="max-w-xl text-base font-light leading-relaxed text-white/75 sm:text-lg"
-              >
-                {display.statement}
-              </p>
-
-            </div>
-          </div>
-
-          {/* Right — premium thumbnail country navigation */}
-          <nav
-            aria-label="Select region"
-            className="flex gap-3 overflow-x-auto pb-4 lg:w-full lg:flex-col lg:gap-2 lg:overflow-visible lg:pb-0"
-          >
-            {COUNTRIES.map((country, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <button
-                  key={country.code}
-                  ref={(el) => (itemRefs.current[index] = el)}
-                  onClick={() => goTo(index)}
-                  onMouseEnter={() => handleNavHoverIn(index)}
-                  onMouseLeave={() => handleNavHoverOut(index)}
-                  onFocus={() => handleNavHoverIn(index)}
-                  onBlur={() => handleNavHoverOut(index)}
-                  aria-current={isActive ? "true" : undefined}
-                  className={`group relative flex w-[220px] shrink-0 cursor-pointer items-center gap-3.5 rounded-[16px] border py-2.5 pl-2.5 pr-4 backdrop-blur-md outline-none transition-[background-color,box-shadow] duration-500 lg:w-full ${
-                    isActive
-                      ? "border-white/90 bg-white/[0.08] shadow-[0_0_36px_-6px_rgba(255,255,255,0.4)]"
-                      : "border-white/12 bg-white/[0.02]"
-                  }`}
-                >
-                  {/* vertical active indicator */}
-                  <span
-                    aria-hidden="true"
-                    className={`absolute -left-3 top-1/2 hidden -translate-y-1/2 rounded-full transition-all duration-500 ease-out lg:block ${
-                      isActive
-                        ? "h-10 w-[2.5px] bg-white opacity-100"
-                        : "h-2 w-[2.5px] bg-white/0 opacity-0"
-                    }`}
-                  />
-
-                  {/* thumbnail */}
-                  <div
-                    ref={(el) => (thumbRefs.current[index] = el)}
-                    className={`relative h-[70px] w-[70px] shrink-0 overflow-hidden rounded-[4px] border bg-white/5 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.7)] transition-[border-color] duration-500 ${
-                      isActive ? "border-white" : "border-white/20"
-                    }`}
-                  >
-                    <img
-                      src={country.image}
-                      alt={country.name}
-                      className="h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/10" />
-
-                    {/* small flag chip on the thumbnail */}
-                    <div className="absolute bottom-1 left-1 flex h-[18px] w-[26px] items-center justify-center overflow-hidden rounded-[4px] border border-white/30 bg-black/50 backdrop-blur-sm">
-                      {country.flag ? (
-                        <img
-                          src={country.flag}
-                          alt=""
-                          aria-hidden="true"
-                          className="h-full w-full object-cover"
-                        />
-                      ) : (
-                        <span className="text-[7px] font-medium tracking-widest text-white/70">
-                          {country.code}
-                        </span>
-                      )}
+                {/* top row: flag + name / counter */}
+                <div className="absolute inset-x-0 top-0 flex items-center justify-between p-6 sm:p-9">
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 overflow-hidden rounded-[6px] border border-white/40 bg-white/5 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.8)] sm:h-9 sm:w-9">
+                      <img
+                        src={country.flag}
+                        alt={`${country.name} flag`}
+                        className="h-full w-full object-cover"
+                      />
                     </div>
-                  </div>
-
-                  {/* name + reveal arrow */}
-                  <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
-                    <span
-                      className={`truncate text-left font-medium leading-tight tracking-wide transition-colors duration-500 ${
-                        isActive
-                          ? "text-[15px] text-white"
-                          : "text-sm text-white/55"
-                      }`}
-                    >
+                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75 sm:text-sm">
                       {country.name}
                     </span>
-                    <ArrowRight
-                      ref={(el) => (arrowRefs.current[index] = el)}
-                      size={14}
-                      strokeWidth={1.5}
-                      className="shrink-0 text-white opacity-0"
-                      style={{ transform: "translateX(-6px)" }}
-                    />
                   </div>
-                </button>
-              );
-            })}
-          </nav>
+                  <span className="font-mono text-xs tracking-[0.2em] text-white/45 sm:text-sm">
+                    {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* bottom text block */}
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 lg:p-12">
+            <h3
+  className="
+    max-w-5xl
+    text-2xl
+    sm:text-3xl
+    lg:text-[2.5rem]
+    font-normal
+    tracking-[-0.04em]
+    leading-[0.88]
+  "
+>
+  {country.heading}
+</h3>
+                  <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/70 sm:text-base">
+                    {country.paragraph}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2.5">
+                    {country.chips.map((chip) => (
+                      <span
+                        key={chip}
+                        className="rounded-xl border border-white/25 bg-white/[0.06] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white/80 backdrop-blur-md sm:text-xs"
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-      
+        {/* Pagination dots */}
+        <div className="mt-9 flex items-center justify-center gap-2.5">
+          {COUNTRIES.map((c, i) => (
+            <button
+              key={c.code}
+              aria-label={`Go to ${c.name}`}
+              onClick={() => goTo(i)}
+              className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                i === index ? "w-7 bg-white" : "w-1.5 bg-white/25 hover:bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -85,7 +85,7 @@ function SplitHeadline({ text, active }) {
 
         <div
           key={lineIndex}
-          className="overflow-hidden"
+          className="overflow-visible pb-4"
         >
 
           <motion.div
@@ -119,7 +119,7 @@ function SplitHeadline({ text, active }) {
                 font-['Montserrat']
                 text-5xl
                 
-                leading-none
+                leading-[1.08]
                 text-white
 
                 sm:text-6xl

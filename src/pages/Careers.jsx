@@ -657,8 +657,7 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Join us band */}
-        <section className="bg-black py-24 md:py-28">
+   <section className="bg-black py-24 md:py-28">
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
             <motion.div
               variants={fadeUp}
@@ -673,16 +672,36 @@ const Careers = () => {
               <p className="mt-5 text-base font-light text-white/70">{JOIN_US_BAND.description}</p>
               <a
                 href={MAILTO_HREF}
-                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-black transition-transform duration-200 hover:-translate-y-0.5"
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-black"
               >
-                Explore Careers
-                <ArrowUpRight className="h-4 w-4" />
+                Click here
               </a>
             </motion.div>
 
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={0.1}
+              className="flex flex-col gap-4 border-t border-white/15 pt-8 md:border-l md:border-t-0 md:pl-14 md:pt-0"
+            >
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+                Partner Access
+              </span>
+              {JOIN_US_BAND.partnerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.anchor}
+                  className="group inline-flex w-fit items-center gap-2 rounded-full border border-white/40 px-6 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-white hover:bg-white/10"
+                >
+                  {link.label}
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              ))}
+            </motion.div>
           </div>
         </section>
-
               
       </div>
     </PageWrapper>

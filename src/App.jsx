@@ -55,6 +55,12 @@ import Education from "./pages/industries/Education";
 import Government from "./pages/industries/Government";
 import Insights from "./pages/Insights";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
+import PrivacyPolicy from "./pages/policy/PrivacyPolicy";
+import CookiePolicy from "./pages/policy/CookiePolicy";
+import Accessibility from "./pages/policy/Accessibility";
+import Disclaimer from "./pages/policy/Disclaimer";
+import SecurityPolicy from "./pages/policy/SecurityPolicy";
+import TermsOfUse from "./pages/policy/TermsOfUse";
 
 function App() {
   return (
@@ -63,6 +69,12 @@ function App() {
       <Navbar />
       <Routes>
        <Route path="/insights" element={<Insights />} />
+       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+<Route path="/cookie-policy" element={<CookiePolicy />} />
+<Route path="/accessibility" element={<Accessibility />} />
+<Route path="/disclaimer" element={<Disclaimer />} />
+<Route path="/security-policy" element={<SecurityPolicy />} />
+<Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />

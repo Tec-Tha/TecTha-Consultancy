@@ -138,13 +138,14 @@ const Contact = ({ onBack }) => {
       className="relative min-h-screen overflow-hidden bg-black"
     >
       {/* Portrait image, right half, fading into the dark background */}
-      <div className="absolute inset-y-0 right-0 hidden w-[46%] md:block">
-        <img src={PORTRAIT_IMAGE} alt="" className="h-full w-full object-cover grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/100 to-transparent" />
+      <div className="absolute inset-y-0 right-0 hidden w-[100%] md:block">
+        <img src={PORTRAIT_IMAGE} alt="" className="h-full w-full object-cover " />
+          <div className="absolute inset-0 bg-black/75" />
+
       </div>
 
       <div className="relative mx-auto max-w-3xl px-2 py-14 md:px-12 md:py-20">
-       
+        
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -155,7 +156,7 @@ const Contact = ({ onBack }) => {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[color:var(--color-brand-600,#3B5BFF)]/20">
             <Building2 className="h-4.5 w-4.5 text-[color:var(--color-brand-400,#7C9CFF)]" />
           </span>
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-white">
+          <span className="text-xl font-medium uppercase tracking-[0.2em] text-white">
             Request for Services
           </span>
         </motion.div>

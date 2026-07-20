@@ -1,5 +1,4 @@
 import Hero from "../components/home/Hero";
-import LogoSlider from "../components/shared/LogoSlider";
 import Overview from "../components/home/Overview";
 
 import WhyUs from "../components/home/WhyUs";
@@ -23,7 +22,7 @@ const Home = () => {
       fullBleed
     >
       <Hero />
-      <LogoSlider />
+   
       <Overview />
       <Insights />
       <WhyUs />
