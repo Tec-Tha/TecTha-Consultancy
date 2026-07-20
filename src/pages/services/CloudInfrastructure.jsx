@@ -27,116 +27,115 @@ const CAPABILITIES = [
     id: 1,
     title: "Cloud Strategy",
     short:
-      "Migration roadmaps that align infrastructure investment to business outcomes.",
+      "Develop cloud adoption strategies and transformation roadmaps aligned with business goals and long-term scalability.",
     image: "/art.jpg",
-    tags: ["Consulting", "Roadmap", "Migration"],
-    link: "/services/CloudInfrastructure/cloud-strategy",
+    tags: ["Strategy", "Roadmap", "Consulting"],
+    link: "/services/CloudService/cloud-strategy",
   },
   {
     id: 2,
-    title: "Cloud Migration",
+    title: "Cloud Engineering",
     short:
-      "Move legacy workloads to the cloud with zero-downtime cutover plans.",
+      "Design, build, and modernize cloud-native infrastructure with secure, resilient, and high-performing architectures.",
     image: "/art.jpg",
-    tags: ["Lift & Shift", "Replatform", "Migration"],
-    link: "/services/CloudInfrastructure/cloud-migration",
+    tags: ["Architecture", "Migration", "Engineering"],
+    link: "/services/CloudService/cloud-engineering",
   },
   {
     id: 3,
-    title: "Multi-Cloud Architecture",
+    title: "Cloud Migration",
     short:
-      "Resilient, portable systems designed across AWS, Azure, and GCP.",
+      "Seamlessly migrate applications, workloads, and data to the cloud with minimal disruption and maximum reliability.",
     image: "/art.jpg",
     tags: ["AWS", "Azure", "GCP"],
-    link: "/services/CloudInfrastructure/multi-cloud-architecture",
+    link: "/services/CloudService/cloud-migration",
   },
   {
     id: 4,
-    title: "DevOps & Automation",
+    title: "Platform Engineering",
     short:
-      "CI/CD pipelines and infrastructure as code that ship faster, safer.",
+      "Accelerate software delivery through automated platforms, infrastructure as code, and developer self-service.",
     image: "/art.jpg",
     tags: ["CI/CD", "IaC", "Automation"],
-    link: "/services/CloudInfrastructure/devops-automation",
+    link: "/services/CloudService/platform-engineering",
   },
   {
     id: 5,
-    title: "Kubernetes & Containers",
+    title: "DevOps",
     short:
-      "Container orchestration platforms built for scale and portability.",
+      "Improve release speed and operational reliability with automated pipelines, continuous integration, and monitoring.",
     image: "/art.jpg",
-    tags: ["Kubernetes", "Docker", "Orchestration"],
-    link: "/services/CloudInfrastructure/kubernetes-containers",
+    tags: ["CI/CD", "DevSecOps", "Monitoring"],
+    link: "/services/CloudService/devops",
   },
   {
     id: 6,
-    title: "Cloud Security & FinOps",
+    title: "Managed Cloud",
     short:
-      "Cost governance and security controls baked into every environment.",
+      "Optimize cloud operations with proactive monitoring, cost management, security, and 24/7 managed support.",
     image: "/art.jpg",
-    tags: ["Security", "Cost Control", "Compliance"],
-    link: "/services/CloudInfrastructure/cloud-security-finops",
+    tags: ["Security", "Cost Optimization", "Support"],
+    link: "/services/CloudService/managed-cloud",
   },
 ];
 
 
 const CHALLENGES = [
   {
-    title: "Infrastructure that can't scale",
-    desc: "On-premise systems and rigid architectures buckle under seasonal spikes and growth, forcing manual intervention to keep services online.",
+    title: "Limited Scalability",
+    desc: "Legacy infrastructure and rigid architectures struggle to support business growth, increasing operational complexity and reducing agility.",
   },
   {
-    title: "Cloud spend spiraling out of control",
-    desc: "Unmonitored provisioning and idle resources drive up cloud bills without a clear owner accountable for cost efficiency.",
+    title: "Uncontrolled Cloud Costs",
+    desc: "Poor resource visibility and inefficient provisioning lead to rising cloud expenses without effective governance or optimization.",
   },
   {
-    title: "Migrations that stall mid-project",
-    desc: "Lift-and-shift plans lose momentum when dependencies, data gravity, or compliance requirements surface late in the process.",
+    title: "Complex Cloud Migrations",
+    desc: "Application dependencies, legacy systems, and compliance requirements often delay migration projects and increase business risk.",
   },
   {
-    title: "Downtime during releases",
-    desc: "Manual deployment processes introduce risk, turning routine releases into high-stakes events with rollback uncertainty.",
+    title: "Slow Software Delivery",
+    desc: "Manual deployment processes and fragmented workflows reduce release speed while increasing the likelihood of production failures.",
   },
   {
-    title: "Security gaps across environments",
-    desc: "Inconsistent configuration across cloud accounts and regions leaves exploitable gaps that traditional audits miss.",
+    title: "Security & Compliance Risks",
+    desc: "Inconsistent security controls across hybrid and multi-cloud environments create vulnerabilities and compliance challenges.",
   },
   {
-    title: "Fragmented ownership across teams",
-    desc: "Multiple teams provisioning infrastructure independently leave no single source of truth for architecture or cost.",
+    title: "Operational Silos",
+    desc: "Disconnected teams and inconsistent infrastructure management result in reduced visibility, governance, and operational efficiency.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We audit existing infrastructure, workloads, and dependencies to identify the fastest, lowest-risk path to the cloud.",
+    title: "Assess & Discover",
+    desc: "Evaluate existing infrastructure, applications, and business objectives to define a secure and scalable cloud transformation strategy.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target cloud environment, sequenced against workload criticality and business priorities.",
+    title: "Design Architecture",
+    desc: "Create resilient cloud architectures with security, scalability, and performance aligned to organizational requirements.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Migrate",
-    desc: "Engineering teams execute migration waves using automated tooling, with rollback plans at every checkpoint.",
+    title: "Migrate & Modernize",
+    desc: "Execute structured migration plans using proven methodologies that minimize downtime and reduce operational risk.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Automate",
-    desc: "CI/CD pipelines and infrastructure as code replace manual processes, with monitoring in place from day one.",
+    title: "Automate & Deploy",
+    desc: "Implement CI/CD pipelines, Infrastructure as Code, and automated monitoring to accelerate software delivery.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Optimize & Govern",
-    desc: "We establish ongoing cost governance, security posture management, and performance tuning as usage grows.",
+    title: "Optimize & Manage",
+    desc: "Continuously improve cloud performance through cost optimization, governance, security monitoring, and operational support.",
     image: "/art.jpg",
   },
 ];
@@ -145,56 +144,55 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "Resilient, compliant infrastructure for high-availability trading and banking systems.",
+    desc: "Secure and highly available cloud platforms for banking, insurance, and financial operations.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Edge-to-cloud connectivity for IoT telemetry and plant floor systems.",
+    desc: "Cloud-enabled production systems supporting smart factories, IoT, and operational efficiency.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "HIPAA-aware cloud environments for clinical data and patient systems.",
+    desc: "Compliant cloud environments that protect patient data while enabling connected healthcare services.",
   },
   {
-    title: "Retail",
+    title: "Retail & E-Commerce",
     image: "/art.jpg",
-    desc: "Elastic infrastructure that absorbs seasonal traffic without over-provisioning.",
+    desc: "Scalable cloud infrastructure designed to deliver seamless customer experiences during peak demand.",
   },
   {
-    title: "Logistics",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "Real-time fleet and warehouse systems built on globally distributed infrastructure.",
+    desc: "Reliable cloud solutions for real-time fleet management, warehouse operations, and supply chain visibility.",
   },
   {
-    title: "Public Sector",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Secure, compliant cloud environments for citizen-facing digital services.",
+    desc: "Secure, compliant, and resilient digital infrastructure supporting modern public services and citizen engagement.",
   },
 ];
 
-
 const FAQS = [
   {
-    q: "How is Tec Tha's approach to cloud infrastructure different from a generic cloud vendor?",
-    a: "We are not tied to a single hyperscaler and do not push a one-size-fits-all environment. Every engagement starts with your workloads, compliance requirements, and operating model, and we design infrastructure that fits how your organization actually runs, with governance built in from the start.",
+    q: "Why choose Tec Tha for cloud infrastructure services?",
+    a: "Tec Tha delivers vendor-neutral cloud solutions tailored to your business objectives. We combine cloud strategy, engineering, security, and governance to build scalable, resilient, and cost-efficient cloud environments.",
   },
   {
-    q: "How long does a typical cloud migration take?",
-    a: "A focused workload migration can move from assessment to production in 8 to 12 weeks. Enterprise-wide cloud transformations typically run 4 to 9 months, delivered in phased migration waves so risk is contained and value is realized incrementally.",
+    q: "How long does a cloud migration typically take?",
+    a: "Migration timelines depend on workload complexity and business requirements. Smaller projects can be completed within a few weeks, while enterprise-scale transformations are delivered in phased stages over several months.",
   },
   {
-    q: "Can you work with our existing on-premise and legacy systems?",
-    a: "Yes. Most engagements begin by integrating with existing data centers, ERP systems, and legacy applications rather than replacing them outright. We assess what should move to the cloud, what should be re-architected, and what should stay on-premise for now.",
+    q: "Can you integrate with our existing infrastructure?",
+    a: "Yes. We integrate seamlessly with existing on-premises systems, legacy applications, and hybrid cloud environments while minimizing disruption to business operations.",
   },
   {
-    q: "How do you handle cloud security and compliance?",
-    a: "Security is not a final checklist item. We build identity controls, network segmentation, and audit logging into the infrastructure design itself, aligned to frameworks such as SOC 2, ISO 27001, and relevant industry-specific regulation.",
+    q: "How do you ensure cloud security and compliance?",
+    a: "Security is embedded throughout the cloud lifecycle with identity management, encryption, continuous monitoring, compliance controls, and governance aligned to industry standards.",
   },
   {
-    q: "What does ongoing support look like after migration?",
-    a: "We provide structured post-migration support including cost monitoring, security posture reviews, and quarterly architecture reviews, so infrastructure continues to perform as usage and business needs evolve.",
+    q: "Do you provide ongoing cloud management and support?",
+    a: "Yes. Our managed cloud services include proactive monitoring, performance optimization, cost management, security operations, and continuous support to ensure long-term reliability.",
   },
 ];
 

@@ -25,118 +25,116 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "Technology Strategy",
+    title: "Cybersecurity Strategy",
     short:
-      "Board-level roadmaps that align technology investment with business priorities.",
+      "Develop enterprise security strategies aligned with business objectives, risk management, and regulatory compliance.",
     image: "/art.jpg",
-    tags: ["Strategy", "Roadmap", "Leadership"],
-    link: "/services/DigitalAdvisory/technology-strategy",
+    tags: ["Strategy", "Risk", "Consulting"],
+    link: "/services/CybersecurityService/cybersecurity-strategy",
   },
   {
     id: 2,
-    title: "Operating Model Design",
+    title: "Identity & Access Management",
     short:
-      "Redesign how technology, product, and business teams work together.",
+      "Secure digital identities with centralized authentication, authorization, and privileged access management.",
     image: "/art.jpg",
-    tags: ["Operating Model", "Org Design", "Governance"],
-    link: "/services/DigitalAdvisory/operating-model-design",
+    tags: ["IAM", "Zero Trust", "Access Control"],
+    link: "/services/CybersecurityService/identity-access-management",
   },
   {
     id: 3,
-    title: "Vendor & Platform Selection",
+    title: "Cloud Security",
     short:
-      "Independent evaluation of platforms and vendors against your actual requirements.",
+      "Protect cloud workloads with advanced security controls, continuous monitoring, and threat prevention.",
     image: "/art.jpg",
-    tags: ["Evaluation", "RFP", "Due Diligence"],
-    link: "/services/DigitalAdvisory/vendor-platform-selection",
+    tags: ["Cloud Security", "Threat Protection", "Compliance"],
+    link: "/services/CybersecurityService/cloud-security",
   },
   {
     id: 4,
-    title: "M&A Technology Due Diligence",
+    title: "Governance, Risk & Compliance",
     short:
-      "Assess technology risk and integration cost ahead of acquisitions.",
+      "Strengthen governance frameworks and maintain compliance with industry regulations and security standards.",
     image: "/art.jpg",
-    tags: ["M&A", "Due Diligence", "Risk"],
-    link: "/services/DigitalAdvisory/ma-technology-due-diligence",
+    tags: ["Governance", "Risk", "Compliance"],
+    link: "/services/CybersecurityService/governance-risk-compliance",
   },
   {
     id: 5,
-    title: "IT Cost Optimization",
+    title: "Security Operations",
     short:
-      "Identify redundant spend and redirect budget toward high-value initiatives.",
+      "Detect, investigate, and respond to cyber threats through continuous monitoring and incident management.",
     image: "/art.jpg",
-    tags: ["Cost", "Optimization", "Budget"],
-    link: "/services/DigitalAdvisory/it-cost-optimization",
+    tags: ["SOC", "Monitoring", "Incident Response"],
+    link: "/services/CybersecurityService/security-operations",
   },
   {
     id: 6,
-    title: "Risk & Governance Advisory",
+    title: "Managed Security",
     short:
-      "Frameworks for technology risk, compliance, and board-level reporting.",
+      "Deliver proactive security management with 24/7 monitoring, threat detection, and operational support.",
     image: "/art.jpg",
-    tags: ["Risk", "Compliance", "Governance"],
-    link: "/services/DigitalAdvisory/risk-governance-advisory",
+    tags: ["Managed Services", "Threat Detection", "Support"],
+    link: "/services/CybersecurityService/managed-security",
   },
 ];
-
 
 const CHALLENGES = [
   {
-    title: "Technology roadmap disconnected from strategy",
-    desc: "IT investment decisions are made independently of business priorities, leaving leadership unable to explain the return on major spend.",
+    title: "Expanding Attack Surface",
+    desc: "Hybrid environments, cloud adoption, and connected devices increase exposure to evolving cyber threats.",
   },
   {
-    title: "No independent view on vendor decisions",
-    desc: "Platform selections are shaped by vendor sales cycles rather than an objective assessment of fit, cost, and long-term risk.",
+    title: "Security Alert Overload",
+    desc: "Large volumes of alerts make it difficult for security teams to identify and respond to critical incidents quickly.",
   },
   {
-    title: "Unclear technology risk ahead of a deal",
-    desc: "Acquisitions move forward without a clear picture of integration cost, technical debt, or security exposure in the target company.",
+    title: "Delayed Incident Response",
+    desc: "Without automated detection and response capabilities, cyber incidents can significantly impact business operations.",
   },
   {
-    title: "IT spend growing without visibility",
-    desc: "Overlapping tools, unused licenses, and legacy contracts quietly inflate the technology budget year over year.",
+    title: "Complex Compliance Requirements",
+    desc: "Meeting evolving regulatory standards requires continuous governance, monitoring, and audit readiness.",
   },
   {
-    title: "Governance that slows decisions down",
-    desc: "Technology risk and compliance processes exist but aren't structured to give the board a clear, fast picture of exposure.",
+    title: "Third-Party Security Risks",
+    desc: "Vendors and external partners introduce additional cybersecurity risks that require continuous assessment.",
   },
   {
-    title: "Operating model built for a smaller company",
-    desc: "Technology and business teams still work the way they did years ago, creating friction as the organization scales.",
+    title: "Lack of Security Integration",
+    desc: "Disconnected security processes and business operations create gaps that reduce overall cyber resilience.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We review existing technology strategy, spend, and operating model to identify where advisory input creates the most defensible business value.",
+    title: "Assess & Identify",
+    desc: "Evaluate existing security controls, infrastructure, and vulnerabilities to understand organizational risk exposure.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target strategy, governance model, and decision framework, sequenced against organizational priorities.",
+    title: "Design Protection",
+    desc: "Develop a security architecture aligned with business priorities, compliance requirements, and industry best practices.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Build",
-    desc: "We develop the roadmap, vendor evaluation criteria, or due-diligence findings through structured workshops with executive stakeholders.",
+    title: "Implement Controls",
+    desc: "Deploy security technologies, strengthen configurations, and remediate vulnerabilities across the environment.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Deploy",
-    desc: "Recommendations move into execution with clear ownership, milestones, and board-ready reporting in place from day one.",
+    title: "Monitor & Respond",
+    desc: "Enable continuous threat monitoring, incident detection, and rapid response through security operations.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Scale & Govern",
-    desc: "We establish ongoing advisory check-ins and governance reporting so strategic decisions hold up as the business evolves.",
+    title: "Optimize & Govern",
+    desc: "Continuously improve security posture with governance, compliance monitoring, and ongoing risk management.",
     image: "/art.jpg",
   },
 ];
@@ -145,60 +143,59 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "Technology risk advisory and regulatory-aligned governance frameworks.",
+    desc: "Advanced cybersecurity solutions protecting financial systems, digital transactions, and customer data.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Operating model design across plant, supply chain, and corporate IT.",
+    desc: "Secure industrial control systems, connected factories, and operational technology environments.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Vendor selection and compliance-aware technology governance.",
+    desc: "Protect patient information and healthcare systems while meeting strict regulatory requirements.",
   },
   {
-    title: "Retail",
+    title: "Retail & E-Commerce",
     image: "/art.jpg",
-    desc: "Platform strategy and IT cost optimization across store and digital channels.",
+    desc: "Safeguard payment platforms, customer information, and digital commerce against cyber threats.",
   },
   {
-    title: "Logistics",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "Technology due diligence for network expansion and acquisitions.",
+    desc: "Strengthen cybersecurity across transportation networks, warehouses, and connected supply chains.",
   },
   {
-    title: "Public Sector",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Governance frameworks and independent platform evaluation for public programs.",
+    desc: "Secure critical infrastructure and digital public services with enterprise-grade cyber resilience.",
   },
 ];
-
 
 const FAQS = [
   {
-    q: "How is Tec Tha's digital advisory different from a traditional consultancy?",
-    a: "We are not incentivized by any vendor relationship. Every recommendation is grounded in engineering reality, not slideware, because our teams also build and operate the systems we advise on.",
+    q: "Why choose Tec Tha for cybersecurity services?",
+    a: "Tec Tha delivers business-focused cybersecurity solutions that combine strategy, governance, threat protection, and compliance to safeguard organizations against evolving cyber risks.",
   },
   {
-    q: "How long does a typical digital advisory engagement take?",
-    a: "A focused vendor evaluation or cost review can complete in 4 to 6 weeks. Broader technology strategy or operating model engagements typically run 8 to 16 weeks, aligned to your planning or budget cycle.",
+    q: "How long does a cybersecurity engagement typically take?",
+    a: "Project timelines depend on the scope and complexity. Security assessments can be completed within weeks, while enterprise cybersecurity programs are delivered in structured phases over several months.",
   },
   {
-    q: "Do you get involved in implementation after the advisory phase?",
-    a: "Yes, if you want us to. Many clients move from strategy directly into implementation with our engineering teams, though the advisory work stands on its own and carries no obligation to continue.",
+    q: "Can you integrate with our existing security tools?",
+    a: "Yes. We work with your current security infrastructure, including SIEM, firewalls, endpoint protection, and identity platforms, to maximize existing investments while enhancing overall security.",
   },
   {
-    q: "Can you support technology due diligence on a tight M&A timeline?",
-    a: "Yes. Our due-diligence engagements are structured to deliver a clear risk and integration-cost assessment within the compressed timelines typical of deal processes.",
+    q: "How do you ensure compliance with security standards?",
+    a: "We implement governance frameworks, continuous monitoring, and security controls aligned with standards such as ISO 27001, SOC 2, GDPR, and other industry-specific regulations.",
   },
   {
-    q: "What does ongoing advisory support look like?",
-    a: "We offer structured retainer-based advisory including quarterly strategy reviews, board reporting support, and on-demand guidance as new technology decisions arise.",
+    q: "Do you provide ongoing managed security services?",
+    a: "Yes. Our managed security services include continuous monitoring, threat detection, incident response, vulnerability management, and proactive security optimization.",
   },
 ];
 
-const DigitalAdvisory = () => {
+const CyberSecurity = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
@@ -230,10 +227,10 @@ const DigitalAdvisory = () => {
 </>
         <div className="relative max-w-[1200px] mx-auto">
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="-mt-20 text-xl font uppercase tracking-[0.3em] mb-6 font-['Montserrat'] text-white">
-            Digital Advisory
+            Cyber Security
           </motion.p> <hr className="border-white/40 my-6" />
           <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.08} className="text-7xl md:text-6xl lg:text-7xl font text-white leading-[1.05]">
-            Independent Advisory Built for Enterprise.
+            Security Built to Withstand the Next Attempt.
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0.16} className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
             {/* incase add description use this block */}
@@ -256,27 +253,27 @@ const DigitalAdvisory = () => {
       transition={{ duration: 0.8 }}
     >
       <p className="text-sm uppercase tracking-[0.3em] text-blue-600 mb-6 font-semibold">
-        Enterprise Vision
+        Security Vision
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Advice should be grounded in engineering —
+        Security should adapt to the business —
         <br />
-        not a slide deck.
+        not the other way around.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6 font-['montserrat']">
-        Most advisory engagements end at a recommendation and leave
-        execution to someone else. We reverse that order. Every
-        recommendation we make is shaped by teams who actually build and
-        operate enterprise systems, so the advice holds up in production,
-        not just in a boardroom.
+        Most security programs begin with a tool decision and work backward
+        toward the business risk. We reverse that order. Every engagement
+        starts with how your organization actually operates and where real
+        exposure lives, then works forward to the controls and monitoring
+        that defend it.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Strategy detached from delivery tends to sit on a shelf. Strategy
-        grounded in engineering reality continues to guide decisions as
-        the business evolves.
+        Programs built around a single vendor's roadmap tend to leave gaps.
+        Programs built around your actual risk continue to hold as threats
+        and the business evolve.
       </p>
     </motion.div>
 
@@ -291,11 +288,10 @@ const DigitalAdvisory = () => {
       {/* Replace this div with <img> later */}
       <img
   src="/art.jpg"
-  alt="Enterprise Vision"
+  alt="Security Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
 
-    
     </motion.div>
 
   </div>
@@ -320,10 +316,9 @@ const DigitalAdvisory = () => {
     >
       <img
   src="/art.jpg"
-  alt="Enterprise Vision"
+  alt="Security Reality"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
-
     </motion.div>
 
     {/* Right Content */}
@@ -338,21 +333,21 @@ const DigitalAdvisory = () => {
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Most enterprises don't lack advice.
+        Most enterprises don't have a tooling problem.
         <br />
-        They lack advice they can trust.
+        They have a visibility problem.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6">
-        Leadership teams receive no shortage of vendor pitches and
-        consulting decks, yet major technology decisions still get made on
-        incomplete information because no one in the room is independent.
+        Enterprises today run more security tools than at any point in
+        history, yet breaches persist because no single team has a complete
+        view of the attack surface across cloud, network, and endpoints.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Tec Tha treats digital advisory as enterprise infrastructure. We
-        give leadership independent, engineering-grounded guidance that
-        organizations can confidently rely on for high-stakes decisions.
+        Tec Tha treats security as enterprise infrastructure. We build
+        unified visibility, tested response plans, and governed controls
+        that organizations can confidently rely on to withstand real threats.
       </p>
 
     </motion.div>
@@ -443,7 +438,7 @@ const DigitalAdvisory = () => {
   <div className="mx-auto max-w-7xl px-6">
 
     <p className="uppercase tracking-[0.35em] text-blue-500 text-sm font-semibold mb-5">
-      Enterprise Capabilities
+      Security Capabilities
     </p>
 
     <h2 className="text-5xl text-black font-light mb-16">
@@ -673,7 +668,7 @@ const DigitalAdvisory = () => {
 
       <p className="mt-8 text-lg leading-8 text-slate-500">
         Everything enterprise teams usually ask before
-        starting a digital advisory engagement.
+        starting a cyber security initiative.
       </p>
 
     </motion.div>
@@ -768,19 +763,18 @@ const DigitalAdvisory = () => {
     <div className=" border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-14 md:p-20 backdrop-blur-xl">
 
       <p className="mb-5 uppercase tracking-[0.35em] text-sm font-semibold text-blue-500">
-        Digital Advisory Practice
+        Cyber Security Advisory
       </p>
 
       <h2 className="max-w-4xl text-5xl font-light leading-tight text-white md:text-6xl">
-        Ready for advice grounded
+        Ready to close the gaps
         <br />
-        in engineering reality?
+        before someone else finds them?
       </h2>
 
       <p className="mt-8 max-w-3xl text-lg leading-9 text-white/70">
-        Speak with our advisory practice to identify where strategy, vendor
-        evaluation, and governance can create measurable business value
-        across your organization.
+        Speak with our security advisory team to identify where detection,
+        response, and governance can reduce risk across your organization.
       </p>
 
       <div className="mt-12 flex flex-wrap gap-6">
@@ -812,7 +806,7 @@ const DigitalAdvisory = () => {
       <section className="py-16 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-gray-400 text-base max-w-md">
-            Explore how Technology Strategy, Operating Model Design, and Vendor Selection fit into a single connected roadmap for your organization.
+            Explore how Threat Detection, Penetration Testing, and Identity & Access Management fit into a single connected roadmap for your organization.
           </p>
           <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/5 transition-colors shrink-0">
             View all services
@@ -824,4 +818,4 @@ const DigitalAdvisory = () => {
   );
 };
 
-export default DigitalAdvisory;
+export default CyberSecurity;

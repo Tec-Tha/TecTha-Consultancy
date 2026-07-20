@@ -25,180 +25,176 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "Product Design Strategy",
+    title: "ERP Solutions",
     short:
-      "Design roadmaps that connect user needs to measurable business outcomes.",
+      "Implement modern ERP platforms that streamline operations and improve enterprise-wide efficiency.",
     image: "/art.jpg",
-    tags: ["Strategy", "Roadmap", "Product"],
-    link: "/services/UIUXDesign/product-design-strategy",
+    tags: ["ERP", "Implementation", "Transformation"],
+    link: "/services/EnterpriseSolution/erp-solutions",
   },
   {
     id: 2,
-    title: "UX Research",
+    title: "Human Capital Management",
     short:
-      "User interviews, usability testing, and journey mapping grounded in real behavior.",
+      "Optimize workforce management with integrated HR, payroll, talent, and employee experience solutions.",
     image: "/art.jpg",
-    tags: ["Research", "Usability", "Journey Mapping"],
-    link: "/services/UIUXDesign/ux-research",
+    tags: ["HR", "Talent", "Workforce"],
+    link: "/services/EnterpriseSolution/human-capital-management",
   },
   {
     id: 3,
-    title: "Interface Design",
+    title: "Customer Relationship Management",
     short:
-      "High-fidelity interfaces built for clarity, consistency, and enterprise scale.",
+      "Strengthen customer engagement with intelligent CRM solutions that improve sales, service, and retention.",
     image: "/art.jpg",
-    tags: ["UI", "Visual Design", "Prototyping"],
-    link: "/services/UIUXDesign/interface-design",
+    tags: ["CRM", "Sales", "Customer Experience"],
+    link: "/services/EnterpriseSolution/customer-relationship-management",
   },
   {
     id: 4,
-    title: "Design Systems",
+    title: "Supply Chain Solutions",
     short:
-      "Reusable component libraries that keep products consistent as they grow.",
+      "Improve supply chain visibility, inventory management, and operational efficiency through connected solutions.",
     image: "/art.jpg",
-    tags: ["Design Systems", "Components", "Scalability"],
-    link: "/services/UIUXDesign/design-systems",
+    tags: ["Supply Chain", "Inventory", "Logistics"],
+    link: "/services/EnterpriseSolution/supply-chain-solutions",
   },
   {
     id: 5,
-    title: "Interaction & Motion Design",
+    title: "Finance Solutions",
     short:
-      "Purposeful animation and micro-interactions that make products feel effortless.",
+      "Modernize financial operations with automated accounting, reporting, compliance, and planning capabilities.",
     image: "/art.jpg",
-    tags: ["Motion", "Interaction", "Prototyping"],
-    link: "/services/UIUXDesign/interaction-motion-design",
+    tags: ["Finance", "Automation", "Reporting"],
+    link: "/services/EnterpriseSolution/finance-solutions",
   },
   {
     id: 6,
-    title: "Accessibility & Inclusive Design",
+    title: "Industry Solutions",
     short:
-      "WCAG-aligned design practices that make products usable for everyone.",
+      "Deliver industry-specific enterprise solutions tailored to unique business processes and regulatory requirements.",
     image: "/art.jpg",
-    tags: ["Accessibility", "WCAG", "Inclusive"],
-    link: "/services/UIUXDesign/accessibility-inclusive-design",
+    tags: ["Industry", "Enterprise", "Compliance"],
+    link: "/services/EnterpriseSolution/industry-solutions",
   },
 ];
-
 
 const CHALLENGES = [
   {
-    title: "Products that look inconsistent across teams",
-    desc: "Without a shared design system, every squad builds its own version of buttons, forms, and layouts, eroding the brand.",
+    title: "Disconnected Business Processes",
+    desc: "Siloed departments and disconnected applications reduce visibility, efficiency, and collaboration across the organization.",
   },
   {
-    title: "Designs that never get user-tested",
-    desc: "Interfaces ship based on internal opinion rather than validated user behavior, leading to costly rework after launch.",
+    title: "Legacy Enterprise Systems",
+    desc: "Outdated ERP platforms limit scalability, increase maintenance costs, and slow business innovation.",
   },
   {
-    title: "High drop-off in critical user flows",
-    desc: "Onboarding, checkout, and signup flows lose users at predictable points that no one has diagnosed or redesigned.",
+    title: "Complex ERP Implementations",
+    desc: "Large-scale ERP deployments often face delays due to data migration challenges, customization, and change management.",
   },
   {
-    title: "Design and engineering working in silos",
-    desc: "Handoffs between design and development introduce inconsistencies, delays, and features that don't match the original intent.",
+    title: "Low User Adoption",
+    desc: "Employees struggle to adopt new enterprise systems without intuitive processes, training, and ongoing support.",
   },
   {
-    title: "Accessibility treated as an afterthought",
-    desc: "Products fail basic accessibility standards, creating legal risk and excluding a meaningful share of potential users.",
+    title: "Limited Business Visibility",
+    desc: "Fragmented enterprise data prevents leadership from accessing accurate, real-time insights for decision-making.",
   },
   {
-    title: "Legacy interfaces holding back the brand",
-    desc: "Dated visual design signals an outdated company, even when the underlying product and technology are strong.",
+    title: "Compliance & Governance Risks",
+    desc: "Weak controls and inconsistent processes increase financial, operational, and regulatory compliance risks.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We audit existing interfaces, user flows, and research data to identify where design creates the most defensible business value.",
+    title: "Assess & Discover",
+    desc: "Analyze existing enterprise systems, business processes, and operational challenges to identify transformation opportunities.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target experience and visual system, sequenced against user needs and business priorities.",
+    title: "Design Solution",
+    desc: "Develop a scalable enterprise solution architecture aligned with business objectives and industry best practices.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Build",
-    desc: "Design teams develop high-fidelity screens, prototypes, and component libraries using agile delivery, with review checkpoints in every sprint.",
+    title: "Implement & Integrate",
+    desc: "Configure, customize, and integrate enterprise applications with existing business systems for seamless operations.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Deploy",
-    desc: "Designs move into development with detailed specs, handoff documentation, and QA support in place from day one.",
+    title: "Deploy & Enable",
+    desc: "Deploy enterprise solutions with comprehensive testing, user training, and change management for successful adoption.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Scale & Govern",
-    desc: "We establish ongoing design system governance and usability testing cycles so the experience holds as the product grows.",
+    title: "Optimize & Support",
+    desc: "Continuously enhance system performance through optimization, upgrades, governance, and managed support services.",
     image: "/art.jpg",
   },
 ];
 
 const INDUSTRIES = [
   {
-    title: "Financial Services",
-    image: "/art.jpg",
-    desc: "Trust-driven interfaces for banking, payments, and investment platforms.",
-  },
-  {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Operator dashboards and shop-floor interfaces designed for clarity under pressure.",
+    desc: "Optimize production planning, inventory management, and end-to-end manufacturing operations.",
+  },
+  {
+    title: "Retail & E-Commerce",
+    image: "/art.jpg",
+    desc: "Unify inventory, sales, customer engagement, and supply chain operations across all channels.",
+  },
+  {
+    title: "Financial Services",
+    image: "/art.jpg",
+    desc: "Improve financial management, regulatory reporting, and enterprise governance with integrated solutions.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Patient and clinician-facing interfaces built with accessibility and compliance in mind.",
+    desc: "Enhance healthcare operations with secure resource planning, procurement, and compliance management.",
   },
   {
-    title: "Retail",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "Conversion-focused commerce experiences across web, mobile, and in-store screens.",
+    desc: "Streamline warehouse management, transportation, and supply chain operations through connected enterprise systems.",
   },
   {
-    title: "Logistics",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Dispatch and tracking interfaces designed for speed and situational awareness.",
-  },
-  {
-    title: "Public Sector",
-    image: "/art.jpg",
-    desc: "Accessible, plain-language interfaces for citizen-facing digital services.",
+    desc: "Modernize public sector operations with secure, transparent, and citizen-focused enterprise solutions.",
   },
 ];
-
 
 const FAQS = [
   {
-    q: "How is Tec Tha's approach to UI/UX different from a typical design agency?",
-    a: "We do not deliver static mockups and hand them off. Every design decision is validated with research and built alongside engineering, so what ships matches what was designed and tested.",
+    q: "Why choose Tec Tha for Enterprise Solutions?",
+    a: "Tec Tha delivers end-to-end enterprise solutions that integrate business processes, modernize operations, and improve efficiency through scalable ERP, CRM, HCM, and industry-specific platforms.",
   },
   {
-    q: "How long does a typical UI/UX engagement take?",
-    a: "A focused redesign of a single flow can move from research to final designs in 6 to 10 weeks. Full product design systems typically run 3 to 6 months, delivered in phased releases so value is realized incrementally.",
+    q: "How long does an enterprise solution implementation typically take?",
+    a: "Implementation timelines depend on project scope and business complexity. Individual modules can be delivered within weeks, while enterprise-wide transformations are implemented in phased stages over several months.",
   },
   {
-    q: "Do you conduct user research, or only visual design?",
-    a: "Both. Every engagement can include user interviews, usability testing, and journey mapping to ground design decisions in real behavior rather than assumption.",
+    q: "Can you integrate with our existing business systems?",
+    a: "Yes. We seamlessly integrate enterprise solutions with existing ERP systems, databases, third-party applications, and legacy platforms to maximize your technology investments.",
   },
   {
-    q: "Can you build on top of our existing design system?",
-    a: "Yes. Most engagements begin by auditing existing components and patterns rather than starting from scratch. We assess what should be extended, what should be redesigned, and what should be retired.",
+    q: "How do you ensure data security and compliance?",
+    a: "We implement role-based access controls, governance frameworks, audit trails, and security best practices aligned with industry standards and regulatory requirements.",
   },
   {
-    q: "What does ongoing design support look like after launch?",
-    a: "We provide structured post-launch support including usability testing, design system maintenance, and quarterly experience reviews, so the product continues to improve as user needs evolve.",
+    q: "Do you provide post-implementation support?",
+    a: "Yes. We offer ongoing maintenance, performance optimization, user support, system upgrades, and managed services to ensure long-term business success.",
   },
 ];
-
-const UIUXDesign = () => {
+const ERPSolutions = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
@@ -230,10 +226,10 @@ const UIUXDesign = () => {
 </>
         <div className="relative max-w-[1200px] mx-auto">
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="-mt-20 text-xl font uppercase tracking-[0.3em] mb-6 font-['Montserrat'] text-white">
-            UI &amp; UX Design
+            Enterprise Resource Planning
           </motion.p> <hr className="border-white/40 my-6" />
           <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.08} className="text-7xl md:text-6xl lg:text-7xl font text-white leading-[1.05]">
-            Experience Design Built for Enterprise.
+            ERP Systems Built for Enterprise.
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0.16} className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
             {/* incase add description use this block */}
@@ -260,22 +256,23 @@ const UIUXDesign = () => {
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Design should follow behavior —
+        ERP should mirror your operations —
         <br />
-        not internal opinion.
+        not force your operations to change.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6 font-['montserrat']">
-        Most design programs begin with a visual trend and work backward
-        toward the user problem. We reverse that order. Every engagement
-        starts with how people actually use your product, then works
-        forward to the interface and system that support it.
+        Most ERP programs begin with a platform decision and work backward
+        toward the business process. We reverse that order. Every engagement
+        starts with how your organization actually runs finance, procurement,
+        and operations, then works forward to the module design and
+        integrations that support it.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Interfaces built around a passing trend tend to outlive their
-        usefulness quickly. Interfaces built around real user behavior
-        continue to perform as your product grows.
+        Systems configured around a vendor's default template tend to
+        outlive their usefulness. Systems configured around your operating
+        model continue to evolve as your business grows.
       </p>
     </motion.div>
 
@@ -321,7 +318,6 @@ const UIUXDesign = () => {
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
-
     </motion.div>
 
     {/* Right Content */}
@@ -336,21 +332,21 @@ const UIUXDesign = () => {
       </p>
 
       <h2 className="text-5xl font text-black leading-tight mb-8">
-        Most enterprises don't have a features problem.
+        Most enterprises don't have a process problem.
         <br />
-        They have an experience problem.
+        They have a visibility problem.
       </h2>
 
       <p className="text-gray-600 text-lg leading-9 mb-6">
-        Products today ship more capability than ever, yet users still
-        struggle to complete basic tasks because the underlying experience
-        was never designed around how they actually think and work.
+        Finance, procurement, inventory, and HR each generate their own
+        version of the truth, yet decision-makers often reconcile numbers
+        manually because systems don't talk to each other in real time.
       </p>
 
       <p className="text-gray-600 text-lg leading-9">
-        Tec Tha treats design as enterprise infrastructure. We build
-        research-backed interfaces and design systems that organizations
-        can confidently rely on to drive adoption and retention.
+        Tec Tha treats ERP as enterprise infrastructure. We build unified
+        data models, governance frameworks, and integrated workflows that
+        organizations can confidently rely on for mission-critical decisions.
       </p>
 
     </motion.div>
@@ -671,7 +667,7 @@ const UIUXDesign = () => {
 
       <p className="mt-8 text-lg leading-8 text-slate-500">
         Everything enterprise teams usually ask before
-        starting a UI/UX design initiative.
+        starting an ERP transformation initiative.
       </p>
 
     </motion.div>
@@ -766,19 +762,19 @@ const UIUXDesign = () => {
     <div className=" border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-14 md:p-20 backdrop-blur-xl">
 
       <p className="mb-5 uppercase tracking-[0.35em] text-sm font-semibold text-blue-500">
-        UI/UX Design Practice
+        ERP Advisory
       </p>
 
       <h2 className="max-w-4xl text-5xl font-light leading-tight text-white md:text-6xl">
-        Ready to turn a clunky product
+        Ready to turn fragmented operations
         <br />
-        into an effortless experience?
+        into one connected system?
       </h2>
 
       <p className="mt-8 max-w-3xl text-lg leading-9 text-white/70">
-        Speak with our design practice to identify where research, interface
-        design, and design systems can create measurable business value
-        across your organization.
+        Speak with our ERP advisory team to identify where implementation,
+        integration, and governance can create measurable operational
+        advantage across your organization.
       </p>
 
       <div className="mt-12 flex flex-wrap gap-6">
@@ -810,7 +806,7 @@ const UIUXDesign = () => {
       <section className="py-16 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-gray-400 text-base max-w-md">
-            Explore how Product Strategy, UX Research, and Interface Design fit into a single connected roadmap for your organization.
+            Explore how ERP Strategy, Implementation, and Integration fit into a single connected roadmap for your organization.
           </p>
           <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/5 transition-colors shrink-0">
             View all services
@@ -822,4 +818,4 @@ const UIUXDesign = () => {
   );
 };
 
-export default UIUXDesign;
+export default ERPSolutions;

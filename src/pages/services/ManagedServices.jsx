@@ -25,118 +25,116 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "Application Support",
+    title: "Managed Applications",
     short:
-      "Ongoing monitoring, bug fixes, and enhancements for live production systems.",
+      "Ensure application reliability with proactive monitoring, maintenance, performance optimization, and continuous support.",
     image: "/art.jpg",
-    tags: ["Support", "Maintenance", "SLA"],
-    link: "/services/ManagedServices/application-support",
+    tags: ["Application Support", "Maintenance", "Performance"],
+    link: "/services/ManagedServices/managed-applications",
   },
   {
     id: 2,
-    title: "Infrastructure Management",
+    title: "Managed Cloud",
     short:
-      "Proactive management of cloud and on-premise infrastructure at enterprise scale.",
+      "Optimize cloud environments with proactive monitoring, cost management, security, and operational excellence.",
     image: "/art.jpg",
-    tags: ["Infrastructure", "Cloud", "Uptime"],
-    link: "/services/ManagedServices/infrastructure-management",
+    tags: ["Cloud Operations", "Monitoring", "Optimization"],
+    link: "/services/ManagedServices/managed-cloudd",
   },
   {
     id: 3,
-    title: "24/7 Monitoring & Incident Response",
+    title: "Managed AI",
     short:
-      "Round-the-clock observability with defined escalation and response playbooks.",
+      "Maintain AI platforms with continuous monitoring, model optimization, and lifecycle management for reliable outcomes.",
     image: "/art.jpg",
-    tags: ["Monitoring", "Incident Response", "24/7"],
-    link: "/services/ManagedServices/monitoring-incident-response",
+    tags: ["AI Operations", "Model Management", "Monitoring"],
+    link: "/services/ManagedServices/managed-ai",
   },
   {
     id: 4,
-    title: "Security Operations",
+    title: "Managed Infrastructure",
     short:
-      "Continuous threat monitoring, patching, and vulnerability management.",
+      "Deliver secure, scalable infrastructure management with proactive monitoring, patching, and performance optimization.",
     image: "/art.jpg",
-    tags: ["Security", "SOC", "Patching"],
-    link: "/services/ManagedServices/security-operations",
+    tags: ["Infrastructure", "Security", "Reliability"],
+    link: "/services/ManagedServices/managed-infrastructure",
   },
   {
     id: 5,
-    title: "Database Administration",
+    title: "Technology Operations",
     short:
-      "Performance tuning, backups, and reliability management for critical data stores.",
+      "Ensure seamless IT operations through automation, monitoring, incident management, and continuous improvement.",
     image: "/art.jpg",
-    tags: ["Database", "Performance", "Reliability"],
-    link: "/services/ManagedServices/database-administration",
+    tags: ["IT Operations", "Automation", "Support"],
+    link: "/services/ManagedServices/technology-operations",
   },
   {
     id: 6,
-    title: "Managed Cloud Operations",
+    title: "Enterprise Support",
     short:
-      "Cost governance, scaling, and CI/CD pipeline management for cloud-native systems.",
+      "Provide end-to-end enterprise support with SLA-driven services, rapid issue resolution, and business continuity.",
     image: "/art.jpg",
-    tags: ["Cloud Ops", "CI/CD", "Cost Governance"],
-    link: "/services/ManagedServices/managed-cloud-operations",
+    tags: ["Enterprise Support", "SLA", "24/7 Support"],
+    link: "/services/ManagedServices/enterprise-support",
   },
 ];
-
 
 const CHALLENGES = [
   {
-    title: "No one owns production after go-live",
-    desc: "Systems ship successfully but responsibility for keeping them running fades once the project team disbands.",
+    title: "Limited Operational Visibility",
+    desc: "Without continuous monitoring, organizations struggle to detect performance issues before they impact business operations.",
   },
   {
-    title: "Incidents discovered by customers first",
-    desc: "Without proactive monitoring, outages and performance issues surface through complaints instead of alerts.",
+    title: "Unexpected System Downtime",
+    desc: "Reactive maintenance and delayed issue resolution lead to service disruptions and reduced business productivity.",
   },
   {
-    title: "Security patching falls behind",
-    desc: "Known vulnerabilities sit unpatched for months because no team has clear, ongoing ownership of remediation.",
+    title: "Growing Security Risks",
+    desc: "Delayed patching, outdated systems, and inconsistent monitoring increase exposure to cyber threats.",
   },
   {
-    title: "Cloud costs growing unpredictably",
-    desc: "Infrastructure spend climbs steadily with no one actively right-sizing resources or reviewing usage.",
+    title: "Rising Infrastructure Costs",
+    desc: "Unoptimized cloud resources and inefficient operations increase IT spending without delivering additional value.",
   },
   {
-    title: "Internal teams stretched across too much",
-    desc: "In-house engineers split time between new development and keeping the lights on, and both suffer.",
+    title: "Resource Constraints",
+    desc: "Internal IT teams often lack the capacity to balance innovation while maintaining business-critical systems.",
   },
   {
-    title: "No clear SLA or response process",
-    desc: "When something breaks, there's no defined escalation path, response time commitment, or accountability.",
+    title: "Inconsistent Service Management",
+    desc: "Without defined processes and SLAs, incident response and operational support become unpredictable and inefficient.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We audit existing systems, infrastructure, and support processes to identify where managed services create the most defensible business value.",
+    title: "Assess & Discover",
+    desc: "Evaluate existing applications, infrastructure, and operational processes to identify support and optimization opportunities.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target support model, monitoring stack, and escalation framework, sequenced against operational priorities.",
+    title: "Plan & Design",
+    desc: "Develop a tailored managed services strategy, monitoring framework, and SLA model aligned with business requirements.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Build",
-    desc: "We stand up monitoring, alerting, and runbooks, and onboard your systems into our support model with defined SLAs.",
+    title: "Implement & Onboard",
+    desc: "Deploy monitoring tools, automate operational workflows, and transition systems into a fully managed environment.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Deploy",
-    desc: "Support goes live with 24/7 coverage, incident response protocols, and performance benchmarks in place from day one.",
+    title: "Monitor & Support",
+    desc: "Provide proactive monitoring, incident management, security operations, and continuous technical support.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Scale & Govern",
-    desc: "We establish ongoing capacity planning, cost reviews, and governance reporting so systems stay reliable as usage grows.",
+    title: "Optimize & Improve",
+    desc: "Continuously enhance performance, security, cost efficiency, and operational reliability through ongoing optimization.",
     image: "/art.jpg",
   },
 ];
@@ -145,56 +143,55 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "High-availability support for transaction systems with strict uptime requirements.",
+    desc: "Deliver secure, high-availability managed services for mission-critical financial applications and infrastructure.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Plant-floor system uptime and infrastructure support across production sites.",
+    desc: "Maintain production systems and industrial infrastructure with reliable operational support and monitoring.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Compliance-aware support for clinical and patient-facing systems.",
+    desc: "Ensure continuous availability of healthcare applications while meeting strict security and compliance requirements.",
   },
   {
-    title: "Retail",
+    title: "Retail & E-Commerce",
     image: "/art.jpg",
-    desc: "Peak-season scaling and uptime support for e-commerce and POS systems.",
+    desc: "Support business-critical retail platforms with scalable infrastructure and 24/7 operational monitoring.",
   },
   {
-    title: "Logistics",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "24/7 monitoring for dispatch, tracking, and fleet management platforms.",
+    desc: "Maintain logistics systems, fleet operations, and supply chain platforms with uninterrupted service delivery.",
   },
   {
-    title: "Public Sector",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Reliable infrastructure support for citizen-facing digital services.",
+    desc: "Provide secure, reliable managed services supporting public sector infrastructure and citizen-facing applications.",
   },
 ];
 
-
 const FAQS = [
   {
-    q: "How is Tec Tha's managed services different from a generic support desk?",
-    a: "We support systems built with the same engineering discipline we apply to new development. Support engineers understand the architecture deeply, not just a ticketing queue, so incidents get resolved faster and with fewer regressions.",
+    q: "Why choose Tec Tha for Managed Services?",
+    a: "Tec Tha provides proactive managed services that combine monitoring, maintenance, security, and operational expertise to maximize system availability, performance, and business continuity.",
   },
   {
-    q: "What response times can we expect?",
-    a: "Response and resolution targets are defined in a formal SLA tailored to system criticality, typically ranging from 15-minute response for critical incidents to next-business-day for low-priority requests.",
+    q: "What response times do you provide?",
+    a: "We deliver SLA-based support with response and resolution times tailored to business-criticality, ensuring rapid incident management and minimal operational disruption.",
   },
   {
-    q: "Can you take over support for a system you didn't build?",
-    a: "Yes. Most engagements begin with a structured knowledge-transfer and system audit phase before we take on live support responsibility, so nothing is missed during transition.",
+    q: "Can you manage systems developed by another vendor?",
+    a: "Yes. We perform a structured assessment and knowledge transfer before assuming responsibility, ensuring a seamless transition with minimal business impact.",
   },
   {
-    q: "How do you handle security and compliance in ongoing operations?",
-    a: "Security operations are built into the support model itself, including patch management, vulnerability scanning, and access reviews, aligned to frameworks such as SOC 2, GDPR, and relevant industry-specific regulation.",
+    q: "How do you ensure security and compliance?",
+    a: "Our managed services include continuous monitoring, patch management, vulnerability assessments, access controls, and governance aligned with industry standards and regulatory requirements.",
   },
   {
-    q: "What does the transition to managed services look like?",
-    a: "We run a structured onboarding phase covering documentation review, monitoring setup, and a shadow period before we assume full operational ownership, minimizing disruption to your team.",
+    q: "Do you provide continuous optimization after onboarding?",
+    a: "Yes. We continuously monitor system health, optimize performance, improve cost efficiency, and provide strategic recommendations to support long-term business success.",
   },
 ];
 

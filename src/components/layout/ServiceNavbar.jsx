@@ -3,14 +3,11 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 const SERVICES = [
-  { name: "Artificial Intelligence", link: "/services/EnterpriseSoftware" },
-  { name: "Enterprise Solutions", link: "/services/AIIntegration" },
+  { name: "Artificial Intelligence", link: "/services/ArtificialIntelligence" },
+  { name: "Enterprise Solutions", link: "/services/ERPsolution" },
   { name: "Cloud & Infrastructure", link: "/services/CloudInfrastructure" },
-  { name: "UI/UX & Product Design", link: "/services/UIUXDesign" },
-  { name: "Cybersecurity", link: "/services/BrandDemand" },
-  { name: "Digital Transformation", link: "/services/DigitalAdvisory" },
-  {name: "HR Technology",link: "/services/hr-technology"},
-  {name: "Business & Digital Transformation",link: "/services/business-digital-transformation"},
+  { name: "Cybersecurity", link: "/services/CyberSecurity" },
+  { name: "Digital Transformation", link: "/services/DigitalTransformation" },
   {name:"Managed Services",link:"/services/ManagedServices"},
   { name: "Enterprise Applications", link: "/services/EnterpriseApplications" },
   { name: "Data & Artificial Intelligence", link: "/services/DataAI" },
@@ -18,7 +15,7 @@ const SERVICES = [
 
 // Sub-tabs mapped per parent service link.
 const SUB_SECTIONS = {
-  "/services/EnterpriseSoftware": [
+  "/services/ArtificialIntelligence": [
     { label: "AI Strategy", link: "/services/ArtificialIntelligence&DataAnalytics/ai-strategy" },
     { label: "Enterprise AI", link: "/services/ArtificialIntelligence&DataAnalytics/enterprise-ai" },
     { label: "Generative AI", link: "/services/ArtificialIntelligence&DataAnalytics/generative-ai" },
@@ -34,7 +31,7 @@ const SUB_SECTIONS = {
     { label: "DevOps", link: "/services/CloudService/devops" },
     { label: "Managed Cloud", link: "/services/CloudService/managed-cloud" },
   ],
-  "/services/BrandDemand": [
+  "/services/CyberSecurity": [
     { label: "Cybersecurity Strategy", link: "/services/CybersecurityService/cybersecurity-strategy" },
     { label: "Identity & Access Management", link: "/services/CybersecurityService/identity-access-management" },
     { label: "Cloud Security", link: "/services/CybersecurityService/cloud-security" },
@@ -42,7 +39,7 @@ const SUB_SECTIONS = {
     { label: "Security Operations", link: "/services/CybersecurityService/security-operations" },
     { label: "Managed Security", link: "/services/CybersecurityService/managed-security" },
   ],
-  "/services/DigitalAdvisory": [
+  "/services/DigitalTransformation": [
     { label: "Business Consulting", link: "/services/DigitalTransformation/business-consulting" },
     { label: "Enterprise Transformation", link: "/services/DigitalTransformation/enterprise-transformation" },
     { label: "Enterprise Architecture", link: "/services/DigitalTransformation/enterprise-architecture" },
@@ -50,7 +47,7 @@ const SUB_SECTIONS = {
     { label: "Technology Advisory", link: "/services/DigitalTransformation/technology-advisory" },
     { label: "Change Management", link: "/services/DigitalTransformation/change-management" },
   ],
-  "/services/AIIntegration": [
+  "/services/ERPsolution": [
     { label: "ERP Solutions", link: "/services/EnterpriseSolution/erp-solutions" },
     { label: "Human Capital Management", link: "/services/EnterpriseSolution/human-capital-management" },
     { label: "Customer Relationship Management", link: "/services/EnterpriseSolution/customer-relationship-management" },

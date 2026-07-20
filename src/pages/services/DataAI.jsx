@@ -25,118 +25,116 @@ const fadeUp = (delay = 0) => ({
 const CAPABILITIES = [
   {
     id: 1,
-    title: "Data Strategy",
+    title: "Data Engineering",
     short:
-      "Roadmaps that turn scattered data assets into a governed enterprise resource.",
+      "Build scalable data pipelines and modern architectures that enable reliable, high-quality enterprise data.",
     image: "/art.jpg",
-    tags: ["Consulting", "Roadmap", "Data Maturity"],
-    link: "/services/DataAndAI/data-strategy",
+    tags: ["Data Pipelines", "ETL", "Data Lake"],
+    link: "/services/DataAI/data-engineering",
   },
   {
     id: 2,
-    title: "Data Engineering",
+    title: "Business Intelligence",
     short:
-      "Pipelines and warehouses built to move and shape data at enterprise scale.",
+      "Transform business data into interactive dashboards and actionable insights for informed decision-making.",
     image: "/art.jpg",
-    tags: ["Pipelines", "ETL", "Warehousing"],
-    link: "/services/DataAndAI/data-engineering",
+    tags: ["Dashboards", "Reporting", "Insights"],
+    link: "/services/DataAI/business-intelligence",
   },
   {
     id: 3,
-    title: "Business Intelligence",
+    title: "AI Analytics",
     short:
-      "Dashboards and reporting that put trusted numbers in front of decision-makers.",
+      "Leverage AI-powered analytics to uncover trends, optimize performance, and accelerate business growth.",
     image: "/art.jpg",
-    tags: ["BI", "Dashboards", "Reporting"],
-    link: "/services/DataAndAI/business-intelligence",
+    tags: ["AI", "Analytics", "Optimization"],
+    link: "/services/DataAI/ai-analytics",
   },
   {
     id: 4,
-    title: "Data Science & ML",
+    title: "Executive Intelligence",
     short:
-      "Predictive models and machine learning systems built on production data.",
+      "Deliver executive-ready insights through advanced reporting, KPI tracking, and strategic performance analytics.",
     image: "/art.jpg",
-    tags: ["ML", "Predictive", "Modeling"],
-    link: "/services/DataAndAI/data-science-ml",
+    tags: ["KPIs", "Executive Dashboards", "Strategy"],
+    link: "/services/DataAI/executive-intelligence",
   },
   {
     id: 5,
-    title: "Real-Time Analytics",
+    title: "Predictive Analytics",
     short:
-      "Streaming architectures that turn live data into immediate operational decisions.",
+      "Use machine learning and predictive models to forecast outcomes, identify risks, and improve business decisions.",
     image: "/art.jpg",
-    tags: ["Streaming", "Real-Time", "Events"],
-    link: "/services/DataAndAI/real-time-analytics",
+    tags: ["Forecasting", "Machine Learning", "Prediction"],
+    link: "/services/DataAI/predictive-analytics",
   },
   {
     id: 6,
     title: "Data Governance",
     short:
-      "Quality, lineage, and access frameworks that keep enterprise data trustworthy.",
+      "Ensure trusted, secure, and compliant data with governance frameworks, quality controls, and lifecycle management.",
     image: "/art.jpg",
-    tags: ["Governance", "Quality", "Compliance"],
-    link: "/services/DataAndAI/data-governance",
+    tags: ["Governance", "Data Quality", "Compliance"],
+    link: "/services/DataAI/data-governance",
   },
 ];
-
 
 const CHALLENGES = [
   {
-    title: "Data scattered across the business",
-    desc: "Sales, operations, and finance each hold their own version of the truth, with no shared warehouse to reconcile them.",
+    title: "Disconnected Data Sources",
+    desc: "Business data is spread across multiple systems, making it difficult to create a single, trusted source of truth.",
   },
   {
-    title: "Reports nobody fully trusts",
-    desc: "Dashboards return different numbers depending on who built them, so leadership falls back on gut instinct for major decisions.",
+    title: "Limited Business Visibility",
+    desc: "Inconsistent reporting and fragmented analytics reduce confidence in decision-making across the organization.",
   },
   {
-    title: "Analytics that arrive too late",
-    desc: "By the time a report reaches leadership, the underlying operational conditions have already changed.",
+    title: "Slow Access to Insights",
+    desc: "Manual reporting processes delay critical business insights, limiting operational agility and responsiveness.",
   },
   {
-    title: "Data science projects that stay experimental",
-    desc: "Models perform well in notebooks but never make it into production workflows where they could create value.",
+    title: "Underutilized AI Investments",
+    desc: "AI initiatives often fail to deliver value because models are not integrated into real business workflows.",
   },
   {
-    title: "No clear data ownership",
-    desc: "Without defined stewardship, data quality degrades over time and nobody is accountable for fixing it.",
+    title: "Poor Data Quality",
+    desc: "Incomplete, duplicate, and inconsistent data impacts reporting accuracy and reduces business confidence.",
   },
   {
-    title: "Compliance risk in how data is handled",
-    desc: "Inconsistent access controls and unclear data lineage expose the organization during audits and regulatory reviews.",
+    title: "Governance & Compliance Risks",
+    desc: "Weak governance frameworks and inconsistent data controls increase regulatory and operational risks.",
   },
 ];
-
 
 const METHODOLOGY = [
   {
     step: "01",
-    title: "Assess",
-    desc: "We audit existing data sources, pipelines, and reporting to identify where analytics and AI create the most defensible business value.",
+    title: "Assess & Discover",
+    desc: "Evaluate existing data ecosystems, business objectives, and analytics maturity to identify transformation opportunities.",
     image: "/art.jpg",
   },
   {
     step: "02",
-    title: "Design",
-    desc: "We architect the target data model and platform design, sequenced against technical constraints and business priorities.",
+    title: "Design Architecture",
+    desc: "Create modern data architectures and governance frameworks aligned with scalability, security, and business needs.",
     image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Build",
-    desc: "Engineering teams develop pipelines, models, and dashboards using agile delivery, with governance checkpoints in every sprint.",
+    title: "Build Solutions",
+    desc: "Develop data pipelines, AI models, dashboards, and analytics platforms using agile engineering practices.",
     image: "/art.jpg",
   },
   {
     step: "04",
-    title: "Deploy",
-    desc: "Solutions move to production with monitoring, data quality checks, and performance benchmarks in place from day one.",
+    title: "Deploy & Integrate",
+    desc: "Deploy enterprise-ready solutions with automated monitoring, validation, and seamless business integration.",
     image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Scale & Govern",
-    desc: "We establish ongoing monitoring, retraining cycles, and governance reporting so insight quality holds as usage grows.",
+    title: "Optimize & Govern",
+    desc: "Continuously improve data quality, model performance, governance, and analytics capabilities as business needs evolve.",
     image: "/art.jpg",
   },
 ];
@@ -145,56 +143,55 @@ const INDUSTRIES = [
   {
     title: "Financial Services",
     image: "/art.jpg",
-    desc: "Risk modeling, fraud analytics, and regulatory reporting automation.",
+    desc: "Enable fraud detection, risk analytics, regulatory reporting, and financial forecasting with data-driven intelligence.",
   },
   {
     title: "Manufacturing",
     image: "/art.jpg",
-    desc: "Predictive maintenance analytics and real-time production dashboards.",
+    desc: "Optimize production, predictive maintenance, and operational efficiency through advanced analytics.",
   },
   {
     title: "Healthcare",
     image: "/art.jpg",
-    desc: "Clinical data analytics and compliance-aware reporting pipelines.",
+    desc: "Improve patient outcomes with secure clinical analytics, healthcare intelligence, and regulatory compliance.",
   },
   {
-    title: "Retail",
+    title: "Retail & E-Commerce",
     image: "/art.jpg",
-    desc: "Demand forecasting, customer analytics, and inventory intelligence.",
+    desc: "Drive customer engagement, demand forecasting, inventory optimization, and personalized shopping experiences.",
   },
   {
-    title: "Logistics",
+    title: "Logistics & Supply Chain",
     image: "/art.jpg",
-    desc: "Route analytics, warehouse performance, and fleet-level dashboards.",
+    desc: "Enhance supply chain visibility, fleet performance, and operational efficiency using real-time analytics.",
   },
   {
-    title: "Public Sector",
+    title: "Government & Public Sector",
     image: "/art.jpg",
-    desc: "Data-driven policy planning and citizen service analytics.",
+    desc: "Support evidence-based decision-making with secure analytics, performance reporting, and digital governance.",
   },
 ];
 
-
 const FAQS = [
   {
-    q: "How is Tec Tha's approach to data and AI different from a generic analytics vendor?",
-    a: "We do not sell a single dashboard tool and adapt your business to fit it. Every engagement starts with your data reality and decision-making process, and we design pipelines, models, and reporting that integrate into how your organization actually works.",
+    q: "Why choose Tec Tha for Data & AI services?",
+    a: "Tec Tha combines data engineering, business intelligence, AI, and governance to deliver scalable, secure, and business-focused data solutions that create measurable value.",
   },
   {
-    q: "How long does a typical data and AI engagement take?",
-    a: "A focused analytics workflow can move from assessment to production in 8 to 12 weeks. Enterprise-wide data platforms typically run 4 to 9 months, delivered in phased releases so value is realized incrementally rather than at a single go-live date.",
+    q: "How long does a Data & AI implementation typically take?",
+    a: "Project timelines depend on business complexity. Smaller analytics solutions can be delivered within weeks, while enterprise data platforms are implemented in phased releases over several months.",
   },
   {
-    q: "Can you work with our existing data infrastructure and legacy systems?",
-    a: "Yes. Most engagements begin by integrating with existing databases, ERPs, and legacy systems rather than replacing them outright. We assess what should be modernized, what should be wrapped with integration layers, and what should be left untouched.",
+    q: "Can you integrate with our existing systems and databases?",
+    a: "Yes. We integrate with existing ERP systems, databases, cloud platforms, and legacy applications to maximize your current technology investments.",
   },
   {
-    q: "How do you handle data governance and regulatory compliance?",
-    a: "Governance is not a final checklist item. We build data lineage, access controls, and quality monitoring into the pipeline itself, aligned to frameworks such as SOC 2, GDPR, and relevant industry-specific regulation.",
+    q: "How do you ensure data security and governance?",
+    a: "We implement governance frameworks, access controls, data quality management, and compliance standards to ensure trusted, secure, and well-managed enterprise data.",
   },
   {
-    q: "What does ongoing support look like after deployment?",
-    a: "We provide structured post-deployment support including pipeline monitoring, model retraining schedules, and quarterly business reviews, so systems continue to perform as data and business conditions evolve.",
+    q: "Do you provide ongoing analytics and platform support?",
+    a: "Yes. We offer continuous monitoring, performance optimization, governance reviews, model maintenance, and managed support to ensure long-term success.",
   },
 ];
 

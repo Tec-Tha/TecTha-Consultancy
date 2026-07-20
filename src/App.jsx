@@ -7,15 +7,12 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
-import EnterpriseSoftware from "./pages/services/EnterpriseSoftware";
-import AIIntegration from "./pages/services/AIIntegration";
+import ArtificialIntelligence from "./pages/services/ArtificialIntelligence";
+import ERPsolution from "./pages/services/ERPsolution";
 import CloudInfrastructure from "./pages/services/CloudInfrastructure";
-import UIUXDesign from "./pages/services/UIUXDesign";
-import BrandDemand from "./pages/services/BrandDemand";
+import CyberSecurity from "./pages/services/Cybersecurity";
 import ManagedServices from "./pages/services/ManagedServices"
-import DigitalAdvisory from "./pages/services/DigitalAdvisory";
-import HRTechnology from "./pages/services/HRTechnology";
-import BusinessDigitalTransformation from "./pages/services/BusinessDigitalTransformation";
+import DigitalTransformation from "./pages/services/DigitalTransformation";
 import AIStrategy from "./pages/services/ArtificialIntelligence&DataAnalytics/AIStrategy";
 import EnterpriseAI from "./pages/services/ArtificialIntelligence&DataAnalytics/EnterpriseAI";
 import GenerativeAI from "./pages/services/ArtificialIntelligence&DataAnalytics/GenerativeAI";
@@ -54,7 +51,6 @@ import TechnologyOperations from "./pages/services/ManagedServices/TechnologyOpe
 import EnterpriseSupport from "./pages/services/ManagedServices/EnterpriseSupport";
 import EnterpriseApplications from "./pages/services/EnterpriseApplications";
 import DataAI from "./pages/services/DataAI";
-import EnterpriseSoftwaree from "./pages/services/EnterpriseApplications/EnterpriseSoftwaree";
 import CustomApplications from "./pages/services/EnterpriseApplications/CustomApplications";
 import BusinessApplications from "./pages/services/EnterpriseApplications/BusinessApplications";
 import SystemsIntegration from "./pages/services/EnterpriseApplications/SystemsIntegration";
@@ -99,14 +95,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/services/EnterpriseSoftware" element={<EnterpriseSoftware />} />
-        <Route path="/services/AIIntegration" element={<AIIntegration />} />
+        <Route path="/services/ArtificialIntelligence" element={<ArtificialIntelligence />} />
+        <Route path="/services/ERPsolution" element={<ERPsolution />} />
         <Route path="/services/CloudInfrastructure" element={<CloudInfrastructure />} />
-        <Route path="/services/UIUXDesign" element={<UIUXDesign />} />
-        <Route path="/services/BrandDemand" element={<BrandDemand />} />
-        <Route path="/services/DigitalAdvisory" element={<DigitalAdvisory />} />
-        <Route path="/services/hr-technology" element={<HRTechnology />} />
-        <Route path="/services/business-digital-transformation" element={<BusinessDigitalTransformation />} />
+        <Route path="/services/CyberSecurity" element={<CyberSecurity />} />
+        <Route path="/services/DigitalTransformation" element={<DigitalTransformation />} />
         <Route path="/services/ArtificialIntelligence&DataAnalytics/ai-strategy" element={<AIStrategy />} />
         <Route path="/services/ArtificialIntelligence&DataAnalytics/enterprise-ai" element={<EnterpriseAI />} />
         <Route path="/services/ArtificialIntelligence&DataAnalytics/generative-ai" element={<GenerativeAI />} />
@@ -145,7 +138,7 @@ function App() {
         <Route path="/services/ManagedServices/technology-operations" element={<TechnologyOperations />} />
         <Route path="/services/ManagedServices/enterprise-support" element={<EnterpriseSupport />} />
         <Route path="/services/EnterpriseApplications" element={<EnterpriseApplications />} />
-        <Route path="/services/EnterpriseApplications/enterprise-softwaree" element={<EnterpriseSoftwaree />} />
+        <Route path="/services/EnterpriseApplications/enterprise-softwaree" element={<ArtificialIntelligence />} />
         <Route path="/services/EnterpriseApplications/custom-applications" element={<CustomApplications />} />
         <Route path="/services/EnterpriseApplications/business-applications" element={<BusinessApplications />} />
         <Route path="/services/EnterpriseApplications/systems-integration" element={<SystemsIntegration />} />
