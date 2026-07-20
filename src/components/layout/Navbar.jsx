@@ -28,6 +28,7 @@ import {
 const NAV_LINKS = [
   { label: "Who we are", to: "/about" },
   { label: "What we do", to: "/services" },
+   { label: "Industries", to: "/industries" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
 ];

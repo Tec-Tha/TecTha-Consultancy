@@ -161,7 +161,7 @@ const GROWTH_CAROUSEL = [
   
 ];
 
-const DEPARTMENTS = ["All", "Engineering", "Data", "Design", "Operations"];
+const DEPARTMENTS = ["All", "Engineering", "Data", "Management", "Operations"];
 
 const OPEN_ROLES = [
   { title: "Senior Software Engineer", department: "Engineering", type: "Full-time" },

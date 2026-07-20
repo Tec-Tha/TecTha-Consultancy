@@ -88,7 +88,7 @@ export default function Manufacturing() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-4xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] tracking-tight text-white"
+            className="max-w-4xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] tracking-tight text-zinc-300"
           >
             Building
             <br />
@@ -430,7 +430,7 @@ export default function Manufacturing() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-[#0F172A]">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
 
               Build Intelligent
               <br />
