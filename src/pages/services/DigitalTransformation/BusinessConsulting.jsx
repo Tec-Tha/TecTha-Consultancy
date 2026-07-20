@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Business Assessment",
     desc: "We analyze your business operations, challenges, and strategic objectives to identify opportunities for improvement.",
-    image: "...",
+    image: "/services/3.avif",
   },
   {
     step: "02",
     title: "Strategy Development",
     desc: "Our consultants create a customized roadmap focused on operational excellence, innovation, and sustainable growth.",
-    image: "...",
+    image: "/services/8.avif",
   },
   {
     step: "03",
     title: "Solution Implementation",
     desc: "We implement business strategies, optimize processes, and align technology with organizational objectives.",
-    image: "...",
+    image: "/services/7.avif",
   },
   {
     step: "04",
     title: "Performance Optimization",
     desc: "Continuous monitoring, performance measurement, and process improvements maximize business value.",
-    image: "...",
+    image: "/services/6.avif",
   },
   {
     step: "05",
     title: "Continuous Growth",
     desc: "We provide ongoing advisory services to help organizations adapt, innovate, and achieve long-term success.",
-    image: "...",
+    image: "/services/5.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/services/1.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -317,7 +317,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/services/2.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "Business Consulting",
     short:
       "Align business strategy with digital initiatives to accelerate growth, innovation, and operational excellence.",
-    image: "/art.jpg",
+    image: "/services/11.avif",
     tags: ["Strategy", "Transformation", "Consulting"],
     link: "/services/DigitalTransformation/business-consulting",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Enterprise Transformation",
     short:
       "Drive organization-wide transformation through modern operating models, digital innovation, and business agility.",
-    image: "/art.jpg",
+    image: "/services/14.avif",
     tags: ["Transformation", "Operations", "Innovation"],
     link: "/services/DigitalTransformation/enterprise-transformation",
   },
@@ -111,63 +111,63 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess & Discover",
     desc: "Evaluate business strategy, technology landscape, and operational processes to identify transformation opportunities.",
-    image: "/art.jpg",
+    image: "/services/16.avif",
   },
   {
     step: "02",
     title: "Define Strategy",
     desc: "Develop transformation roadmaps, governance frameworks, and business strategies aligned with organizational goals.",
-    image: "/art.jpg",
+    image: "/services/17.avif",
   },
   {
     step: "03",
     title: "Transform & Implement",
     desc: "Execute transformation initiatives through process optimization, technology enablement, and organizational alignment.",
-    image: "/art.jpg",
+    image: "/services/18.avif",
   },
   {
     step: "04",
     title: "Enable Adoption",
     desc: "Support successful implementation through stakeholder engagement, change management, and performance monitoring.",
-    image: "/art.jpg",
+    image: "/services/20.avif",
   },
   {
     step: "05",
     title: "Optimize & Sustain",
     desc: "Continuously improve business performance through governance, operational excellence, and ongoing strategic guidance.",
-    image: "/art.jpg",
+    image: "/services/19.avif",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/services/23.avif",
     desc: "Support digital transformation, governance, and operational excellence across financial institutions.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/services/24.avif",
     desc: "Modernize manufacturing operations with smart processes, digital technologies, and enterprise transformation.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/services/25.avif",
     desc: "Improve healthcare delivery through digital transformation, compliance, and process optimization.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/services/26.avif",
     desc: "Enhance customer experiences with digital business strategies and operational transformation.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/services/21.avif",
     desc: "Optimize logistics operations through digital innovation, automation, and process excellence.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/services/22.avif",
     desc: "Enable citizen-centric digital services through strategic transformation and governance frameworks.",
   },
 ];
@@ -209,7 +209,7 @@ const DigitalAdvisory = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/services/9.avif')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -287,7 +287,7 @@ const DigitalAdvisory = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/services/10.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -316,7 +316,7 @@ const DigitalAdvisory = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/services/12.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />

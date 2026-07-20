@@ -121,7 +121,7 @@ const FRAMEWORK = [
     step: "01",
     title: "Transformation Assessment",
     desc: "We evaluate your business capabilities, technology landscape, and strategic objectives to identify transformation opportunities.",
-    image: "...",
+    image: "/services/27.avif",
   },
   {
     step: "02",

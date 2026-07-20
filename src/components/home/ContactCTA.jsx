@@ -70,9 +70,9 @@ const ContactCTA = () => {
           <MagneticButton strength={0.35}>
             <a
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-black font-semibold transition hover:bg-zinc-200"
+              className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-black font-semibold transition hover:bg-zinc-200"
             >
-              Talk to our team
+              Connect with Us
               <ArrowUpRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </MagneticButton>
