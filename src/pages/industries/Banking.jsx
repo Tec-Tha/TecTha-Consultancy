@@ -23,33 +23,27 @@ const fadeUp = {
 const focusCards = [
   {
     title: "Digital Banking",
-    image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=1200&q=80",
+    image: "/industry/1.jpg",
   },
   {
     title: "Fraud Detection",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
+    image: "/industry/2.jpg",
   },
   {
     title: "Open Banking",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80",
+    image: "/industry/3.jpg",
   },
   {
     title: "Risk Analytics",
-    image:
-      "https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80",
+    image: "/industry/4.jpg",
   },
   {
     title: "Core Banking",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    image: "/industry/5.jpg",
   },
   {
     title: "Wealth Management",
-    image:
-      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&q=80",
+    image: "/industry/6.jpg",
   },
 ];
 
@@ -61,7 +55,7 @@ export default function Banking() {
       <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2200&q=80"
+          src="/industry/7.jpg"
           alt="Banking"
           className="absolute inset-0 h-full w-full object-cover scale-105"
         />
@@ -148,7 +142,7 @@ export default function Banking() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=1800&q=80"
+              src="/industry/8.jpg"
               alt="Digital Banking"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -391,7 +385,7 @@ export default function Banking() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1800&q=80"
+              src="/industry/9.jpg"
               alt="Future Banking"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />

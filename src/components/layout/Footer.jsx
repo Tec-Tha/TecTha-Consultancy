@@ -67,14 +67,18 @@ const FOOTER_LINKS = [
 </div>
     </div>
 
-    <div className="mt-8 border-t border-white/10 pt-6">
+   <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+  <p className="text-sm text-gray-500">
+    © {new Date().getFullYear()} Tec Tha Technologies Pvt. Ltd. All Rights Reserved.
+  </p>
 
-      <p className="text-sm text-gray-500">
-        © {new Date().getFullYear()} Tec Tha Technologies Pvt. Ltd. All Rights Reserved.
-      </p>
-
-    </div>
-
+  <a
+    href="mailto:support@tectha.com?subject=Support%20Request&body=Hello%20Tec%20Tha%20Team,%0A%0A"
+    className="text-sm text-gray-400 transition-colors duration-300 hover:text-white"
+  >
+    support@tectha.com
+  </a>
+</div>
   </div>
 </footer>
   );

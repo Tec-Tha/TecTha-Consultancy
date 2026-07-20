@@ -28,11 +28,9 @@ import {
 const NAV_LINKS = [
   { label: "Who we are", to: "/about" },
   { label: "What we do", to: "/services" },
-  { label: "Industries", to: "/industries" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
 ];
-
 const SERVICES = [
   {
     title: "Services",
@@ -490,10 +488,10 @@ setShowIndustries(false);
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          
+         
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[15px] font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
           >
             Contact us
           </Link>
@@ -501,6 +499,7 @@ setShowIndustries(false);
 
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
+          
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -547,7 +546,7 @@ setShowIndustries(false);
               <motion.div variants={linkItem} className="mt-3">
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-3.5 text-base font-semibold text-white"
+                  className="flex items-center justify-center gap-2  bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-3.5 text-base font-semibold text-white"
                 >
                   Contact
                   <ArrowUpRight className="h-4 w-4" />

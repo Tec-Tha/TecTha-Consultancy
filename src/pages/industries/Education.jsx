@@ -24,33 +24,29 @@ const focusCards = [
   {
     title: "Digital Learning",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+      "/industry/10.jpg",
   },
   {
     title: "Smart Campus",
     image:
-      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80",
+      "/industry/11.jpg",
   },
   {
     title: "AI Tutoring",
     image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+      "/industry/12.jpg",
   },
   {
     title: "Learning Analytics",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+      "/industry/13.jpg",
   },
   {
     title: "Virtual Classroom",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
+      "/industry/14.jpg",
   },
-  {
-    title: "Student Experience",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80",
-  },
+
 ];
 
 export default function Education() {
@@ -64,7 +60,7 @@ export default function Education() {
       <section className="relative flex h-screen items-center overflow-hidden bg-black">
 
         <img
-          src="https://img.magnific.com/free-photo/book-with-green-board-background_1150-3837.jpg?semt=ais_hybrid&w=740&q=80"
+          src="/industry/15.jpg"
           alt="Education"
           className="absolute inset-0 h-full w-full object-cover scale-105"
         />
@@ -152,7 +148,7 @@ export default function Education() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=80"
+              src="/industry/16.jpg"
               alt="Digital Education"
               className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -377,7 +373,7 @@ export default function Education() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1800&q=80"
+              src="/industry/17.jpg"
               alt="Future Education"
               className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
@@ -394,7 +390,7 @@ export default function Education() {
         {/* Background */}
 
         <img
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=2200&q=80"
+          src="/industry/17.jpg"
           alt="Education CTA"
           className="absolute inset-0 h-full w-full object-cover"
         />
