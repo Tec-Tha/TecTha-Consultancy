@@ -28,7 +28,7 @@ import {
 const NAV_LINKS = [
   { label: "Who we are", to: "/about" },
   { label: "What we do", to: "/services" },
-  { label: "Insights", to: "/insights" },
+  { label: "Insights", to: "/industries" },
   { label: "Careers", to: "/careers" },
 ];
 const SERVICES = [
@@ -120,6 +120,45 @@ const SERVICES = [
     ],
   },
 ];
+const INDUSTRIES = [
+  {
+    title: "Industries",
+    items: [
+      {
+        name: "Healthcare",
+        link: "/industries/healthcare",
+      },
+      {
+        name: "Banking",
+        link: "/industries/banking",
+      },
+      {
+        name: "Manufacturing",
+        link: "/industries/manufacturing",
+      },
+      {
+        name: "Retail",
+        link: "/industries/retail",
+      },
+      {
+        name: "Education",
+        link: "/industries/education",
+      },
+      {
+        name: "Government",
+        link: "/industries/government",
+      },
+      {
+        name: "Professional Services",
+        link: "/industries/professional-services",
+      },
+      {
+        name: "Logistics",
+        link: "/industries/logistics",
+      },
+    ],
+  },
+];
 
 const drawerVariants = {
   hidden: { opacity: 0, height: 0 },
@@ -177,7 +216,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(0);
+const [showIndustries, setShowIndustries] = useState(false);
+
+const [activeCategory, setActiveCategory] = useState(0);
+const [activeIndustry] = useState(0);
   const dropdownRef = useRef(null);
   const closeTimeoutRef = useRef(null);
   const location = useLocation();
@@ -204,7 +246,8 @@ const Navbar = () => {
   // Close the mobile drawer / mega menu on route change.
   useEffect(() => {
     setIsMenuOpen(false);
-    setShowServices(false);
+   setShowServices(false);
+setShowIndustries(false);
     setActiveCategory(0);
   }, [location.pathname]);
 
@@ -254,8 +297,8 @@ const Navbar = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black shadow-lg">
-      <div className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-10">
-        <Link to="/" className="flex items-center gap-4">
+      <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-6 xl:px-8">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src={logo}
             alt="TEC THA Logo"
@@ -263,14 +306,14 @@ const Navbar = () => {
           />
 
           <div className="flex flex-col leading-none">
-            <span className="font-['Montserrat'] text-3xl font-medium text-white">
+            <span className="font-['Montserrat'] text-[2rem] font-medium whitespace-nowrap text-white">
               Tec Tha
             </span>
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-5 lg:flex">
+        <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
           {NAV_LINKS.map((link) => {
             if (link.label === "What we do") {
               return (
@@ -282,10 +325,10 @@ const Navbar = () => {
                   onMouseLeave={scheduleCloseMegaMenu}
                   onBlur={handleContainerBlur}
                 >
-                  <div className="flex items-center gap-2 px-10 py-3">
+                  <div className="flex items-center gap-2 px-6 xl:px-7 py-3">
  <Link
   to="/services"
-  className={`font-['Montserrat'] text-2xl transition-colors ${
+  className={`font-['Montserrat'] text-[1.35rem] transition-colors ${
     location.pathname.startsWith("/services")
       ? "text-white"
       : "text-gray-300 hover:text-white"
@@ -360,9 +403,9 @@ const Navbar = () => {
 
   return (
     <div key={section.title}>
-      {section.title === "Services" ? (
+      {section.title === "Services" || section.title === "Industries" ? (
         <Link
-          to="/services"
+  to={section.title === "Services" ? "/services" : "/industries"}
           onMouseEnter={() => setActiveCategory(i)}
           onFocus={() => setActiveCategory(i)}
           onClick={() => setShowServices(false)}
@@ -434,7 +477,7 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `relative px-10 py-3 font-['Montserrat'] text-2xl transition-colors duration-200 ${
+  `relative px-6 py-3 font-['Montserrat'] text-[1.35rem] transition-colors duration-200 ${
                     isActive ? "text-white" : "text-gray-300 hover:text-white"
                   }`
                 }
@@ -456,10 +499,10 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-         
+          <ThemeToggle />
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
           >
             Contact us
           </Link>
@@ -467,7 +510,7 @@ const Navbar = () => {
 
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
-          
+          <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}

@@ -3,69 +3,82 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
   ArrowRight,
-  ShieldCheck,
-  Layers,
-  Workflow,
-  Database,
-  Brain,
-  Bot,
-  ScrollText,
-  Sparkles,
   ChevronDown,
 } from "lucide-react";
 import ServiceNavbar from "../../components/layout/ServiceNavbar";
 
 const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 24 },
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
       delay,
-      ease: [0.16, 1, 0.3, 1],
     },
   },
 });
 
 const CAPABILITIES = [
   {
-    icon: Brain,
+    id: 1,
     title: "AI Strategy",
-    desc: "Roadmaps that connect AI investment to measurable business outcomes, sequenced against real organizational readiness.",
-    link: "/services/ai-strategy",
+    short:
+      "Roadmaps that connect AI investment to measurable business outcomes.",
+    image: "/art.jpg",
+    tags: ["Consulting", "Roadmap", "Transformation"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/ai-strategy",
   },
   {
-    icon: Layers,
+    id: 2,
     title: "Enterprise AI",
-    desc: "Production-grade AI systems engineered for the scale, uptime, and compliance enterprise operations require.",
-    link: "/services/enterprise-ai",
+    short:
+      "Production-grade AI systems built for enterprise scale and security.",
+    image: "/art.jpg",
+    tags: ["Scalable", "Secure", "Enterprise"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/enterprise-ai",
   },
   {
-    icon: Sparkles,
+    id: 3,
     title: "Generative AI",
-    desc: "Custom and fine-tuned generative models built around proprietary data, not generic public endpoints.",
-    link: "/services/generative-ai",
+    short:
+      "Custom LLMs and GenAI solutions trained on your enterprise knowledge.",
+    image: "/art.jpg",
+    tags: ["LLM", "RAG", "GPT"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/generative-ai",
   },
   {
-    icon: Bot,
+    id: 4,
     title: "AI Agents",
-    desc: "Autonomous agents that plan, execute, and coordinate work across enterprise tools, data, and workflows.",
-    link: "/services/ai-agents",
+    short:
+      "Autonomous AI agents capable of planning and executing workflows.",
+    image: "/art.jpg",
+    tags: ["Agents", "Automation", "AI"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/ai-agents",
   },
   {
-    icon: Workflow,
+    id: 5,
     title: "Intelligent Automation",
-    desc: "RPA, machine learning, and orchestration combined to remove bottlenecks from high-volume operational processes.",
-    link: "/services/intelligent-automation",
+    short:
+      "Combine AI, RPA and workflows to automate repetitive operations.",
+    image: "/art.jpg",
+    tags: ["RPA", "Workflow", "ML"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/intelligent-automation",
   },
   {
-    icon: ShieldCheck,
+    id: 6,
     title: "AI Governance",
-    desc: "Risk frameworks, monitoring, and audit trails that make AI deployment defensible to regulators and boards.",
-    link: "/services/ai-governance",
+    short:
+      "Responsible AI frameworks with compliance, monitoring and auditability.",
+    image: "/art.jpg",
+    tags: ["Security", "Compliance", "Risk"],
+    link: "/services/ArtificialIntelligence&DataAnalytics/ai-governance",
   },
 ];
+
 
 const CHALLENGES = [
   {
@@ -94,49 +107,71 @@ const CHALLENGES = [
   },
 ];
 
-const AI_PROCESS = [
+
+const METHODOLOGY = [
   {
     step: "01",
-    title: "Discover",
-    desc: "Understand business goals, stakeholders, existing systems, and opportunities."
+    title: "Assess",
+    desc: "We audit existing data infrastructure, systems, and workflows to identify where AI creates the most defensible business value.",
+    image: "/art.jpg",
   },
   {
     step: "02",
     title: "Design",
-    desc: "Architect AI solutions, data pipelines, security, and enterprise workflows."
+    desc: "We architect the target data model and system design, sequenced against technical constraints and business priorities.",
+    image: "/art.jpg",
   },
   {
     step: "03",
-    title: "Develop",
-    desc: "Build production-ready AI models, APIs, integrations, and automation."
+    title: "Build",
+    desc: "Engineering teams develop, train, and integrate solutions using agile delivery, with governance checkpoints in every sprint.",
+    image: "/art.jpg",
   },
   {
     step: "04",
     title: "Deploy",
-    desc: "Launch securely with monitoring, governance, and performance tracking."
+    desc: "Solutions move to production with monitoring, rollback plans, and performance benchmarks in place from day one.",
+    image: "/art.jpg",
   },
   {
     step: "05",
-    title: "Optimize",
-    desc: "Continuously improve models using enterprise feedback and new data."
+    title: "Scale & Govern",
+    desc: "We establish ongoing monitoring, retraining cycles, and governance reporting so performance holds as usage grows.",
+    image: "/art.jpg",
   },
 ];
 
-const METHODOLOGY = [
-  { step: "01", title: "Assess", desc: "We audit existing data infrastructure, systems, and workflows to identify where AI creates the most defensible business value." },
-  { step: "02", title: "Design", desc: "We architect the target data model and system design, sequenced against technical constraints and business priorities." },
-  { step: "03", title: "Build", desc: "Engineering teams develop, train, and integrate solutions using agile delivery, with governance checkpoints in every sprint." },
-  { step: "04", title: "Deploy", desc: "Solutions move to production with monitoring, rollback plans, and performance benchmarks in place from day one." },
-  { step: "05", title: "Scale & Govern", desc: "We establish ongoing monitoring, retraining cycles, and governance reporting so performance holds as usage grows." },
-];
-
 const INDUSTRIES = [
-  { name: "Financial Services", desc: "Fraud detection, credit risk modeling, and regulatory reporting automation." },
-  { name: "Manufacturing", desc: "Predictive maintenance, quality inspection, and supply chain forecasting." },
-  { name: "Healthcare", desc: "Clinical data analytics and compliance-aware AI deployment." },
-  { name: "Retail", desc: "Demand forecasting, personalization, and inventory optimization." },
-  { name: "Logistics", desc: "Route optimization, warehouse automation, and fleet intelligence." },
-  { name: "Public Sector", desc: "Citizen service automation and data-driven policy planning." },
+  {
+    title: "Financial Services",
+    image: "/art.jpg",
+    desc: "Fraud detection, credit risk modeling, and regulatory reporting automation.",
+  },
+  {
+    title: "Manufacturing",
+    image: "/art.jpg",
+    desc: "Predictive maintenance, quality inspection, and supply chain forecasting.",
+  },
+  {
+    title: "Healthcare",
+    image: "/art.jpg",
+    desc: "Clinical data analytics and compliance-aware AI deployment.",
+  },
+  {
+    title: "Retail",
+    image: "/art.jpg",
+    desc: "Demand forecasting, personalization, and inventory optimization.",
+  },
+  {
+    title: "Logistics",
+    image: "/art.jpg",
+    desc: "Route optimization, warehouse automation, and fleet intelligence.",
+  },
+  {
+    title: "Public Sector",
+    image: "/art.jpg",
+    desc: "Citizen service automation and data-driven policy planning.",
+  },
 ];
 
 
@@ -254,30 +289,12 @@ const EnterpriseSoftware = () => {
       className="relative"
     >
       {/* Replace this div with <img> later */}
-      <div className="h-[650px] rounded-[32px] border border-dashed border-slate-300 bg-slate-100 flex items-center justify-center overflow-hidden">
-        <span className="text-slate-500 text-lg">
-          /images/enterprise-vision.jpg
-        </span>
-      </div>
+      <img
+  src="/art.jpg"
+  alt="Enterprise Vision"
+  className="h-[650px] w-full rounded-[32px] object-cover"
+/>
 
-      {/* Floating Card */}
-      <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute -left-8 top-10 bg-white rounded-3xl shadow-2xl p-6"
-      >
-        <p className="text-sm text-gray-500">AI Strategy</p>
-        <h4 className="font-bold text-xl text-black">Business First</h4>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 12, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute -right-8 bottom-12 bg-white rounded-3xl shadow-2xl p-6"
-      >
-        <p className="text-sm text-gray-500">Enterprise Ready</p>
-        <h4 className="font-bold text-xl text-black">Secure & Scalable</h4>
-      </motion.div>
     </motion.div>
 
   </div>
@@ -300,31 +317,12 @@ const EnterpriseSoftware = () => {
       transition={{ duration: 1 }}
       className="relative"
     >
-      <div className="h-[650px] rounded-[32px] border border-dashed border-slate-300 bg-slate-100 flex items-center justify-center overflow-hidden">
-        <span className="text-slate-500 text-lg">
-          /images/business-reality.jpg
-        </span>
-      </div>
+      <img
+  src="/art.jpg"
+  alt="Enterprise Vision"
+  className="h-[650px] w-full rounded-[32px] object-cover"
+/>
 
-      <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute right-6 top-10 bg-white rounded-3xl shadow-2xl p-6"
-      >
-        <p className="text-sm text-gray-500">Data Quality</p>
-        <h3 className="text-3xl font-bold text-blue-600">99.8%</h3>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute -left-6 bottom-10 bg-white rounded-3xl shadow-2xl p-6"
-      >
-        <p className="text-sm text-gray-500">Live Insights</p>
-        <h4 className="font-semibold text-black">
-          Real-time Analytics
-        </h4>
-      </motion.div>
     </motion.div>
 
     {/* Right Content */}
@@ -440,88 +438,80 @@ const EnterpriseSoftware = () => {
   </div>
 </section>
 
-      {/* Enterprise Capabilities */}
-      <section id="capabilities" className="py-20 px-6 md:px-10 border-t border-white/10">
-        <div className="max-w-[1200px] mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#818CF8] mb-4 font-['Montserrat']">Enterprise Capabilities</p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-2xl mb-14">Six disciplines, one connected practice.</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {CAPABILITIES.map((cap) => (
-              <Link to={cap.link} key={cap.title} className="group rounded-2xl border border-white/10 p-8 hover:border-white/25 hover:bg-white/[0.03] transition-all duration-300">
-                <cap.icon className="h-7 w-7 text-[#818CF8] mb-5" />
-                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                  {cap.title}
-                  <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{cap.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section className="bg-white py-24">
 
-      {/* Our AI Process */}
-<section className="py-36 px-6 md:px-10 bg-white">
+  <div className="mx-auto max-w-7xl px-6">
 
-  <div className="max-w-[1500px] mx-auto">
+    <p className="uppercase tracking-[0.35em] text-blue-500 text-sm font-semibold mb-5">
+      Enterprise Capabilities
+    </p>
 
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="mb-24"
-    >
-      <p className="uppercase tracking-[0.35em] text-blue-600 text-sm font-semibold mb-5">
-        Our AI Process
-      </p>
+    <h2 className="text-5xl text-black font-light mb-16">
+      Six disciplines, one connected practice.
+    </h2>
 
-      <h2 className="text-5xl md:text-6xl font-light text-slate-900 leading-tight max-w-4xl">
-        From business challenge
-        <br />
-        to enterprise deployment.
-      </h2>
-    </motion.div>
+    <div className="group/cards flex gap-7 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 
-    <div className="relative">
+      {CAPABILITIES.map((service, i) => (
 
-      {/* Line */}
-      <div className="absolute left-0 top-7 w-full h-px bg-slate-200"></div>
+        <motion.div
+          key={service.id}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={i * 0.08}
+          className="min-w-[330px] flex-shrink-0 snap-start lg:min-w-[32%]"
+        >
 
-      <div className="grid md:grid-cols-5 gap-10 relative">
-
-        {AI_PROCESS.map((item, index) => (
-
-          <motion.div
-            key={item.step}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.15,
-            }}
-            className="relative"
+          <Link
+            to={service.link}
+            className="group relative block h-[650px] overflow-hidden transition-all duration-700 hover:scale-105"
           >
 
-            {/* Circle */}
-            <div className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold text-lg shadow-xl mb-10 relative z-10">
-              {item.step}
+            <img
+              src={service.image}
+              alt={service.title}
+              className="absolute inset-0 h-full w-full object-cover brightness-50 group-hover:brightness-100 group-hover:scale-110 transition duration-700"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40"/>
+
+            <div className="absolute bottom-0 p-8 text-white">
+
+              <h3 className="text-4xl mb-4">
+                {service.title}
+              </h3>
+
+              <p className="text-white/80">
+                {service.short}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+
+                {service.tags.map(tag=>(
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full border border-white/20 bg-white/10 text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+
+              </div>
+
+              <div className="mt-8 flex items-center gap-2 font-semibold">
+                Explore Service
+                <ArrowRight className="h-5 w-5"/>
+              </div>
+
             </div>
 
-            <h3 className="text-2xl font-semibold text-slate-900 mb-4">
-              {item.title}
-            </h3>
+          </Link>
 
-            <p className="text-slate-600 leading-8">
-              {item.desc}
-            </p>
+        </motion.div>
 
-          </motion.div>
-
-        ))}
-
-      </div>
+      ))}
 
     </div>
 
@@ -531,78 +521,292 @@ const EnterpriseSoftware = () => {
 
 
       {/* Industry Solutions */}
-      <section className="py-20 px-6 md:px-10 border-t border-white/10">
-        <div className="max-w-[1200px] mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#818CF8] mb-4 font-['Montserrat']">Industry Solutions</p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-2xl mb-14">Context matters. We build for your industry's constraints.</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {INDUSTRIES.map((ind) => (
-              <div key={ind.name} className="rounded-2xl border border-white/10 p-7">
-                <Database className="h-6 w-6 text-[#818CF8] mb-4" />
-                <h3 className="text-lg font-semibold mb-2">{ind.name}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{ind.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-28">
 
+  <div className="max-w-7xl mx-auto px-6">
+
+    <p className="uppercase tracking-[0.35em] text-blue-600 text-sm font-semibold mb-5">
+      Industry Solutions
+    </p>
+
+    <h2 className="text-5xl font-light text-slate-900 max-w-3xl mb-20">
+      Context matters. We build for your industry's constraints.
+    </h2>
+
+    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-20">
+
+      {INDUSTRIES.map((industry, index) => (
+
+        <motion.div
+          key={industry.title}
+          variants={fadeUp(index * 0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="group"
+        >
+
+          {/* Image */}
+          <div className="overflow-hidden">
+
+            <img
+              src={industry.image}
+              alt={industry.title}
+              className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-110"
+            />
+
+          </div>
+
+          {/* Content */}
+
+          <h3 className="mt-8 text-4xl font-light text-slate-900">
+            {industry.title}
+          </h3>
+
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            {industry.desc}
+          </p>
+
+        </motion.div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* Delivery Framework */}
-      <section className="py-20 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">
-        <div className="max-w-[1200px] mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#818CF8] mb-4 font-['Montserrat']">Delivery Framework</p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-2xl mb-14">A structured path from assessment to scale.</h2>
-          <div className="space-y-10">
-            {METHODOLOGY.map((m) => (
-              <div key={m.step} className="flex gap-8 items-start">
-                <span className="text-3xl font-bold text-white/20 shrink-0 w-16">{m.step}</span>
-                <div className="border-l border-white/10 pl-8 pb-2">
-                  <h3 className="text-xl font-semibold mb-2">{m.title}</h3>
-                  <p className="text-gray-400 leading-relaxed max-w-2xl">{m.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-black py-32">
 
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+
+    <p className="uppercase tracking-[0.35em] text-blue-500 text-sm font-semibold mb-5">
+      Delivery Framework
+    </p>
+
+    <h2 className="text-5xl font-light text-white max-w-3xl mb-24">
+      A structured path from assessment to scale.
+    </h2>
+
+    <div className="space-y-32">
+
+      {METHODOLOGY.map((item, index) => (
+
+        <motion.div
+          key={item.step}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: index * 0.1 }}
+          className="border-b border-white/10 pb-24"
+        >
+
+          {/* Image */}
+
+          <div className="overflow-hidden">
+
+            <img
+              src={item.image}
+              alt={item.title}
+              className="h-[520px] w-full object-cover transition duration-700 hover:scale-105"
+            />
+
+          </div>
+
+          {/* Content */}
+
+          <div className="mt-12">
+
+            <span className="text-[90px] font-bold text-white/10">
+              {item.step}
+            </span>
+
+            <h3 className="mt-3 text-5xl font-light text-white">
+              {item.title}
+            </h3>
+
+            <p className="mt-8 max-w-3xl text-lg leading-9 text-white/70">
+              {item.desc}
+            </p>
+
+          </div>
+
+        </motion.div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* FAQs */}
-      <section className="py-20 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">
-        <div className="max-w-[900px] mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#818CF8] mb-4 font-['Montserrat']">Frequently Asked Questions</p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-14">Common questions from enterprise leaders.</h2>
-          <div className="divide-y divide-white/10">
-            {FAQS.map((faq, i) => (
-              <div key={faq.q} className="py-6">
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="flex w-full items-center justify-between gap-6 text-left">
-                  <span className="text-lg font-semibold">{faq.q}</span>
-                  <ChevronDown className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`} />
-                </button>
-                {openFaq === i && (
-                  <p className="text-gray-400 leading-relaxed mt-4 max-w-3xl">{faq.a}</p>
-                )}
-              </div>
-            ))}
-          </div>
+      <section className="bg-white py-32">
+
+  <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[420px_1fr] gap-24">
+
+    {/* LEFT */}
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      className="lg:sticky lg:top-28 h-fit"
+    >
+      <p className="uppercase tracking-[0.35em] text-blue-600 text-sm font-semibold mb-5">
+        Frequently Asked Questions
+      </p>
+
+      <h2 className="text-5xl font-light leading-tight text-slate-900">
+        Common questions
+        <br />
+        from enterprise
+        <br />
+        leaders.
+      </h2>
+
+      <p className="mt-8 text-lg leading-8 text-slate-500">
+        Everything enterprise teams usually ask before
+        starting an AI transformation initiative.
+      </p>
+
+    </motion.div>
+
+    {/* RIGHT */}
+
+    <motion.div
+      initial={{ opacity: 0, x: 60 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+
+      {FAQS.map((faq, index) => (
+
+        <div
+          key={faq.q}
+          className="border-b border-slate-200 py-8"
+        >
+
+          <button
+            onClick={() =>
+              setOpenFaq(openFaq === index ? null : index)
+            }
+            className="w-full flex justify-between items-start gap-10 text-left group"
+          >
+
+            <div className="flex gap-8">
+
+              <span className="text-blue-600 font-semibold text-lg w-8">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h3 className="text-2xl font-light leading-snug text-slate-900 group-hover:text-blue-600 transition">
+                {faq.q}
+              </h3>
+
+            </div>
+
+            <div
+              className={`transition duration-300 ${
+                openFaq === index
+                  ? "rotate-180"
+                  : ""
+              }`}
+            >
+              <ChevronDown size={24} />
+            </div>
+
+          </button>
+
+          <motion.div
+            initial={false}
+            animate={{
+              height: openFaq === index ? "auto" : 0,
+              opacity: openFaq === index ? 1 : 0,
+            }}
+            transition={{
+              duration: 0.35,
+            }}
+            className="overflow-hidden"
+          >
+
+            <div className="pl-16 pr-8 pt-6">
+
+              <p className="text-slate-600 leading-9 text-lg max-w-3xl">
+                {faq.a}
+              </p>
+
+            </div>
+
+          </motion.div>
+
         </div>
-      </section>
+
+      ))}
+
+    </motion.div>
+
+  </div>
+
+</section>
 
       {/* Enterprise CTA */}
-      <section className="py-24 px-6 md:px-10 border-t border-white/10">
-        <div className="max-w-[1000px] mx-auto text-center">
-          <ScrollText className="h-8 w-8 text-[#818CF8] mx-auto mb-6" />
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">Ready to turn enterprise data into a decision advantage?</h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Speak with our enterprise advisory team about where AI and data analytics can create the most defensible value for your organization.
-          </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors">
-            Schedule an enterprise consultation
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+      <section className="relative overflow-hidden bg-black py-32">
+
+  {/* Background Glow */}
+  <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2  bg-blue-600/10 blur-[180px]" />
+
+  <div className="relative mx-auto max-w-6xl px-6">
+
+    <div className=" border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-14 md:p-20 backdrop-blur-xl">
+
+      <p className="mb-5 uppercase tracking-[0.35em] text-sm font-semibold text-blue-500">
+        Enterprise AI Advisory
+      </p>
+
+      <h2 className="max-w-4xl text-5xl font-light leading-tight text-white md:text-6xl">
+        Ready to turn enterprise data
+        <br />
+        into a decision advantage?
+      </h2>
+
+      <p className="mt-8 max-w-3xl text-lg leading-9 text-white/70">
+        Speak with our enterprise advisory team to identify where AI,
+        automation, and analytics can create measurable business value across
+        your organization.
+      </p>
+
+      <div className="mt-12 flex flex-wrap gap-6">
+
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-slate-100"
+        >
+          Schedule a Consultation
+          <ArrowRight className="h-5 w-5" />
+        </Link>
+
+        <Link
+          to="/services"
+          className="inline-flex items-center gap-3 rounded-full border border-white/20 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:border-blue-500 hover:bg-white/5"
+        >
+          Explore Services
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* Footer CTA */}
       <section className="py-16 px-6 md:px-10 border-t border-white/10 bg-white/[0.02]">

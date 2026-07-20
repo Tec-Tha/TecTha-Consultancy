@@ -92,7 +92,7 @@ export default function Retail() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-black leading-[0.95] text-white"
+            className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
           >
             Retail Through
             <br />
@@ -142,7 +142,7 @@ export default function Retail() {
       </section>
             {/* ================= MODERN RETAIL ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-[#F8FAFC] py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -173,7 +173,7 @@ export default function Retail() {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Seamless Shopping.
               <br />
@@ -181,7 +181,7 @@ export default function Retail() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Retail is evolving beyond traditional storefronts. We help
               retailers create connected shopping experiences through AI,
@@ -208,13 +208,13 @@ export default function Retail() {
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-700">
 
                     {item}
 
@@ -246,7 +246,7 @@ export default function Retail() {
             <div>
 
 
-              <h2 className="max-w-4xl text-6xl font-black leading-tight text-white">
+              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
 
                 Creating Intelligent
                 <br />
@@ -305,7 +305,7 @@ export default function Retail() {
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-bold text-white">
+                      <h3 className="text-3xl font-light text-white">
 
                         {card.title}
 
@@ -336,7 +336,7 @@ export default function Retail() {
       </section>
             {/* ================= FUTURE OF RETAIL ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-[#F8FAFC] py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -355,7 +355,7 @@ export default function Retail() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Transforming
               <br />
@@ -365,7 +365,7 @@ export default function Retail() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Today's consumers expect seamless, personalized and connected
               experiences across every channel. We help retailers modernize
@@ -436,7 +436,7 @@ export default function Retail() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-black leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
 
               Create Retail
               <br />

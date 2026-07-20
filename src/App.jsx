@@ -5,8 +5,6 @@ import ScrollProgress from "./components/layout/ScrollProgress";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Logistics from "./pages/industries/Logistics";
-import IndustryLayout from "./pages/industries/IndustryLayout";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import EnterpriseSoftware from "./pages/services/EnterpriseSoftware";
@@ -14,6 +12,7 @@ import AIIntegration from "./pages/services/AIIntegration";
 import CloudInfrastructure from "./pages/services/CloudInfrastructure";
 import UIUXDesign from "./pages/services/UIUXDesign";
 import BrandDemand from "./pages/services/BrandDemand";
+import ManagedServices from "./pages/services/ManagedServices"
 import DigitalAdvisory from "./pages/services/DigitalAdvisory";
 import HRTechnology from "./pages/services/HRTechnology";
 import BusinessDigitalTransformation from "./pages/services/BusinessDigitalTransformation";
@@ -47,6 +46,28 @@ import CustomerRelationshipManagement from "./pages/services/EnterpriseSolution/
 import SupplyChainSolutions from "./pages/services/EnterpriseSolution/SupplyChainSolutions";
 import FinanceSolutions from "./pages/services/EnterpriseSolution/FinanceSolutions";
 import IndustrySolutions from "./pages/services/EnterpriseSolution/IndustrySolutions";
+import ManagedApplications from "./pages/services/ManagedServices/ManagedApplications";
+import ManagedCloudd from "./pages/services/ManagedServices/ManagedCloudd";
+import ManagedAI from "./pages/services/ManagedServices/ManagedAI";
+import ManagedInfrastructure from "./pages/services/ManagedServices/ManagedInfrastructure";
+import TechnologyOperations from "./pages/services/ManagedServices/TechnologyOperations";
+import EnterpriseSupport from "./pages/services/ManagedServices/EnterpriseSupport";
+import EnterpriseApplications from "./pages/services/EnterpriseApplications";
+import DataAI from "./pages/services/DataAI";
+import EnterpriseSoftwaree from "./pages/services/EnterpriseApplications/EnterpriseSoftwaree";
+import CustomApplications from "./pages/services/EnterpriseApplications/CustomApplications";
+import BusinessApplications from "./pages/services/EnterpriseApplications/BusinessApplications";
+import SystemsIntegration from "./pages/services/EnterpriseApplications/SystemsIntegration";
+import SaaSPlatforms from "./pages/services/EnterpriseApplications/SaaSPlatforms";
+import ApplicationModernization from "./pages/services/EnterpriseApplications/ApplicationModernization";
+import DataEngineering from "./pages/services/DataAI/DataEngineering";
+import BusinessIntelligence from "./pages/services/DataAI/BusinessIntelligence";
+import AIAnalytics from "./pages/services/DataAI/AIAnalytics";
+import ExecutiveIntelligence from "./pages/services/DataAI/ExecutiveIntelligence";
+import PredictiveAnalytics from "./pages/services/DataAI/PredictiveAnalytics";
+import DataGovernance from "./pages/services/DataAI/DataGovernance";
+import IndustryLayout from "./pages/industries/IndustryLayout";
+import Logistics from "./pages/industries/Logistics";
 import Healthcare from "./pages/industries/Healthcare";
 import Banking from "./pages/industries/Banking";
 import Manufacturing from "./pages/industries/Manufacturing";
@@ -116,11 +137,37 @@ function App() {
         <Route path="/services/EnterpriseSolution/supply-chain-solutions" element={<SupplyChainSolutions />} />
         <Route path="/services/EnterpriseSolution/finance-solutions" element={<FinanceSolutions />} />
         <Route path="/services/EnterpriseSolution/industry-solutions" element={<IndustrySolutions />} />
+        <Route path="/services/ManagedServices" element={<ManagedServices />} />
+        <Route path="/services/ManagedServices/managed-applications" element={<ManagedApplications />} />
+        <Route path="/services/ManagedServices/managed-cloudd" element={<ManagedCloudd />} />
+        <Route path="/services/ManagedServices/managed-ai" element={<ManagedAI />} />
+        <Route path="/services/ManagedServices/managed-infrastructure" element={<ManagedInfrastructure />} />
+        <Route path="/services/ManagedServices/technology-operations" element={<TechnologyOperations />} />
+        <Route path="/services/ManagedServices/enterprise-support" element={<EnterpriseSupport />} />
+        <Route path="/services/EnterpriseApplications" element={<EnterpriseApplications />} />
+        <Route path="/services/EnterpriseApplications/enterprise-softwaree" element={<EnterpriseSoftwaree />} />
+        <Route path="/services/EnterpriseApplications/custom-applications" element={<CustomApplications />} />
+        <Route path="/services/EnterpriseApplications/business-applications" element={<BusinessApplications />} />
+        <Route path="/services/EnterpriseApplications/systems-integration" element={<SystemsIntegration />} />
+        <Route path="/services/EnterpriseApplications/saas-platforms" element={<SaaSPlatforms />} />
+        <Route path="/services/EnterpriseApplications/application-modernization" element={<ApplicationModernization />} />
+        <Route path="/services/DataAI" element={<DataAI />} />
+        <Route path="/services/DataAI/data-engineering" element={<DataEngineering />} />
+        <Route path="/services/DataAI/business-intelligence" element={<BusinessIntelligence />} />
+        <Route path="/services/DataAI/ai-analytics" element={<AIAnalytics />} />
+        <Route path="/services/DataAI/executive-intelligence" element={<ExecutiveIntelligence />} />
+        <Route path="/services/DataAI/predictive-analytics" element={<PredictiveAnalytics />} />
+        <Route path="/services/DataAI/data-governance" element={<DataGovernance />} />
+        <Route path="/industries/logistics" element={<Logistics />} />
+        <Route path="/industries/healthcare" element={<Healthcare />} />
+        <Route path="/industries/banking" element={<Banking />} />
+        <Route path="/industries/manufacturing" element={<Manufacturing />} />
+        <Route path="/industries" element={<IndustryLayout />} />
         <Route path="/industries/logistics" element={<Logistics />}/>
         <Route path="/industries/healthcare" element={<Healthcare />}/>
         <Route path="/industries/banking" element={<Banking />}/>
         <Route path="/industries/manufacturing" element={<Manufacturing />}/>
-        <Route path="/industries/:industry" element={<Retail />} />
+        <Route path="/industries/retail" element={<Retail />} />
         <Route path="/industries/education" element={<Education />} />
         <Route path="/industries/government" element={<Government />} />
         <Route path="/industries/professional-services" element={<ProfessionalServices />} />

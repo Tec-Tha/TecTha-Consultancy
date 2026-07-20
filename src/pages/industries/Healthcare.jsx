@@ -94,7 +94,7 @@ export default function Healthcare() {
             custom={0}
             className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400"
           >
-            Healthcare Industry
+           
           </motion.p>
 
           <motion.h1
@@ -102,13 +102,13 @@ export default function Healthcare() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-4xl text-[clamp(4rem,7vw,7rem)] font-black leading-[0.95] text-white"
+            className="max-w-4xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
           >
             Transforming
             <br />
             Healthcare
-            <br />
-            Through Technology.
+            
+            
           </motion.h1>
 
           <motion.p
@@ -149,7 +149,7 @@ export default function Healthcare() {
       </section>
             {/* ================= DIGITAL HEALTHCARE ================= */}
 
-      <section className="bg-[#05070B] py-32">
+      <section className="bg-white py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -186,7 +186,7 @@ export default function Healthcare() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+           <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]"> 
 
               Intelligent Care
               <br />
@@ -194,7 +194,7 @@ export default function Healthcare() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+          <p className="mt-8 text-lg leading-9 text-gray-400">
 
               Healthcare organizations are embracing AI, cloud platforms,
               connected medical devices and predictive analytics to
@@ -221,13 +221,13 @@ export default function Healthcare() {
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-200">
+                  <p className="text-lg text-gray-700">
 
                     {item}
 
@@ -239,13 +239,7 @@ export default function Healthcare() {
 
             </div>
 
-            <button className="mt-16 flex items-center gap-3 border-b border-blue-500 pb-2 text-lg font-semibold text-blue-400 transition hover:gap-5">
-
-              Discover Healthcare Solutions
-
-              <ArrowRight size={20} />
-
-            </button>
+            
 
           </motion.div>
 
@@ -264,13 +258,10 @@ export default function Healthcare() {
 
             <div>
 
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+              
+              
 
-                IN FOCUS
-
-              </p>
-
-              <h2 className="text-6xl font-black leading-tight text-white">
+              <h2 className="text-6xl font-light leading-tight text-white">
 
                 Healthcare Capabilities
 
@@ -331,7 +322,7 @@ export default function Healthcare() {
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-bold text-white">
+                      <h3 className="text-3xl font-light text-white">
 
                         {card.title}
 
@@ -343,19 +334,7 @@ export default function Healthcare() {
                         outcomes, operational efficiency and connected care.
 
                       </p>
-
-                      <button className="mt-8 flex items-center gap-3 text-blue-400 transition-all duration-300 group-hover:gap-5">
-
-                        Explore Capability
-
-                        <ArrowRight
-                          size={20}
-                          className="transition-transform group-hover:translate-x-1"
-                        />
-
-                      </button>
-
-                    </div>
+</div>
 
                   </div>
 
@@ -372,7 +351,7 @@ export default function Healthcare() {
       </section>
             {/* ================= CONNECTED HEALTHCARE ================= */}
 
-      <section className="bg-[#05070B] py-36">
+      <section className="bg-white py-36">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -391,7 +370,7 @@ export default function Healthcare() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-black leading-tight text-white">
+            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
 
               Building The
               <br />
@@ -401,7 +380,7 @@ export default function Healthcare() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-8 text-lg leading-9 text-gray-600">
 
               Modern healthcare demands connected systems, secure data
               exchange, AI-powered clinical support and digital experiences
@@ -469,7 +448,7 @@ export default function Healthcare() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-black leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
 
               Deliver Better Care.
               <br />
