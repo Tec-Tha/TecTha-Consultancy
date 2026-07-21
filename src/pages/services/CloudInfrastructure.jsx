@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "Cloud Strategy",
     short:
       "Develop cloud adoption strategies and transformation roadmaps aligned with business goals and long-term scalability.",
-    image: "/art.jpg",
+    image: "/cloud/29.avif",
     tags: ["Strategy", "Roadmap", "Consulting"],
     link: "/services/CloudService/cloud-strategy",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Cloud Engineering",
     short:
       "Design, build, and modernize cloud-native infrastructure with secure, resilient, and high-performing architectures.",
-    image: "/art.jpg",
+    image: "/cloud/30.avif",
     tags: ["Architecture", "Migration", "Engineering"],
     link: "/services/CloudService/cloud-engineering",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "Cloud Migration",
     short:
       "Seamlessly migrate applications, workloads, and data to the cloud with minimal disruption and maximum reliability.",
-    image: "/art.jpg",
+    image: "/cloud/31.avif",
     tags: ["AWS", "Azure", "GCP"],
     link: "/services/CloudService/cloud-migration",
   },
@@ -55,7 +55,7 @@ const CAPABILITIES = [
     title: "Platform Engineering",
     short:
       "Accelerate software delivery through automated platforms, infrastructure as code, and developer self-service.",
-    image: "/art.jpg",
+    image: "/cloud/30.avif",
     tags: ["CI/CD", "IaC", "Automation"],
     link: "/services/CloudService/platform-engineering",
   },
@@ -64,7 +64,7 @@ const CAPABILITIES = [
     title: "DevOps",
     short:
       "Improve release speed and operational reliability with automated pipelines, continuous integration, and monitoring.",
-    image: "/art.jpg",
+    image: "/cloud/28.avif",
     tags: ["CI/CD", "DevSecOps", "Monitoring"],
     link: "/services/CloudService/devops",
   },
@@ -73,7 +73,7 @@ const CAPABILITIES = [
     title: "Managed Cloud",
     short:
       "Optimize cloud operations with proactive monitoring, cost management, security, and 24/7 managed support.",
-    image: "/art.jpg",
+    image: "/cloud/33.avif",
     tags: ["Security", "Cost Optimization", "Support"],
     link: "/services/CloudService/managed-cloud",
   },
@@ -112,63 +112,63 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess & Discover",
     desc: "Evaluate existing infrastructure, applications, and business objectives to define a secure and scalable cloud transformation strategy.",
-    image: "/art.jpg",
+    image: "/cloud/31.avif",
   },
   {
     step: "02",
     title: "Design Architecture",
     desc: "Create resilient cloud architectures with security, scalability, and performance aligned to organizational requirements.",
-    image: "/art.jpg",
+    image: "/cloud/35.avif",
   },
   {
     step: "03",
     title: "Migrate & Modernize",
     desc: "Execute structured migration plans using proven methodologies that minimize downtime and reduce operational risk.",
-    image: "/art.jpg",
+    image: "/cloud/36.avif",
   },
   {
     step: "04",
     title: "Automate & Deploy",
     desc: "Implement CI/CD pipelines, Infrastructure as Code, and automated monitoring to accelerate software delivery.",
-    image: "/art.jpg",
+    image: "/cloud/37.avif",
   },
   {
     step: "05",
     title: "Optimize & Manage",
     desc: "Continuously improve cloud performance through cost optimization, governance, security monitoring, and operational support.",
-    image: "/art.jpg",
+    image: "/cloud/38.avif",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/cloud/40.avif",
     desc: "Secure and highly available cloud platforms for banking, insurance, and financial operations.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/cloud/39.avif",
     desc: "Cloud-enabled production systems supporting smart factories, IoT, and operational efficiency.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/cloud/32.avif",
     desc: "Compliant cloud environments that protect patient data while enabling connected healthcare services.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/cloud/17.avif",
     desc: "Scalable cloud infrastructure designed to deliver seamless customer experiences during peak demand.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/cloud/34.avif",
     desc: "Reliable cloud solutions for real-time fleet management, warehouse operations, and supply chain visibility.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/cloud/33.avif",
     desc: "Secure, compliant, and resilient digital infrastructure supporting modern public services and citizen engagement.",
   },
 ];
@@ -210,7 +210,7 @@ const CloudInfrastructure = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/cloud/26.avif')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -287,7 +287,7 @@ const CloudInfrastructure = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/cloud/27.avif"
   alt="Infrastructure Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -315,7 +315,7 @@ const CloudInfrastructure = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/cloud/28.avif"
   alt="Infrastructure Reality"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />

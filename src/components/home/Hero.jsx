@@ -36,7 +36,7 @@ const HERO_SLIDES = [
       "Empowering businesses with modern technology, AI, and scalable digital solutions.",
 
     button: "Explore Services",
-
+      to: "/Services",  
     image: "/digital.jpeg",
   },
 
@@ -52,6 +52,7 @@ const HERO_SLIDES = [
       "Delivering enterprise AI solutions that automate, predict, and accelerate innovation.",
 
     button: "Discover AI",
+    to: "/services/ArtificialIntelligence", 
 
     image: "/art.jpg",
   },
@@ -68,6 +69,7 @@ const HERO_SLIDES = [
       "Helping organizations embrace next-generation technology with confidence.",
 
     button: "Get Started",
+    to: "/Contact", 
 
     image: "/ai.jpg",
   },
@@ -224,14 +226,14 @@ function PremiumButton({
       overflow-hidden
       rounded-full
       bg-gradient-to-r
-      from-blue-600
-      to-cyan-500
+      from-white
+      to-white
       px-8
       py-4
       font-['Montserrat']
       text-sm
-      font-semibold
-      text-white
+      font-bold
+      text-black
       transition-all
       duration-500
       hover:scale-105
@@ -371,31 +373,18 @@ text-gray-400
 
             <div className="mt-10">
 
-              <PremiumButton
-
-                icon={ArrowRight}
-
-              >
-
-                {slide.button}
-
-              </PremiumButton>
+          <PremiumButton
+  to={slide.to}
+  icon={ArrowRight}
+>
+  {slide.button}
+</PremiumButton>
 
             </div>
 
           </Reveal>
 
         </div>
-
-
-
-
-
-
-
-
-
-    
 
       </div>
 
