@@ -553,7 +553,7 @@ const AIAgents = () => {
           </p>
           <Link
             to="/contact"
-             className="inline-flex items-center gap-3 rounded-full border border-white/20 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:border-blue-500 hover:bg-white/5"
+             className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
           >
             Schedule an ERP Consultation
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
