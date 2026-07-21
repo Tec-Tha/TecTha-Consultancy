@@ -92,11 +92,11 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Assess", desc: "We inventory existing workloads, dependencies, and data, and evaluate each one for migration readiness.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Plan the Path", desc: "We match each workload to the right approach — rehost, replatform, or refactor — and sequence it into migration waves.", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Assess", desc: "We inventory existing workloads, dependencies, and data, and evaluate each one for migration readiness.", image: "/cloud/11.avif" },
+  { step: "02", title: "Plan the Path", desc: "We match each workload to the right approach — rehost, replatform, or refactor — and sequence it into migration waves.", image: "/cloud/13.avif" },
   { step: "03", title: "Migrate", desc: "We execute migration wave by wave, validating data integrity and system behavior at every step.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Cut Over", desc: "We run parallel environments and a tested cutover plan so the transition happens with minimal to zero downtime.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Optimize", desc: "Once migrated, we tune performance, security, and cost so the new environment outperforms the old one.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
+  { step: "04", title: "Cut Over", desc: "We run parallel environments and a tested cutover plan so the transition happens with minimal to zero downtime.", image: "/cloud/12.avif" },
+  { step: "05", title: "Optimize", desc: "Once migrated, we tune performance, security, and cost so the new environment outperforms the old one.", image: "/cloud/14.avif" },
 ];
 
 const DELIVERABLES = [
@@ -154,7 +154,7 @@ const CloudMigration = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
+            src="/cloud/10.avif"
             alt="Cloud strategy and roadmap planning"
             className="h-full w-full object-cover"
           />
@@ -239,7 +239,7 @@ const CloudMigration = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/9.avif"
                 alt="Cloud roadmap and governance"
                 className="h-full w-full object-cover"
               />

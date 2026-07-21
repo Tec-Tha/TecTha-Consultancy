@@ -92,10 +92,10 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Onboard", desc: "We assess your environment, document its architecture, and integrate it into our monitoring and support systems.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  { step: "01", title: "Onboard", desc: "We assess your environment, document its architecture, and integrate it into our monitoring and support systems.", image: "/cloud/24.avif" },
   { step: "02", title: "Stabilize", desc: "We resolve outstanding issues, apply overdue patches, and bring the environment to a healthy baseline.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop" },
   { step: "03", title: "Monitor", desc: "We put 24/7 monitoring and alerting in place, with clear ownership over triage and response.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Maintain", desc: "We handle ongoing patching, backups, and routine maintenance so it never falls behind again.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" },
+  { step: "04", title: "Maintain", desc: "We handle ongoing patching, backups, and routine maintenance so it never falls behind again.", image: "/cloud/25.avif" },
   { step: "05", title: "Optimize", desc: "We continuously tune performance and cost, reporting back on health and spend on a regular cadence.", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1600&auto=format&fit=crop" },
 ];
 
@@ -154,7 +154,7 @@ const ManagedCloud = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
+            src="/cloud/22.avif"
             alt="Cloud strategy and roadmap planning"
             className="h-full w-full object-cover"
           />
@@ -239,7 +239,7 @@ const ManagedCloud = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/23.avif"
                 alt="Cloud roadmap and governance"
                 className="h-full w-full object-cover"
               />
