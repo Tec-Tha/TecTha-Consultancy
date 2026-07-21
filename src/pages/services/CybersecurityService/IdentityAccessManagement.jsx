@@ -245,7 +245,7 @@ const AIAgents = () => {
             custom={0.12}
             className="text-white text-4xl md:text-6xl lg:text-7xl font leading-[1.03] max-w-4xl mb-8 tracking-tight"
           >
-           Secure identities and control access with intelligent Identity & Access Management solutions.
+           Secure identities with intelligent Identity & Access Management.
           </motion.h1>
           <motion.p
             variants={fadeUp}
