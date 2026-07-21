@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Security Assessment",
     desc: "We assess your existing security environment, identify vulnerabilities, and evaluate monitoring capabilities.",
-    image: "...",
+    image: "/cybersecurity/40.avif",
   },
   {
     step: "02",
     title: "SOC Strategy",
     desc: "Our experts design a Security Operations framework tailored to your business, infrastructure, and compliance requirements.",
-    image: "...",
+    image: "/cybersecurity/41.avif",
   },
   {
     step: "03",
     title: "Implementation",
     desc: "We deploy monitoring platforms, threat detection tools, SIEM solutions, and security automation capabilities.",
-    image: "...",
+    image: "/cybersecurity/42.avif",
   },
   {
     step: "04",
     title: "24/7 Monitoring & Response",
     desc: "Continuous monitoring, threat hunting, and rapid incident response minimize cyber risks and operational disruption.",
-    image: "...",
+    image: "/cybersecurity/43.avif",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Regular security reviews, threat intelligence updates, and process improvements strengthen long-term cyber resilience.",
-    image: "...",
+    image: "/cybersecurity/44.avif",
   },
 ];
 
@@ -227,7 +227,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/cybersecurity/45.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -303,7 +303,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/cybersecurity/39.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

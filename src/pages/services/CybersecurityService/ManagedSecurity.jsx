@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Security Assessment",
     desc: "We evaluate your security environment, identify vulnerabilities, and define your protection requirements.",
-    image: "...",
+    image: "/cloud/2.avif",
   },
   {
     step: "02",
     title: "Service Strategy",
     desc: "Our experts design a managed security service tailored to your infrastructure, business objectives, and compliance needs.",
-    image: "...",
+    image: "/cloud/3.avif",
   },
   {
     step: "03",
     title: "Security Deployment",
     desc: "We implement monitoring tools, endpoint protection, threat detection, and security controls across your environment.",
-    image: "...",
+    image: "/cloud/4.avif",
   },
   {
     step: "04",
     title: "24/7 Managed Protection",
     desc: "Continuous monitoring, incident response, and vulnerability management provide ongoing protection against cyber threats.",
-    image: "...",
+    image: "/cloud/6.avif",
   },
   {
     step: "05",
     title: "Continuous Improvement",
     desc: "Regular security reviews, reporting, and optimization ensure your defenses remain effective against evolving threats.",
-    image: "...",
+    image: "/cloud/2.avif",
   },
 ];
 
@@ -227,7 +227,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/cloud/7.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -303,7 +303,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/1.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
