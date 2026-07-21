@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Data Assessment",
     desc: "We evaluate your existing data landscape, business objectives, and infrastructure to define a scalable data engineering strategy.",
-    image: "...",
+    image: "/DA&AI/35.avif",
   },
   {
     step: "02",
     title: "Architecture Design",
     desc: "Our experts design modern data architectures that support integration, scalability, governance, and analytics.",
-    image: "...",
+    image: "/DA&AI/36.avif",
   },
   {
     step: "03",
     title: "Pipeline Development",
     desc: "We build secure, automated data pipelines that collect, transform, and deliver trusted enterprise data.",
-    image: "...",
+    image: "/DA&AI/37.avif",
   },
   {
     step: "04",
     title: "Data Platform Deployment",
     desc: "Deploy cloud-native data platforms, warehouses, and lakes that enable real-time analytics and AI workloads.",
-    image: "...",
+    image: "/DA&AI/38.avif",
   },
   {
     step: "05",
     title: "Optimization & Governance",
     desc: "Continuously improve data quality, performance, governance, and operational efficiency across the enterprise.",
-    image: "...",
+    image: "/DA&AI/39.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+           src="/DA&AI/40.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -314,7 +314,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/DA&AI/41.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -602,12 +602,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

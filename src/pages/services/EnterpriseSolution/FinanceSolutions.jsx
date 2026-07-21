@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Financial Assessment",
     desc: "We evaluate your financial processes, reporting requirements, and business objectives to define the right solution strategy.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/40.avif",
   },
   {
     step: "02",
     title: "Solution Design",
     desc: "Our experts design finance solutions tailored to accounting, budgeting, compliance, and reporting needs.",
-    image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/41.avif",
   },
   {
     step: "03",
     title: "System Integration",
     desc: "We integrate finance solutions with ERP, banking systems, payroll, tax platforms, and enterprise applications.",
-    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/42.avif",
   },
   {
     step: "04",
     title: "Deployment & Training",
     desc: "We implement the solution, migrate financial data, and train finance teams for successful adoption.",
-    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/43.avif",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Ongoing monitoring, system enhancements, and expert support ensure long-term financial efficiency.",
-    image: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/44.avif",
   },
 ];
 
@@ -228,7 +228,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2400&auto=format&fit=crop"
+            src="/ERPSol/45.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -304,7 +304,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1600&auto=format&fit=crop"
+                src="/ERPSol/46.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -596,12 +596,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+        
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

@@ -123,35 +123,35 @@ const FRAMEWORK = [
     title: "Workforce Assessment",
     desc: "We evaluate your HR processes, workforce challenges, and organizational goals to define the right Human Capital Management strategy.",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
+      "/ERPSol/47.avif",
   },
   {
     step: "02",
     title: "Solution Planning",
     desc: "Our experts design an HCM solution tailored to recruitment, payroll, employee engagement, and talent management requirements.",
     image:
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+      "/ERPSol/48.avif",
   },
   {
     step: "03",
     title: "System Integration",
     desc: "We integrate HCM with ERP, payroll, attendance, finance, and other enterprise applications for seamless workforce management.",
     image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1600&auto=format&fit=crop",
+      "/ERPSol/49.avif",
   },
   {
     step: "04",
     title: "Deployment & Adoption",
     desc: "We implement the solution, migrate employee data, train HR teams, and ensure a smooth transition across your organization.",
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+      "/ERPSol/50.avif",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Ongoing support, analytics, and performance improvements ensure your HCM platform evolves with your workforce.",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
+      "/ERPSol/51.avif",
   },
 ];
 
@@ -233,7 +233,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2400&auto=format&fit=crop"
+            src="/ERPSol/52.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -309,7 +309,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1600&auto=format&fit=crop"
+                src="/ERPSol/53.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

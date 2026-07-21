@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Data Assessment",
     desc: "We assess your data sources, analytics capabilities, and business objectives to define an AI analytics strategy.",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1600&auto=format&fit=crop",
+    image: "/DA&AI/21.avif",
   },
   {
     step: "02",
     title: "Analytics Strategy",
     desc: "Our experts design AI-powered analytics solutions that align with business goals and decision-making requirements.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+    image: "/DA&AI/22.avif",
   },
   {
     step: "03",
     title: "Platform Implementation",
     desc: "We integrate AI models, data platforms, and visualization tools to enable intelligent business analytics.",
-    image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1600&auto=format&fit=crop",
+    image: "/DA&AI/23.avif",
   },
   {
     step: "04",
     title: "Insight Generation",
     desc: "Real-time dashboards, predictive analytics, and automated reporting provide actionable business intelligence.",
-    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1600&auto=format&fit=crop",
+    image: "/DA&AI/24.avif",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "We continuously improve AI models, analytics performance, and business insights to maximize long-term value.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
+    image: "/DA&AI/25.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/DA&AI/26.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -313,7 +313,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/DA&AI/27.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -601,12 +601,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}
