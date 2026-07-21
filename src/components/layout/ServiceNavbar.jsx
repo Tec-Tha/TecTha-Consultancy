@@ -6,7 +6,7 @@ const SERVICES = [
   { name: "Artificial Intelligence", link: "/services/ArtificialIntelligence" },
   { name: "Enterprise Solutions", link: "/services/ERPsolution" },
   { name: "Cloud & Infrastructure", link: "/services/CloudInfrastructure" },
-  { name: "Cybersecurity", link: "/services/CyberSecurity" },
+  { name: "Cybersecurity", link: "/services/Cybersecurity" },
   { name: "Digital Transformation", link: "/services/DigitalTransformation" },
   {name:"Managed Services",link:"/services/ManagedServices"},
   { name: "Enterprise Applications", link: "/services/EnterpriseApplications" },
@@ -31,7 +31,7 @@ const SUB_SECTIONS = {
     { label: "DevOps", link: "/services/CloudService/devops" },
     { label: "Managed Cloud", link: "/services/CloudService/managed-cloud" },
   ],
-  "/services/CyberSecurity": [
+  "/services/Cybersecurity": [
     { label: "Cybersecurity Strategy", link: "/services/CybersecurityService/cybersecurity-strategy" },
     { label: "Identity & Access Management", link: "/services/CybersecurityService/identity-access-management" },
     { label: "Cloud Security", link: "/services/CybersecurityService/cloud-security" },

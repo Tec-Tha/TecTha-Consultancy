@@ -10,15 +10,15 @@ const SERVICES = [
   {
     id: "ai-integration",
     link: "/services/ArtificialIntelligence",
-    image: "/AI Integration & Agentics.jpg",
+    image: "/AI12.jpg",
     title: "Artificial Intelligence",
     short: "Build intelligent enterprise applications powered by AI, automation, and machine learning.",
     tags: ["AI Solutions", "Automation", "Machine Learning", "Enterprise AI"],
   },
   {
     id: "enterprise-software",
-    link: "/services/AIIntegration",
-    image: "/AI Integration & Agentics.jpg",
+    link: "/services/ERPsolution",
+    image: "/erp.jpg",
     title: "Enterprise Solutions",
     short: "Implement enterprise platforms that unify operations, workflows, and business processes.",
     tags: ["ERP", "CRM", "Business Process", "Enterprise Systems"],
@@ -26,23 +26,23 @@ const SERVICES = [
   {
     id: "cloud-infrastructure",
     link: "/services/CloudInfrastructure",
-    image: "/cloud & Infrastructure.jpg",
+    image: "/cloud2.webp",
     title: "Cloud & Infrastructure",
     short: "Deploy scalable cloud infrastructure that powers secure and reliable enterprise applications.",
     tags: ["Cloud", "Infrastructure", "Scalability", "Security"],
   },
   {
     id: "uiux-design",
-    link: "/services/DigitalTransformation",
-    image: "/UI UX.webp",
+    link: "/services/DataAI",
+    image: "/data.webp",
     title: "Data & Artificial Intelligence",
     short: "Leverage enterprise data and AI to improve decision-making and operational performance.",
     tags: ["Data Analytics", "AI Insights", "Business Intelligence", "Predictive Analytics"],
   },
   {
     id: "brand-demand",
-    link: "/services/BrandDemand",
-    image: "/Brand & Demand Strategy.webp",
+    link: "/services/Cybersecurity",
+    image: "/cyber.webp",
     title: "Cybersecurity",
     short: "Protect enterprise applications with advanced security, compliance, and threat protection.",
     tags: ["Application Security", "Cyber Defense", "Compliance", "Threat Protection"],
@@ -50,7 +50,7 @@ const SERVICES = [
   {
     id: "digital-advisory",
     link: "/services/DigitalTransformation",
-    image: "/Digital Advisory.webp",
+    image: "/digital.webp",
     title: "Digital Transformation",
     short: "Modernize enterprise applications through digital transformation and technology innovation.",
     tags: ["Digital Transformation", "Modernization", "Innovation", "Business Growth"],
@@ -130,7 +130,7 @@ const scaleY = useSpring(scrollYProgress, {
       description="Cloud, data, AI, security, platform engineering, and digital strategy consulting."
     >
       {/* Intro */}
-      <section className="py-20 md:py-28">
+      <section className="bg-black py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <motion.h1
             variants={fadeUp}
@@ -138,7 +138,7 @@ const scaleY = useSpring(scrollYProgress, {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             custom={0.08}
-            className="mt-1 text-[clamp(2.25rem,4.5vw,3.75rem)] font leading-[1.05] tracking-tight text-[color:var(--color-text-primary)]"
+            className="mt-1 text-[clamp(2.25rem,4.5vw,3.75rem)] font leading-[1.05] tracking-tight text-white"
           >
             Bespoke Enterprise Services
           </motion.h1>
@@ -149,7 +149,7 @@ const scaleY = useSpring(scrollYProgress, {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             custom={0.16}
-            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[color:var(--color-text-secondary)]"
+            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white"
           >
             We design, develop, deploy, and verify complex technical systems for global operations.
           </motion.p>
@@ -157,7 +157,7 @@ const scaleY = useSpring(scrollYProgress, {
       </section>
 
       {/* Services card grid */}
-      <section className="bg-black py-20">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="group/cards flex gap-7 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {SERVICES.map((service, i) => (
@@ -215,7 +215,9 @@ const scaleY = useSpring(scrollYProgress, {
               </motion.div>
             ))}
           </div>
+          <div className="mt-16 border-t border-black"></div>
         </div>
+        
       </section>
 
       {/* Timeline Process */}
