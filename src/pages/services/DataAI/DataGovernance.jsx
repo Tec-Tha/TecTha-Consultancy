@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Governance Assessment",
     desc: "We assess your current data landscape, governance maturity, and regulatory requirements to identify improvement opportunities.",
-    image: "...",
+    image: "/DA&AI/42.avif",
   },
   {
     step: "02",
     title: "Governance Strategy",
     desc: "Our experts define policies, standards, ownership models, and governance frameworks aligned with business objectives.",
-    image: "...",
+    image: "/DA&AI/37.avif",
   },
   {
     step: "03",
     title: "Implementation",
     desc: "We establish governance processes, data stewardship, security controls, and quality management across enterprise systems.",
-    image: "...",
+    image: "/DA&AI/44.avif",
   },
   {
     step: "04",
     title: "Monitoring & Compliance",
     desc: "Continuous monitoring ensures data quality, regulatory compliance, policy enforcement, and operational transparency.",
-    image: "...",
+    image: "/DA&AI/45.avif",
   },
   {
     step: "05",
     title: "Optimization",
     desc: "We continuously refine governance policies, improve data quality, and strengthen enterprise-wide data management practices.",
-    image: "...",
+    image: "/DA&AI/46.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/DA&AI/47.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -314,7 +314,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/DA&AI/48.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -602,12 +602,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

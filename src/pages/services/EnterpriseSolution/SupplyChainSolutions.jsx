@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Supply Chain Assessment",
     desc: "We analyze your procurement, inventory, logistics, and warehouse operations to identify improvement opportunities.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/61.avif",
   },
   {
     step: "02",
     title: "Solution Design",
     desc: "Our experts design a supply chain solution tailored to your operational requirements and business objectives.",
-    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/62.avif",
   },
   {
     step: "03",
     title: "System Integration",
     desc: "We integrate supply chain solutions with ERP, CRM, warehouse management, transportation, and supplier systems.",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/63.avif",
   },
   {
     step: "04",
     title: "Deployment & Training",
     desc: "We implement the solution, migrate operational data, and train teams for seamless adoption.",
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/64.avif",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Ongoing monitoring, analytics, and performance improvements ensure long-term supply chain efficiency.",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop",
+    image: "/ERPSol/65.avif",
   },
 ];
 
@@ -227,7 +227,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2400&auto=format&fit=crop"
+            src="/ERPSol/66.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -303,7 +303,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop"
+                src="/ERPSol/67.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -595,12 +595,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+        
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

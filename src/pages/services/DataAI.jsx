@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "Data Engineering",
     short:
       "Build scalable data pipelines and modern architectures that enable reliable, high-quality enterprise data.",
-    image: "/art.jpg",
+    image: "/DA&AI/1.avif",
     tags: ["Data Pipelines", "ETL", "Data Lake"],
     link: "/services/DataAI/data-engineering",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Business Intelligence",
     short:
       "Transform business data into interactive dashboards and actionable insights for informed decision-making.",
-    image: "/art.jpg",
+    image: "/DA&AI/2.avif",
     tags: ["Dashboards", "Reporting", "Insights"],
     link: "/services/DataAI/business-intelligence",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "AI Analytics",
     short:
       "Leverage AI-powered analytics to uncover trends, optimize performance, and accelerate business growth.",
-    image: "/art.jpg",
+    image: "/DA&AI/3.avif",
     tags: ["AI", "Analytics", "Optimization"],
     link: "/services/DataAI/ai-analytics",
   },
@@ -55,7 +55,7 @@ const CAPABILITIES = [
     title: "Executive Intelligence",
     short:
       "Deliver executive-ready insights through advanced reporting, KPI tracking, and strategic performance analytics.",
-    image: "/art.jpg",
+    image: "/DA&AI/4.avif",
     tags: ["KPIs", "Executive Dashboards", "Strategy"],
     link: "/services/DataAI/executive-intelligence",
   },
@@ -64,7 +64,7 @@ const CAPABILITIES = [
     title: "Predictive Analytics",
     short:
       "Use machine learning and predictive models to forecast outcomes, identify risks, and improve business decisions.",
-    image: "/art.jpg",
+    image: "/DA&AI/5.avif",
     tags: ["Forecasting", "Machine Learning", "Prediction"],
     link: "/services/DataAI/predictive-analytics",
   },
@@ -73,7 +73,7 @@ const CAPABILITIES = [
     title: "Data Governance",
     short:
       "Ensure trusted, secure, and compliant data with governance frameworks, quality controls, and lifecycle management.",
-    image: "/art.jpg",
+    image: "/DA&AI/6.avif",
     tags: ["Governance", "Data Quality", "Compliance"],
     link: "/services/DataAI/data-governance",
   },
@@ -111,63 +111,63 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess & Discover",
     desc: "Evaluate existing data ecosystems, business objectives, and analytics maturity to identify transformation opportunities.",
-    image: "/art.jpg",
+    image: "/DA&AI/7.avif",
   },
   {
     step: "02",
     title: "Design Architecture",
     desc: "Create modern data architectures and governance frameworks aligned with scalability, security, and business needs.",
-    image: "/art.jpg",
+    image: "/DA&AI/8.avif",
   },
   {
     step: "03",
     title: "Build Solutions",
     desc: "Develop data pipelines, AI models, dashboards, and analytics platforms using agile engineering practices.",
-    image: "/art.jpg",
+    image: "/DA&AI/9.avif",
   },
   {
     step: "04",
     title: "Deploy & Integrate",
     desc: "Deploy enterprise-ready solutions with automated monitoring, validation, and seamless business integration.",
-    image: "/art.jpg",
+    image: "/DA&AI/10.avif",
   },
   {
     step: "05",
     title: "Optimize & Govern",
     desc: "Continuously improve data quality, model performance, governance, and analytics capabilities as business needs evolve.",
-    image: "/art.jpg",
+    image: "/DA&AI/11.avif",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/DA&AI/12.avif",
     desc: "Enable fraud detection, risk analytics, regulatory reporting, and financial forecasting with data-driven intelligence.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/DA&AI/13.avif",
     desc: "Optimize production, predictive maintenance, and operational efficiency through advanced analytics.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/DA&AI/14.avif",
     desc: "Improve patient outcomes with secure clinical analytics, healthcare intelligence, and regulatory compliance.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/DA&AI/15.avif",
     desc: "Drive customer engagement, demand forecasting, inventory optimization, and personalized shopping experiences.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/DA&AI/16.avif",
     desc: "Enhance supply chain visibility, fleet performance, and operational efficiency using real-time analytics.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/DA&AI/17.avif",
     desc: "Support evidence-based decision-making with secure analytics, performance reporting, and digital governance.",
   },
 ];
@@ -209,7 +209,7 @@ const DataAI = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/DA&AI/18.avif')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -287,7 +287,7 @@ const DataAI = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/DA&AI/19.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -315,7 +315,7 @@ const DataAI = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/DA&AI/20.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
