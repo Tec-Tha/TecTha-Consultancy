@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "Managed Applications",
     short:
       "Ensure application reliability with proactive monitoring, maintenance, performance optimization, and continuous support.",
-    image: "/art.jpg",
+    image: "/Merge/1.avif",
     tags: ["Application Support", "Maintenance", "Performance"],
     link: "/services/ManagedServices/managed-applications",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Managed Cloud",
     short:
       "Optimize cloud environments with proactive monitoring, cost management, security, and operational excellence.",
-    image: "/art.jpg",
+    image: "/Merge/2.avif",
     tags: ["Cloud Operations", "Monitoring", "Optimization"],
     link: "/services/ManagedServices/managed-cloudd",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "Managed AI",
     short:
       "Maintain AI platforms with continuous monitoring, model optimization, and lifecycle management for reliable outcomes.",
-    image: "/art.jpg",
+    image: "/Merge/3.avif",
     tags: ["AI Operations", "Model Management", "Monitoring"],
     link: "/services/ManagedServices/managed-ai",
   },
@@ -55,7 +55,7 @@ const CAPABILITIES = [
     title: "Managed Infrastructure",
     short:
       "Deliver secure, scalable infrastructure management with proactive monitoring, patching, and performance optimization.",
-    image: "/art.jpg",
+    image: "/Merge/4.avif",
     tags: ["Infrastructure", "Security", "Reliability"],
     link: "/services/ManagedServices/managed-infrastructure",
   },
@@ -64,7 +64,7 @@ const CAPABILITIES = [
     title: "Technology Operations",
     short:
       "Ensure seamless IT operations through automation, monitoring, incident management, and continuous improvement.",
-    image: "/art.jpg",
+    image: "/Merge/5.avif",
     tags: ["IT Operations", "Automation", "Support"],
     link: "/services/ManagedServices/technology-operations",
   },
@@ -73,7 +73,7 @@ const CAPABILITIES = [
     title: "Enterprise Support",
     short:
       "Provide end-to-end enterprise support with SLA-driven services, rapid issue resolution, and business continuity.",
-    image: "/art.jpg",
+    image: "/Merge/6.avif",
     tags: ["Enterprise Support", "SLA", "24/7 Support"],
     link: "/services/ManagedServices/enterprise-support",
   },
@@ -111,63 +111,63 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess & Discover",
     desc: "Evaluate existing applications, infrastructure, and operational processes to identify support and optimization opportunities.",
-    image: "/art.jpg",
+    image: "/Merge/7.avif",
   },
   {
     step: "02",
     title: "Plan & Design",
     desc: "Develop a tailored managed services strategy, monitoring framework, and SLA model aligned with business requirements.",
-    image: "/art.jpg",
+    image: "/Merge/8.avif",
   },
   {
     step: "03",
     title: "Implement & Onboard",
     desc: "Deploy monitoring tools, automate operational workflows, and transition systems into a fully managed environment.",
-    image: "/art.jpg",
+    image: "/Merge/9.avif",
   },
   {
     step: "04",
     title: "Monitor & Support",
     desc: "Provide proactive monitoring, incident management, security operations, and continuous technical support.",
-    image: "/art.jpg",
+    image: "/Merge/10.avif",
   },
   {
     step: "05",
     title: "Optimize & Improve",
     desc: "Continuously enhance performance, security, cost efficiency, and operational reliability through ongoing optimization.",
-    image: "/art.jpg",
+    image: "/Merge/11.avif",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/Merge/12.avif",
     desc: "Deliver secure, high-availability managed services for mission-critical financial applications and infrastructure.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/Merge/13.avif",
     desc: "Maintain production systems and industrial infrastructure with reliable operational support and monitoring.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/Merge/14.avif",
     desc: "Ensure continuous availability of healthcare applications while meeting strict security and compliance requirements.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/Merge/15.avif",
     desc: "Support business-critical retail platforms with scalable infrastructure and 24/7 operational monitoring.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/Merge/16.avif",
     desc: "Maintain logistics systems, fleet operations, and supply chain platforms with uninterrupted service delivery.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/Merge/17.avif",
     desc: "Provide secure, reliable managed services supporting public sector infrastructure and citizen-facing applications.",
   },
 ];
@@ -209,7 +209,7 @@ const ManagedServices = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/Merge/18.avif')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -287,7 +287,7 @@ const ManagedServices = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+   src="/Merge/19.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -315,7 +315,7 @@ const ManagedServices = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+   src="/Merge/20.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />

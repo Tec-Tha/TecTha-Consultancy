@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "Enterprise Software",
     short:
       "Develop scalable enterprise software tailored to your business processes and long-term growth objectives.",
-    image: "/art.jpg",
+    image: "/ERPApp/1.avif",
     tags: ["Enterprise", "Scalable", "Custom Software"],
     link: "/services/EnterpriseApplications/enterprise-softwaree",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Custom Applications",
     short:
       "Build custom applications that streamline operations and solve unique business challenges.",
-    image: "/art.jpg",
+    image: "/ERPApp/2.avif",
     tags: ["Custom Development", "Business Apps", "Automation"],
     link: "/services/EnterpriseApplications/custom-applications",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "Business Applications",
     short:
       "Deliver business applications that improve collaboration, productivity, and operational efficiency.",
-    image: "/art.jpg",
+    image: "/ERPApp/3.avif",
     tags: ["Business", "Workflow", "Productivity"],
     link: "/services/EnterpriseApplications/business-applications",
   },
@@ -55,7 +55,7 @@ const CAPABILITIES = [
     title: "Systems Integration",
     short:
       "Connect enterprise systems, applications, and data for seamless business operations.",
-    image: "/art.jpg",
+    image: "/ERPApp/4.avif",
     tags: ["Integration", "API", "Connectivity"],
     link: "/services/EnterpriseApplications/systems-integration",
   },
@@ -64,7 +64,7 @@ const CAPABILITIES = [
     title: "SaaS Platforms",
     short:
       "Design and develop secure, cloud-native SaaS platforms built for scalability and performance.",
-    image: "/art.jpg",
+    image: "/ERPApp/5.avif",
     tags: ["SaaS", "Cloud", "Multi-Tenant"],
     link: "/services/EnterpriseApplications/saas-platforms",
   },
@@ -73,7 +73,7 @@ const CAPABILITIES = [
     title: "Application Modernization",
     short:
       "Modernize legacy applications with cloud-native architectures and modern development practices.",
-    image: "/art.jpg",
+    image: "/ERPApp/6.avif",
     tags: ["Modernization", "Cloud", "Legacy"],
     link: "/services/EnterpriseApplications/application-modernization",
   },
@@ -111,63 +111,63 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess & Discover",
     desc: "Evaluate existing applications, business processes, and technical architecture to identify modernization opportunities.",
-    image: "/art.jpg",
+    image: "/ERPApp/7.avif",
   },
   {
     step: "02",
     title: "Design Solution",
     desc: "Create scalable application architectures and integration strategies aligned with business objectives.",
-    image: "/art.jpg",
+    image: "/ERPApp/8.avif",
   },
   {
     step: "03",
     title: "Develop & Integrate",
     desc: "Build high-quality applications using agile methodologies, modern frameworks, and seamless system integration.",
-    image: "/art.jpg",
+    image: "/ERPApp/9.avif",
   },
   {
     step: "04",
     title: "Deploy & Optimize",
     desc: "Launch applications through automated deployment pipelines with monitoring, testing, and performance optimization.",
-    image: "/art.jpg",
+    image: "/ERPApp/10.avif",
   },
   {
     step: "05",
     title: "Support & Evolve",
     desc: "Continuously improve applications through maintenance, feature enhancements, security updates, and performance tuning.",
-    image: "/art.jpg",
+    image: "/ERPApp/11.avif",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/ERPApp/12.avif",
     desc: "Secure enterprise applications supporting financial operations, compliance, and customer engagement.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/ERPApp/13.avif",
     desc: "Custom software for production management, inventory control, and operational efficiency.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/ERPApp/14.avif",
     desc: "Healthcare applications that improve patient care while ensuring regulatory compliance.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/ERPApp/15.avif",
     desc: "Digital commerce platforms and business applications that enhance customer experiences.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/ERPApp/16.avif",
     desc: "Integrated logistics applications for fleet management, warehouse operations, and supply chain visibility.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/ERPApp/17.avif",
     desc: "Secure enterprise applications supporting public services and digital citizen engagement.",
   },
 ];
@@ -209,7 +209,7 @@ const EnterpriseApplication = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/ERPApp/18.avif')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -287,7 +287,7 @@ const EnterpriseApplication = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/ERPApp/19.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -315,7 +315,7 @@ const EnterpriseApplication = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/ERPApp/20.avif"
   alt="Enterprise Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />

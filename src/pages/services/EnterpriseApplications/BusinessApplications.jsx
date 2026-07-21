@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Business Assessment",
     desc: "We analyze your business processes, applications, and operational goals to identify modernization opportunities.",
-    image: "...",
+    image: "/ERPApp/28.avif",
   },
   {
     step: "02",
     title: "Application Strategy",
     desc: "Our experts design a business application roadmap focused on integration, automation, scalability, and user experience.",
-    image: "...",
+    image: "/ERPApp/29.avif",
   },
   {
     step: "03",
     title: "Implementation & Integration",
     desc: "We deploy business applications and integrate them with enterprise systems to streamline workflows.",
-    image: "...",
+    image: "/ERPApp/30.avif",
   },
   {
     step: "04",
     title: "Optimization & Support",
     desc: "Continuous monitoring, maintenance, and performance optimization ensure reliable business operations.",
-    image: "...",
+    image: "/ERPApp/31.avif",
   },
   {
     step: "05",
     title: "Continuous Innovation",
     desc: "We enhance business applications with automation, analytics, and emerging technologies to support long-term growth.",
-    image: "...",
+    image: "/ERPApp/32.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/ERPApp/33.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -317,7 +317,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/ERPApp/34.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -607,12 +607,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+         
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}
@@ -632,7 +628,7 @@ const AIAgents = () => {
 
 <Link
   to="/contact"
-  className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
+  className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
 >
   Schedule a Business Applications Consultation
   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
