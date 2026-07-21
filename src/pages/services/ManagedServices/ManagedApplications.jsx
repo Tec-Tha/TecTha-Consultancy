@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Application Assessment",
     desc: "We evaluate your application landscape, business requirements, and operational challenges to define the right support strategy.",
-    image: "...",
+    image: "/Merge/35.avif",
   },
   {
     step: "02",
     title: "Service Planning",
     desc: "Our experts design a managed application service model tailored to your business applications and operational goals.",
-    image: "...",
+    image: "/Merge/36.avif",
   },
   {
     step: "03",
     title: "Implementation",
     desc: "We establish monitoring, maintenance, support processes, and performance management for your applications.",
-    image: "...",
+    image: "/Merge/37.avif",
   },
   {
     step: "04",
     title: "Continuous Support",
     desc: "Our team provides ongoing monitoring, incident management, troubleshooting, and application enhancements.",
-    image: "...",
+    image: "/Merge/38.avif",
   },
   {
     step: "05",
     title: "Optimization & Innovation",
     desc: "Continuous performance tuning, upgrades, and modernization ensure long-term application success.",
-    image: "...",
+    image: "/Merge/39.avif",
   },
 ];
 
@@ -227,7 +227,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/Merge/40.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -303,7 +303,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/Merge/41.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -595,12 +595,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
-            alt="Enterprise agent systems"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
+          
+          <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div
           variants={fadeUp}

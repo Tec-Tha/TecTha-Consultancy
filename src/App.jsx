@@ -50,6 +50,7 @@ import ManagedInfrastructure from "./pages/services/ManagedServices/ManagedInfra
 import TechnologyOperations from "./pages/services/ManagedServices/TechnologyOperations";
 import EnterpriseSupport from "./pages/services/ManagedServices/EnterpriseSupport";
 import EnterpriseApplications from "./pages/services/EnterpriseApplications";
+import EnterpriseSoftwaree from "./pages/services/EnterpriseApplications/EnterpriseSoftwaree";
 import DataAI from "./pages/services/DataAI";
 import CustomApplications from "./pages/services/EnterpriseApplications/CustomApplications";
 import BusinessApplications from "./pages/services/EnterpriseApplications/BusinessApplications";
@@ -138,7 +139,7 @@ function App() {
         <Route path="/services/ManagedServices/technology-operations" element={<TechnologyOperations />} />
         <Route path="/services/ManagedServices/enterprise-support" element={<EnterpriseSupport />} />
         <Route path="/services/EnterpriseApplications" element={<EnterpriseApplications />} />
-        <Route path="/services/EnterpriseApplications/enterprise-softwaree" element={<ArtificialIntelligence />} />
+        <Route path="/services/EnterpriseApplications/enterprise-softwaree" element={<EnterpriseSoftwaree />} />
         <Route path="/services/EnterpriseApplications/custom-applications" element={<CustomApplications />} />
         <Route path="/services/EnterpriseApplications/business-applications" element={<BusinessApplications />} />
         <Route path="/services/EnterpriseApplications/systems-integration" element={<SystemsIntegration />} />
