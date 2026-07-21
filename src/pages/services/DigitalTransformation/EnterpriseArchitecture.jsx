@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Architecture Assessment",
     desc: "We assess your current technology landscape, business capabilities, and strategic objectives to identify transformation opportunities.",
-    image: "...",
+    image: "/services/36.avif",
   },
   {
     step: "02",
     title: "Architecture Strategy",
     desc: "Our experts design a future-state enterprise architecture aligned with business priorities, governance, and scalability goals.",
-    image: "...",
+    image: "/services/37.avif",
   },
   {
     step: "03",
     title: "Roadmap & Implementation",
     desc: "We define implementation roadmaps, technology standards, and integration strategies to support enterprise transformation.",
-    image: "...",
+    image: "/services/38.avif",
   },
   {
     step: "04",
     title: "Governance & Optimization",
     desc: "Architecture governance ensures technology consistency, compliance, performance, and continuous improvement.",
-    image: "...",
+    image: "/services/39.avif",
   },
   {
     step: "05",
     title: "Continuous Evolution",
     desc: "We continuously refine enterprise architecture to support innovation, business growth, and changing market demands.",
-    image: "...",
+    image: "/services/40.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/services/42.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -317,7 +317,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/services/35.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -608,7 +608,7 @@ const AIAgents = () => {
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2400&auto=format&fit=crop"
+            src="/services/41.avif"
             alt="Enterprise agent systems"
             className="h-full w-full object-cover"
           />

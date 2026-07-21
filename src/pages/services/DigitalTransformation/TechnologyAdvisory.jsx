@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Technology Assessment",
     desc: "We evaluate your technology landscape, business goals, and digital maturity to identify strategic opportunities.",
-    image: "...",
+    image: "/services/52.avif",
   },
   {
     step: "02",
     title: "Advisory Strategy",
     desc: "Our experts develop technology roadmaps aligned with business objectives, innovation, and long-term growth.",
-    image: "...",
+    image: "/services/53.avif",
   },
   {
     step: "03",
     title: "Solution Planning",
     desc: "We recommend modern technology solutions, governance frameworks, and implementation strategies tailored to your organization.",
-    image: "...",
+    image: "/services/54.avif",
   },
   {
     step: "04",
     title: "Implementation Guidance",
     desc: "Our consultants support technology adoption, governance, risk management, and enterprise transformation initiatives.",
-    image: "...",
+    image: "/services/55.avif",
   },
   {
     step: "05",
     title: "Continuous Innovation",
     desc: "We provide ongoing strategic advisory to optimize technology investments and support continuous business innovation.",
-    image: "...",
+    image: "/services/56.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/services/50.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -313,7 +313,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/services/51.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Process Assessment",
     desc: "We evaluate existing business processes, workflows, and operational performance to identify improvement opportunities.",
-    image: "...",
+    image: "/services/48.avif",
   },
   {
     step: "02",
     title: "Process Design",
     desc: "Our experts redesign workflows using industry best practices to improve efficiency, quality, and scalability.",
-    image: "...",
+    image: "/services/49.avif",
   },
   {
     step: "03",
     title: "Implementation",
     desc: "We implement optimized processes, automation initiatives, and governance frameworks across the organization.",
-    image: "...",
+    image: "/services/45.avif",
   },
   {
     step: "04",
     title: "Performance Monitoring",
     desc: "Continuous measurement, KPI tracking, and process analytics ensure consistent operational performance.",
-    image: "...",
+    image: "/services/46.avif",
   },
   {
     step: "05",
     title: "Continuous Improvement",
     desc: "Regular reviews and optimization initiatives help organizations sustain operational excellence and long-term business value.",
-    image: "...",
+    image: "/services/47.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/services/43.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -313,7 +313,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/services/44.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
