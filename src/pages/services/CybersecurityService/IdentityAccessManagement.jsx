@@ -122,31 +122,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Identity Assessment",
     desc: "We evaluate your identity infrastructure, user lifecycle, and access policies to identify security gaps.",
-    image: "...",
+    image: "/cybersecurity/30.avif",
   },
   {
     step: "02",
     title: "IAM Strategy",
     desc: "Our experts design an Identity & Access Management framework aligned with your business and compliance requirements.",
-    image: "...",
+    image: "/cybersecurity/29.avif",
   },
   {
     step: "03",
     title: "Implementation",
     desc: "We deploy identity governance, Single Sign-On (SSO), Multi-Factor Authentication (MFA), and role-based access controls.",
-    image: "...",
+    image: "/cybersecurity/28.avif",
   },
   {
     step: "04",
     title: "Monitoring & Governance",
     desc: "Continuous monitoring, access reviews, and policy enforcement ensure secure and compliant identity management.",
-    image: "...",
+    image: "/cybersecurity/31.avif",
   },
   {
     step: "05",
     title: "Continuous Optimization",
     desc: "Regular assessments, user lifecycle improvements, and security enhancements keep your IAM environment future-ready.",
-    image: "...",
+    image: "/cybersecurity/32.avif",
   },
 ];
 
@@ -227,7 +227,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/cybersecurity/27.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -303,7 +303,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/cybersecurity/26.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
@@ -595,7 +595,11 @@ const AIAgents = () => {
       {/* ============================================================ */}
       <section className="relative py-40 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
-          
+          <img
+            src=""
+            alt="Enterprise agent systems"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-black" />
         </div>
         <motion.div

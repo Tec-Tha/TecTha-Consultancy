@@ -28,7 +28,7 @@ const CAPABILITIES = [
     title: "Cybersecurity Strategy",
     short:
       "Develop enterprise security strategies aligned with business objectives, risk management, and regulatory compliance.",
-    image: "/art.jpg",
+    image: "/cybersecurity/4.avif",
     tags: ["Strategy", "Risk", "Consulting"],
     link: "/services/CybersecurityService/cybersecurity-strategy",
   },
@@ -37,7 +37,7 @@ const CAPABILITIES = [
     title: "Identity & Access Management",
     short:
       "Secure digital identities with centralized authentication, authorization, and privileged access management.",
-    image: "/art.jpg",
+    image: "/cybersecurity/6.avif",
     tags: ["IAM", "Zero Trust", "Access Control"],
     link: "/services/CybersecurityService/identity-access-management",
   },
@@ -46,7 +46,7 @@ const CAPABILITIES = [
     title: "Cloud Security",
     short:
       "Protect cloud workloads with advanced security controls, continuous monitoring, and threat prevention.",
-    image: "/art.jpg",
+    image: "/cybersecurity/5.avif",
     tags: ["Cloud Security", "Threat Protection", "Compliance"],
     link: "/services/CybersecurityService/cloud-security",
   },
@@ -55,7 +55,7 @@ const CAPABILITIES = [
     title: "Governance, Risk & Compliance",
     short:
       "Strengthen governance frameworks and maintain compliance with industry regulations and security standards.",
-    image: "/art.jpg",
+    image: "/cybersecurity/7.avif",
     tags: ["Governance", "Risk", "Compliance"],
     link: "/services/CybersecurityService/governance-risk-compliance",
   },
@@ -64,7 +64,7 @@ const CAPABILITIES = [
     title: "Security Operations",
     short:
       "Detect, investigate, and respond to cyber threats through continuous monitoring and incident management.",
-    image: "/art.jpg",
+    image: "/cybersecurity/8.avif",
     tags: ["SOC", "Monitoring", "Incident Response"],
     link: "/services/CybersecurityService/security-operations",
   },
@@ -73,7 +73,7 @@ const CAPABILITIES = [
     title: "Managed Security",
     short:
       "Deliver proactive security management with 24/7 monitoring, threat detection, and operational support.",
-    image: "/art.jpg",
+    image: "/cybersecurity/9.avif",
     tags: ["Managed Services", "Threat Detection", "Support"],
     link: "/services/CybersecurityService/managed-security",
   },
@@ -111,63 +111,63 @@ const METHODOLOGY = [
     step: "01",
     title: "Assess & Identify",
     desc: "Evaluate existing security controls, infrastructure, and vulnerabilities to understand organizational risk exposure.",
-    image: "/art.jpg",
+    image: "/cybersecurity/16.avif",
   },
   {
     step: "02",
     title: "Design Protection",
     desc: "Develop a security architecture aligned with business priorities, compliance requirements, and industry best practices.",
-    image: "/art.jpg",
+    image: "/cybersecurity/17.avif",
   },
   {
     step: "03",
     title: "Implement Controls",
     desc: "Deploy security technologies, strengthen configurations, and remediate vulnerabilities across the environment.",
-    image: "/art.jpg",
+    image: "/cybersecurity/18.avif",
   },
   {
     step: "04",
     title: "Monitor & Respond",
     desc: "Enable continuous threat monitoring, incident detection, and rapid response through security operations.",
-    image: "/art.jpg",
+    image: "/cybersecurity/19.avif",
   },
   {
     step: "05",
     title: "Optimize & Govern",
     desc: "Continuously improve security posture with governance, compliance monitoring, and ongoing risk management.",
-    image: "/art.jpg",
+    image: "/cybersecurity/20.avif",
   },
 ];
 
 const INDUSTRIES = [
   {
     title: "Financial Services",
-    image: "/art.jpg",
+    image: "/cybersecurity/10.avif",
     desc: "Advanced cybersecurity solutions protecting financial systems, digital transactions, and customer data.",
   },
   {
     title: "Manufacturing",
-    image: "/art.jpg",
+    image: "/cybersecurity/11.avif",
     desc: "Secure industrial control systems, connected factories, and operational technology environments.",
   },
   {
     title: "Healthcare",
-    image: "/art.jpg",
+    image: "/cybersecurity/12.avif",
     desc: "Protect patient information and healthcare systems while meeting strict regulatory requirements.",
   },
   {
     title: "Retail & E-Commerce",
-    image: "/art.jpg",
+    image: "/cybersecurity/13.avif",
     desc: "Safeguard payment platforms, customer information, and digital commerce against cyber threats.",
   },
   {
     title: "Logistics & Supply Chain",
-    image: "/art.jpg",
+    image: "/cybersecurity/14.avif",
     desc: "Strengthen cybersecurity across transportation networks, warehouses, and connected supply chains.",
   },
   {
     title: "Government & Public Sector",
-    image: "/art.jpg",
+    image: "/cybersecurity/15.avif",
     desc: "Secure critical infrastructure and digital public services with enterprise-grade cyber resilience.",
   },
 ];
@@ -209,7 +209,7 @@ const CyberSecurity = () => {
   <motion.div
   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
   style={{
-    backgroundImage: "url('/art.jpg')",
+    backgroundImage: "url('/cybersecurity/1.avif')",
   }}
   initial={{ scale: 1.2 }}
   animate={{ scale: 1 }}
@@ -287,7 +287,7 @@ const CyberSecurity = () => {
     >
       {/* Replace this div with <img> later */}
       <img
-  src="/art.jpg"
+  src="/cybersecurity/2.avif"
   alt="Security Vision"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
@@ -315,7 +315,7 @@ const CyberSecurity = () => {
       className="relative"
     >
       <img
-  src="/art.jpg"
+  src="/cybersecurity/3.avif"
   alt="Security Reality"
   className="h-[650px] w-full rounded-[32px] object-cover"
 />
