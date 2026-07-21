@@ -11,7 +11,7 @@ import ArtificialIntelligence from "./pages/services/ArtificialIntelligence";
 import ERPsolution from "./pages/services/ERPsolution";
 import CloudInfrastructure from "./pages/services/CloudInfrastructure";
 import Cybersecurity from "./pages/services/Cybersecurity";
-import ManagedServices from "./pages/services/ManagedServices"
+import ManagedServices from "./pages/services/ManagedServices";
 import DigitalTransformation from "./pages/services/DigitalTransformation";
 import AIStrategy from "./pages/services/ArtificialIntelligence&DataAnalytics/AIStrategy";
 import EnterpriseAI from "./pages/services/ArtificialIntelligence&DataAnalytics/EnterpriseAI";
