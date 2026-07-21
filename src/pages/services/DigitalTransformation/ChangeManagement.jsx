@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Change Assessment",
     desc: "We evaluate organizational readiness, stakeholder expectations, and business objectives to develop an effective change strategy.",
-    image: "...",
+    image: "/services/59.avif",
   },
   {
     step: "02",
     title: "Change Strategy",
     desc: "Our consultants create structured communication, engagement, and adoption plans aligned with business goals.",
-    image: "...",
+    image: "/services/60.avif",
   },
   {
     step: "03",
     title: "Implementation & Enablement",
     desc: "We support change execution through leadership alignment, employee training, and organizational engagement initiatives.",
-    image: "...",
+    image: "/services/61.avif",
   },
   {
     step: "04",
     title: "Adoption & Monitoring",
     desc: "We monitor adoption, gather feedback, and measure organizational readiness throughout the transformation journey.",
-    image: "...",
+    image: "/services/62.avif",
   },
   {
     step: "05",
     title: "Continuous Improvement",
     desc: "Ongoing optimization, coaching, and performance measurement ensure sustainable organizational change.",
-    image: "...",
+    image: "/services/63.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/services/57.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -313,7 +313,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/services/58.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />

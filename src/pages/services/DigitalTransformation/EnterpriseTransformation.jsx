@@ -121,31 +121,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Transformation Assessment",
     desc: "We evaluate your business capabilities, technology landscape, and strategic objectives to identify transformation opportunities.",
-    image: "/services/27.avif",
+    image: "/services/28.avif",
   },
   {
     step: "02",
     title: "Transformation Strategy",
     desc: "Our consultants create a comprehensive roadmap that aligns business goals, technology investments, and organizational priorities.",
-    image: "...",
+    image: "/services/31.avif",
   },
   {
     step: "03",
     title: "Execution & Modernization",
     desc: "We implement transformation initiatives across business processes, technology platforms, and enterprise operations.",
-    image: "...",
+    image: "/services/32.avif",
   },
   {
     step: "04",
     title: "Optimization & Adoption",
     desc: "Continuous monitoring, employee enablement, and performance measurement ensure successful transformation outcomes.",
-    image: "...",
+    image: "/services/33.avif",
   },
   {
     step: "05",
     title: "Innovation & Growth",
     desc: "We continuously optimize business capabilities to support innovation, resilience, and long-term competitive advantage.",
-    image: "...",
+    image: "/services/34.avif",
   },
 ];
 
@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2400&auto=format&fit=crop"
+            src="/services/29.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
@@ -313,7 +313,7 @@ const AIAgents = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop"
+                src="/services/30.avif"
                 alt="Agent guardrails and monitoring"
                 className="h-full w-full object-cover"
               />
