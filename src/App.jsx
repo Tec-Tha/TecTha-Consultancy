@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import ArtificialIntelligence from "./pages/services/ArtificialIntelligence";
 import ERPsolution from "./pages/services/ERPsolution";
 import CloudInfrastructure from "./pages/services/CloudInfrastructure";
-import CyberSecurity from "./pages/services/Cybersecurity";
+import Cybersecurity from "./pages/services/Cybersecurity";
 import ManagedServices from "./pages/services/ManagedServices"
 import DigitalTransformation from "./pages/services/DigitalTransformation";
 import AIStrategy from "./pages/services/ArtificialIntelligence&DataAnalytics/AIStrategy";
@@ -99,7 +99,7 @@ function App() {
         <Route path="/services/ArtificialIntelligence" element={<ArtificialIntelligence />} />
         <Route path="/services/ERPsolution" element={<ERPsolution />} />
         <Route path="/services/CloudInfrastructure" element={<CloudInfrastructure />} />
-        <Route path="/services/CyberSecurity" element={<CyberSecurity />} />
+        <Route path="/services/Cybersecurity" element={<Cybersecurity />} />
         <Route path="/services/DigitalTransformation" element={<DigitalTransformation />} />
         <Route path="/services/ArtificialIntelligence&DataAnalytics/ai-strategy" element={<AIStrategy />} />
         <Route path="/services/ArtificialIntelligence&DataAnalytics/enterprise-ai" element={<EnterpriseAI />} />

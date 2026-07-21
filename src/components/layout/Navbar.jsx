@@ -50,7 +50,7 @@ const SERVICES = [
       },
       {
         name: "Cybersecurity",
-        link: "/services/CyberSecurity",
+        link: "/services/Cybersecurity",
       },
       {
         name: "Digital Transformation",
