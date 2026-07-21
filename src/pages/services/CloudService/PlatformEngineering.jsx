@@ -128,31 +128,31 @@ const FRAMEWORK = [
     step: "01",
     title: "Platform Assessment",
     desc: "We assess your engineering processes, infrastructure, and developer workflows to define an effective platform strategy.",
-    image: "...",
+    image: "/cloud/17.avif",
   },
   {
     step: "02",
     title: "Platform Architecture",
     desc: "Our experts design scalable platform architectures that simplify development, deployment, and operations.",
-    image: "...",
+    image: "/cloud/18.avif",
   },
   {
     step: "03",
     title: "Automation & Integration",
     desc: "We implement Infrastructure as Code, CI/CD pipelines, automation, and cloud-native platform capabilities.",
-    image: "...",
+    image: "/cloud/19.avif",
   },
   {
     step: "04",
     title: "Platform Operations",
     desc: "Deliver secure, reliable, and observable platforms with continuous monitoring, governance, and operational support.",
-    image: "...",
+    image: "/cloud/20.avif",
   },
   {
     step: "05",
     title: "Optimization & Innovation",
     desc: "Continuously improve platform performance, developer productivity, scalability, and operational efficiency.",
-    image: "...",
+    image: "/cloud/21.avif",
   },
 ];
 
@@ -234,7 +234,7 @@ const PlatformEngineering = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
+            src="/cloud/15.avif"
             alt="Cloud strategy and roadmap planning"
             className="h-full w-full object-cover"
           />
@@ -321,7 +321,7 @@ const PlatformEngineering = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/16.avif"
                 alt="Cloud roadmap and governance"
                 className="h-full w-full object-cover"
               />

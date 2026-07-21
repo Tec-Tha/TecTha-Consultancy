@@ -225,7 +225,7 @@ const CloudEngineering = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/8.avif"
                 alt="Cloud architecture and automation"
                 className="h-full w-full object-cover"
               />
