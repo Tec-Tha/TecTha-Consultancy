@@ -93,11 +93,36 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Assess", desc: "We review your current release process, tooling, and incident history to find where time and reliability are lost.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Automate", desc: "We build CI/CD pipelines that automate build, test, and deployment, removing manual steps from the release path.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Standardize Infrastructure", desc: "We move infrastructure into code, so every environment is consistent, versioned, and reproducible.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Instrument", desc: "We put monitoring, logging, and alerting in place so issues get caught before customers notice them.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Operate & Improve", desc: "We run post-incident reviews and continuously tune the pipeline as your release cadence grows.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" },
+  {
+    step: "01",
+    title: "Assess",
+    desc: "We review your current release process, tooling, and incident history to find where time and reliability are lost.",
+    image: "/cloud/c8.avif",
+  },
+  {
+    step: "02",
+    title: "Automate",
+    desc: "We build CI/CD pipelines that automate build, test, and deployment, removing manual steps from the release path.",
+    image: "/cloud/c9.avif",
+  },
+  {
+    step: "03",
+    title: "Standardize Infrastructure",
+    desc: "We move infrastructure into code, so every environment is consistent, versioned, and reproducible.",
+    image: "/cloud/c10.avif",
+  },
+  {
+    step: "04",
+    title: "Instrument",
+    desc: "We put monitoring, logging, and alerting in place so issues get caught before customers notice them.",
+    image: "/cloud/c11.avif",
+  },
+  {
+    step: "05",
+    title: "Operate & Improve",
+    desc: "We run post-incident reviews and continuously tune the pipeline as your release cadence grows.",
+    image: "/cloud/c12.avif",
+  },
 ];
 
 const DELIVERABLES = [
@@ -109,21 +134,7 @@ const DELIVERABLES = [
   { icon: Gauge, title: "Performance & Reliability Tuning", desc: "Ongoing optimization of pipelines and infrastructure as release volume and scale increase." },
 ];
 
-const INDUSTRIES = [
-  { name: "SaaS & Technology", desc: "Pipelines built for frequent releases without sacrificing stability.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Financial Services", desc: "Automation with the audit trail and controls regulated releases require.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "E-Commerce", desc: "Deployment pipelines that hold up during peak traffic events.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Release automation that keeps compliance controls intact at every step.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Automation connecting software releases to operational systems safely.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Logistics", desc: "Pipelines built to support systems that can't afford downtime.", image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop" },
-];
 
-const IMPACT = [
-  { value: "10x", label: "Faster Deployment Frequency" },
-  { value: "70%", label: "Reduction in Failed Deployments" },
-  { value: "60%", label: "Faster Incident Resolution Time" },
-  { value: "24/7", label: "Automated Monitoring Coverage" },
-];
 
 const FAQS = [
   { q: "How is DevOps different from cloud engineering?", a: "Cloud engineering focuses on the infrastructure itself. DevOps focuses on the processes and automation around it — how code gets built, tested, deployed, and monitored on top of that infrastructure." },
@@ -155,7 +166,7 @@ const DevOps = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
+            src="/cloud/c13.avif"
             alt="Cloud strategy and roadmap planning"
             className="h-full w-full object-cover"
           />
@@ -240,7 +251,7 @@ const DevOps = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/c14.avif"
                 alt="Cloud roadmap and governance"
                 className="h-full w-full object-cover"
               />

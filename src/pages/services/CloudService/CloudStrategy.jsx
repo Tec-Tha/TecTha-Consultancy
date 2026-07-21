@@ -92,11 +92,36 @@ const CHALLENGES = [
 ];
 
 const FRAMEWORK = [
-  { step: "01", title: "Discover", desc: "We assess your current cloud footprint, business priorities, and constraints across teams and systems.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" },
-  { step: "02", title: "Model", desc: "We build a total-cost-of-ownership model comparing providers and architectures against your actual workloads.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
-  { step: "03", title: "Define the Roadmap", desc: "We set a sequenced, milestone-based roadmap that ties cloud investment directly to business outcomes.", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop" },
-  { step: "04", title: "Align Stakeholders", desc: "We bring engineering, finance, and leadership onto a shared plan, so execution doesn't stall on disagreement.", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop" },
-  { step: "05", title: "Govern & Adjust", desc: "We put governance checkpoints in place to track progress and adjust the strategy as needs evolve.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" },
+  {
+    step: "01",
+    title: "Discover",
+    desc: "We assess your current cloud footprint, business priorities, and constraints across teams and systems.",
+    image: "/cloud/c1.avif",
+  },
+  {
+    step: "02",
+    title: "Model",
+    desc: "We build a total-cost-of-ownership model comparing providers and architectures against your actual workloads.",
+    image: "/cloud/c2.avif",
+  },
+  {
+    step: "03",
+    title: "Define the Roadmap",
+    desc: "We set a sequenced, milestone-based roadmap that ties cloud investment directly to business outcomes.",
+    image: "/cloud/c3.avif",
+  },
+  {
+    step: "04",
+    title: "Align Stakeholders",
+    desc: "We bring engineering, finance, and leadership onto a shared plan, so execution doesn't stall on disagreement.",
+    image: "/cloud/c4.avif",
+  },
+  {
+    step: "05",
+    title: "Govern & Adjust",
+    desc: "We put governance checkpoints in place to track progress and adjust the strategy as needs evolve.",
+    image: "/cloud/c5.avif",
+  },
 ];
 
 const DELIVERABLES = [
@@ -108,21 +133,7 @@ const DELIVERABLES = [
   { icon: Eye, title: "Progress Reporting", desc: "Ongoing visibility into how execution is tracking against the strategy's defined milestones." },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", desc: "Strategy balancing regulatory constraints with cost and resilience goals.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Healthcare", desc: "Roadmaps that account for compliance requirements from day one.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Retail", desc: "Strategy built around seasonal demand and margin pressure.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Manufacturing", desc: "Roadmaps connecting plant systems to a long-term cloud direction.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" },
-  { name: "SaaS & Technology", desc: "Strategy tuned for fast growth without runaway infrastructure cost.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" },
-  { name: "Public Sector", desc: "Roadmaps aligned to procurement cycles and public accountability.", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" },
-];
 
-const IMPACT = [
-  { value: "35%", label: "Average Reduction in Projected Cloud Spend" },
-  { value: "100%", label: "Stakeholder Alignment on Roadmap" },
-  { value: "3x", label: "Faster Strategy-to-Execution Handoff" },
-  { value: "12mo", label: "Typical Roadmap Planning Horizon" },
-];
 
 const FAQS = [
   { q: "How is cloud strategy different from cloud migration?", a: "Strategy is the plan: which provider, which architecture, what it costs, and in what order. Migration is the execution of that plan. We build the strategy first so migration doesn't start on guesswork." },
@@ -154,7 +165,7 @@ const CloudStrategy = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
+            src="/cloud/c6.avif"
             alt="Cloud strategy and roadmap planning"
             className="h-full w-full object-cover"
           />
@@ -239,7 +250,7 @@ const CloudStrategy = () => {
           >
             <div className="relative rounded-[28px] overflow-hidden h-[480px]">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+                src="/cloud/c7.avif"
                 alt="Cloud roadmap and governance"
                 className="h-full w-full object-cover"
               />
