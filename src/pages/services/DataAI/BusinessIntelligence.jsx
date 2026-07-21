@@ -226,7 +226,7 @@ const AIAgents = () => {
           className="absolute inset-0"
         >
           <img
-            src="/DA&AI/33.avif"
+            src="/DA&AI/10.avif"
             alt="Autonomous AI agent systems"
             className="h-full w-full object-cover"
           />
