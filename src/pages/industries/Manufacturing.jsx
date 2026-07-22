@@ -430,7 +430,7 @@ export default function Manufacturing() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-5xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
 
               Build Intelligent
               <br />
