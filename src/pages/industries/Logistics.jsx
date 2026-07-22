@@ -347,7 +347,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-7xl font-light leading-tight text-[#0F172A]">
 
               Delivering
               <br />
@@ -424,7 +424,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
 
               Build Intelligent
               <br />

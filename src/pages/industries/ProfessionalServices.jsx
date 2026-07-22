@@ -86,7 +86,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.15}
-className="max-w-5xl text-5xl font-light leading-[0.95] text-white"
+className="max-w-5xl text-7xl font-light leading-[0.95] text-white"
 >
 
 Driving
@@ -419,7 +419,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             className="text-center"
           >
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
 
               Build Smarter
               <br />

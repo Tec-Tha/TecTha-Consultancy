@@ -308,7 +308,7 @@ For     Every Industry.
 
       </p>
 
-      <h2 className="text-[clamp(3rem,6vw,5.5rem)] font-light leading-[1.05] tracking-tight text-white">
+      <h2 className="text-7xl font-light leading-[1.05] tracking-tight text-white">
 
         Ready To Transform
         <br />

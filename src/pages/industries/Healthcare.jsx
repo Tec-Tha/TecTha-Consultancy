@@ -368,7 +368,7 @@ export default function Healthcare() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-7xl font-light leading-tight text-[#0F172A]">
 
               Building The
               <br />
@@ -446,7 +446,7 @@ export default function Healthcare() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
 
               Deliver Better Care.
               <br />
