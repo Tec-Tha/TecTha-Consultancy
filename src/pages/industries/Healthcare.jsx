@@ -104,9 +104,7 @@ export default function Healthcare() {
             custom={0.15}
             className="max-w-4xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
           >
-            Transforming
-            <br />
-            Healthcare
+         Advancing<br />Healthcare
             
             
           </motion.h1>

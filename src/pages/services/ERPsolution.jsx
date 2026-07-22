@@ -260,7 +260,7 @@ const ERPSolutions = () => {
         Enterprise Vision
       </p>
 
-      <h2 className="text-5xl font text-black leading-tight mb-8">
+      <h2 className="text-6xl font text-black leading-tight mb-8">
         ERP should mirror your operations —
         <br />
         not force your operations to change.

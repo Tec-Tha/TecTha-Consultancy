@@ -30,7 +30,7 @@ const HERO_SLIDES = [
     badge: "DIGITAL TRANSFORMATION",
 
     title:
-      "Cutting Edge\nSolutions To\nPower Your\nBusiness.",
+  "Building\nIntelligent\nBusiness\nSolutions.",
 
     description:
       "Empowering businesses with modern technology, AI, and scalable digital solutions.",
