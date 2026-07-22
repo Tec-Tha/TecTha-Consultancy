@@ -84,7 +84,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.15}
-className="max-w-5xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
+className="max-w-5xl text-5xl font-light leading-[0.95] text-white"
 >
 
 Intelligent
