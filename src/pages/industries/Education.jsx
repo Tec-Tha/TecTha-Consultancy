@@ -86,7 +86,7 @@ export default function Education() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-5xl text-6xl font-light leading-[0.95] text-white"
+            className="max-w-5xl text-7xl font-light leading-[0.95] text-white"
           >
             Empowering
             <br />
