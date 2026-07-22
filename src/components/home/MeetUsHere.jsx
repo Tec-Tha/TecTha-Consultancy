@@ -131,7 +131,7 @@ export default function MeetUsHere() {
 
   return (
     <section
-      className="relative min-h-screen w-full bg-[#040404] text-white overflow-hidden"
+      className="relative min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#040404] text-white overflow-hidden"
       style={{ fontFamily: "'Montserrat', sans-serif" }}
     >
       <style>{`
@@ -155,9 +155,9 @@ export default function MeetUsHere() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-4 pt-16 pb-12 sm:px-6 sm:pt-20 sm:pb-16 lg:px-16">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-col px-4 pt-10 pb-8 sm:px-6 sm:pt-14 sm:pb-10 md:pt-20 md:pb-16 lg:px-16">
         {/* Page header */}
-        <div className="mb-10 flex flex-col items-center text-center sm:mb-14 lg:mb-16">
+        <div className="mb-8 flex flex-col items-center text-center sm:mb-10 md:mb-14 lg:mb-16">
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-8 bg-white/40" />
             <span className="text-[11px] font-medium uppercase tracking-[0.5em] text-white/45">
@@ -176,23 +176,23 @@ export default function MeetUsHere() {
 
         {/* Card */}
         <div
-          className="relative mx-auto w-full"
+          className="relative mx-auto w-full max-w-full"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="relative h-[360px] w-full overflow-hidden rounded-[6px] border border-white/12 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:h-[500px] lg:h-[660px]">
-            {/* Prev / Next arrows — centered against the card's own height at every breakpoint */}
+          <div className="relative w-full max-w-full overflow-hidden rounded-[6px] border border-white/12 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] md:h-[500px] lg:h-[660px]">
+            {/* Prev / Next arrows — centered on the image panel on mobile, on the full card from md up (matches original desktop behavior) */}
             <button
               aria-label="Previous country"
               onClick={prev}
-              className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/40 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-black/70 sm:left-6 sm:h-12 sm:w-12"
+              className="absolute left-4 top-[110px] z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/40 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-black/70 sm:left-6 sm:top-[130px] sm:h-12 sm:w-12 md:top-1/2"
             >
               <ChevronLeft size={18} strokeWidth={1.5} />
             </button>
             <button
               aria-label="Next country"
               onClick={next}
-              className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/40 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-black/70 sm:right-6 sm:h-12 sm:w-12"
+              className="absolute right-4 top-[110px] z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/40 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-black/70 sm:right-6 sm:top-[130px] sm:h-12 sm:w-12 md:top-1/2"
             >
               <ChevronRight size={18} strokeWidth={1.5} />
             </button>
@@ -206,43 +206,47 @@ export default function MeetUsHere() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-0"
+                className="relative md:absolute md:inset-0"
               >
-                <img
-                  src={country.image}
-                  alt={country.name}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{ filter: "grayscale(0.35) contrast(1.05)" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/10" />
+                {/* Image panel — fixed compact height + normal flow on mobile so it never overlaps the text below it; becomes the original full-bleed absolute background from md up */}
+                <div className="relative h-[220px] w-full sm:h-[260px] md:absolute md:inset-0 md:h-full">
+                  <img
+                    src={country.image}
+                    alt={country.name}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ filter: "grayscale(0.35) contrast(1.05)" }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/10" />
 
-                {/* top row: flag + name / counter */}
-                <div className="absolute inset-x-0 top-0 flex items-center justify-between p-6 sm:p-9">
-                  <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 overflow-hidden rounded-[6px] border border-white/40 bg-white/5 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.8)] sm:h-9 sm:w-9">
-                      <img
-                        src={country.flag}
-                        alt={`${country.name} flag`}
-                        className="h-full w-full object-cover"
-                      />
+                  {/* top row: flag + name / counter */}
+                  <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-3 p-4 sm:p-5 md:p-9">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <div className="h-7 w-7 shrink-0 overflow-hidden rounded-[6px] border border-white/40 bg-white/5 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.8)] sm:h-8 sm:w-8 md:h-9 md:w-9">
+                        <img
+                          src={country.flag}
+                          alt={`${country.name} flag`}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <span className="truncate text-xs font-semibold uppercase tracking-[0.2em] text-white/75 md:tracking-[0.35em] md:text-sm">
+                        {country.name}
+                      </span>
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75 sm:text-sm">
-                      {country.name}
+                    <span className="shrink-0 font-mono text-xs tracking-[0.2em] text-white/45 md:text-sm">
+                      {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
                     </span>
                   </div>
-                  <span className="font-mono text-xs tracking-[0.2em] text-white/45 sm:text-sm">
-                    {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-                  </span>
                 </div>
 
-                {/* bottom text block */}
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-12">
+                {/* bottom text block — reflows below the image on mobile with its own background; becomes the original absolute overlay from md up */}
+                <div className="relative bg-[#040404] p-4 sm:p-5 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent md:p-7 lg:p-12">
             <h3
   className="
     max-w-5xl
-    text-2xl
-    sm:text-3xl
+    text-xl
+    sm:text-2xl
+    md:text-3xl
     lg:text-[2.5rem]
     font-normal
     tracking-[-0.04em]
@@ -251,14 +255,14 @@ export default function MeetUsHere() {
 >
   {country.heading}
 </h3>
-                  <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/70 sm:text-base">
+                  <p className="mt-3 max-w-xl text-xs font-light leading-relaxed text-white/70 sm:mt-4 sm:text-sm md:text-base">
                     {country.paragraph}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2.5">
+                  <div className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:gap-2.5 md:mt-6">
                     {country.chips.map((chip) => (
                       <span
                         key={chip}
-                        className="rounded-xl border border-white/25 bg-white/[0.06] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white/80 backdrop-blur-md sm:text-xs"
+                        className="rounded-xl border border-white/25 bg-white/[0.06] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-white/80 backdrop-blur-md sm:px-4 sm:py-1.5 sm:text-[11px] md:text-xs"
                       >
                         {chip}
                       </span>
@@ -271,7 +275,7 @@ export default function MeetUsHere() {
         </div>
 
         {/* Pagination dots */}
-        <div className="mt-9 flex items-center justify-center gap-2.5">
+        <div className="mt-6 flex items-center justify-center gap-2.5 sm:mt-7 md:mt-9">
           {COUNTRIES.map((c, i) => (
             <button
               key={c.code}

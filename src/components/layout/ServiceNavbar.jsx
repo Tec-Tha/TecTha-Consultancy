@@ -100,7 +100,9 @@ const ServiceNavbar = () => {
   const subTabs = SUB_SECTIONS[parentLink] || [];
 
   return (
-    <div className="fixed top-20 left-0 w-full h-14 bg-black/90 backdrop-blur-md border-b border-white/10 z-40 shadow-lg text-white">
+    // Mobile: top-16 (64px) to sit flush under the shorter mobile navbar.
+    // Desktop (md+): top-20 (80px), unchanged from original.
+    <div className="fixed top-16 md:top-20 left-0 w-full h-14 bg-black/90 backdrop-blur-md border-b border-white/10 z-40 shadow-lg text-white">
       <div className="mx-auto flex h-full max-w-[1650px] items-center px-6 md:px-10">
         {/* Left: current service label (plain, no dropdown) */}
         <Link

@@ -23,6 +23,10 @@ import {
  * panel on the left, a vertical list of category tabs in the middle, and
  * a flat two-column item list on the right that swaps with the active
  * tab — everything else in the navbar is unchanged.
+ *
+ * Mobile drawer: "What we do" and "Industries" expand as accordions
+ * (reusing the same SERVICES / INDUSTRIES data as the desktop mega menu),
+ * everything else stays a normal link.
  */
 
 const NAV_LINKS = [
@@ -202,6 +206,21 @@ const itemsPanelVariants = {
   exit: { opacity: 0, x: -8, transition: { duration: 0.12 } },
 };
 
+// Mobile accordion panel: smooth height + opacity, no layout jump.
+const mobileAccordionVariants = {
+  hidden: { opacity: 0, height: 0 },
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: { duration: 0.22, ease: [0.7, 0, 0.84, 0] },
+  },
+};
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -210,6 +229,8 @@ const [showIndustries, setShowIndustries] = useState(false);
 
 const [activeCategory, setActiveCategory] = useState(0);
 const [activeIndustry] = useState(0);
+  // Which mobile drawer accordion is open: "services" | "industries" | null
+  const [mobileAccordion, setMobileAccordion] = useState(null);
   const dropdownRef = useRef(null);
   const closeTimeoutRef = useRef(null);
   const location = useLocation();
@@ -239,6 +260,7 @@ const [activeIndustry] = useState(0);
    setShowServices(false);
 setShowIndustries(false);
     setActiveCategory(0);
+    setMobileAccordion(null);
   }, [location.pathname]);
 
   // Clear any pending close timer on unmount.
@@ -283,6 +305,17 @@ setShowIndustries(false);
       e.preventDefault();
       openMegaMenu();
     }
+  };
+
+  // Close the drawer and collapse any open accordion — used when a mobile
+  // submenu item is tapped so navigation feels instant and clean.
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setMobileAccordion(null);
+  };
+
+  const toggleMobileAccordion = (key) => {
+    setMobileAccordion((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -505,9 +538,9 @@ setShowIndustries(false);
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-white md:h-12 md:w-12"
           >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
           </button>
         </div>
       </div>
@@ -526,32 +559,155 @@ setShowIndustries(false);
               variants={linkStagger}
               initial="hidden"
               animate="visible"
-              className="flex flex-col gap-1 px-4 sm:px-6 py-6"
+              className="flex flex-col gap-1 px-4 sm:px-6 py-6 md:mx-auto md:max-w-2xl md:gap-2 md:px-8 md:py-8"
             >
-              {NAV_LINKS.map((link) => (
-                <motion.div key={link.to} variants={linkItem}>
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) =>
-                      `block rounded-xl px-4 py-3 text-lg font-medium ${
-                        isActive
-                          ? "bg-blue-600/15 text-blue-400"
-                          : "text-gray-300 hover:text-white"
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                </motion.div>
-              ))}
+              {NAV_LINKS.map((link) => {
+                // "What we do" — accordion, reuses the SERVICES array.
+                if (link.label === "What we do") {
+                  const isOpen = mobileAccordion === "services";
+
+                  return (
+                    <motion.div key={link.to} variants={linkItem}>
+                      <button
+                        type="button"
+                        onClick={() => toggleMobileAccordion("services")}
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-services-panel"
+                        className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-lg font-medium text-gray-300 hover:text-white md:px-6 md:py-4 md:text-xl"
+                      >
+                        <span>{link.label}</span>
+                        <ChevronDown
+                          size={18}
+                          className={`shrink-0 transition-transform duration-300 md:h-5 md:w-5 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            id="mobile-services-panel"
+                            key="mobile-services-panel"
+                            variants={mobileAccordionVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-4 px-4 pb-3 pt-1 md:px-6 md:pb-4">
+                              {SERVICES.map((section) => (
+                                <div key={section.title}>
+                                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-white/40 md:text-sm">
+                                    {section.title}
+                                  </p>
+                                  <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-6">
+                                    {section.items.map((item) => (
+                                      <Link
+                                        key={item.name}
+                                        to={item.link}
+                                        onClick={closeMobileMenu}
+                                        className="rounded-lg px-3 py-2 text-[15px] text-gray-400 transition-colors duration-200 hover:bg-white/5 hover:text-white md:px-4 md:py-2.5 md:text-base"
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                }
+
+                // "Industries" — accordion, reuses the INDUSTRIES array.
+                if (link.label === "Industries") {
+                  const isOpen = mobileAccordion === "industries";
+
+                  return (
+                    <motion.div key={link.to} variants={linkItem}>
+                      <button
+                        type="button"
+                        onClick={() => toggleMobileAccordion("industries")}
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-industries-panel"
+                        className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-lg font-medium text-gray-300 hover:text-white md:px-6 md:py-4 md:text-xl"
+                      >
+                        <span>{link.label}</span>
+                        <ChevronDown
+                          size={18}
+                          className={`shrink-0 transition-transform duration-300 md:h-5 md:w-5 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            id="mobile-industries-panel"
+                            key="mobile-industries-panel"
+                            variants={mobileAccordionVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-4 px-4 pb-3 pt-1 md:px-6 md:pb-4">
+                              {INDUSTRIES.map((section) => (
+                                <div key={section.title}>
+                                  <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-6">
+                                    {section.items.map((item) => (
+                                      <Link
+                                        key={item.name}
+                                        to={item.link}
+                                        onClick={closeMobileMenu}
+                                        className="rounded-lg px-3 py-2 text-[15px] text-gray-400 transition-colors duration-200 hover:bg-white/5 hover:text-white md:px-4 md:py-2.5 md:text-base"
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                }
+
+                // Everything else — "Who we are", "Insights", "Careers" — stays a normal link.
+                return (
+                  <motion.div key={link.to} variants={linkItem}>
+                    <NavLink
+                      to={link.to}
+                      onClick={closeMobileMenu}
+                      className={({ isActive }) =>
+                        `block rounded-xl px-4 py-3 text-lg font-medium md:px-6 md:py-4 md:text-xl ${
+                          isActive
+                            ? "bg-blue-600/15 text-blue-400"
+                            : "text-gray-300 hover:text-white"
+                        }`
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  </motion.div>
+                );
+              })}
               <SearchOverlay />
               <motion.div variants={linkItem} className="mt-3">
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center gap-2  bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-3.5 text-base font-semibold text-white"
+                  className="flex items-center justify-center gap-2  bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-3.5 text-base font-semibold text-white md:py-4 md:text-lg"
                 >
                   Contact
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5" />
                 </Link>
               </motion.div>
             </motion.nav>

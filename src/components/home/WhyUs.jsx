@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -149,9 +148,9 @@ return(
 "
 >
 
-  <div className="mb-6 flex items-center gap-4 sm:mb-8 sm:gap-7">
+  <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-7">
 
-    <div className="h-[1px] w-16 bg-blue-600"/>
+    <div className="h-[1px] w-10 bg-blue-600 sm:w-12 lg:w-16"/>
 
     <span
       className="
