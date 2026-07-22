@@ -246,7 +246,7 @@ export default function Retail() {
             <div>
 
 
-              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
+              <h2 className="max-w-4xl text-7xl font-light leading-tight text-white">
 
                 Creating Intelligent
                 <br />
@@ -355,7 +355,7 @@ export default function Retail() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-7xl font-light leading-tight text-[#0F172A]">
 
               Transforming
               <br />
@@ -436,7 +436,7 @@ export default function Retail() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
 
               Create Retail
               <br />
