@@ -242,7 +242,7 @@ export default function Manufacturing() {
 
               </p>
 
-              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
+              <h2 className="max-w-4xl text-5xl font-light leading-tight text-white">
 
                 Engineering Intelligent
                 <br />
@@ -352,7 +352,7 @@ export default function Manufacturing() {
 
             </span>
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-5xl font-light leading-tight text-[#0F172A]">
 
               Accelerating
               <br />
