@@ -88,7 +88,7 @@ export default function Manufacturing() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-4xl text-5xl font-light leading-[0.95] tracking-tight text-zinc-300"
+            className="max-w-7xl text-7xl font-light leading-[0.95] tracking-tight text-zinc-300"
           >
             Building
             <br />

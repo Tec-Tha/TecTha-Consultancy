@@ -248,7 +248,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
               
 
-              <h2 className="max-w-4xl text-6xl font-normal leading-tight text-white">
+              <h2 className="max-w-4xl text-7xl font-normal leading-tight text-white">
 
                 Helping Enterprises
                 <br />

@@ -102,7 +102,7 @@ export default function Healthcare() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-4xl text-[clamp(4rem,7vw,7rem)] font-light leading-[0.95] text-white"
+            className="max-w-4xl text-7xl font-light leading-[0.95] text-white"
           >
          Advancing<br />Healthcare
             
