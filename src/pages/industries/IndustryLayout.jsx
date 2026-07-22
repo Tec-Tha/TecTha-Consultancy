@@ -111,13 +111,13 @@ export default function IndustryLayout() {
               initial={{ opacity:0,y:30 }}
               whileInView={{ opacity:1,y:0 }}
               transition={{ duration:.7 }}
-              className="max-w-4xl text-7xl leading-tight text-white"
+              className="max-w-4xl text-6xl leading-tight text-white"
             >
               Engineering
-              <br />
-              Industry
-              <br />
-              Transformation.
+<br />
+Innovation
+<br />
+Delivered.
             </motion.h1>
 
             <motion.p
@@ -126,10 +126,10 @@ export default function IndustryLayout() {
               transition={{ delay:.2 }}
               className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
             >
-              We help organizations modernize operations,
-              unlock intelligent automation,
-              and create scalable digital ecosystems
-              that drive measurable business growth.
+              We help engineering organizations
+modernize operations,
+adopt intelligent automation,
+and build scalable digital solutions.
             </motion.p>
 
           </div>

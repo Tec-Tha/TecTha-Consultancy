@@ -230,7 +230,7 @@ const CloudInfrastructure = () => {
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0} className="-mt-20 text-xl font uppercase tracking-[0.3em] mb-6 font-['Montserrat'] text-white">
             Cloud Infrastructure
           </motion.p> <hr className="border-white/40 my-6" />
-          <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.08} className="text-7xl md:text-6xl lg:text-7xl font text-white leading-[1.05]">
+          <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.08} className="text-6xl md:text-6xl lg:text-7xl font text-white leading-[1.05]">
             Infrastructure Built for the Enterprise Cloud.
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={0.16} className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
