@@ -34,7 +34,9 @@ const ContactCTA = () => {
         className="pointer-events-none absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-[90px] sm:h-[420px] sm:w-[420px] sm:blur-[120px] lg:h-[560px] lg:w-[560px]"
       />
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6">
+      {/* px-4 -> px-6 raises mobile-only side padding (below the sm/640px breakpoint).
+          sm:px-6 is untouched, so tablet/desktop spacing is identical to before. */}
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 text-center sm:px-6">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}

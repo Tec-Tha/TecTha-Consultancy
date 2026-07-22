@@ -704,7 +704,7 @@ setShowIndustries(false);
               <motion.div variants={linkItem} className="mt-3">
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center gap-2  bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-3.5 text-base font-semibold text-white md:py-4 md:text-lg"
+                  className="flex items-center justify-center gap-2  bg-white px-5 py-3.5 text-base font-bold text-black md:py-4 md:text-lg"
                 >
                   Contact
                   <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5" />
