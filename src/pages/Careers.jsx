@@ -64,9 +64,9 @@ const ASSET_BASE = "/careers";
 
 const HERO = {
   eyebrow: "Careers",
-  title: "Work that ships, on teams that stay small.",
+  title: "Build what's next, together.",
   subtitle:
-    "Join a global community of innovators, engineers and problem-solvers dedicated to creating transformative technology solutions that empower businesses, inspire communities and shape the future of digital innovation.",
+    "Work alongside passionate engineers, designers, and innovators to create AI-powered software, cloud platforms, and enterprise solutions that make a measurable impact for businesses worldwide.",
   image: `${ASSET_BASE}/hero.avif`,
 };
 
@@ -82,15 +82,15 @@ const SET_THE_PACE = {
 
 const HIRING_PATHS = [
   {
-    title: "Entry Level & Internships",
-    description: "Start your career journey with real client work from week one.",
-    cta: "Explore",
+    title: "Early Careers",
+    description: "Launch your career with meaningful work, hands-on learning, and mentorship from experienced professionals.",
+    cta: "Explore Roles →",
     anchor: "#open-roles",
   },
   {
-    title: "Experienced Hires",
-    description: "Explore challenging, senior-scope opportunities across our hubs.",
-    cta: "Explore",
+    title: "Experienced Professionals",
+    description: "Take on complex challenges, lead impactful initiatives, and help build the next generation of AI, cloud, and enterprise solutions.",
+    cta: "View Opportunities →",
     anchor: "#open-roles",
   },
 ];
@@ -121,24 +121,24 @@ const PROGRAMS_CAROUSEL = [
 
 const BENEFITS = [
   {
-    icon: PiggyBank,
-    title: "Equity from day one",
-    description: "Every full-time hire receives equity, not just leadership.",
+    
+    title: "Collaborative Culture",
+    description: "Work with talented people who value innovation, trust, and continuous improvement.",
   },
   {
-    icon: Heart,
-    title: "Full health coverage",
-    description: "Medical, dental, and vision covered in full for you and dependents.",
+   
+    title: "Learning & Growth",
+    description: "Expand your expertise through mentorship, real-world projects, and continuous professional development.",
   },
   {
-    icon: GraduationCap,
-    title: "Learning budget",
-    description: "$3,000 a year for courses, conferences, or certifications, no approval chain.",
+    
+    title: "Flexible Work",
+    description: "A flexible work environment designed to help you do your best work from wherever you are.",
   },
   {
-    icon: Globe2,
-    title: "Work from any hub",
-    description: "Rotate between our six delivery hubs, or work remote within your region.",
+    
+    title: "Ownership & Impact",
+    description: "Take responsibility for meaningful work that creates lasting value for clients and communities.",
   },
 ];
 
@@ -348,16 +348,13 @@ const BenefitCarousel = ({ items }) => {
         className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {items.map((benefit) => {
-          const Icon = benefit.icon;
+         
           return (
             <div
               key={benefit.title}
               className="w-72 flex-shrink-0 snap-start bg-[color:var(--color-bg-secondary)] p-8"
             >
-              <Icon
-                className="h-9 w-9 text-[color:var(--color-brand-600)]"
-                strokeWidth={1.5}
-              />
+             
               <h3 className="mt-10 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-text-primary)]">
                 {benefit.title}
               </h3>
@@ -530,7 +527,7 @@ const Careers = () => {
         {/* Benefits carousel */}
         <section className="py-2 md:py-2">
           <div className="mx-auto max-w-7xl px-6">
-            <SectionHeader overline="Benefits" title="Unparalleled workplace benefits" align="left" />
+            <SectionHeader overline="Benefits" title="Build Your Career With Confidence" align="left" />
             <div className="mt-12">
               <BenefitCarousel items={BENEFITS} />
             </div>

@@ -89,11 +89,7 @@ const Insights = () => {
     lg:text-6xl
     "
   >
-    Perspectives
-   
-    That Shape
-  
-    Tomorrow.
+ Building Tomorrow Starts With Better Thinking
   </h2>
 
   {/* Subtitle */}
@@ -112,9 +108,7 @@ const Insights = () => {
     lg:leading-10
     "
   >
-    Explore expert perspectives, emerging technologies, and practical
-    insights that help organizations navigate change and create lasting
-    business value.
+   Discover research, emerging technologies, and strategic insights that help organizations anticipate change, accelerate innovation, and create sustainable competitive advantage.
   </p>
 
 </div>

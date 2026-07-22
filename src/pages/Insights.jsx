@@ -129,7 +129,7 @@ const Insights = () => {
             className="mb-6 inline-flex w-fit items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-white/70"
           >
             <span className="h-px w-10 bg-white/50" />
-            Insights &amp; Programs
+            INSIGHTS &amp; RESOURCES
           </motion.span>
 
           <motion.h1
@@ -139,7 +139,8 @@ const Insights = () => {
             custom={0.22}
             className="max-w-4xl text-[clamp(2.75rem,7vw,4.6rem)] font-normal leading-[1.02] tracking-tight text-white"
           >
-           INSIGHTS THAT INSPIRE GLOBAL PROGRESS
+          
+   Engineering Ideas That Move Business Forward.
           </motion.h1>
 
           <motion.p
@@ -149,7 +150,7 @@ const Insights = () => {
             custom={0.36}
             className="mt-8 max-w-xl text-lg leading-relaxed text-white/70"
           >
-            From international technology summits to strategic innovation forums, discover how Tec Tha is shaping meaningful conversations and impactful collaborations across the world.
+            Explore expert perspectives, technical articles, industry trends, and practical resources covering AI, cloud, enterprise software, cybersecurity, and digital transformation
           </motion.p>
         </motion.div>
 

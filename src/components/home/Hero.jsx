@@ -30,12 +30,12 @@ const HERO_SLIDES = [
     badge: "DIGITAL TRANSFORMATION",
 
     title:
-  "Building\nIntelligent\nBusiness\nSolutions.",
+  "Engineering\nthe Future\nof Business",
 
     description:
-      "Empowering businesses with modern technology, AI, and scalable digital solutions.",
+      "We partner with organizations worldwide to design intelligent technologies, accelerate digital transformation, and build secure, scalable solutions that create lasting business value",
 
-    button: "Explore Services",
+    button: "Explore Solutions",
       to: "/Services",  
     image: "/digital.jpeg",
   },
@@ -46,10 +46,10 @@ const HERO_SLIDES = [
     badge: "ARTIFICIAL INTELLIGENCE",
 
     title:
-      "Creating\nSmarter\nBusinesses\nWith AI.",
+      "Engineering\nIntelligent\nDigital\nFutures.",
 
     description:
-      "Delivering enterprise AI solutions that automate, predict, and accelerate innovation.",
+      "We design AI-powered platforms, enterprise software, cloud solutions, and digital ecosystems that help organizations innovate, scale, and lead with confidence.",
 
     button: "Discover AI",
     to: "/services/ArtificialIntelligence", 
@@ -63,10 +63,10 @@ const HERO_SLIDES = [
     badge: "ENTERPRISE SOLUTIONS",
 
     title:
-      "Engineering\nThe Future\nOf Digital\nGrowth.",
+      "Engineering\nWhat's Next.",
 
     description:
-      "Helping organizations embrace next-generation technology with confidence.",
+      "We design intelligent technologies, enterprise platforms, and secure digital solutions that help organizations innovate, scale, and lead with confidence.",
 
     button: "Get Started",
     to: "/Contact", 

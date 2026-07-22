@@ -10,24 +10,24 @@ const COUNTRIES = [
     name: "Singapore",
     flag: "/meetushere/sg.svg",
     image: "/meetushere/8.avif",
-    heading: "Enabling next-generation enterprise technology across Singapore",
+    heading: "Engineering Innovation for Asia-Pacific.",
     paragraph:
-      "As a regional technology hub, Singapore is where Tec Tha delivers advanced cloud, AI, and data engineering solutions that help enterprises across Asia-Pacific scale securely and intelligently.",
-    chips: ["AI & Cloud", "Data Engineering", "Cybersecurity", "Digital Transformation"],
+      "Leveraging Singapore's world-class technology ecosystem, Tec Tha partners with organizations to deliver intelligent digital solutions that accelerate innovation, strengthen resilience, and create sustainable business growth across the Asia-Pacific region.",
+    chips: ["Artificial Intelligence", "Cloud Platforms", "Enterprise Software", "Cybersecurity"],
   },
   {
   code: "EU",
   name: "Europe",
   flag: "/meetushere/eu.svg",
   image: "/meetushere/9.avif",
-  heading: "Accelerating digital transformation across Europe",
+  heading: "Engineering the Future of European Enterprise",
   paragraph:
-    "Tec Tha partners with enterprises across Europe to modernize technology landscapes through AI, cloud engineering, cybersecurity, and enterprise software. We help organizations build secure, resilient, and future-ready digital ecosystems that drive innovation and sustainable growth.",
+    "Tec Tha partners with organizations across Europe to deliver AI, cloud, cybersecurity, and enterprise technologies that strengthen resilience, accelerate innovation, and create sustainable business growth.",
   chips: [
-    "Enterprise AI",
-    "Cloud Transformation",
+    "Artificial Intelligence",
+    "Cloud Platforms",
     "Cybersecurity",
-    "Digital Engineering",
+    "Enterprise Software",
   ],
 },
  
@@ -36,9 +36,9 @@ const COUNTRIES = [
     name: "United Arab Emirates",
     flag: "/meetushere/uae.svg",
     image: "/meetushere/2.avif",
-    heading: "Advancing enterprise and government innovation across the UAE",
+    heading: "Accelerating Digital Innovation Across the UAE",
     paragraph:
-      "In the UAE, Tec Tha builds intelligent, secure digital infrastructure for enterprises and government institutions, combining AI, cloud, and data engineering to support ambitious national transformation agendas.",
+      "Helping businesses and public sector organizations adopt AI, cloud, enterprise applications, and digital engineering solutions to innovate, grow, and deliver measurable impact.",
     chips: ["AI & Data Analytics", "Cloud Solutions", "Digital Engineering", "Technology Consulting"],
   },
    {
@@ -166,11 +166,11 @@ export default function MeetUsHere() {
             <span className="h-px w-8 bg-white/40" />
           </div>
           <h2 className="text-[10vw] font-medium leading-[0.95] tracking-tight sm:text-[7vw] lg:text-[3.6rem]">
-            Meet Us Here
+           Trusted Across Global Markets
           </h2>
           <p className="mt-6 max-w-lg text-sm font-light leading-relaxed tracking-wide text-white/50 sm:text-base">
-            Tec Tha delivers AI, cloud, cybersecurity, and enterprise engineering
-            for organizations across seven global markets.
+           
+            Tec Tha partners with organizations worldwide to deliver enterprise AI, cloud transformation, cybersecurity, and digital engineering solutions that accelerate innovation, strengthen security, and drive sustainable business growth.
           </p>
         </div>
 

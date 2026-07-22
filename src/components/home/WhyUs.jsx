@@ -1,340 +1,312 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-gsap.registerPlugin(ScrollTrigger);
 
-const THINKING = [
+/* ---------------------------------------------------------------
+   DESIGN TOKENS — matched to the reference (white bg, blue accent)
+--------------------------------------------------------------- */
+const PAPER = "#FFFFFF";
+const INK = "#14161B";
+const SLATE = "#6B7280";
+const HAIRLINE = "#E7E8EC";
+const ACCENT = "darkblue"; // reference blue
+const ACCENT_SOFT = "#EAF0FF";
+
+const FONT_DISPLAY = "'Montserrat', sans-serif";
+const FONT_BODY = "'Montserrat', sans-serif";
+
+const EASE = [0.22, 1, 0.36, 1];
+
+/* ---------------------------------------------------------------
+   CONTENT — same four principles and graphics as before
+--------------------------------------------------------------- */
+const PRINCIPLES = [
   {
-    id: 1,
-    title: "Technology Should Empower Businesses Enable Organizations to Innovate and Thrive with Confidence.",
+    num: "01",
+    title: "Business First. Technology Second.",
     description:
-      "We transform technology into a strategic advantage that drives innovation, efficiency, and measurable business growth.",
-    image: "/whyus.jpg",
+      "Technology is valuable only when it solves business challenges, creates measurable outcomes, and enables sustainable growth.",
+     image: "/whyus.jpg",
   },
-
   {
-    id: 2,
-    title: "Understanding Comes Before Every Great Transformation with Deep Business Insight and a Clear Vision for the Future.",
+    num: "02",
+    title: "Every Great Partnership Begins With Understanding.",
     description:
-      "Every engagement begins with listening, learning, and aligning technology with your long-term business vision.",
-    image: "/wethink1.jpg",
+      "We listen first, align with your business objectives, and design solutions tailored to your long-term vision.",
+      image: "/wethink1.jpg",
   },
-
   {
-    id: 3,
-    title: "Innovation Delivers Its Greatest Value It Accelerates Transformation and  Sustainable Competitive Advantage..",
+    num: "03",
+    title: "Innovation With Purpose.",
     description:
-      "We combine strategy, design, and engineering to create digital solutions that perform reliably at enterprise scale.",
-    image: "/industry.jpg",
+      "We combine strategy, engineering, and intelligent technologies to build secure, scalable, and future-ready digital solutions.",
+      image: "/industry.jpg",
   },
-
   {
-    id: 4,
-    title: "Building Long-Term Partnerships That Inspire Innovation and Lasting Business Value Beyond Every Engagement.",
+    num: "04",
+    title: "Success Is Built Together.",
     description:
-      "Working together over the long term enables continuous innovation, sustainable growth, and lasting business value.",
-    image: "/fill.avif",
+      "We believe long-term partnerships create stronger innovation, greater resilience, and lasting business value.",
+       image: "/fill.avif",
   },
 ];
-export default function HowWeThink() {
 
-const sectionRef = useRef(null);
+/* ---------------------------------------------------------------
+   ABSTRACT LINE-ART GRAPHICS (same visual language, larger canvas)
+--------------------------------------------------------------- */
+function Graphic({ type }) {
+  const common = { fill: "none", strokeLinecap: "round", strokeLinejoin: "round" };
 
-const [active,setActive] = useState(0);
-
-useEffect(() => {
-
-  const section = sectionRef.current;
-
-  const tl = gsap.timeline({
-
-    scrollTrigger:{
-
-      trigger:section,
-
-      start:"top top",
-
-      end:"bottom bottom",
-
-      scrub:1,
-
-      invalidateOnRefresh:true,
-
-      onUpdate:(self)=>{
-
-        const progress=self.progress;
-
-        const total=THINKING.length;
-
-        const current=Math.min(
-          total-1,
-          Math.floor(progress*total)
-        );
-
-        setActive(current);
-
-      }
-
-    }
-
-  });
-
-  return()=>{
-
-    tl.kill();
-
-    ScrollTrigger.getAll().forEach(trigger=>trigger.kill());
-
+  if (type === "value") {
+    return (
+      <svg viewBox="0 0 800 450" width="100%" height="100%">
+        <line x1="70" y1="360" x2="730" y2="360" stroke={HAIRLINE} strokeWidth="1" />
+        {[140, 280, 420, 560].map((x, i) => (
+          <rect
+            key={x}
+            x={x}
+            y={360 - (i + 1) * 52}
+            width="64"
+            height={(i + 1) * 52}
+            fill={i === 3 ? ACCENT : INK}
+            opacity={i === 3 ? 1 : 0.1 + i * 0.06}
+          />
+        ))}
+        <path d="M105 315 L305 245 L455 285 L690 130" stroke={ACCENT} strokeWidth="3" {...common} />
+        <circle cx="690" cy="130" r="8" fill={ACCENT} />
+      </svg>
+    );
   }
 
-},[]);
+  if (type === "listen") {
+    return (
+      <svg viewBox="0 0 800 450" width="100%" height="100%">
+        <circle cx="400" cy="225" r="42" fill={INK} />
+        {[100, 155, 210].map((r, i) => (
+          <circle
+            key={r}
+            cx="400"
+            cy="225"
+            r={r}
+            stroke={i === 2 ? ACCENT : HAIRLINE}
+            strokeWidth={i === 2 ? 2 : 1}
+            {...common}
+          />
+        ))}
+        <path d="M400 190 L400 260 M365 225 L435 225" stroke={PAPER} strokeWidth="3" {...common} />
+      </svg>
+    );
+  }
 
-return(
+  if (type === "network") {
+    const pts = [
+      [230, 130],
+      [560, 100],
+      [660, 250],
+      [420, 340],
+      [150, 290],
+      [400, 225],
+    ];
+    return (
+      <svg viewBox="0 0 800 450" width="100%" height="100%">
+        {pts.map(([x, y], i) =>
+          pts.slice(i + 1).map(([x2, y2], j) => (
+            <line key={`${i}-${j}`} x1={x} y1={y} x2={x2} y2={y2} stroke={HAIRLINE} strokeWidth="1" />
+          ))
+        )}
+        <line x1="400" y1="225" x2="660" y2="250" stroke={ACCENT} strokeWidth="2" />
+        <line x1="400" y1="225" x2="230" y2="130" stroke={ACCENT} strokeWidth="2" />
+        {pts.map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r={i === 5 ? 12 : 9} fill={i === 5 ? ACCENT : INK} opacity={i === 5 ? 1 : 0.75} />
+        ))}
+      </svg>
+    );
+  }
 
-<section
-  ref={sectionRef}
-  className="
-  relative
-  h-[420vh]
-  bg-white
-  sm:h-[520vh]
-  lg:h-[600vh]
-  "
->
+  return (
+    <svg viewBox="0 0 800 450" width="100%" height="100%">
+      <circle cx="340" cy="225" r="105" stroke={INK} strokeWidth="2" {...common} />
+      <circle cx="465" cy="225" r="105" stroke={ACCENT} strokeWidth="2" {...common} />
+      <line x1="120" y1="225" x2="190" y2="225" stroke={HAIRLINE} strokeWidth="1" />
+      <line x1="615" y1="225" x2="685" y2="225" stroke={HAIRLINE} strokeWidth="1" />
+    </svg>
+  );
+}
 
-  {/* Sticky Container */}
-
-  <div
-    className="
-    sticky
-    top-0
-    flex
-    min-h-screen
-    items-center
-    overflow-hidden
-    "
-  >
-
-  <div
-  className="
-  mx-auto
-  grid
-  h-full
-  w-full
-  max-w-[1900px]
-  grid-cols-1
-  items-center
-  gap-8
-  px-4
-  py-12
-  sm:px-6
-  sm:py-16
-  lg:grid-cols-2
-  lg:px-14
-  lg:py-0
-  "
->
-    <div
-  className="
-  sticky
-  top-0
-  flex
-  min-h-screen
-  flex-col
-  justify-center
-  py-8
-  lg:h-screen
-"
->
-
-  <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-7">
-
-    <div className="h-[1px] w-10 bg-blue-600 sm:w-12 lg:w-16"/>
-
-    <span
-      className="
-      font-['Montserrat']
-      text-lg
-      font-medium
-      uppercase
-      tracking-[4px]
-      sm:text-xl
-      text-blue-800
-      "
+/* ---------------------------------------------------------------
+   CHEVRON ICON
+--------------------------------------------------------------- */
+function Chevron({ open }) {
+  return (
+    <motion.svg
+      viewBox="0 0 20 20"
+      width="20"
+      height="20"
+      animate={{ rotate: open ? 180 : 0 }}
+      transition={{ duration: 0.4, ease: EASE }}
+      className="flex-shrink-0"
     >
-      HOW WE THINK
-    </span>
+      <path
+        d="M4 7L10 13L16 7"
+        stroke={open ? ACCENT : SLATE}
+        strokeWidth="1.6"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </motion.svg>
+  );
+}
 
-  </div>
-<AnimatePresence mode="wait">
-  <motion.div
+/* ---------------------------------------------------------------
+   ACCORDION ITEM
+--------------------------------------------------------------- */
+function AccordionItem({ data, index, isOpen, onToggle }) {
+  return (
+    <div>
+      <button
+        onClick={() => onToggle(index)}
+        className="w-full flex items-start gap-5 md:gap-8 py-7 md:py-8 text-left"
+        style={{ background: "transparent" }}
+      >
+        <span
+          style={{
+            fontFamily: FONT_BODY,
+            fontWeight: 700,
+            fontSize: "20px",
+            letterSpacing: "0.02em",
+            color: ACCENT,
+            paddingTop: "3px",
+            flexShrink: 0,
+            width: "30px",
+          }}
+        >
+          {data.num}
+        </span>
 
-    key={active}
+        <h3
+          style={{
+            fontFamily: FONT_DISPLAY,
+            color: INK,
+            letterSpacing: "-0.005em",
+            lineHeight: 1.3,
+          }}
+          className="flex-1 text-xl md:text-4xl font-normal pr-4"
+        >
+          {data.title}
+        </h3>
 
-    initial={{
-      opacity:0,
-      y:50
-    }}
+        <span style={{ marginTop: "6px" }}>
+          <Chevron open={isOpen} />
+        </span>
+      </button>
 
-    animate={{
-      opacity:1,
-      y:0
-    }}
-    exit={{
-  opacity:0,
-  y:-40
-}}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.55, ease: EASE }}
+            className="overflow-hidden"
+          >
+            <div className="pb-10 md:pb-12 pl-0 md:pl-[46px]">
+              {/* LARGE IMAGE */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
+                style={{
+                  background: `linear-gradient(160deg, ${PAPER} 0%, ${ACCENT_SOFT} 100%)`,
+                  border: `1px solid ${HAIRLINE}`,
+                }}
+                className="w-full aspect-video rounded-2xl overflow-hidden p-8 md:p-12 mb-8"
+              >
+                <img src={data.image} alt={data.title} className="w-full h-full object-cover" />
+              </motion.div>
 
-    transition={{
-      duration:.7,
-      ease:[0.22,1,0.36,1]
-    }}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
+                style={{ fontFamily: FONT_BODY, color: SLATE, lineHeight: 1.8 }}
+                className="text-base md:text-lg max-w-2xl"
+              >
+                {data.description}
+              </motion.p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-  >
-
-    <span
-      className="
-      text-[3.4rem]
-      font-bold
-      leading-none
-      sm:text-[4.5rem]
-      lg:text-[90px]
-      text-gray-400
-      "
-    >
-      0{THINKING[active].id}
-    </span>
-
-    <h2
-      className="
-      mt-6
-      
-
-      font-['Montserrat']
-
-      text-[2.2rem]
-
-      font-medium
-
-      leading-[1.1]
-
-      tracking-tight
-
-      text-black
-      sm:text-[3rem]
-      lg:text-[60px]
-      "
-    >
-
-      {THINKING[active].title}
-
-      <br/>
-
-      <span className="text-black">
-
-        {THINKING[active].highlight}
-
-      </span>
-
-    </h2>
-
-    <p
-      className="
-      mt-6
-
-      max-w-xl
-
-      text-base
-
-      leading-8
-
-      text-gray-500
-      sm:mt-8
-      sm:text-lg
-      sm:leading-9
-      lg:text-xl
-      lg:leading-9
-      "
-    >
-
-      {THINKING[active].description}
-
-    </p>
-
- </motion.div>
- </AnimatePresence>
-
-</div>
-
-{/* RIGHT */}
-
-<div>
-
-  <div className="group relative overflow-hidden rounded-[10px]">
-   <AnimatePresence mode="wait">
-
-<motion.img
-key={active}
-
-initial={{
-opacity:0,
-scale:1.08
-}}
-
-animate={{
-opacity:1,
-scale:1
-}}
-
-exit={{
-opacity:0,
-scale:1.08
-}}
-
-transition={{
-duration:.8
-}}
-      src={THINKING[active].image}
-      alt={THINKING[active].title}
-      className="
-      h-[320px]
-      w-full
-      object-cover
-      scale-105
-      sm:h-[420px]
-      lg:h-[600px]
-transition-transform
-duration-[1800ms]
-ease-out
-group-hover:scale-100
-      "
-    />
-    </AnimatePresence>
-
-    <div
-      className="
-      absolute
-      inset-0
-      bg-gradient-to-t
-      from-black/30
-      via-transparent
-      to-transparent
-      "
-    />
-  </div>
-
-</div>
-
-      </div>
-
+      <div style={{ height: "1px", background: HAIRLINE }} />
     </div>
+  );
+}
 
-  
+/* ---------------------------------------------------------------
+   MAIN SECTION
+--------------------------------------------------------------- */
+export default function OurApproach() {
+  const [active, setActive] = useState(0);
 
-</section>
+  return (
+    <section style={{ background: PAPER }} className="relative w-full py-20 md:py-28">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+      `}</style>
 
+      <div className="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+        {/* LEFT — sticky intro */}
+        <div className="md:col-span-4">
+          <div className="static md:sticky md:top-32">
+            <span
+              style={{
+                fontFamily: FONT_BODY,
+                fontWeight: 700,
+                color: ACCENT,
+                letterSpacing: "0.16em",
+              }}
+              className="block text-xs md:text-xl uppercase mb-6"
+            >
+              Our Approach
+            </span>
 
-)
+            <h2
+              style={{
+                fontFamily: FONT_DISPLAY,
+                color: INK,
+                letterSpacing: "-0.01em",
+                lineHeight: 1.15,
+              }}
+              className="text-4xl md:text-5xl font-normal mb-6"
+            >
+              Four convictions that guide every engagement.
+            </h2>
 
+            <p
+              style={{ fontFamily: FONT_BODY, color: SLATE, lineHeight: 1.75 }}
+              className="text-base max-w-sm"
+            >
+              What we hold ourselves to, from the first conversation
+              through long-term delivery.
+            </p>
+          </div>
+        </div>
+
+        {/* RIGHT — accordion */}
+        <div className="md:col-span-8">
+          <div style={{ height: "1px", background: HAIRLINE }} />
+          {PRINCIPLES.map((p, i) => (
+            <AccordionItem
+              key={p.num}
+              data={p}
+              index={i}
+              isOpen={active === i}
+              onToggle={(idx) => setActive(active === idx ? null : idx)}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
