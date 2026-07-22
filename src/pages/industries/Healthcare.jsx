@@ -85,14 +85,14 @@ export default function Healthcare() {
 
         {/* Content */}
 
-        <div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <motion.p
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0}
-            className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400"
+            className="mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.45em] text-blue-400"
           >
            
           </motion.p>
@@ -102,7 +102,7 @@ export default function Healthcare() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-4xl text-7xl font-light leading-[0.95] text-white"
+            className="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] lg:leading-[0.95] text-white"
           >
          Advancing<br />Healthcare
             
@@ -114,7 +114,7 @@ export default function Healthcare() {
             initial="hidden"
             animate="visible"
             custom={0.3}
-            className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+            className="mt-6 lg:mt-8 max-w-2xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300"
           >
             We help healthcare providers, hospitals and life sciences
             organizations deliver intelligent patient experiences,
@@ -126,7 +126,7 @@ export default function Healthcare() {
             initial="hidden"
             animate="visible"
             custom={0.45}
-            className="mt-12 flex gap-5"
+            className="mt-10 lg:mt-12 flex gap-5"
           >
 
           </motion.div>
@@ -139,7 +139,7 @@ export default function Healthcare() {
             repeat: Infinity,
             duration: 2,
           }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-white"
         >
           <ChevronDown size={42} />
         </motion.div>
@@ -147,9 +147,9 @@ export default function Healthcare() {
       </section>
             {/* ================= DIGITAL HEALTHCARE ================= */}
 
-      <section className="bg-white py-32">
+      <section className="bg-white py-16 md:py-24 lg:py-32">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:gap-16 lg:gap-24 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
 
           {/* LEFT IMAGE */}
 
@@ -164,7 +164,7 @@ export default function Healthcare() {
             <img
               src="/industry/51.jpg"
               alt="Digital Healthcare"
-              className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[280px] sm:h-[420px] md:h-[560px] lg:h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -178,13 +178,13 @@ export default function Healthcare() {
             transition={{ duration: 0.8 }}
           >
 
-            <span className="text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.45em] text-blue-400">
 
               DIGITAL HEALTHCARE
 
             </span>
 
-           <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]"> 
+           <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-[#0F172A]"> 
 
               Intelligent Care
               <br />
@@ -192,7 +192,7 @@ export default function Healthcare() {
 
             </h2>
 
-          <p className="mt-8 text-lg leading-9 text-gray-400">
+          <p className="mt-6 lg:mt-8 text-base sm:text-lg lg:text-lg leading-7 lg:leading-9 text-gray-400">
 
               Healthcare organizations are embracing AI, cloud platforms,
               connected medical devices and predictive analytics to
@@ -203,7 +203,7 @@ export default function Healthcare() {
 
             {/* FEATURES */}
 
-            <div className="mt-14 space-y-7">
+            <div className="mt-10 lg:mt-14 space-y-5 lg:space-y-7">
 
               {[
                 "AI Assisted Clinical Diagnosis",
@@ -216,16 +216,16 @@ export default function Healthcare() {
 
                 <div
                   key={item}
-                  className="flex items-center gap-5"
+                  className="flex items-center gap-4 sm:gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
+                  <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base sm:text-lg font-light text-white">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-700">
+                  <p className="text-base sm:text-lg text-gray-700">
 
                     {item}
 
@@ -246,20 +246,20 @@ export default function Healthcare() {
       </section>
             {/* ================= IN FOCUS ================= */}
 
-      <section className="bg-[#0B0F16] py-32">
+      <section className="bg-[#0B0F16] py-16 md:py-24 lg:py-32">
 
-        <div className="mx-auto max-w-7xl px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
 
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-10 lg:mb-16 flex items-center justify-between">
 
             <div>
 
               
               
 
-              <h2 className="text-6xl font-light leading-tight text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-white">
 
                 Healthcare Capabilities
 
@@ -274,18 +274,21 @@ export default function Healthcare() {
           <Swiper
             modules={[Navigation]}
             navigation
-            spaceBetween={30}
+            spaceBetween={20}
             slidesPerView={3.2}
             speed={900}
             breakpoints={{
               0: {
                 slidesPerView: 1.15,
+                spaceBetween: 16,
               },
               768: {
                 slidesPerView: 2,
+                spaceBetween: 24,
               },
               1200: {
                 slidesPerView: 3.2,
+                spaceBetween: 30,
               },
             }}
           >
@@ -304,7 +307,7 @@ export default function Healthcare() {
                   className="group cursor-pointer overflow-hidden bg-[#111827]"
                 >
 
-                  <div className="relative h-[560px] overflow-hidden">
+                  <div className="relative h-[320px] sm:h-[420px] md:h-[480px] lg:h-[560px] overflow-hidden">
 
                     <img
                       src={card.image}
@@ -318,15 +321,15 @@ export default function Healthcare() {
 
                     {/* Content */}
 
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 lg:p-8">
 
-                      <h3 className="text-3xl font-light text-white">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white">
 
                         {card.title}
 
                       </h3>
 
-                      <p className="mt-5 leading-8 text-gray-300">
+                      <p className="mt-3 sm:mt-4 lg:mt-5 text-sm sm:text-base leading-6 lg:leading-8 text-gray-300">
 
                         Intelligent healthcare solutions that improve patient
                         outcomes, operational efficiency and connected care.
@@ -349,9 +352,9 @@ export default function Healthcare() {
       </section>
             {/* ================= CONNECTED HEALTHCARE ================= */}
 
-      <section className="bg-white py-36">
+      <section className="bg-white py-16 md:py-24 lg:py-36">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:gap-16 lg:gap-24 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
 
@@ -362,13 +365,13 @@ export default function Healthcare() {
             transition={{ duration: 0.8 }}
           >
 
-            <span className="text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.45em] text-blue-400">
 
               CONNECTED HEALTHCARE
 
             </span>
 
-            <h2 className="mt-6 text-7xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-[#0F172A]">
 
               Building The
               <br />
@@ -378,7 +381,7 @@ export default function Healthcare() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-6 lg:mt-8 text-base sm:text-lg lg:text-lg leading-7 lg:leading-9 text-gray-600">
 
               Modern healthcare demands connected systems, secure data
               exchange, AI-powered clinical support and digital experiences
@@ -404,7 +407,7 @@ export default function Healthcare() {
             <img
               src="/industry/52.jpg"
               alt="Healthcare Technology"
-              className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[300px] sm:h-[440px] md:h-[600px] lg:h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -414,7 +417,7 @@ export default function Healthcare() {
       </section>
             {/* ================= HEALTHCARE CTA ================= */}
 
-      <section className="relative overflow-hidden bg-[#020617] py-36">
+      <section className="relative overflow-hidden bg-[#020617] py-16 md:py-24 lg:py-36">
 
         {/* Background Image */}
 
@@ -430,7 +433,7 @@ export default function Healthcare() {
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-[#020617]" />
 
-        <div className="relative z-20 mx-auto max-w-7xl px-8">
+        <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -440,13 +443,13 @@ export default function Healthcare() {
             className="text-center"
           >
 
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+            <p className="mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.45em] text-blue-400">
 
               SHAPING THE FUTURE OF HEALTHCARE
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white">
 
               Deliver Better Care.
               <br />
@@ -454,7 +457,7 @@ export default function Healthcare() {
 
             </h2>
 
-            <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+            <p className="mx-auto mt-8 lg:mt-10 max-w-3xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300">
 
               From intelligent hospitals to connected patient experiences,
               Tec Tha enables healthcare organizations to innovate with AI,

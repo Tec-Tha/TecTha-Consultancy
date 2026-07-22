@@ -24,7 +24,7 @@ const Footer = () => {
           {/* Logo */}
           <Link to="/" className="flex flex-shrink-0 items-center gap-3">
             <img
-              src="/logo.jpeg"
+              src="/logo1.jpeg"
               alt="Tec Tha"
               className="h-10 w-10 object-contain sm:h-12 sm:w-12"
             />

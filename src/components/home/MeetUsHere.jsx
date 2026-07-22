@@ -84,12 +84,12 @@ const COUNTRIES = [
 
   {
     code: "DE",
-    name: "Germany",
-    flag: "/meetushere/germany.svg",
-    image: "/meetushere/1.avif",
-    heading: "Engineering digital transformation across Germany",
+    name: "france",
+    flag: "/meetushere/fr.svg",
+    image: "/meetushere/6.avif",
+    heading: "Engineering digital transformation across France",
     paragraph:
-      "Tec Tha partners with Germany's industrial and enterprise leaders to modernize core systems, embed AI into critical operations, and build cloud and cybersecurity foundations engineered for precision and scale.",
+      "Tec Tha partners with France's industrial and enterprise leaders to modernize core systems, embed AI into critical operations, and build cloud and cybersecurity foundations engineered for precision and scale.",
     chips: ["AI & Automation", "Cloud Engineering", "Cybersecurity", "Enterprise Software"],
   },
  

@@ -55,7 +55,7 @@ return(
 
 {/* HERO */}
 
-<section className="relative flex h-screen items-center overflow-hidden bg-black">
+<section className="relative flex min-h-screen items-center overflow-hidden bg-black">
 
 <img
 src="/industry/60.jpg"
@@ -67,14 +67,14 @@ className="absolute inset-0 h-full w-full object-cover scale-105"
 
 <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent"/>
 
-<div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+<div className="relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
 
 <motion.p
 variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0}
-className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400"
+className="mb-3 sm:mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.45em] text-blue-400"
 >
 
 
@@ -86,7 +86,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.15}
-className="max-w-5xl text-7xl font-light leading-[0.95] text-white"
+className="max-w-full sm:max-w-xl lg:max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] sm:leading-[1] lg:leading-[0.95] text-white"
 >
 
 Driving
@@ -102,7 +102,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.3}
-className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+className="mt-5 sm:mt-6 lg:mt-8 max-w-full sm:max-w-xl lg:max-w-2xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300"
 >
 
 Accelerate enterprise growth through digital consulting,
@@ -116,7 +116,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.45}
-className="mt-12 flex gap-5"
+className="mt-8 sm:mt-10 lg:mt-12 flex flex-wrap gap-3 sm:gap-4 lg:gap-5"
 >
 
 </motion.div>
@@ -129,19 +129,19 @@ transition={{
 repeat:Infinity,
 duration:2
 }}
-className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
+className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-white"
 >
 
-<ChevronDown size={42}/>
+<ChevronDown className="h-8 w-8 sm:h-9 sm:w-9 lg:h-[42px] lg:w-[42px]" />
 
 </motion.div>
 
 </section>
       {/* ================= ENTERPRISE CONSULTING ================= */}
 
-      <section className="bg-[#F8FAFC] py-32">
+      <section className="bg-[#F8FAFC] py-16 sm:py-20 lg:py-32">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 sm:gap-14 lg:gap-24 px-5 sm:px-6 lg:px-8 grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT IMAGE */}
 
@@ -150,13 +150,13 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group overflow-hidden"
+            className="group w-full overflow-hidden"
           >
 
             <img
               src="/industry/54.jpg"
               alt="Enterprise Consulting"
-              className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[280px] sm:h-[380px] md:h-[460px] lg:h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -171,7 +171,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
            
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-4 sm:mt-5 lg:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-[#0F172A]">
 
               Strategy That
               <br />
@@ -181,7 +181,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-5 sm:mt-6 lg:mt-8 text-base sm:text-lg leading-7 sm:leading-8 lg:leading-9 text-gray-600">
 
               Organizations today need more than technology—they need
               strategic partners who understand business transformation.
@@ -193,7 +193,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             {/* FEATURES */}
 
-            <div className="mt-14 space-y-7">
+            <div className="mt-8 sm:mt-10 lg:mt-14 space-y-4 sm:space-y-5 lg:space-y-7">
 
               {[
                 "Business Strategy & Advisory",
@@ -206,16 +206,16 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                 <div
                   key={item}
-                  className="flex items-center gap-5"
+                  className="flex items-center gap-3 sm:gap-4 lg:gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base sm:text-lg font-light text-white">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-700">
+                  <p className="text-base sm:text-lg text-gray-700">
 
                     {item}
 
@@ -236,19 +236,19 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= PROFESSIONAL CAPABILITIES ================= */}
 
-      <section className="bg-[#0B0F16] py-32">
+      <section className="bg-[#0B0F16] py-16 sm:py-20 lg:py-32">
 
-        <div className="mx-auto max-w-7xl px-8">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
           {/* Header */}
 
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-10 sm:mb-12 lg:mb-16 flex flex-wrap items-center justify-between gap-4">
 
             <div>
 
               
 
-              <h2 className="max-w-4xl text-7xl font-normal leading-tight text-white">
+              <h2 className="max-w-full lg:max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight text-white">
 
                 Helping Enterprises
                 <br />
@@ -265,18 +265,25 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           <Swiper
             modules={[Navigation]}
             navigation
-            spaceBetween={30}
-            slidesPerView={3.2}
+            spaceBetween={20}
+            slidesPerView={1.15}
             speed={900}
             breakpoints={{
               0: {
                 slidesPerView: 1.15,
+                spaceBetween: 16,
+              },
+              480: {
+                slidesPerView: 1.4,
+                spaceBetween: 20,
               },
               768: {
                 slidesPerView: 2,
+                spaceBetween: 24,
               },
               1200: {
                 slidesPerView: 3.2,
+                spaceBetween: 30,
               },
             }}
           >
@@ -288,10 +295,10 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
                 <motion.div
                   whileHover={{ y: -10 }}
                   transition={{ duration: 0.35 }}
-                  className="group cursor-pointer overflow-hidden bg-[#111827]"
+                  className="group w-full cursor-pointer overflow-hidden bg-[#111827]"
                 >
 
-                  <div className="relative h-[560px] overflow-hidden">
+                  <div className="relative h-[380px] sm:h-[440px] md:h-[500px] lg:h-[560px] overflow-hidden">
 
                     <img
                       src={card.image}
@@ -301,15 +308,15 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
 
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 lg:p-8">
 
-                      <h3 className="text-3xl font-light text-white">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white">
 
                         {card.title}
 
                       </h3>
 
-                      <p className="mt-5 leading-8 text-gray-300">
+                      <p className="mt-3 sm:mt-4 lg:mt-5 text-sm sm:text-base leading-6 sm:leading-7 lg:leading-8 text-gray-300">
 
                         Delivering strategic consulting, enterprise
                         modernization and digital transformation that
@@ -334,9 +341,9 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= BUSINESS TRANSFORMATION ================= */}
 
-      <section className="bg-[#F8FAFC] py-36">
+      <section className="bg-[#F8FAFC] py-16 sm:py-24 lg:py-36">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 sm:gap-14 lg:gap-24 px-5 sm:px-6 lg:px-8 grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
 
@@ -345,9 +352,10 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-4 sm:mt-5 lg:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-[#0F172A]">
 
               Turning
               <br />
@@ -357,7 +365,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-5 sm:mt-6 lg:mt-8 text-base sm:text-lg leading-7 sm:leading-8 lg:leading-9 text-gray-600">
 
               We partner with organizations to solve complex business
               challenges through strategic consulting, digital innovation
@@ -375,13 +383,13 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group overflow-hidden"
+            className="group order-1 w-full overflow-hidden lg:order-2"
           >
 
             <img
               src="/industry/55.jpg"
               alt="Business Transformation"
-              className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[280px] sm:h-[400px] md:h-[480px] lg:h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -391,7 +399,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= PROFESSIONAL SERVICES CTA ================= */}
 
-      <section className="relative overflow-hidden bg-[#020617] py-36">
+      <section className="relative overflow-hidden bg-[#020617] py-20 sm:py-28 lg:py-36">
 
         {/* Background */}
 
@@ -409,7 +417,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
         {/* Content */}
 
-        <div className="relative z-20 mx-auto max-w-7xl px-8">
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -419,7 +427,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             className="text-center"
           >
 
-            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-full sm:max-w-2xl lg:max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white">
 
               Build Smarter
               <br />
@@ -429,7 +437,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+            <p className="mx-auto mt-6 sm:mt-8 lg:mt-10 max-w-full sm:max-w-xl lg:max-w-3xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300">
 
               Tec Tha partners with organizations to unlock innovation,
               modernize operations and create long-term value through

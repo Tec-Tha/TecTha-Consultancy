@@ -55,7 +55,7 @@ return(
 
 {/* HERO */}
 
-<section className="relative flex h-screen items-center overflow-hidden bg-black">
+<section className="relative flex min-h-screen items-center overflow-hidden bg-black">
 
 <img
 src="/industry/35.jpg"
@@ -67,7 +67,7 @@ className="absolute inset-0 h-full w-full object-cover scale-105"
 
 <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent"/>
 
-<div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+<div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
 <motion.p
 variants={fadeUp}
@@ -86,7 +86,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.15}
-className="max-w-5xl text-7xl font-light leading-[0.95] text-white"
+className="max-w-5xl text-5xl font-light leading-[0.95] text-white sm:text-6xl lg:text-7xl"
 >
 
 Building
@@ -102,7 +102,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.3}
-className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+className="mt-6 max-w-2xl text-base leading-8 text-gray-300 sm:mt-8 sm:text-lg sm:leading-9 lg:text-xl lg:leading-9"
 >
 
 Empowering governments through secure digital
@@ -138,7 +138,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 </section>
       {/* ================= DIGITAL GOVERNANCE ================= */}
 
-      <section className="bg-[#F8FAFC] py-32">
+      <section className="overflow-x-hidden bg-[#F8FAFC] py-20 sm:py-24 lg:py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -155,7 +155,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             <img
               src="/industry/36.jpg"
               alt="Digital Government"
-              className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[320px] w-full object-cover transition duration-1000 group-hover:scale-110 sm:h-[480px] lg:h-[720px]"
             />
 
           </motion.div>
@@ -169,7 +169,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-4xl font-light leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
 
               Smarter Governance.
               <br />
@@ -179,7 +179,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-400">
+            <p className="mt-6 text-base leading-8 text-gray-400 sm:mt-8 sm:text-lg sm:leading-9">
 
               Governments are accelerating digital transformation through
               secure cloud platforms, intelligent citizen services,
@@ -191,7 +191,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             {/* FEATURES */}
 
-            <div className="mt-14 space-y-7">
+            <div className="mt-8 space-y-5 sm:mt-14 sm:space-y-7">
 
               {[
                 "Digital Citizen Services",
@@ -207,13 +207,13 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-base font-light text-white sm:h-11 sm:w-11 sm:text-lg">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-700">
+                  <p className="text-base text-gray-700 sm:text-lg">
 
                     {item}
 
@@ -231,18 +231,18 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= GOVERNMENT CAPABILITIES ================= */}
 
-      <section className="bg-[#0B0F16] py-32">
+      <section className="overflow-x-hidden bg-[#0B0F16] py-20 sm:py-24 lg:py-32">
 
-        <div className="mx-auto max-w-7xl px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
 
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-10 flex items-start sm:mb-16 sm:items-center sm:justify-between">
 
             <div>
 
 
-              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
+              <h2 className="max-w-4xl text-4xl font-light leading-tight text-white sm:text-5xl lg:text-6xl">
 
                 Powering Digital
                 <br />
@@ -285,7 +285,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
                   className="group cursor-pointer overflow-hidden bg-[#111827]"
                 >
 
-                  <div className="relative h-[560px] overflow-hidden">
+                  <div className="relative h-[320px] overflow-hidden sm:h-[460px] lg:h-[560px]">
 
                     <img
                       src={card.image}
@@ -301,13 +301,13 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-light text-white">
+                      <h3 className="text-2xl font-light text-white sm:text-3xl">
 
                         {card.title}
 
                       </h3>
 
-                      <p className="mt-5 leading-8 text-gray-300">
+                      <p className="mt-3 text-sm leading-7 text-gray-300 sm:mt-5 sm:text-base sm:leading-8">
 
                         Modern digital platforms that strengthen governance,
                         improve citizen engagement, enhance transparency and
@@ -334,9 +334,9 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= FUTURE OF GOVERNMENT ================= */}
 
-      <section className="bg-[#F8FAFC] py-36">
+      <section className="overflow-x-hidden bg-[#F8FAFC] py-20 sm:py-28 lg:py-36">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-2 lg:gap-24 lg:px-8">
 
           {/* LEFT CONTENT */}
 
@@ -357,7 +357,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-6 text-base leading-8 text-gray-600 sm:mt-8 sm:text-lg sm:leading-9">
 
               Governments are embracing digital transformation to build
               transparent, citizen-centric services that improve efficiency,
@@ -384,7 +384,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             <img
               src="/industry/33.jpg"
               alt="Government Innovation"
-              className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[320px] w-full object-cover transition duration-1000 group-hover:scale-110 sm:h-[480px] lg:h-[760px]"
             />
 
           </motion.div>
@@ -394,7 +394,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= GOVERNMENT CTA ================= */}
 
-      <section className="relative overflow-hidden bg-[#020617] py-36">
+      <section className="relative overflow-hidden bg-[#020617] py-20 sm:py-28 lg:py-36">
 
         {/* Background */}
 
@@ -412,7 +412,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
         {/* Content */}
 
-        <div className="relative z-20 mx-auto max-w-7xl px-8">
+        <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -424,7 +424,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             
 
-            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-4xl font-light leading-tight text-white sm:text-5xl lg:text-7xl">
 
               Modernize Public
               <br />
@@ -434,7 +434,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+            <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-300 sm:mt-10 sm:text-lg sm:leading-9 lg:text-xl lg:leading-9">
 
               Tec Tha partners with governments to build secure,
               citizen-centric digital ecosystems that improve public

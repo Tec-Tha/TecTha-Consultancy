@@ -254,7 +254,7 @@ const Navbar = () => {
       <div className="mx-auto flex h-16 sm:h-20 w-full max-w-[1500px] items-center justify-between px-4 sm:px-6 xl:px-8">
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           <img
-            src={logo}
+            src="/logo1.jpeg"
             alt="TEC THA Logo"
             className="h-10 sm:h-12 lg:h-14 w-auto object-contain shrink-0"
           />

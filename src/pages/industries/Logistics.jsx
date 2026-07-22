@@ -66,14 +66,14 @@ alt=""
 
 <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent"/>
 
-<div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+<div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
 <motion.p
 variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0}
-className="mb-5 uppercase tracking-[0.45em] text-blue-400"
+className="mb-5 uppercase tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.45em] text-blue-400"
 >
 
 
@@ -84,7 +84,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.15}
-className="max-w-7xl text-7xl font-light leading-[0.95] text-white"
+className="max-w-7xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] lg:leading-[0.95] text-white"
 >
 
 Intelligent
@@ -100,7 +100,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.3}
-className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+className="mt-6 lg:mt-8 max-w-2xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300"
 >
 
 Transform logistics operations through AI,
@@ -114,7 +114,7 @@ variants={fadeUp}
 initial="hidden"
 animate="visible"
 custom={0.45}
-className="mt-12 flex gap-5"
+className="mt-10 lg:mt-12 flex gap-5"
 >
 
 
@@ -128,7 +128,7 @@ transition={{
 repeat:Infinity,
 duration:2
 }}
-className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
+className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-white"
 >
 
 <ChevronDown size={42}/>
@@ -138,9 +138,9 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 </section>
       {/* ================= SMART LOGISTICS ================= */}
 
-      <section className="bg-[#F8FAFC] py-32">
+      <section className="bg-[#F8FAFC] py-16 md:py-24 lg:py-32">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:gap-16 lg:gap-24 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
 
           {/* LEFT IMAGE */}
 
@@ -155,7 +155,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             <img
               src="/industry/27.jpg"
               alt="Smart Logistics"
-              className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[280px] sm:h-[420px] md:h-[560px] lg:h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -170,7 +170,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-[#0F172A]">
 
               Faster Delivery.
               <br />
@@ -180,7 +180,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-6 lg:mt-8 text-base sm:text-lg lg:text-lg leading-7 lg:leading-9 text-gray-600">
 
               Modern logistics organizations rely on connected supply chains,
               intelligent automation and AI-powered visibility to optimize
@@ -191,7 +191,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             {/* FEATURES */}
 
-            <div className="mt-14 space-y-7">
+            <div className="mt-10 lg:mt-14 space-y-5 lg:space-y-7">
 
               {[
                 "AI Route Optimization",
@@ -204,16 +204,16 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                 <div
                   key={item}
-                  className="flex items-center gap-5"
+                  className="flex items-center gap-4 sm:gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
+                  <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base sm:text-lg font-light text-white">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-700">
+                  <p className="text-base sm:text-lg text-gray-700">
 
                     {item}
 
@@ -234,18 +234,18 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= LOGISTICS CAPABILITIES ================= */}
 
-      <section className="bg-[#0B0F16] py-32">
+      <section className="bg-[#0B0F16] py-16 md:py-24 lg:py-32">
 
-        <div className="mx-auto max-w-7xl px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
 
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-10 lg:mb-16 flex items-center justify-between">
 
             <div>
 
 
-              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
+              <h2 className="max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-white">
 
                 Powering Intelligent
                 <br />
@@ -262,18 +262,21 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           <Swiper
             modules={[Navigation]}
             navigation
-            spaceBetween={30}
+            spaceBetween={20}
             slidesPerView={3.2}
             speed={900}
             breakpoints={{
               0: {
                 slidesPerView: 1.15,
+                spaceBetween: 16,
               },
               768: {
                 slidesPerView: 2,
+                spaceBetween: 24,
               },
               1200: {
                 slidesPerView: 3.2,
+                spaceBetween: 30,
               },
             }}
           >
@@ -288,7 +291,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
                   className="group cursor-pointer overflow-hidden bg-[#111827]"
                 >
 
-                  <div className="relative h-[560px] overflow-hidden">
+                  <div className="relative h-[320px] sm:h-[420px] md:h-[480px] lg:h-[560px] overflow-hidden">
 
                     <img
                       src={card.image}
@@ -302,15 +305,15 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
                     {/* Content */}
 
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 lg:p-8">
 
-                      <h3 className="text-3xl font-light text-white">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white">
 
                         {card.title}
 
                       </h3>
 
-                      <p className="mt-5 leading-8 text-gray-300">
+                      <p className="mt-3 sm:mt-4 lg:mt-5 text-sm sm:text-base leading-6 lg:leading-8 text-gray-300">
 
                         Build resilient logistics ecosystems with intelligent
                         automation, AI-powered planning, connected warehouses
@@ -334,9 +337,9 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= FUTURE OF LOGISTICS ================= */}
 
-      <section className="bg-[#F8FAFC] py-36">
+      <section className="bg-[#F8FAFC] py-16 md:py-24 lg:py-36">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:gap-16 lg:gap-24 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
 
@@ -347,7 +350,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-7xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-[#0F172A]">
 
               Delivering
               <br />
@@ -357,7 +360,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-6 lg:mt-8 text-base sm:text-lg lg:text-lg leading-7 lg:leading-9 text-gray-600">
 
               Logistics leaders are embracing AI, automation and connected
               ecosystems to improve visibility, reduce costs and deliver
@@ -383,7 +386,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
             <img
               src="/industry/26.jpg"
               alt="Future Logistics"
-              className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[300px] sm:h-[440px] md:h-[600px] lg:h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -393,7 +396,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
       </section>
             {/* ================= LOGISTICS CTA ================= */}
 
-      <section className="relative overflow-hidden bg-[#020617] py-36">
+      <section className="relative overflow-hidden bg-[#020617] py-16 md:py-24 lg:py-36">
 
         {/* Background */}
 
@@ -413,7 +416,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
         {/* Content */}
 
-        <div className="relative z-20 mx-auto max-w-7xl px-8">
+        <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -424,7 +427,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           >
 
 
-            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white">
 
               Build Intelligent
               <br />
@@ -434,7 +437,7 @@ className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
 
             </h2>
 
-            <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+            <p className="mx-auto mt-8 lg:mt-10 max-w-3xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300">
 
               Modernize your logistics ecosystem with AI-powered
               warehouse automation, real-time fleet visibility,

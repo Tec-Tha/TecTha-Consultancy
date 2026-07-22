@@ -59,7 +59,7 @@ export default function Manufacturing() {
 
       {/* HERO */}
 
-      <section className="relative flex h-screen items-center overflow-hidden bg-black">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-black">
 
         <img
           src="/industry/42.jpg"
@@ -71,14 +71,14 @@ export default function Manufacturing() {
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent"></div>
 
-        <div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
 
           <motion.p
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0}
-            className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400"
+            className="mb-3 sm:mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.45em] text-blue-400"
           >
            
           </motion.p>
@@ -88,7 +88,7 @@ export default function Manufacturing() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-7xl text-7xl font-light leading-[0.95] tracking-tight text-zinc-300"
+            className="max-w-full sm:max-w-2xl lg:max-w-7xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] sm:leading-[1] lg:leading-[0.95] tracking-tight text-zinc-300"
           >
             Building
             <br />
@@ -102,7 +102,7 @@ export default function Manufacturing() {
             initial="hidden"
             animate="visible"
             custom={0.3}
-            className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+            className="mt-5 sm:mt-6 lg:mt-8 max-w-full sm:max-w-xl lg:max-w-2xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300"
           >
             Empower manufacturing enterprises with Industry 4.0,
             intelligent automation, connected factories and
@@ -114,7 +114,7 @@ export default function Manufacturing() {
             initial="hidden"
             animate="visible"
             custom={0.45}
-            className="mt-12 flex gap-5"
+            className="mt-8 sm:mt-10 lg:mt-12 flex flex-wrap gap-3 sm:gap-4 lg:gap-5"
           >
 
           </motion.div>
@@ -127,17 +127,17 @@ export default function Manufacturing() {
             repeat: Infinity,
             duration: 2,
           }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-white"
         >
-          <ChevronDown size={42} />
+          <ChevronDown className="h-8 w-8 sm:h-9 sm:w-9 lg:h-[42px] lg:w-[42px]" />
         </motion.div>
 
       </section>
             {/* ================= SMART MANUFACTURING ================= */}
 
-      <section className="bg-[#F8FAFC] py-32">
+      <section className="bg-[#F8FAFC] py-16 sm:py-20 lg:py-32">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 sm:gap-14 lg:gap-24 px-5 sm:px-6 lg:px-8 grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT IMAGE */}
 
@@ -146,13 +146,13 @@ export default function Manufacturing() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group overflow-hidden"
+            className="group w-full overflow-hidden"
           >
 
             <img
               src="/industry/25.jpg"
               alt="Smart Manufacturing"
-              className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[280px] sm:h-[380px] md:h-[460px] lg:h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -166,7 +166,7 @@ export default function Manufacturing() {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-4 sm:mt-5 lg:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-[#0F172A]">
 
               Smart Factories.
               <br />
@@ -174,7 +174,7 @@ export default function Manufacturing() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-5 sm:mt-6 lg:mt-8 text-base sm:text-lg leading-7 sm:leading-8 lg:leading-9 text-gray-600">
 
               Modern manufacturers are embracing Industry 4.0 technologies to
               improve production efficiency, optimize operations and deliver
@@ -185,7 +185,7 @@ export default function Manufacturing() {
 
             {/* FEATURES */}
 
-            <div className="mt-14 space-y-7">
+            <div className="mt-8 sm:mt-10 lg:mt-14 space-y-4 sm:space-y-5 lg:space-y-7">
 
               {[
                 "Industrial IoT Integration",
@@ -198,16 +198,16 @@ export default function Manufacturing() {
 
                 <div
                   key={item}
-                  className="flex items-center gap-5"
+                  className="flex items-center gap-3 sm:gap-4 lg:gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base sm:text-lg font-light text-white">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-700">
+                  <p className="text-base sm:text-lg text-gray-700">
 
                     {item}
 
@@ -226,23 +226,23 @@ export default function Manufacturing() {
       </section>
             {/* ================= MANUFACTURING CAPABILITIES ================= */}
 
-      <section className="bg-[#0B0F16] py-32">
+      <section className="bg-[#0B0F16] py-16 sm:py-20 lg:py-32">
 
-        <div className="mx-auto max-w-7xl px-8">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
           {/* Header */}
 
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-10 sm:mb-12 lg:mb-16 flex flex-wrap items-center justify-between gap-4">
 
             <div>
 
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+              <p className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.45em] text-blue-400">
 
                 MANUFACTURING CAPABILITIES
 
               </p>
 
-              <h2 className="max-w-4xl text-5xl font-light leading-tight text-white">
+              <h2 className="max-w-full lg:max-w-4xl text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-white">
 
                 Engineering Intelligent
                 <br />
@@ -259,18 +259,25 @@ export default function Manufacturing() {
           <Swiper
             modules={[Navigation]}
             navigation
-            spaceBetween={30}
-            slidesPerView={3.2}
+            spaceBetween={20}
+            slidesPerView={1.15}
             speed={900}
             breakpoints={{
               0: {
                 slidesPerView: 1.15,
+                spaceBetween: 16,
+              },
+              480: {
+                slidesPerView: 1.4,
+                spaceBetween: 20,
               },
               768: {
                 slidesPerView: 2,
+                spaceBetween: 24,
               },
               1200: {
                 slidesPerView: 3.2,
+                spaceBetween: 30,
               },
             }}
           >
@@ -286,10 +293,10 @@ export default function Manufacturing() {
                   transition={{
                     duration: .35,
                   }}
-                  className="group cursor-pointer overflow-hidden bg-[#111827]"
+                  className="group w-full cursor-pointer overflow-hidden bg-[#111827]"
                 >
 
-                  <div className="relative h-[560px] overflow-hidden">
+                  <div className="relative h-[380px] sm:h-[440px] md:h-[500px] lg:h-[560px] overflow-hidden">
 
                     <img
                       src={card.image}
@@ -299,15 +306,15 @@ export default function Manufacturing() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 lg:p-8">
 
-                      <h3 className="text-3xl font-light text-white">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white">
 
                         {card.title}
 
                       </h3>
 
-                      <p className="mt-5 leading-8 text-gray-300">
+                      <p className="mt-3 sm:mt-4 lg:mt-5 text-sm sm:text-base leading-6 sm:leading-7 lg:leading-8 text-gray-300">
 
                         Delivering scalable manufacturing platforms,
                         connected operations and AI-powered industrial
@@ -333,9 +340,9 @@ export default function Manufacturing() {
       </section>
             {/* ================= FUTURE OF MANUFACTURING ================= */}
 
-      <section className="bg-[#F8FAFC] py-36">
+      <section className="bg-[#F8FAFC] py-16 sm:py-24 lg:py-36">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 sm:gap-14 lg:gap-24 px-5 sm:px-6 lg:px-8 grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
 
@@ -344,15 +351,16 @@ export default function Manufacturing() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
           >
 
-            <span className="text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.45em] text-blue-400">
 
               FUTURE OF MANUFACTURING
 
             </span>
 
-            <h2 className="mt-6 text-5xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-4 sm:mt-5 lg:mt-6 text-3xl sm:text-4xl lg:text-5xl font-light leading-tight text-[#0F172A]">
 
               Accelerating
               <br />
@@ -362,7 +370,7 @@ export default function Manufacturing() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-5 sm:mt-6 lg:mt-8 text-base sm:text-lg leading-7 sm:leading-8 lg:leading-9 text-gray-600">
 
               Tec Tha enables manufacturers to build resilient,
               intelligent and connected production ecosystems through
@@ -380,13 +388,13 @@ export default function Manufacturing() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group overflow-hidden"
+            className="group order-1 w-full overflow-hidden lg:order-2"
           >
 
             <img
               src="/industry/43.jpg"
               alt="Manufacturing Innovation"
-              className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[280px] sm:h-[400px] md:h-[480px] lg:h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
             />
 
           </motion.div>
@@ -396,7 +404,7 @@ export default function Manufacturing() {
       </section>
             {/* ================= MANUFACTURING CTA ================= */}
 
-      <section className="relative overflow-hidden bg-[#020617] py-36">
+      <section className="relative overflow-hidden bg-[#020617] py-20 sm:py-28 lg:py-36">
 
         {/* Background */}
 
@@ -414,7 +422,7 @@ export default function Manufacturing() {
 
         {/* Content */}
 
-        <div className="relative z-20 mx-auto max-w-7xl px-8">
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -424,13 +432,13 @@ export default function Manufacturing() {
             className="text-center"
           >
 
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.45em] text-blue-400">
+            <p className="mb-3 sm:mb-4 lg:mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.45em] text-blue-400">
 
               SHAPING THE FUTURE OF MANUFACTURING
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-full sm:max-w-2xl lg:max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white">
 
               Build Intelligent
               <br />
@@ -440,7 +448,7 @@ export default function Manufacturing() {
 
             </h2>
 
-            <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+            <p className="mx-auto mt-6 sm:mt-8 lg:mt-10 max-w-full sm:max-w-xl lg:max-w-3xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300">
 
               Unlock the power of Industry 4.0 with AI-driven automation,
               Industrial IoT, predictive analytics and connected production
@@ -460,5 +468,3 @@ export default function Manufacturing() {
     </>
   );
 }
-      
-

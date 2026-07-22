@@ -182,8 +182,10 @@ return (
   className="
   group
   relative
+  grid
   overflow-hidden
   rounded-[10px]
+  lg:block
   "
   >
 
@@ -197,12 +199,18 @@ return (
       y: imageY,
     }}
     className="
-      h-[280px]
+      col-start-1
+      row-start-1
+      h-full
+      min-h-[300px]
       w-full
       object-cover
       will-change-transform
-      sm:h-[360px]
+      sm:min-h-[380px]
+      lg:col-auto
+      lg:row-auto
       lg:h-[420px]
+      lg:min-h-0
     "
   />
 
@@ -213,6 +221,8 @@ return (
   absolute
 
   inset-0
+
+  z-10
 
   bg-gradient-to-t
 
@@ -249,13 +259,20 @@ return (
   }}
 
   className="
-  absolute
-  bottom-0
-  left-0
+  relative
   z-20
+  col-start-1
+  row-start-1
+  self-end
   max-w-3xl
   p-6
   sm:p-10
+  lg:absolute
+  lg:inset-x-0
+  lg:bottom-0
+  lg:col-auto
+  lg:row-auto
+  lg:self-auto
   lg:p-16
   "
   >
