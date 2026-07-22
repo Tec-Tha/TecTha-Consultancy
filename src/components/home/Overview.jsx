@@ -74,13 +74,13 @@ const nextRef = useRef(null);
 
 return(
 
-<section className="bg-white py-20">
+<section className="bg-white py-16 sm:py-20">
 
-  <div className="mx-auto max-w-[1450px] ">
+  <div className="mx-auto max-w-[1450px] px-4 sm:px-6 lg:px-8">
 
     {/* Header */}
 
-    <div className="mb-16 flex items-center justify-between">
+    <div className="mb-10 flex flex-col gap-6 sm:mb-14 md:mb-16 md:flex-row md:items-center md:justify-between">
 
       {/* Left */}
 
@@ -96,11 +96,13 @@ return(
 
         className="
         font-['Montserrat']
-        text-5xl
+        text-3xl
         font-medium
         tracking-tight
         text-black
-        lg:text-6xl
+        sm:text-4xl
+        lg:text-5xl
+        xl:text-6xl
         "
 
       >
@@ -123,8 +125,8 @@ return(
 
           className="
           flex
-          h-14
-          w-14
+          h-11
+          w-11
           items-center
           justify-center
           rounded-full
@@ -133,6 +135,10 @@ return(
           transition
           hover:bg-black
           hover:text-white
+          sm:h-12
+          sm:w-12
+          lg:h-14
+          lg:w-14
           "
 
         >
@@ -151,8 +157,8 @@ return(
 
           className="
           flex
-          h-14
-          w-14
+          h-11
+          w-11
           items-center
           justify-center
           rounded-full
@@ -161,6 +167,10 @@ return(
           transition
           hover:bg-black
           hover:text-white
+          sm:h-12
+          sm:w-12
+          lg:h-14
+          lg:w-14
           "
 
         >
@@ -222,12 +232,14 @@ return(
         src={item.image}
         alt={item.title}
         className="
-          h-[320px]
+          h-[260px]
           w-full
           object-cover
           transition-all
           duration-700
           group-hover:scale-105
+          sm:h-[300px]
+          lg:h-[320px]
         "
       />
 
@@ -239,7 +251,7 @@ return(
       className="
         mt-8
         font-['Montserrat']
-        text-[42px]
+        text-[1.9rem]
         font-medium
         leading-tight
         tracking-tight
@@ -247,6 +259,8 @@ return(
         transition
         duration-300
         group-hover:text-blue-600
+        sm:text-[2.4rem]
+        lg:text-[42px]
       "
     >
       {item.title}

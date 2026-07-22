@@ -49,10 +49,10 @@ const ARTICLES = [
 
 const Insights = () => {
   return (
-    <section className="bg-black py-24 md:py-18">
-      <div className="mx-auto max-w-7xl px-6 md:px-6">
+    <section className="bg-black py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-        <div className="mb-20 max-w-5xl">
+        <div className="mb-12 max-w-5xl sm:mb-16 lg:mb-20">
 
   {/* Overline */}
 
@@ -80,11 +80,13 @@ const Insights = () => {
   <h2
     className="
     font-['Montserrat']
-    text-5xl
+    text-4xl
     font-normal
     leading-[0.92]
     tracking-tight
     text-white
+    sm:text-5xl
+    lg:text-6xl
     "
   >
     Perspectives
@@ -98,11 +100,16 @@ const Insights = () => {
 
   <p
     className="
-    mt-8
+    mt-6
     max-w-3xl
-    text-[22px]
-    leading-10
+    text-base
+    leading-8
     text-gray-500
+    sm:mt-8
+    sm:text-lg
+    sm:leading-9
+    lg:text-[22px]
+    lg:leading-10
     "
   >
     Explore expert perspectives, emerging technologies, and practical
@@ -174,11 +181,11 @@ const Insights = () => {
 </div>
                 
 
-                <h3 className="mt-4 text-3xl font-medium leading-snug text-white transition-colors duration-300 group-hover:white">
+                <h3 className="mt-4 text-2xl font-medium leading-snug text-white transition-colors duration-300 group-hover:white sm:text-3xl">
                   {article.title}
                 </h3>
 
-                <p className="mt-3 flex-1 text-[14px] leading-relaxed text-white">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-white sm:text-[14px]">
                   {article.excerpt}
                 </p>
 

@@ -22,12 +22,12 @@ const ContactCTA = () => {
   return (
     <section
   ref={sectionRef}
-  className="relative overflow-hidden bg-black/95 py-28 md:py-36"
+  className="relative overflow-hidden bg-black/95 py-20 sm:py-24 lg:py-28"
 >
  
   
  
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const ContactCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.16 }}
-          className="mt-6 max-w-xl text-lg text-slate-400"
+          className="mt-6 max-w-xl text-base text-slate-400 sm:text-lg"
         >
           From enterprise software and AI to cloud infrastructure and digital strategy,
           we build technology that drives measurable business growth.
@@ -70,7 +70,7 @@ const ContactCTA = () => {
           <MagneticButton strength={0.35}>
             <a
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-black font-semibold transition hover:bg-zinc-200"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-black font-semibold transition hover:bg-zinc-200 sm:w-auto"
             >
               Connect with Us
               <ArrowUpRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

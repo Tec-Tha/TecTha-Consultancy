@@ -20,7 +20,7 @@ const FOOTER_LINKS = [
  const Footer = () => {
   return (
    <footer className="bg-black text-white">
-  <div className="mx-auto max-w-7xl  py-4">
+  <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
 
     <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
 
@@ -39,7 +39,7 @@ const FOOTER_LINKS = [
       </Link>
 
       {/* Legal */}
-<div className="flex items-center gap-8">
+<div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-x-6 lg:gap-x-8">
 
   {FOOTER_LINKS.map((item, index) => (
     <div key={item.label} className="flex items-center">
@@ -58,7 +58,7 @@ const FOOTER_LINKS = [
       </Link>
 
       {index !== FOOTER_LINKS.length - 1 && (
-        <span className="mx-8 h-4 w-px bg-white/20" />
+        <span className="mx-4 h-4 w-px bg-white/20 sm:mx-6 lg:mx-8" />
       )}
 
     </div>

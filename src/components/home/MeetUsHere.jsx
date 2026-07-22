@@ -155,9 +155,9 @@ export default function MeetUsHere() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-6 pt-20 pb-16 sm:px-10 lg:px-16">
+      <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-4 pt-16 pb-12 sm:px-6 sm:pt-20 sm:pb-16 lg:px-16">
         {/* Page header */}
-        <div className="mb-14 flex flex-col items-center text-center lg:mb-16">
+        <div className="mb-10 flex flex-col items-center text-center sm:mb-14 lg:mb-16">
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-8 bg-white/40" />
             <span className="text-[11px] font-medium uppercase tracking-[0.5em] text-white/45">
@@ -165,7 +165,7 @@ export default function MeetUsHere() {
             </span>
             <span className="h-px w-8 bg-white/40" />
           </div>
-          <h2 className="text-[11vw] font-medium  leading-[0.95] tracking-tight sm:text-[7vw] lg:text-[3.6rem]">
+          <h2 className="text-[10vw] font-medium leading-[0.95] tracking-tight sm:text-[7vw] lg:text-[3.6rem]">
             Meet Us Here
           </h2>
           <p className="mt-6 max-w-lg text-sm font-light leading-relaxed tracking-wide text-white/50 sm:text-base">
@@ -180,7 +180,7 @@ export default function MeetUsHere() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="relative h-[400px] w-full overflow-hidden rounded-[6px] border border-white/12 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:h-[560px] lg:h-[660px]">
+          <div className="relative h-[360px] w-full overflow-hidden rounded-[6px] border border-white/12 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:h-[500px] lg:h-[660px]">
             {/* Prev / Next arrows — centered against the card's own height at every breakpoint */}
             <button
               aria-label="Previous country"
@@ -237,7 +237,7 @@ export default function MeetUsHere() {
                 </div>
 
                 {/* bottom text block */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 lg:p-12">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-12">
             <h3
   className="
     max-w-5xl

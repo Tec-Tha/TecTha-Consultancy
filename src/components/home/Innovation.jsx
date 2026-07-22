@@ -1,4 +1,4 @@
-  import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
   import { useRef } from "react";
 
   const STORIES = [
@@ -51,9 +51,9 @@ const imageY = useTransform(
 );
 
 return (
-  <section className="bg-white py-28">
+  <section className="bg-white py-16 sm:py-20 lg:py-28">
 
-    <div className="mx-auto max-w-[1700px] px-10">
+    <div className="mx-auto max-w-[1700px] px-4 sm:px-6 lg:px-10">
 
       <motion.div
 
@@ -79,18 +79,22 @@ return (
 
       >
 
-        <div className="mb-8 flex items-center gap-5">
+        <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4 lg:gap-5">
 
-          <div className="h-[2px] w-16 bg-blue-600"/>
+          <div className="h-[2px] w-10 bg-blue-600 sm:w-12 lg:w-16"/>
 
           <span
             className="
             font-['Montserrat']
-            text-xl
+            text-sm
             font-medium
             uppercase
-            tracking-[6px]
+            tracking-[3px]
             text-blue-600
+            sm:text-base
+            sm:tracking-[4px]
+            lg:text-xl
+            lg:tracking-[6px]
             "
           >
             INNOVATION IN PRACTICE
@@ -101,11 +105,13 @@ return (
         <h2
           className="
           font-['Montserrat']
-          text-7xl
+          text-4xl
           font-medium
           leading-[1.1]
           tracking-tight
           text-black
+          sm:text-5xl
+          lg:text-7xl
           "
         >
           Turning Vision   Into   <br/>
@@ -117,11 +123,16 @@ return (
 
         <p
           className="
-          mt-8
+          mt-6
           max-w-3xl
-          text-[22px]
-          leading-10
+          text-base
+          leading-8
           text-gray-500
+          sm:mt-8
+          sm:text-lg
+          sm:leading-9
+          lg:text-[22px]
+          lg:leading-10
           "
         >
           Every breakthrough begins with curiosity,
@@ -160,7 +171,9 @@ return (
   }}
 
   className="
-  mb-20
+  mb-10
+  sm:mb-16
+  lg:mb-20
   "
 
   >
@@ -184,10 +197,12 @@ return (
       y: imageY,
     }}
     className="
-      h-[420px]
+      h-[280px]
       w-full
       object-cover
       will-change-transform
+      sm:h-[360px]
+      lg:h-[420px]
     "
   />
 
@@ -239,7 +254,9 @@ return (
   left-0
   z-20
   max-w-3xl
-  p-16
+  p-6
+  sm:p-10
+  lg:p-16
   "
   >
 
@@ -247,11 +264,11 @@ return (
 
   <h3
   className="
-  mt-5
+  mt-3
 
   font-['Montserrat']
 
-  text-[50px]
+  text-[2rem]
 
   font-medium
 
@@ -260,6 +277,10 @@ return (
   tracking-tight
 
   text-white
+  sm:mt-4
+  sm:text-[2.8rem]
+  lg:mt-5
+  lg:text-[50px]
   "
   >
 
@@ -271,11 +292,13 @@ return (
   className="
   mt-4
 
-  text-[26px]
+  text-lg
 
   leading-[1.3]
 
   text-white/90
+  sm:text-[1.4rem]
+  lg:text-[26px]
   "
   >
 
@@ -289,11 +312,15 @@ return (
 
   max-w-2xl
 
-  text-lg
+  text-sm
 
-  leading-9
+  leading-7
 
   text-white/75
+  sm:text-base
+  sm:leading-8
+  lg:text-lg
+  lg:leading-9
   "
   >
 

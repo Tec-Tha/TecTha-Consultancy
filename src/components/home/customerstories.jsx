@@ -65,8 +65,8 @@ const STORIES = [
 
 const CustomerStories = () => {
   return (
-    <section className="bg-white pt-20 pb-24">
-      <div className="mx-auto max-w-[1600px] px-8">
+    <section className="bg-white pt-16 pb-20 sm:pt-20 sm:pb-24">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <motion.h2
@@ -76,12 +76,13 @@ const CustomerStories = () => {
           transition={{ duration: 0.6 }}
           className="
             font-['Montserrat']
-            text-3xl
+            text-2xl
             font-medium
             tracking-tight
             text-black
             mb-10
             max-w-5xl
+            sm:text-3xl
             lg:text-4xl
           "
         >
@@ -168,9 +169,11 @@ const CustomerStories = () => {
                     group
                     relative
                     block
-                    h-[600px]
-                    overflow-hidden 
+                    h-[440px]
+                    overflow-hidden
                     rounded-[5px]
+                    sm:h-[520px]
+                    lg:h-[600px]
                   "
                 >
                   {/* Image */}
@@ -231,11 +234,13 @@ const CustomerStories = () => {
                       <h3
                         className="
                           font-['Montserrat']
-                          text-[38px]
+                          text-[1.75rem]
                           font-normal
                           leading-tight
                           tracking-tight
                           text-white
+                          sm:text-[2.25rem]
+                          lg:text-[38px]
                         "
                       >
                         {story.title}
@@ -244,9 +249,11 @@ const CustomerStories = () => {
                       <p
                         className="
                           mt-6
-                          text-lg
-                          leading-8
+                          text-base
+                          leading-7
                           text-white/80
+                          sm:text-lg
+                          sm:leading-8
                           opacity-0
                           translate-y-8
                           transition-all

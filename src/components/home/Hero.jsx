@@ -81,13 +81,13 @@ function SplitHeadline({ text, active }) {
   const lines = text.split("\n");
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-1 sm:space-y-2">
 
       {lines.map((line, lineIndex) => (
 
         <div
           key={lineIndex}
-          className="overflow-visible pb-4"
+          className="overflow-visible pb-2 sm:pb-4"
         >
 
           <motion.div
@@ -116,19 +116,18 @@ function SplitHeadline({ text, active }) {
                 key={index}
 
                 className="
-                mr-6
+                mr-2
                 inline-block
                 font-['Montserrat']
-                text-5xl
-                
-                leading-[1.08]
+                text-[1.85rem]
+                leading-[1.05]
                 text-white
-
-                sm:text-6xl
-
-                lg:text-8xl
-
-                xl:text-[84px]
+                xs:text-[2.1rem]
+                mr-3
+                sm:mr-6
+                sm:text-[3.25rem]
+                lg:text-[4.5rem]
+                xl:text-[5.5rem]
                 "
 
                 variants={{
@@ -221,15 +220,17 @@ function PremiumButton({
       group
       relative
       inline-flex
+      w-full
       items-center
+      justify-center
       gap-3
       overflow-hidden
       rounded-full
       bg-gradient-to-r
       from-white
       to-white
-      px-8
-      py-4
+      px-6
+      py-3
       font-['Montserrat']
       text-sm
       font-bold
@@ -238,6 +239,9 @@ function PremiumButton({
       duration-500
       hover:scale-105
       hover:shadow-[0_15px_40px_rgba(37,99,235,.45)]
+      sm:w-auto
+      sm:px-8
+      sm:py-4
       "
     >
       {/* Shine Effect */}
@@ -283,7 +287,7 @@ function PremiumButton({
 
 function HeroSlide({ slide, active }) {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden">
         {/* Background Image */}
   <motion.img
     src={slide.image}
@@ -302,7 +306,7 @@ function HeroSlide({ slide, active }) {
   {/* Dark Overlay */}
   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/60" />
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-18 px-6 py-28 lg:grid-cols-2 lg:px-10">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-2 lg:px-10 lg:py-28">
 
         {/* LEFT */}
 
@@ -316,7 +320,7 @@ function HeroSlide({ slide, active }) {
 
           {/* Heading */}
 
-          <div className="mt-12">
+          <div className="mt-8 sm:mt-10 lg:mt-12">
 
             <SplitHeadline
 
@@ -344,12 +348,17 @@ function HeroSlide({ slide, active }) {
 
             <p
              className="
-mt-8
+mt-4
 max-w-xl
 font-['Montserrat']
-text-lg
-leading-9
+text-base
+leading-7
 text-gray-400
+sm:mt-6
+sm:leading-8
+lg:mt-8
+sm:text-lg
+sm:leading-9
 "
             >
               {slide.description}
@@ -371,7 +380,7 @@ text-gray-400
 
           >
 
-            <div className="mt-10">
+            <div className="mt-6 sm:mt-8 lg:mt-10">
 
           <PremiumButton
   to={slide.to}
@@ -480,13 +489,13 @@ export default function Hero() {
 
         className="
         absolute
-        left-8
+        left-2
         top-1/2
         z-50
         -translate-y-1/2
         flex
-        h-14
-        w-14
+        h-9
+        w-9
         items-center
         justify-center
         rounded-full
@@ -498,11 +507,17 @@ export default function Hero() {
         duration-300
         hover:border-blue-500
         hover:bg-blue-600
+        sm:left-4
+        sm:h-11
+        sm:w-11
+        lg:left-8
+        lg:h-14
+        lg:w-14
         "
 
       >
 
-        <ChevronLeft />
+        <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
 
       </button>
 
@@ -518,13 +533,13 @@ export default function Hero() {
 
         className="
         absolute
-        right-8
+        right-2
         top-1/2
         z-50
         -translate-y-1/2
         flex
-        h-14
-        w-14
+        h-9
+        w-9
         items-center
         justify-center
         rounded-full
@@ -536,11 +551,17 @@ export default function Hero() {
         duration-300
         hover:border-blue-500
         hover:bg-blue-600
+        sm:right-4
+        sm:h-11
+        sm:w-11
+        lg:right-8
+        lg:h-14
+        lg:w-14
         "
 
       >
 
-        <ChevronRight />
+        <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
 
       </button>
 
@@ -554,12 +575,16 @@ export default function Hero() {
       <div
         className="
         absolute
-        bottom-12
+        bottom-6
         left-1/2
         z-50
         flex
         -translate-x-1/2
-        gap-4
+        gap-2
+        sm:bottom-8
+        sm:gap-3
+        lg:bottom-12
+        lg:gap-4
         "
       >
 
@@ -575,14 +600,15 @@ export default function Hero() {
             transition-all
             duration-500
             rounded-full
-            h-2
+            h-1.5
+            sm:h-2
 
             ${
               activeIndex === index
 
-                ? "bg-blue-500 w-14"
+                ? "bg-blue-500 w-8 sm:w-10 lg:w-14"
 
-                : "bg-white/20 w-6"
+                : "bg-white/20 w-4 sm:w-5 lg:w-6"
 
             }
             `}

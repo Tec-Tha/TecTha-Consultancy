@@ -97,8 +97,10 @@ return(
   ref={sectionRef}
   className="
   relative
-  h-[600vh]
+  h-[420vh]
   bg-white
+  sm:h-[520vh]
+  lg:h-[600vh]
   "
 >
 
@@ -109,7 +111,7 @@ return(
     sticky
     top-0
     flex
-    h-screen
+    min-h-screen
     items-center
     overflow-hidden
     "
@@ -122,10 +124,16 @@ return(
   h-full
   w-full
   max-w-[1900px]
-  grid-cols-2
+  grid-cols-1
   items-center
   gap-8
-  px-14
+  px-4
+  py-12
+  sm:px-6
+  sm:py-16
+  lg:grid-cols-2
+  lg:px-14
+  lg:py-0
   "
 >
     <div
@@ -133,23 +141,26 @@ return(
   sticky
   top-0
   flex
-  h-screen
+  min-h-screen
   flex-col
   justify-center
+  py-8
+  lg:h-screen
 "
 >
 
-  <div className="mb-8 flex items-center gap-7">
+  <div className="mb-6 flex items-center gap-4 sm:mb-8 sm:gap-7">
 
     <div className="h-[1px] w-16 bg-blue-600"/>
 
     <span
       className="
       font-['Montserrat']
-      text-xl
+      text-lg
       font-medium
       uppercase
       tracking-[4px]
+      sm:text-xl
       text-blue-800
       "
     >
@@ -185,9 +196,11 @@ return(
 
     <span
       className="
-      text-[90px]
+      text-[3.4rem]
       font-bold
       leading-none
+      sm:text-[4.5rem]
+      lg:text-[90px]
       text-gray-400
       "
     >
@@ -201,7 +214,7 @@ return(
 
       font-['Montserrat']
 
-      text-[60px]
+      text-[2.2rem]
 
       font-medium
 
@@ -210,6 +223,8 @@ return(
       tracking-tight
 
       text-black
+      sm:text-[3rem]
+      lg:text-[60px]
       "
     >
 
@@ -227,15 +242,20 @@ return(
 
     <p
       className="
-      mt-8
+      mt-6
 
       max-w-xl
 
-      text-xl
+      text-base
 
-      leading-9
+      leading-8
 
       text-gray-500
+      sm:mt-8
+      sm:text-lg
+      sm:leading-9
+      lg:text-xl
+      lg:leading-9
       "
     >
 
@@ -279,10 +299,12 @@ duration:.8
       src={THINKING[active].image}
       alt={THINKING[active].title}
       className="
-      h-[600px]
+      h-[320px]
       w-full
       object-cover
-     scale-105
+      scale-105
+      sm:h-[420px]
+      lg:h-[600px]
 transition-transform
 duration-[1800ms]
 ease-out

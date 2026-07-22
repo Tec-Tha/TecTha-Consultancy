@@ -286,17 +286,17 @@ setShowIndustries(false);
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black shadow-lg">
-      <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-6 xl:px-8">
-        <Link to="/" className="flex items-center gap-3">
+    <header className="fixed inset-x-0 top-0 z-50 w-full max-w-[100vw] border-b border-white/10 bg-black shadow-lg">
+      <div className="mx-auto flex h-16 sm:h-20 w-full max-w-[1500px] items-center justify-between px-4 sm:px-6 xl:px-8">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           <img
             src={logo}
             alt="TEC THA Logo"
-            className="h-14 w-auto object-contain"
+            className="h-10 sm:h-12 lg:h-14 w-auto object-contain shrink-0"
           />
 
-          <div className="flex flex-col leading-none">
-            <span className="font-['Montserrat'] text-[2rem] font-medium whitespace-nowrap text-white">
+          <div className="flex flex-col leading-none min-w-0">
+            <span className="font-['Montserrat'] text-lg sm:text-2xl lg:text-[2rem] font-medium whitespace-nowrap text-white truncate">
               Tec Tha
             </span>
           </div>
@@ -488,7 +488,7 @@ setShowIndustries(false);
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
               <SearchOverlay />
           <Link
             to="/contact"
@@ -499,7 +499,7 @@ setShowIndustries(false);
         </div>
 
         {/* Mobile controls */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden shrink-0">
           
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -512,7 +512,7 @@ setShowIndustries(false);
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — fixed overlay so it never affects page width/layout */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -520,13 +520,13 @@ setShowIndustries(false);
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="overflow-hidden border-t border-gray-800 bg-black md:hidden"
+            className="fixed inset-x-0 top-16 sm:top-20 z-40 w-full max-w-[100vw] overflow-x-hidden overflow-y-auto max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] border-t border-gray-800 bg-black lg:hidden"
           >
             <motion.nav
               variants={linkStagger}
               initial="hidden"
               animate="visible"
-              className="flex flex-col gap-1 px-6 py-6"
+              className="flex flex-col gap-1 px-4 sm:px-6 py-6"
             >
               {NAV_LINKS.map((link) => (
                 <motion.div key={link.to} variants={linkItem}>
