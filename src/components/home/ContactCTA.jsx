@@ -54,8 +54,8 @@ const ContactCTA = () => {
           transition={{ duration: 0.6, delay: 0.08 }}
           className="text-[clamp(2.25rem,5vw,4.25rem)] font-medium leading-[1.05] tracking-tight text-slate-50"
         >
-          Ready to Transform
-          <br className="hidden sm:block" /> Your Business?
+          Building the Future   ,Together
+         
         </motion.h2>
 
         <motion.p
@@ -65,9 +65,7 @@ const ContactCTA = () => {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-6 max-w-xl text-base text-slate-400 sm:text-lg"
         >
-          Let&apos;s discuss your next digital initiative. From AI and cloud to
-          enterprise engineering, we build technology that drives measurable
-          business growth.
+        We design, engineer, and scale AI-powered software, cloud platforms, and enterprise solutions that help organizations innovate faster and create lasting business value.
         </motion.p>
 
         <motion.div
@@ -82,7 +80,7 @@ const ContactCTA = () => {
               href="/contact"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-black font-semibold transition hover:bg-zinc-200 sm:w-auto"
             >
-              Contact Our Team
+              Start a Conversation
               <ArrowUpRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </MagneticButton>
