@@ -65,13 +65,13 @@ const STORY = {
   image: `${ASSET_BASE}/3.avif`,
 };
 
-const IMPACT_STATS = [
-  { value: 11, suffix: "+", label: "Countries" },
-  { value: 480, suffix: "+", label: "Enterprise Clients" },
-  { value: 2100, suffix: "+", label: "Projects Delivered" },
-  { value: 65000, suffix: "+", label: "Enterprise Deliveries" },
- 
-];
+  const IMPACT_STATS = [
+    { value: 11, suffix: "+", label: "Countries" },
+    { value: 30, suffix: "+", label: "DIGITAL SOLUTIONS" },
+    { value: 15 , suffix: "+", label: "TECHNOLOGY CAPABILITIES" },
+    { value: "24/7", suffix: "", label: "GLOBAL SUPPORT" },
+  
+  ];
 
 const WHO_WE_ARE = {
   eyebrow: "Who We Are",
@@ -265,7 +265,7 @@ const fadeIn = {
 
 const Eyebrow = ({ children, dark = false }) => (
   <span
-    className={`text-xs font-semibold uppercase tracking-[0.3em] ${
+    className={`text-xl font-semibold uppercase tracking-[0.3em] ${
       dark ? "text-white/50" : "text-[#6B6B6E]"
     }`}
   >
@@ -278,20 +278,26 @@ const HairlineDivider = ({ dark = false }) => (
 );
 
 const Stat = ({ stat }) => {
-  const [ref, value] = useCountUp(stat.value);
+  const isNumber = typeof stat.value === "number";
+
+  const [ref, value] = useCountUp(
+    isNumber ? stat.value : 0
+  );
+
   return (
     <div ref={ref} className="flex flex-col gap-2 py-8 md:py-0">
       <span className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-        {value.toLocaleString()}
-        {stat.suffix}
+        {isNumber
+          ? `${value.toLocaleString()}${stat.suffix}`
+          : stat.value}
       </span>
+
       <span className="text-sm font-medium uppercase tracking-[0.15em] text-white/50">
         {stat.label}
       </span>
     </div>
   );
 };
-
 const ValueRow = ({ value, index }) => {
   const Icon = value.icon;
   return (
@@ -351,14 +357,60 @@ const HubRow = ({ hub, index }) => (
     whileInView="visible"
     viewport={{ once: true, margin: "-100px" }}
     custom={index * 0.05}
-    className="group flex items-baseline justify-between border-b border-white/10 py-6 transition-colors duration-300 hover:border-white/40"
+    className="
+      group
+      flex
+      flex-col
+      gap-3
+      border-b
+      border-white/10
+      py-5
+      transition-colors
+      duration-300
+      hover:border-white/40
+
+      md:flex-row
+      md:items-baseline
+      md:justify-between
+      md:gap-0
+      md:py-6
+    "
   >
-    <div className="flex items-baseline gap-6">
-      <span className="text-xs font-semibold text-white/30">{String(index + 1).padStart(2, "0")}</span>
-      <span className="text-2xl font-medium tracking-tight text-white md:text-3xl">{hub.city}</span>
-      <span className="hidden text-sm font-light text-white/40 sm:inline">{hub.country}</span>
+    {/* Left Content */}
+    <div className="flex items-start gap-3 sm:gap-5 md:items-baseline md:gap-6">
+      <span className="mt-1 text-xs font-semibold text-white/30 shrink-0">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      <div className="flex flex-col">
+        <span className="text-xl font-medium tracking-tight text-white sm:text-2xl md:text-3xl">
+          {hub.city}
+        </span>
+
+        <span className="text-sm font-light text-white/50 sm:text-base md:hidden">
+          {hub.country}
+        </span>
+
+        <span className="hidden text-sm font-light text-white/40 md:inline">
+          {hub.country}
+        </span>
+      </div>
     </div>
-    <span className="text-sm font-light uppercase tracking-[0.1em] text-white/40">{hub.focus}</span>
+
+    {/* Right Content */}
+    <span
+      className="
+        text-xs
+        font-light
+        uppercase
+        tracking-[0.1em]
+        text-white/40
+
+        md:text-sm
+      "
+    >
+      {hub.focus}
+    </span>
   </motion.div>
 );
 

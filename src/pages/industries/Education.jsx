@@ -57,7 +57,7 @@ export default function Education() {
 
       {/* HERO */}
 
-      <section className="relative flex h-screen items-center overflow-hidden bg-black">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-black">
 
         <img
           src="/industry/15.jpg"
@@ -69,7 +69,7 @@ export default function Education() {
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent"></div>
 
-        <div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <motion.p
             variants={fadeUp}
@@ -86,7 +86,7 @@ export default function Education() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="max-w-5xl text-7xl font-light leading-[0.95] text-white"
+            className="max-w-5xl text-5xl font-light leading-[0.95] text-white sm:text-6xl lg:text-7xl"
           >
             Empowering
             <br />
@@ -98,7 +98,7 @@ export default function Education() {
             initial="hidden"
             animate="visible"
             custom={0.3}
-            className="mt-8 max-w-2xl text-xl leading-9 text-gray-300"
+            className="mt-6 max-w-2xl text-base leading-8 text-gray-300 sm:mt-8 sm:text-lg sm:leading-9 lg:text-xl lg:leading-9"
           >
             Enable connected campuses, intelligent learning platforms,
             AI-powered education and immersive student experiences
@@ -133,7 +133,7 @@ export default function Education() {
       </section>
             {/* ================= DIGITAL EDUCATION ================= */}
 
-      <section className="bg-[#F8FAFC] py-32">
+      <section className="overflow-x-hidden bg-[#F8FAFC] py-20 sm:py-24 lg:py-32">
 
         <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
 
@@ -150,7 +150,7 @@ export default function Education() {
             <img
               src="/industry/16.jpg"
               alt="Digital Education"
-              className="h-[720px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[320px] w-full object-cover transition duration-1000 group-hover:scale-110 sm:h-[480px] lg:h-[720px]"
             />
 
           </motion.div>
@@ -165,7 +165,7 @@ export default function Education() {
           >
 
 
-            <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+            <h2 className="mt-6 text-4xl font-light leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
 
               Smarter Learning.
               <br />
@@ -173,7 +173,7 @@ export default function Education() {
 
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
+            <p className="mt-6 text-base leading-8 text-gray-600 sm:mt-8 sm:text-lg sm:leading-9">
 
               Educational institutions are transforming learning through
               AI-powered platforms, virtual classrooms, personalized
@@ -184,7 +184,7 @@ export default function Education() {
 
             {/* FEATURES */}
 
-            <div className="mt-14 space-y-7">
+            <div className="mt-8 space-y-5 sm:mt-14 sm:space-y-7">
 
               {[
                 "AI-Powered Learning Platforms",
@@ -200,13 +200,13 @@ export default function Education() {
                   className="flex items-center gap-5"
                 >
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-lg font-light text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-base font-light text-white sm:h-11 sm:w-11 sm:text-lg">
 
                     ✓
 
                   </div>
 
-                  <p className="text-lg text-gray-700">
+                  <p className="text-base text-gray-700 sm:text-lg">
 
                     {item}
 
@@ -227,18 +227,18 @@ export default function Education() {
       </section>
             {/* ================= EDUCATION CAPABILITIES ================= */}
 
-      <section className="bg-[#0B0F16] py-32">
+      <section className="overflow-x-hidden bg-[#0B0F16] py-20 sm:py-24 lg:py-32">
 
-        <div className="mx-auto max-w-7xl px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
 
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-10 flex flex-col items-start gap-4 sm:mb-16 sm:flex-row sm:items-center sm:justify-between">
 
             <div>
 
              
-              <h2 className="max-w-4xl text-6xl font-light leading-tight text-white">
+              <h2 className="max-w-4xl text-4xl font-light leading-tight text-white sm:text-5xl lg:text-6xl">
 
                 Building Intelligent
                 <br />
@@ -281,7 +281,7 @@ export default function Education() {
                   className="group cursor-pointer overflow-hidden bg-[#111827]"
                 >
 
-                  <div className="relative h-[560px] overflow-hidden">
+                  <div className="relative h-[320px] overflow-hidden sm:h-[460px] lg:h-[560px]">
 
                     <img
                       src={card.image}
@@ -297,13 +297,13 @@ export default function Education() {
 
                     <div className="absolute bottom-0 left-0 right-0 p-8">
 
-                      <h3 className="text-3xl font-light text-white">
+                      <h3 className="text-2xl font-light text-white sm:text-3xl">
 
                         {card.title}
 
                       </h3>
 
-                      <p className="mt-5 leading-8 text-gray-300">
+                      <p className="mt-3 text-sm leading-7 text-gray-300 sm:mt-5 sm:text-base sm:leading-8">
 
                         Empower educational institutions with connected
                         learning, AI-driven insights, digital collaboration
@@ -328,9 +328,9 @@ export default function Education() {
       </section>
             {/* ================= FUTURE OF EDUCATION ================= */}
 
-      <section className="bg-[#F8FAFC] py-36">
+      <section className="overflow-x-hidden bg-[#F8FAFC] py-20 sm:py-28 lg:py-36">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-2 lg:gap-24 lg:px-8">
 
           {/* LEFT CONTENT */}
 
@@ -340,7 +340,7 @@ export default function Education() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-           <h2 className="mt-6 text-6xl font-light leading-tight text-[#0F172A]">
+           <h2 className="mt-6 text-4xl font-light leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
 
               Creating
               <br />
@@ -350,7 +350,7 @@ export default function Education() {
 
             </h2>
 
-           <p className="mt-8 text-lg leading-9 text-gray-600">
+           <p className="mt-6 text-base leading-8 text-gray-600 sm:mt-8 sm:text-lg sm:leading-9">
 
               Modern education requires intelligent digital ecosystems that
               connect students, educators and institutions through AI,
@@ -375,7 +375,7 @@ export default function Education() {
             <img
               src="/industry/17.jpg"
               alt="Future Education"
-              className="h-[760px] w-full object-cover transition duration-1000 group-hover:scale-110"
+              className="h-[320px] w-full object-cover transition duration-1000 group-hover:scale-110 sm:h-[480px] lg:h-[760px]"
             />
 
           </motion.div>
@@ -385,7 +385,7 @@ export default function Education() {
       </section>
             {/* ================= EDUCATION CTA ================= */}
 
-      <section className="relative overflow-hidden bg-[#020617] py-36">
+      <section className="relative overflow-hidden bg-[#020617] py-20 sm:py-28 lg:py-36">
 
         {/* Background */}
 
@@ -403,7 +403,7 @@ export default function Education() {
 
         {/* Content */}
 
-        <div className="relative z-20 mx-auto max-w-7xl px-8">
+        <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -419,7 +419,7 @@ export default function Education() {
 
             </p>
 
-            <h2 className="mx-auto max-w-5xl text-7xl font-light leading-tight text-white">
+            <h2 className="mx-auto max-w-5xl text-4xl font-light leading-tight text-white sm:text-5xl lg:text-7xl">
 
               Build Future-Ready
               <br />
@@ -429,7 +429,7 @@ export default function Education() {
 
             </h2>
 
-            <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-gray-300">
+            <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-300 sm:mt-10 sm:text-lg sm:leading-9 lg:text-xl lg:leading-9">
 
               Empower schools, universities and educational institutions
               with intelligent digital platforms, AI-driven learning,
