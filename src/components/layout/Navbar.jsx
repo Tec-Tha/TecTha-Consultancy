@@ -19,23 +19,23 @@ import {
  * slides between items; mobile collapses into a staggered slide-down
  * drawer.
  *
- * "What we do" opens a TCS-style, hover-driven mega menu: a static intro
- * panel on the left, a vertical list of category tabs in the middle, and
- * a flat two-column item list on the right that swaps with the active
- * tab — everything else in the navbar is unchanged.
+ * "What we do" — clicking the TEXT navigates straight to /services and
+ * never opens the dropdown. Only clicking the ChevronDown arrow toggles
+ * the mega menu open/closed.
  *
- * Mobile drawer: "What we do" and "Industries" expand as accordions
- * (reusing the same SERVICES / INDUSTRIES data as the desktop mega menu),
- * everything else stays a normal link.
+ * Mobile drawer: "What we do" expands as an accordion (reusing SERVICES).
+ * "Industries" is a normal link straight to /industries — no
+ * dropdown/accordion.
  */
 
 const NAV_LINKS = [
   { label: "Who we are", to: "/about" },
   { label: "What we do", to: "/services" },
-   { label: "Industries", to: "/industries" },
+  { label: "Industries", to: "/industries" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
 ];
+
 const SERVICES = [
   {
     title: "Services",
@@ -60,10 +60,9 @@ const SERVICES = [
         name: "Digital Transformation",
         link: "/services/DigitalTransformation",
       },
-      
       {
-        name:"Managed Services",
-        link:"/services/ManagedServices",
+        name: "Managed Services",
+        link: "/services/ManagedServices",
       },
       {
         name: "Enterprise Applications",
@@ -75,7 +74,6 @@ const SERVICES = [
       },
     ],
   },
-
   {
     title: "Industries",
     items: [
@@ -110,45 +108,6 @@ const SERVICES = [
       {
         name: "Professional Services",
         link: "/industries/professional-services",
-      },
-    ],
-  },
-];
-const INDUSTRIES = [
-  {
-    title: "Industries",
-    items: [
-      {
-        name: "Healthcare",
-        link: "/industries/healthcare",
-      },
-      {
-        name: "Banking",
-        link: "/industries/banking",
-      },
-      {
-        name: "Manufacturing",
-        link: "/industries/manufacturing",
-      },
-      {
-        name: "Retail",
-        link: "/industries/retail",
-      },
-      {
-        name: "Education",
-        link: "/industries/education",
-      },
-      {
-        name: "Government",
-        link: "/industries/government",
-      },
-      {
-        name: "Professional Services",
-        link: "/industries/professional-services",
-      },
-      {
-        name: "Logistics",
-        link: "/industries/logistics",
       },
     ],
   },
@@ -225,14 +184,11 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
-const [showIndustries, setShowIndustries] = useState(false);
 
-const [activeCategory, setActiveCategory] = useState(0);
-const [activeIndustry] = useState(0);
-  // Which mobile drawer accordion is open: "services" | "industries" | null
+  const [activeCategory, setActiveCategory] = useState(0);
+  // Which mobile drawer accordion is open: "services" | null
   const [mobileAccordion, setMobileAccordion] = useState(null);
   const dropdownRef = useRef(null);
-  const closeTimeoutRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -257,36 +213,11 @@ const [activeIndustry] = useState(0);
   // Close the mobile drawer / mega menu on route change.
   useEffect(() => {
     setIsMenuOpen(false);
-   setShowServices(false);
-setShowIndustries(false);
+    setShowServices(false);
     setActiveCategory(0);
     setMobileAccordion(null);
   }, [location.pathname]);
 
-  // Clear any pending close timer on unmount.
-  useEffect(() => {
-    return () => {
-      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
-    };
-  }, []);
-
-  const openMegaMenu = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
-    }
-    setShowServices(true);
-  };
-
-  const scheduleCloseMegaMenu = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setShowServices(false);
-      setActiveCategory(0);
-    }, 120);
-  };
-
-  // Keep the menu open while focus is anywhere inside it (keyboard nav);
-  // close once focus actually leaves the whole dropdown container.
   const handleContainerBlur = (e) => {
     if (!dropdownRef.current) return;
     if (!dropdownRef.current.contains(e.relatedTarget)) {
@@ -303,7 +234,7 @@ setShowIndustries(false);
     }
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      openMegaMenu();
+      setShowServices(true);
     }
   };
 
@@ -344,37 +275,39 @@ setShowIndustries(false);
                   ref={dropdownRef}
                   key={link.to}
                   className="relative"
-                  onMouseEnter={openMegaMenu}
-                  onMouseLeave={scheduleCloseMegaMenu}
                   onBlur={handleContainerBlur}
                 >
                   <div className="flex items-center gap-2 px-6 xl:px-7 py-3">
- <Link
-  to="/services"
-  className={`font-['Montserrat'] text-[1.35rem] transition-colors ${
-    location.pathname.startsWith("/services")
-      ? "text-white"
-      : "text-gray-300 hover:text-white"
-  }`}
->
-  What we do
-</Link>
+                    {/* TEXT — navigates to /services only, never toggles dropdown */}
+                    <Link
+                      to="/services"
+                      className={`font-['Montserrat'] text-[1.35rem] transition-colors ${
+                        location.pathname.startsWith("/services")
+                          ? "text-white"
+                          : "text-gray-300 hover:text-white"
+                      }`}
+                    >
+                      What we do
+                    </Link>
 
-  <button
-    type="button"
-    onClick={() => setShowServices((prev) => !prev)}
-    className="text-gray-300 hover:text-white"
-    aria-haspopup="true"
-    aria-expanded={showServices}
-  >
-    <ChevronDown
-      size={18}
-      className={`transition-transform duration-300 ${
-        showServices ? "rotate-180" : ""
-      }`}
-    />
-  </button>
-</div>
+                    {/* ARROW — only this toggles the dropdown */}
+                    <button
+                      type="button"
+                      onClick={() => setShowServices((prev) => !prev)}
+                      onKeyDown={handleTriggerKeyDown}
+                      className="text-gray-300 hover:text-white"
+                      aria-haspopup="true"
+                      aria-expanded={showServices}
+                      aria-label="Toggle what we do menu"
+                    >
+                      <ChevronDown
+                        size={18}
+                        className={`transition-transform duration-300 ${
+                          showServices ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
 
                   {location.pathname.startsWith("/services") && (
                     <motion.span
@@ -407,7 +340,7 @@ setShowIndustries(false);
                             </p>
                             <Link
                               to="/services"
-                    
+                              onClick={() => setShowServices(false)}
                               className="group mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-white"
                             >
                               Explore all services
@@ -422,45 +355,50 @@ setShowIndustries(false);
                             className="divide-y divide-white/10 border-l border-white/10 pl-10"
                           >
                             {SERVICES.map((section, i) => {
-  const isActive = activeCategory === i;
+                              const isActive = activeCategory === i;
 
-  return (
-    <div key={section.title}>
-      {section.title === "Services" || section.title === "Industries" ? (
-        <Link
-  to={section.title === "Services" ? "/services" : "/industries"}
-          onMouseEnter={() => setActiveCategory(i)}
-          onFocus={() => setActiveCategory(i)}
-          onClick={() => setShowServices(false)}
-          className={`group flex w-full items-center justify-between gap-3 py-3.5 text-left font-['Montserrat'] text-[15px] transition-colors duration-200 ${
-            isActive
-              ? "font-semibold text-white"
-              : "text-gray-400 hover:text-white"
-          }`}
-        >
-          <span>{section.title}</span>
-          <ChevronRight size={15} />
-        </Link>
-      ) : (
-        <button
-          type="button"
-          role="tab"
-          aria-selected={isActive}
-          onMouseEnter={() => setActiveCategory(i)}
-          onFocus={() => setActiveCategory(i)}
-          className={`group flex w-full items-center justify-between gap-3 py-3.5 text-left font-['Montserrat'] text-[15px] transition-colors duration-200 ${
-            isActive
-              ? "font-semibold text-white"
-              : "text-gray-400 hover:text-white"
-          }`}
-        >
-          <span>{section.title}</span>
-          <ChevronRight size={15} />
-        </button>
-      )}
-    </div>
-  );
-})}
+                              return (
+                                <div key={section.title}>
+                                  {section.title === "Services" ||
+                                  section.title === "Industries" ? (
+                                    <Link
+                                      to={
+                                        section.title === "Services"
+                                          ? "/services"
+                                          : "/industries"
+                                      }
+                                      onMouseEnter={() => setActiveCategory(i)}
+                                      onFocus={() => setActiveCategory(i)}
+                                      onClick={() => setShowServices(false)}
+                                      className={`group flex w-full items-center justify-between gap-3 py-3.5 text-left font-['Montserrat'] text-[15px] transition-colors duration-200 ${
+                                        isActive
+                                          ? "font-semibold text-white"
+                                          : "text-gray-400 hover:text-white"
+                                      }`}
+                                    >
+                                      <span>{section.title}</span>
+                                      <ChevronRight size={15} />
+                                    </Link>
+                                  ) : (
+                                    <button
+                                      type="button"
+                                      role="tab"
+                                      aria-selected={isActive}
+                                      onMouseEnter={() => setActiveCategory(i)}
+                                      onFocus={() => setActiveCategory(i)}
+                                      className={`group flex w-full items-center justify-between gap-3 py-3.5 text-left font-['Montserrat'] text-[15px] transition-colors duration-200 ${
+                                        isActive
+                                          ? "font-semibold text-white"
+                                          : "text-gray-400 hover:text-white"
+                                      }`}
+                                    >
+                                      <span>{section.title}</span>
+                                      <ChevronRight size={15} />
+                                    </button>
+                                  )}
+                                </div>
+                              );
+                            })}
                           </div>
 
                           {/* Columns 3 & 4 — flat item list for the active category */}
@@ -475,15 +413,15 @@ setShowIndustries(false);
                                 className="columns-2 gap-x-16"
                               >
                                 {SERVICES[activeCategory].items.map((item) => (
-  <Link
-    key={item.name}
-    to={item.link}
-    onClick={() => setShowServices(false)}
-    className="mb-5 block break-inside-avoid text-[15px] text-gray-300 transition-colors duration-200 hover:text-white"
-  >
-    {item.name}
-  </Link>
-))}
+                                  <Link
+                                    key={item.name}
+                                    to={item.link}
+                                    onClick={() => setShowServices(false)}
+                                    className="mb-5 block break-inside-avoid text-[15px] text-gray-300 transition-colors duration-200 hover:text-white"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                ))}
                               </motion.div>
                             </AnimatePresence>
                           </div>
@@ -500,7 +438,7 @@ setShowIndustries(false);
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-  `relative px-6 py-3 font-['Montserrat'] text-[1.35rem] transition-colors duration-200 ${
+                  `relative px-6 py-3 font-['Montserrat'] text-[1.35rem] transition-colors duration-200 ${
                     isActive ? "text-white" : "text-gray-300 hover:text-white"
                   }`
                 }
@@ -522,7 +460,7 @@ setShowIndustries(false);
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-              <SearchOverlay />
+          <SearchOverlay />
           <Link
             to="/contact"
             className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-black shadow-[0_0_24px_-8px_rgba(99,102,241,0.6)] transition-shadow duration-300 hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.75)]"
@@ -533,14 +471,17 @@ setShowIndustries(false);
 
         {/* Mobile controls */}
         <div className="flex items-center gap-3 lg:hidden shrink-0">
-          
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-white md:h-12 md:w-12"
           >
-            {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
+            {isMenuOpen ? (
+              <X className="h-5 w-5 md:h-6 md:w-6" />
+            ) : (
+              <Menu className="h-5 w-5 md:h-6 md:w-6" />
+            )}
           </button>
         </div>
       </div>
@@ -566,122 +507,77 @@ setShowIndustries(false);
                 if (link.label === "What we do") {
                   const isOpen = mobileAccordion === "services";
 
-                  return (
-                    <motion.div key={link.to} variants={linkItem}>
-                      <button
-                        type="button"
-                        onClick={() => toggleMobileAccordion("services")}
-                        aria-expanded={isOpen}
-                        aria-controls="mobile-services-panel"
-                        className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-lg font-medium text-gray-300 hover:text-white md:px-6 md:py-4 md:text-xl"
-                      >
-                        <span>{link.label}</span>
-                        <ChevronDown
-                          size={18}
-                          className={`shrink-0 transition-transform duration-300 md:h-5 md:w-5 ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
+        return (
+  <motion.div key={link.to} variants={linkItem}>
+    <div className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-lg font-medium text-gray-300 md:px-6 md:py-4 md:text-xl">
+      {/* TEXT — navigates to /services only, never toggles accordion */}
+      <Link
+        to="/services"
+        onClick={closeMobileMenu}
+        className="flex-1 hover:text-white"
+      >
+        {link.label}
+      </Link>
 
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            id="mobile-services-panel"
-                            key="mobile-services-panel"
-                            variants={mobileAccordionVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exit"
-                            className="overflow-hidden"
-                          >
-                            <div className="flex flex-col gap-4 px-4 pb-3 pt-1 md:px-6 md:pb-4">
-                              {SERVICES.map((section) => (
-                                <div key={section.title}>
-                                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-white/40 md:text-sm">
-                                    {section.title}
-                                  </p>
-                                  <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-6">
-                                    {section.items.map((item) => (
-                                      <Link
-                                        key={item.name}
-                                        to={item.link}
-                                        onClick={closeMobileMenu}
-                                        className="rounded-lg px-3 py-2 text-[15px] text-gray-400 transition-colors duration-200 hover:bg-white/5 hover:text-white md:px-4 md:py-2.5 md:text-base"
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  );
+      {/* ARROW — only this toggles the accordion */}
+      <button
+        type="button"
+        onClick={() => toggleMobileAccordion("services")}
+        aria-expanded={isOpen}
+        aria-controls="mobile-services-panel"
+        aria-label="Toggle what we do menu"
+        className="p-1 text-gray-300 hover:text-white"
+      >
+        <ChevronDown
+          size={18}
+          className={`shrink-0 transition-transform duration-300 md:h-5 md:w-5 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+    </div>
+
+    <AnimatePresence initial={false}>
+      {isOpen && (
+        <motion.div
+          id="mobile-services-panel"
+          key="mobile-services-panel"
+          variants={mobileAccordionVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className="overflow-hidden"
+        >
+          <div className="flex flex-col gap-4 px-4 pb-3 pt-1 md:px-6 md:pb-4">
+            {SERVICES.map((section) => (
+              <div key={section.title}>
+                <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-white/40 md:text-sm">
+                  {section.title}
+                </p>
+                <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-6">
+                  {section.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.link}
+                      onClick={closeMobileMenu}
+                      className="rounded-lg px-3 py-2 text-[15px] text-gray-400 transition-colors duration-200 hover:bg-white/5 hover:text-white md:px-4 md:py-2.5 md:text-base"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </motion.div>
+);
                 }
 
-                // "Industries" — accordion, reuses the INDUSTRIES array.
-                if (link.label === "Industries") {
-                  const isOpen = mobileAccordion === "industries";
-
-                  return (
-                    <motion.div key={link.to} variants={linkItem}>
-                      <button
-                        type="button"
-                        onClick={() => toggleMobileAccordion("industries")}
-                        aria-expanded={isOpen}
-                        aria-controls="mobile-industries-panel"
-                        className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-lg font-medium text-gray-300 hover:text-white md:px-6 md:py-4 md:text-xl"
-                      >
-                        <span>{link.label}</span>
-                        <ChevronDown
-                          size={18}
-                          className={`shrink-0 transition-transform duration-300 md:h-5 md:w-5 ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            id="mobile-industries-panel"
-                            key="mobile-industries-panel"
-                            variants={mobileAccordionVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exit"
-                            className="overflow-hidden"
-                          >
-                            <div className="flex flex-col gap-4 px-4 pb-3 pt-1 md:px-6 md:pb-4">
-                              {INDUSTRIES.map((section) => (
-                                <div key={section.title}>
-                                  <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-6">
-                                    {section.items.map((item) => (
-                                      <Link
-                                        key={item.name}
-                                        to={item.link}
-                                        onClick={closeMobileMenu}
-                                        className="rounded-lg px-3 py-2 text-[15px] text-gray-400 transition-colors duration-200 hover:bg-white/5 hover:text-white md:px-4 md:py-2.5 md:text-base"
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  );
-                }
-
-                // Everything else — "Who we are", "Insights", "Careers" — stays a normal link.
+                // Everything else — "Who we are", "Industries", "Insights",
+                // "Careers" — stays a plain link, no dropdown.
                 return (
                   <motion.div key={link.to} variants={linkItem}>
                     <NavLink

@@ -111,7 +111,7 @@ export default function IndustryLayout() {
               initial={{ opacity:0,y:30 }}
               whileInView={{ opacity:1,y:0 }}
               transition={{ duration:.7 }}
-              className="max-w-4xl text-6xl leading-tight text-white"
+              className="max-w-4xl text-5xl leading-tight text-white"
             >
               Engineering
 <br />
