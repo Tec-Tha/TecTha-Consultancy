@@ -99,7 +99,7 @@ export default function IndustryLayout() {
 
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
 
-        <div className="relative z-20 flex h-full w-full items-start pt-20 pb-16 sm:items-center sm:pt-0 sm:pb-0">
+        <div className="relative z-20 flex h-full w-full items-start pt-24 pb-16 sm:pt-28 sm:pb-0 lg:pt-36 xl:pt-40">
 
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8">
 
