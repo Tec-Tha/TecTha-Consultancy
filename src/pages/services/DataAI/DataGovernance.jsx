@@ -38,7 +38,7 @@ const staggerParent = {
 
 const Eyebrow = ({ children, dark }) => (
   <p
-    className={`text-xs font-semibold uppercase tracking-[0.25em] mb-5 font-['Montserrat'] ${
+    className={`text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] mb-4 sm:mb-5 font-['Montserrat'] ${
       dark ? "text-[#818CF8]" : "text-[#2563EB]"
     }`}
   >
@@ -212,13 +212,13 @@ const AIAgents = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
-    <div className="min-h-screen bg-white text-[#0B1120]">
+    <div className="min-h-screen w-full bg-white text-[#0B1120] overflow-x-hidden">
       <ServiceNavbar />
 
       {/* ============================================================ */}
       {/* HERO — full screen cinematic                                  */}
       {/* ============================================================ */}
-      <section className="relative h-screen min-h-[720px] w-full overflow-hidden flex items-end">
+      <section className="relative min-h-screen h-screen sm:min-h-[720px] w-full overflow-hidden flex items-end">
         <motion.div
           initial={{ scale: 1.12 }}
           animate={{ scale: 1 }}
@@ -233,13 +233,13 @@ const AIAgents = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
         </motion.div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10 pb-24 pt-40">
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full px-4 sm:px-6 md:px-10 pb-16 sm:pb-20 md:pb-24 pt-28 sm:pt-32 md:pt-40">
 <motion.p
   variants={fadeUp}
   initial="hidden"
   animate="visible"
   custom={0}
-  className="text-xs font-semibold uppercase tracking-[0.3em] text-[#93A5FF] mb-6 font-['Montserrat']"
+  className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#93A5FF] mb-4 sm:mb-6 font-['Montserrat']"
 >
   Data Governance
 </motion.p>
@@ -249,7 +249,7 @@ const AIAgents = () => {
   initial="hidden"
   animate="visible"
   custom={0.12}
-  className="text-white text-4xl md:text-6xl lg:text-7xl font leading-[1.03] max-w-4xl mb-8 tracking-tight"
+  className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font leading-[1.1] sm:leading-[1.05] md:leading-[1.03] max-w-4xl mb-6 sm:mb-8 tracking-tight"
 >
   Build trust in your enterprise data with effective Data Governance.
 </motion.h1>
@@ -259,17 +259,17 @@ const AIAgents = () => {
   initial="hidden"
   animate="visible"
   custom={0.22}
-  className="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed mb-10"
+  className="text-white/70 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-8 sm:mb-10"
 >
   Establish enterprise-wide governance frameworks that improve data quality, strengthen security, ensure compliance, and enable confident, data-driven decision-making.
 </motion.p>
 
 <Link
   to="/contact"
-  className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
+  className="group w-full sm:w-auto flex sm:inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-black hover:bg-gray-200 transition-colors text-center"
 >
-  Schedule a Data Governance Consultation
-  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+  <span className="min-w-0">Schedule a Data Governance Consultation</span>
+  <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
 </Link>
         
         </div>
@@ -278,8 +278,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       {/* WHY AI AGENTS — split, floating cards                         */}
       {/* ============================================================ */}
-      <section className="py-28 px-6 md:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-14 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 bg-white">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -288,11 +288,11 @@ const AIAgents = () => {
           >
 <Eyebrow>WHY DATA GOVERNANCE</Eyebrow>
 
-<h2 className="text-3xl md:text-5xl font leading-[1.1] mb-8 tracking-tight text-[#0B1120]">
+<h2 className="text-2xl sm:text-3xl md:text-5xl font leading-[1.15] sm:leading-[1.1] mb-6 sm:mb-8 tracking-tight text-[#0B1120]">
   Trusted data is the foundation of every successful digital enterprise.
 </h2>
 
-<div className="text-gray-600 text-lg leading-relaxed space-y-5">
+<div className="text-gray-600 text-base sm:text-lg leading-relaxed space-y-4 sm:space-y-5">
   <p>
     Organizations rely on accurate, secure, and well-managed data to support business operations, regulatory compliance, analytics, and artificial intelligence initiatives.
   </p>
@@ -312,7 +312,7 @@ const AIAgents = () => {
             custom={0.15}
             className="relative"
           >
-            <div className="relative rounded-[28px] overflow-hidden h-[480px]">
+            <div className="relative rounded-[20px] sm:rounded-[24px] md:rounded-[28px] overflow-hidden h-[240px] sm:h-[340px] md:h-[420px] lg:h-[480px]">
               <img
                 src="/DA&AI/48.avif"
                 alt="Agent guardrails and monitoring"
@@ -347,7 +347,7 @@ const AIAgents = () => {
       {/* ============================================================ */}
       {/* EXECUTIVE CHALLENGES — black bg, glass cards                  */}
       {/* ============================================================ */}
-      <section className="py-32 px-6 md:px-10 bg-black">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-10 bg-black">
         <div className="max-w-[1400px] mx-auto">
       
           <motion.div
@@ -355,18 +355,18 @@ const AIAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="mb-10 sm:mb-14 md:mb-20"
           >
-<p className="text-sm uppercase tracking-[0.35em] text-blue-500 font-semibold mb-4">
+<p className="text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.35em] text-blue-500 font-semibold mb-3 sm:mb-4">
   Data Governance Challenges
 </p>
 
-<h2 className="text-5xl md:text-6xl text-white font-light leading-tight max-w-6xl">
+<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-light leading-tight max-w-6xl">
   The governance and compliance challenges impacting enterprise data.
 </h2>
           </motion.div>
       
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6">
       
             {CHALLENGES.map((item,index)=>(
       
@@ -380,21 +380,21 @@ const AIAgents = () => {
                   delay:index*0.08
                 }}
                 whileHover={{x:8}}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500"
               >
       
-                <div className="grid md:grid-cols-[100px_1fr] gap-10 items-center p-10">
+                <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-3 sm:gap-4 md:gap-10 items-start md:items-center p-6 sm:p-8 md:p-10">
       
-                  <div className="text-6xl font text-white/10 group-hover:text-blue-500 transition">
+                  <div className="text-3xl sm:text-4xl md:text-6xl font text-white/10 group-hover:text-blue-500 transition">
                     0{index+1}
                   </div>
       
                   <div>
-                    <h3 className="text-3xl text-white mb-3">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl text-white mb-2 sm:mb-3">
                       {item.title}
                     </h3>
       
-                    <p className="text-lg leading-8 text-white/70 max-w-4xl">
+                    <p className="text-base sm:text-lg leading-7 sm:leading-8 text-white/70 max-w-4xl">
                       {item.desc}
                     </p>
                   </div>
@@ -415,20 +415,20 @@ const AIAgents = () => {
       {/* ============================================================ */}
       {/* AGENT FRAMEWORK — large stacked image cards                    */}
       {/* ============================================================ */}
-      <section className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-white py-14 sm:py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
       
           {/* Heading */}
-<p className="uppercase tracking-[0.35em] text-blue-600 text-sm font-semibold mb-5">
+<p className="uppercase tracking-[0.25em] sm:tracking-[0.35em] text-blue-600 text-xs sm:text-sm font-semibold mb-4 sm:mb-5">
   Data Governance Framework
 </p>
 
-<h2 className="text-5xl font-light text-slate-900 max-w-4xl mb-20 leading-tight">
+<h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 max-w-4xl mb-10 sm:mb-14 md:mb-20 leading-tight">
   A strategic framework for trusted, secure, and compliant enterprise data.
 </h2>
       
           {/* Cards */}
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-9 md:gap-10">
       
             {FRAMEWORK.map((item, index) => (
               <motion.div
@@ -448,17 +448,17 @@ const AIAgents = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-110"
+                    className="h-[190px] sm:h-[220px] md:h-[260px] w-full object-cover transition duration-700 group-hover:scale-110"
                   />
                 </div>
       
                 {/* Title */}
-                <h3 className="mt-8 text-4xl font-light text-slate-900">
+                <h3 className="mt-5 sm:mt-6 md:mt-8 text-2xl sm:text-3xl md:text-4xl font-light text-slate-900">
                   {item.title}
                 </h3>
       
                 {/* Description */}
-                <p className="mt-5 text-lg leading-9 text-slate-600">
+                <p className="mt-3 sm:mt-4 md:mt-5 text-base sm:text-lg leading-7 sm:leading-9 text-slate-600">
                   {item.desc}
                 </p>
       
@@ -473,24 +473,24 @@ const AIAgents = () => {
       {/* ============================================================ */}
       {/* WHAT WE DELIVER — white bg, icon cards                        */}
       {/* ============================================================ */}
-      <section className="bg-black py-28">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-black py-16 sm:py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
       
-          <div className="grid lg:grid-cols-[420px_1fr] gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 md:gap-14 lg:gap-20">
       
             {/* Left Sticky */}
             <div className="lg:sticky lg:top-28 self-start">
-<h2 className="mt-5 text-5xl font-light leading-tight text-white">
+<h2 className="mt-2 sm:mt-3 md:mt-5 text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-white">
   Comprehensive Data Governance solutions for modern enterprises.
 </h2>
 
-<p className="mt-8 text-lg leading-8 text-white/60">
+<p className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
   Our Data Governance services help organizations improve data quality, strengthen compliance, protect sensitive information, and establish trusted data management practices across the enterprise.
 </p>
                    </div>
       
             {/* Right Cards */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-7 md:space-y-8">
       
               {DELIVERABLES.map((item, index) => (
                 <motion.div
@@ -506,23 +506,23 @@ const AIAgents = () => {
                     scale: 1.02,
                     y: -5,
                   }}
-                  className="sticky top-32"
+                  className="md:sticky md:top-32"
                 >
-                  <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-10 transition-all duration-500 hover:border-blue-500/40 hover:bg-white/10">
+                  <div className="rounded-[22px] sm:rounded-[26px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-10 transition-all duration-500 hover:border-blue-500/40 hover:bg-white/10">
       
                     <div className="flex items-center justify-between">
       
-                      <span className="text-7xl font-light text-white/10">
+                      <span className="text-4xl sm:text-5xl md:text-7xl font-light text-white/10">
                         {String(index + 1).padStart(2, "0")}
                       </span>
       
                     </div>
       
-                    <h3 className="mt-8 text-3xl font text-white">
+                    <h3 className="mt-5 sm:mt-6 md:mt-8 text-xl sm:text-2xl md:text-3xl font text-white">
                       {item.title}
                     </h3>
       
-                    <p className="mt-5 text-lg leading-8 text-white/60">
+                    <p className="mt-3 sm:mt-4 md:mt-5 text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
                       {item.desc}
                     </p>
       
@@ -542,8 +542,8 @@ const AIAgents = () => {
       {/* ============================================================ */}
       {/* FAQ — split, accordion                                        */}
       {/* ============================================================ */}
-      <section className="py-28 px-6 md:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto grid md:grid-cols-[1fr_1.4fr] gap-16">
+      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 bg-white">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -552,7 +552,7 @@ const AIAgents = () => {
             className="md:sticky md:top-32 h-fit"
           >
             <Eyebrow>FAQ</Eyebrow>
-            <h2 className="text-3xl md:text-5xl font leading-[1.1] tracking-tight text-[#0B1120]">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font leading-[1.15] sm:leading-[1.1] tracking-tight text-[#0B1120]">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -571,13 +571,13 @@ const AIAgents = () => {
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 text-left px-7 py-6 hover:bg-black/[0.02] transition-colors"
+                    className="flex w-full items-center justify-between gap-4 sm:gap-6 text-left px-4 py-4 sm:px-7 sm:py-6 hover:bg-black/[0.02] transition-colors"
                   >
-                    <span className="text-base md:text-lg font-semibold text-[#0B1120]">{faq.q}</span>
+                    <span className="flex-1 min-w-0 text-sm sm:text-base md:text-lg font-semibold text-[#0B1120]">{faq.q}</span>
                     <motion.span
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-black/10"
+                      className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full border border-black/10"
                     >
                       <Plus className="h-4 w-4 text-[#2563EB]" />
                     </motion.span>
@@ -588,7 +588,7 @@ const AIAgents = () => {
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="text-gray-500 leading-relaxed px-7 pb-7 max-w-2xl">{faq.a}</p>
+                    <p className="text-gray-500 text-sm sm:text-base leading-relaxed px-4 pb-5 sm:px-7 sm:pb-7 max-w-2xl">{faq.a}</p>
                   </motion.div>
                 </motion.div>
               );
@@ -600,7 +600,7 @@ const AIAgents = () => {
       {/* ============================================================ */}
       {/* FINAL CTA — cinematic                                         */}
       {/* ============================================================ */}
-      <section className="relative py-40 px-6 md:px-10 overflow-hidden">
+      <section className="relative py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0">
           
           <div className="absolute inset-0 bg-black" />
@@ -612,20 +612,20 @@ const AIAgents = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="relative max-w-[1000px] mx-auto text-center"
         >
-<h2 className="mt-5 text-5xl font-light leading-tight text-white">
+<h2 className="mt-2 sm:mt-3 md:mt-5 text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-white">
   Turn trusted data into a strategic business asset.
 </h2>
 
-<p className="mt-8 text-lg leading-8 text-white/60">
+<p className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
   Partner with our Data Governance experts to improve data quality, strengthen compliance, and build a secure, future-ready data foundation for your organization.
 </p>
 
 <Link
   to="/contact"
-  className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-200 transition-colors"
+  className="group w-full sm:w-auto mt-6 sm:mt-7 md:mt-8 flex sm:inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-black hover:bg-gray-200 transition-colors"
 >
-  Schedule a Data Governance Consultation
-  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+  <span className="min-w-0">Schedule a Data Governance Consultation</span>
+  <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
 </Link>
         </motion.div>
       </section>
