@@ -56,27 +56,27 @@ const COUNTRIES = [
     name: "United Kingdom",
     flag: "/meetushere/uk.svg",
     image: "/meetushere/4.avif",
-    heading: "Powering enterprise innovation across the United Kingdom",
+    heading: "Driving Digital Transformation Across the United Kingdom",
     paragraph:
-      "Across the UK, Tec Tha delivers cloud modernization, data-driven intelligence, and technology consulting that help enterprises and public institutions operate with greater agility, security, and resilience.",
-    chips: ["Cloud Modernization", "Data & Analytics", "Technology Consulting", "AI Solutions"],
+      "We partner with enterprises, public sector organizations, and high-growth businesses across the United Kingdom to accelerate digital transformation through AI, cloud modernization, cybersecurity, and enterprise engineering—delivering secure, scalable, and future-ready solutions.",
+    chips: ["Cloud Modernization", "Enterprise Engineering", "Cybersecurity", "AI Solutions"],
   },
     {
     code: "AU",
     name: "Australia",
     flag: "/meetushere/au.svg",
     image: "/meetushere/7.avif",
-    heading: "Delivering scalable enterprise technology across Australia",
+    heading: "Empowering Australian Enterprises Through Intelligent Technology",
     paragraph:
       "Tec Tha works with Australian enterprises and institutions to modernize infrastructure, apply AI at scale, and strengthen cybersecurity posture, underpinning digital transformation built to last.",
-    chips: ["Cloud & AI Solutions", "Enterprise Software", "Cybersecurity", "Data Analytics"],
+    chips: ["Cloud & AI Solutions", "Enterprise Software", "Cybersecurity", "DATA INTELLIGENCE"],
   },
   {
     code: "US",
     name: "United States",
     flag: "/meetushere/us.svg",
     image: "/meetushere/5.avif",
-    heading: "Accelerating enterprise transformation across the United States",
+    heading: "Accelerating enterprise transformation across the \nUnited States",
     paragraph:
       "Tec Tha equips enterprises across the United States with enterprise-grade AI, resilient cloud infrastructure, and advanced cybersecurity, engineered to support digital transformation at national scale.",
     chips: ["Enterprise AI", "Cloud Infrastructure", "Cybersecurity", "Digital Engineering"],
